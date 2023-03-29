@@ -28,10 +28,10 @@ class AppServiceProvider extends ServiceProvider
     {
         
 
-        $latest_blog=DB::table('blogs')->orderBy('created_at','Desc')->limit(3)->get();
+        /*$latest_blog=DB::table('blogs')->orderBy('created_at','Desc')->limit(3)->get();
         View::share('latest_blog', $latest_blog);
         $logo_url=Logo::latest('id')->limit(1)->get();
-        View::share('logo_url',  $logo_url);
+        View::share('logo_url',  $logo_url);*/
 
         
     }
