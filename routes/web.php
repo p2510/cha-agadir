@@ -22,7 +22,7 @@ use App\Http\Controllers\InterestedController;
 use App\Http\Controllers\NewsletterController;
 use App\Http\Controllers\ResponsableController;
 use App\Http\Controllers\CategoryBlogController;
-
+  
 /*
 |--------------------------------------------------------------------------
 | Web Routes
