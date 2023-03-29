@@ -27,12 +27,12 @@ class AppServiceProvider extends ServiceProvider
     public function boot()
     {
         
-
+/*
         $latest_blog=DB::table('blogs')->orderBy('created_at','Desc')->limit(3)->get();
         View::share('latest_blog', $latest_blog);
         $logo_url=Logo::latest('id')->limit(1)->get();
         View::share('logo_url',  $logo_url);
-
+*/
         
     }
 }
