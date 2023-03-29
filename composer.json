@@ -11,7 +11,7 @@
         "guzzlehttp/guzzle": "^7.2",
         "jorenvanhocht/laravel-share": "^4.2",
         "laravel/framework": "^9.19",
-        
+        "laravel/nova": "~4.0",
         "laravel/sanctum": "^3.0",
         "laravel/tinker": "^2.7",
         "maatwebsite/laravel-nova-excel": "^1.3",
