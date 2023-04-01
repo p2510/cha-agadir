@@ -14,7 +14,6 @@ use Laravel\Nova\Fields\HasMany;
 use Laravel\Nova\Fields\DateTime;
 use Laravel\Nova\Fields\Textarea;
 use Laravel\Nova\Fields\BelongsTo;
-use Jangvel\NovaGutenberg\NovaGutenberg;
 use Emilianotisato\NovaTinyMCE\NovaTinyMCE;
 use Laravel\Nova\Http\Requests\NovaRequest;
 use NumaxLab\NovaCKEditor5Classic\CKEditor5Classic;
@@ -134,15 +133,15 @@ class Course extends Resource
                 'toolbar' => 'undo redo | styles | bold italic forecolor backcolor | alignleft aligncenter alignright alignjustify | image | bullist numlist outdent indent | link',
                 'use_lfm' => true
             ]), 
-            NovaGutenberg::make(__('Témoignage'), 'review'),
+           
 
-            /*NovaTinyMCE::make('','review')->options([
+            NovaTinyMCE::make('Témoignages','review')->options([
                 'plugins' => [
                     'lists','preview','anchor','pagebreak','image','wordcount','fullscreen','directionality'
                 ],
                 'toolbar' => 'undo redo | styles | bold italic forecolor backcolor | alignleft aligncenter alignright alignjustify | image | bullist numlist outdent indent | link',
                 'use_lfm' => true
-            ]),*/
+            ]),
 
 
             HasMany::make('programs'),

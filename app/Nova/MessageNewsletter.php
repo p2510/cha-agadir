@@ -7,7 +7,6 @@ use App\Jobs\SendNewsletter;
 use Illuminate\Http\Request;
 use Laravel\Nova\Fields\Text;
 use Illuminate\Database\Eloquent\Model;
-use Jangvel\NovaGutenberg\NovaGutenberg;
 use Emilianotisato\NovaTinyMCE\NovaTinyMCE;
 use Laravel\Nova\Http\Requests\NovaRequest;
 use Maatwebsite\LaravelNovaExcel\Actions\DownloadExcel;
@@ -48,10 +47,15 @@ class MessageNewsletter extends Resource
         return [
             ID::make()->sortable(),
             Text::make('Sujet','subject'),
-            NovaGutenberg::make('Votre email','message'),
+            NovaTinyMCE::make('Votre email','message')->options([
+                'plugins' => [
+                    'lists','preview','anchor','pagebreak','image','wordcount','fullscreen','directionality'
+                ],
+                'toolbar' => 'undo redo | styles | bold italic forecolor backcolor | alignleft aligncenter alignright alignjustify | image | bullist numlist outdent indent | link',
+                'use_lfm' => true
+            ]),
         ];
     }
-
     /**
      * Get the cards available for the request.
      *

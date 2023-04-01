@@ -21,7 +21,6 @@ use Illuminate\Database\Eloquent\Factories\HasFactory;
 class Course extends Model
 {
     use HasFactory;
-    use RendersContent;
     protected $contentColumn = 'content';
     protected $fillable=[
         'position',
