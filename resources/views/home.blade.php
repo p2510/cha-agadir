@@ -646,7 +646,7 @@
                     <div class="owl-carousel-6col clients-logo transparent text-center">
                         @if (count($partners) > 0)
                             @foreach ($partners as $partner)
-                                <div class="item"> <a href="#"><img
+                                <div class="item"> <a href="{{route('home')}}"><img
                                             src="{{ url('storage') }}/{{ $partner->photo }}" alt=""></a>
                                 </div>
                             @endforeach

@@ -158,7 +158,7 @@
 
                             @if (count($logo_url) > 0)
                                 @foreach ($logo_url as $item)
-                                    <a class="menuzord-brand  flip mt-20 mt-sm-10 mb-sm-20 pt-5" href="/"><img
+                                    <a class="menuzord-brand  flip mt-20 mt-sm-10 mb-sm-20 pt-5" href="{{route('home')}}"><img
                                             src="{{ url('storage') }}/{{ $item->logo }}" alt=""></a>
                                 @endforeach
                             @endif
@@ -2126,7 +2126,7 @@
                                 @if (count($logo_url) > 0)
                                     @foreach ($logo_url as $item)
                                         <a class="menuzord-brand  flip mt-20 mt-sm-10 mb-sm-20 pt-20 "
-                                            href="/"><img src="{{ url('storage') }}/{{ $item->logo }}"
+                                            href="{{route('home')}}"><img src="{{ url('storage') }}/{{ $item->logo }}"
                                                 alt=""></a>
                                     @endforeach
                                 @endif
