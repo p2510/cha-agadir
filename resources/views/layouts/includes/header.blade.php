@@ -343,6 +343,6 @@
             const switchlang=document.getElementById('switchlang');
         
             switchlang.addEventListener('change',()=>{
-                window.location.href=`langue/${switchlang.value}`
+                window.location.href=`/langue/${switchlang.value}`
             })
         </script>

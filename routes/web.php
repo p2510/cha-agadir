@@ -76,7 +76,7 @@ Route::get('/agri-business', [BusinessController::class, '__invoke'])->name('bus
 
 // swith lang
 
-Route::get('langue/{lang}', function (string $lang,Request $request) {
+Route::get('/langue/{lang}', function (string $lang,Request $request) {
     if (! in_array($lang, ['en', 'fr'])) {
         abort(400);
     }
