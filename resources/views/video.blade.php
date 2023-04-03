@@ -55,7 +55,7 @@
                                
                                     <div class="gallery-item  a{{ $video->category_video_id }}">
                                         <iframe width="420" height="345"
-                                            src="https://www.youtube.com/embed/{{ $video->video }}">
+                                            src="https://www.youtube.com/embed/{{ $video->video }}?rel=0">
                                         </iframe>
                                     </div>
                                 @endforeach
