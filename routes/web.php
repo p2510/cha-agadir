@@ -1,5 +1,7 @@
 <?php
 
+use Illuminate\Http\Request;
+use Illuminate\Support\Facades\App;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\BlogController;
 use App\Http\Controllers\HomeController;
@@ -36,7 +38,6 @@ use App\Http\Controllers\CategoryBlogController;
 
 Route::prefix('/test')->group(function () {
     
-
 Route::get('/', [HomeController::class, '__invoke'])->name('home');
 Route::get('/nos-formations/{course}', [CourseController::class, 'show'])->name('course.details');
 Route::get('/formation/{res}', [CourseController::class, 'showByName'])->name('course.byname');
@@ -71,3 +72,15 @@ Route::get('/ferme-experiementale', [ExperienceController::class, '__invoke'])->
 Route::get('/impact-cluster', [ImpactController::class, '__invoke'])->name('impact.index');
 Route::get('/agri-business', [BusinessController::class, '__invoke'])->name('business.index');
 });
+
+
+// swith lang
+
+Route::get('langue/{lang}', function (string $lang,Request $request) {
+    if (! in_array($lang, ['en', 'fr'])) {
+        abort(400);
+    }
+
+    $request->session()->put('my_locale', $lang);
+    return redirect()->back();
+})->name('switch.langage');
