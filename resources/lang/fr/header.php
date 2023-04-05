@@ -43,6 +43,20 @@ return [
     'subtitle30'=>'Programme Doctoral',
     'subtitle31'=>'Formation Exécutive',
     'subtitle32'=>' Farm Manager',
+    'info1'=>'Contact',
+    'info2'=>'À propos',
+    'info3'=>'NOS FORMATIONS',
+    ''=>'',
+    ''=>'',
+    ''=>'',
+    ''=>'',
+    ''=>'',
+    ''=>'',
+    ''=>'',
+    ''=>'',
+    ''=>'',
+    ''=>'',
+    ''=>'',
 
    
 ];

@@ -110,8 +110,10 @@
                             <div class="widget">
                                 <a href=""></a>
                                 <select class="language-selector" id="switchlang">
-                                    <option value="fr" @if (App::currentLocale()=='fr')selected @endif >Fançais</option>
-                                    <option value="en"  @if (App::currentLocale()=='en')selected @endif >English</option>
+                                    <option value="fr" @if (App::currentLocale() == 'fr') selected @endif>Fançais
+                                    </option>
+                                    <option value="en" @if (App::currentLocale() == 'en') selected @endif>English
+                                    </option>
                                 </select>
                             </div>
 
@@ -145,17 +147,14 @@
                                         </svg>
                                     </li>
                                     <li>
-                                        <a class="text-white" href="{{ route('contact.create') }}">
-
-
-                                            Contact
-
-                                        </a>
+                                        <a class="text-white"
+                                            href="{{ route('contact.create') }}">{{ __('header.info1') }}</a>
                                     </li>
 
                                     <li class="text-white">|</li>
                                     <li>
-                                        <a class="text-white" href="{{ route('about.index') }}">À propos</a>
+                                        <a class="text-white"
+                                            href="{{ route('about.index') }}">{{ __('header.info2') }}</a>
                                     </li>
                                     <li class="text-white">|</li>
                                     <li class="text-white" style="position:relative; top:3px;">
@@ -172,8 +171,7 @@
                                     <li>
                                         <a href="{{ route('course.index') }}"
                                             class="btn btn-dark btn-circled btn-theme-colored2 btn-sm  pr-30 pl-30 "
-                                            style="font-weight: bold; animation: blink 1s ease-in-out infinite;">NOS
-                                            FORMATIONS</a>
+                                            style="font-weight: bold; animation: blink 1s ease-in-out infinite;">{{ __('header.info3') }}</a>
                                     </li>
 
                                 </ul>
@@ -206,84 +204,106 @@
 
                                 <li @if (Route::current()->getName() == 'home') class='active' @endif>
                                     <a href="{{ route('home') }}" class="font-14 text-uppercase"
-                                        style="padding: 10px 10px 10px 10px; ">{{__('header.title1')}}</a>
+                                        style="padding: 10px 10px 10px 10px; ">{{ __('header.title1') }}</a>
                                 </li>
                                 <li><a href="#home" class="font-14 text-uppercase"
-                                        style="padding: 10px 10px 10px 10px;">{{__('header.title2')}}</a>
+                                        style="padding: 10px 10px 10px 10px;">{{ __('header.title2') }}</a>
                                     <ul class="dropdown">
-                                        <li><a href="{{ route('director.index') }}">{{__('header.subtitle1')}}</a></li>
-                                        <li><a href="{{ route('about.index') }}">{{__('header.subtitle2')}}</a></li>
-                                        <li><a href="{{ route('responsable.index') }}">{{__('header.subtitle3')}}</a>
+                                        <li><a href="{{ route('director.index') }}">{{ __('header.subtitle1') }}</a>
                                         </li>
-                                        <li><a href="{{ route('campus.index') }}">{{__('header.subtitle4')}}</a></li>
-                                        <li><a href="{{ route('evenement.index') }}">{{__('header.subtitle5')}}</a></li>
-                                        <li><a href="{{ route('blog-actualités.index') }}">{{__('header.subtitle6')}}</a></li>
-                                        <li><a href="{{ route('media.index') }}">{{__('header.subtitle7')}}</a></li>
-                                        <li><a href="{{ route('video.index') }}">{{__('header.subtitle8')}}</a></li>
+                                        <li><a href="{{ route('about.index') }}">{{ __('header.subtitle2') }}</a>
+                                        </li>
+                                        <li><a
+                                                href="{{ route('responsable.index') }}">{{ __('header.subtitle3') }}</a>
+                                        </li>
+                                        <li><a href="{{ route('campus.index') }}">{{ __('header.subtitle4') }}</a>
+                                        </li>
+                                        <li><a href="{{ route('evenement.index') }}">{{ __('header.subtitle5') }}</a>
+                                        </li>
+                                        <li><a
+                                                href="{{ route('blog-actualités.index') }}">{{ __('header.subtitle6') }}</a>
+                                        </li>
+                                        <li><a href="{{ route('media.index') }}">{{ __('header.subtitle7') }}</a>
+                                        </li>
+                                        <li><a href="{{ route('video.index') }}">{{ __('header.subtitle8') }}</a>
+                                        </li>
                                     </ul>
                                 </li>
                                 <li @if (Route::current()->getName() == 'course.index') class="active" @endif><a
                                         href="{{ route('course.index') }}" style="padding: 10px 10px 10px 10px;"
-                                        class="font-14 text-uppercase d-inline">{{__('header.title3')}}</a>
+                                        class="font-14 text-uppercase d-inline">{{ __('header.title3') }}</a>
                                     <ul class="dropdown" style="padding-left: -50px;">
                                         <li style="padding-left: -50px;">
                                             <a href="{{ route('degree.show', "Ingénieur d'État") }}"
-                                                style="padding-left: -50px">{{__('header.subtitle9')}}</a>
+                                                style="padding-left: -50px">{{ __('header.subtitle9') }}</a>
                                             <ul class="dropdown">
                                                 <li><a
-                                                        href="{{ route('course.details', 'Horticulture') }}">{{__('header.subtitle10')}}</a>
+                                                        href="{{ route('course.details', 'Horticulture') }}">{{ __('header.subtitle10') }}</a>
                                                 </li>
-                                                <li><a href="{{ route('course.details', 'Protection des Plantes') }}">{{__('header.subtitle11')}}</a></li>
+                                                <li><a
+                                                        href="{{ route('course.details', 'Protection des Plantes') }}">{{ __('header.subtitle11') }}</a>
+                                                </li>
                                                 <li><a
                                                         href="{{ route('course.details', 'Architecture du Paysage') }}">
-                                                        {{__('header.subtitle12')}}</a></li>
+                                                        {{ __('header.subtitle12') }}</a></li>
 
                                             </ul>
 
                                         </li>
-                                        <li><a href="{{ route('degree.show', 'Master') }}">{{__('header.subtitle13')}}</a>
+                                        <li><a
+                                                href="{{ route('degree.show', 'Master') }}">{{ __('header.subtitle13') }}</a>
                                             <ul class="dropdown">
                                                 <li><a
-                                                        href="{{ route('course.details', 'Water & Sustainable Horticulture') }}">{{__('header.subtitle14')}}</a></li>
+                                                        href="{{ route('course.details', 'Water & Sustainable Horticulture') }}">{{ __('header.subtitle14') }}</a>
+                                                </li>
                                                 <li><a
-                                                        href="{{ route('course.details', 'Architecture du Paysage') }}">{{__('header.subtitle15')}}</a>
+                                                        href="{{ route('course.details', 'Architecture du Paysage') }}">{{ __('header.subtitle15') }}</a>
                                                 </li>
                                                 <li><a href="{{ route('course.details', 'Locust Science') }}">
-                                                    {{__('header.subtitle16')}}</a></li>
+                                                        {{ __('header.subtitle16') }}</a></li>
                                                 <li><a href="{{ route('course.details', 'Sciences Acridiennes') }}">
-                                                    {{__('header.subtitle17')}}</a></li>
+                                                        {{ __('header.subtitle17') }}</a></li>
                                             </ul>
                                         </li>
 
-                                        <li><a href="{{ route('degree.show', 'Licence pro') }}"> {{__('header.subtitle18')}}</a>
+                                        <li><a href="{{ route('degree.show', 'Licence pro') }}">
+                                                {{ __('header.subtitle18') }}</a>
                                             <ul class="dropdown">
                                                 <li><a
                                                         href="{{ route('course.details', 'Horticulture Ornementale et Espaces verts') }}">
-                                                        {{__('header.subtitle19')}}  <br class="break"> {{__('header.subtitle20')}} </a></li>
-                                                <li><a href="{{ route('course.details', 'Aménagement du Paysage') }}">{{__('header.subtitle21')}} </a>
+                                                        {{ __('header.subtitle19') }} <br class="break">
+                                                        {{ __('header.subtitle20') }} </a></li>
+                                                <li><a href="{{ route('course.details', 'Aménagement du Paysage') }}">{{ __('header.subtitle21') }}
+                                                    </a>
                                                 </li>
                                             </ul>
                                         </li>
-                                        <li><a href="{{ route('degree.show', 'Technicien sp.') }}">{{__('header.subtitle22')}} </a>
+                                        <li><a href="{{ route('degree.show', 'Technicien sp.') }}">{{ __('header.subtitle22') }}
+                                            </a>
                                             <ul class="dropdown">
                                                 <li><a
-                                                        href="{{ route('course.details', 'Technico-Commercial en Productions Horticoles') }}">{{__('header.subtitle23')}} <br class="break">{{__('header.subtitle24')}} </a></li>
+                                                        href="{{ route('course.details', 'Technico-Commercial en Productions Horticoles') }}">{{ __('header.subtitle23') }}
+                                                        <br class="break">{{ __('header.subtitle24') }} </a></li>
                                                 <li><a
-                                                        href="{{ route('course.details', 'Conditionnement et Valorisation des Produits Agricoles') }}">{{__('header.subtitle25')}}  <br class="break">{{__('header.subtitle26')}}  </a>
+                                                        href="{{ route('course.details', 'Conditionnement et Valorisation des Produits Agricoles') }}">{{ __('header.subtitle25') }}
+                                                        <br class="break">{{ __('header.subtitle26') }} </a>
                                                 </li>
                                                 <li><a
-                                                        href="{{ route('course.details', 'Cultures Ornementales et Aménagement des Espaces Verts') }}">{{__('header.subtitle27')}} <br class="break"> {{__('header.subtitle28')}}</a></li>
-                                                <li><a href="Aquaculture">{{__('header.subtitle29')}}</a>
+                                                        href="{{ route('course.details', 'Cultures Ornementales et Aménagement des Espaces Verts') }}">{{ __('header.subtitle27') }}
+                                                        <br class="break"> {{ __('header.subtitle28') }}</a></li>
+                                                <li><a href="Aquaculture">{{ __('header.subtitle29') }}</a>
                                                 </li>
                                             </ul>
                                         </li>
-                                        <li><a href="{{ route('course.details', 'Programme Doctoral') }}">{{__('header.subtitle30')}}</a>
+                                        <li><a
+                                                href="{{ route('course.details', 'Programme Doctoral') }}">{{ __('header.subtitle30') }}</a>
 
                                         </li>
-                                        <li><a href="{{ route('degree.show', 'Formation Exécutive') }}">{{__('header.subtitle31')}} <span class="label label-danger">New</span></a>
+                                        <li><a href="{{ route('degree.show', 'Formation Exécutive') }}">{{ __('header.subtitle31') }}
+                                                <span class="label label-danger">New</span></a>
                                             <ul class="dropdown">
                                                 <li><a href="{{ route('course.details', 'Farm Manager') }}">
-                                                    {{__('header.subtitle32')}}</a>
+                                                        {{ __('header.subtitle32') }}</a>
                                                 </li>
                                             </ul>
                                         </li>
@@ -293,15 +313,15 @@
                                 </li>
 
                                 <li><a href="{{ route('search.index') }}" style="padding: 10px 10px 10px 10px;"
-                                        class="font-14 text-uppercase">{{__('header.title4')}}</a>
+                                        class="font-14 text-uppercase">{{ __('header.title4') }}</a>
                                 <li><a href="{{ route('center.index') }}" style="padding: 10px 10px 10px 10px;"
-                                        class="font-14 text-uppercase">{{__('header.title5')}}</a>
+                                        class="font-14 text-uppercase">{{ __('header.title5') }}</a>
                                 <li><a href="{{ route('experience.index') }}" style="padding: 10px 10px 10px 10px;"
-                                        class="font-14 text-uppercase">{{__('header.title6')}}</a>
+                                        class="font-14 text-uppercase">{{ __('header.title6') }}</a>
                                 <li><a href="{{ route('impact.index') }}" style="padding: 10px 10px 10px 10px;"
-                                        class="font-14 text-uppercase">{{__('header.title7')}}</a>
+                                        class="font-14 text-uppercase">{{ __('header.title7') }}</a>
                                 <li><a href="{{ route('business.index') }}" style="padding: 10px 10px 10px 10px;"
-                                        class="font-14 text-uppercase">{{__('header.title8')}}</a>
+                                        class="font-14 text-uppercase">{{ __('header.title8') }}</a>
 
                             </ul>
 
@@ -340,9 +360,9 @@
             }
         </style>
         <script>
-            const switchlang=document.getElementById('switchlang');
-        
-            switchlang.addEventListener('change',()=>{
-                window.location.href=`/langue/${switchlang.value}`
+            const switchlang = document.getElementById('switchlang');
+
+            switchlang.addEventListener('change', () => {
+                window.location.href = `/langue/${switchlang.value}`
             })
         </script>

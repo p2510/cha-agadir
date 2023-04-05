@@ -32,7 +32,7 @@
                             <div> {!! $slide->description !!}</div>
 
                             <a href="{{ $slide->url }}"
-                                class="btn btn-dark btn-circled btn-theme-colored2 btn-xl mr-10 pr-30 pl-30">Découvrir</a>
+                                class="btn btn-dark btn-circled btn-theme-colored2 btn-xl mr-10 pr-30 pl-30">{{ __('home.btn1') }}</a>
                         </li>
                     @else
                         <li class="slide">
@@ -45,7 +45,7 @@
 
 
                             <a href="{{ $slide->url }}"
-                                class=" btn btn-dark btn-circled btn-theme-colored2 btn-xl mr-10 pr-30 pl-30">Découvrir</a>
+                                class=" btn btn-dark btn-circled btn-theme-colored2 btn-xl mr-10 pr-30 pl-30">{{ __('home.btn1') }}</a>
                         </li>
                     @endif
                 @endforeach
@@ -314,7 +314,7 @@
 
                                     <button id="hide_popup" class="btn btn-colored btn-theme-colored btn-md m-0"
                                         data-height="40px" style="position:relative;top:-50px;">
-                                        Ne plus afficher</button>
+                                        {{ __('home.text6') }}</button>
                                     @if (isset($item->title))
                                         <h3 class="text-white mt-0">{{ $item->title }}</h3>
                                     @endif
@@ -328,12 +328,12 @@
                                         @if (isset($item->url))
                                             <a href="{{ $item->url }}"
                                                 class="btn btn-colored btn-theme-colored2 btn-md m-0" data-height="40px"
-                                                target="_blank">Découvrir</a>
+                                                target="_blank">{{ __('home.btn1') }}</a>
                                         @endif
                                         @if (isset($item->file))
                                             <a href="{{ url('storage') }}/{{ $item->file }}"
                                                 class="btn btn-colored btn-theme-colored2 btn-md m-0" data-height="40px"
-                                                target="_blank">Télécharger</a>
+                                                target="_blank">{{ __('home.text7') }}</a>
                                         @endif
                                     </div>
                                 </div>
@@ -373,7 +373,7 @@
             <div class="section-title mb-40">
                 <div class="row">
                     <div class="col-md-12">
-                        <h2 class="title text-uppercase mb-5">Nos <span class="text-theme-colored2">Formations</span>
+                        <h2 class="title text-uppercase mb-5">{{ __('home.title1') }} <span class="text-theme-colored2"> {{ __('home.title2') }}</span>
                         </h2>
                     </div>
                 </div>
@@ -409,13 +409,14 @@
                                         </div>
                                         <div class="course-meta">
                                             <ul class="list-inline">
-                                                <li><i class="ficon-clock font-18"></i> {{ $course->duration }} Mois</li>
+                                                <li><i class="ficon-clock font-18"></i> {{ $course->duration }} {{ __('home.text1') }}</li>
                                                 <li><i class="pe-7s-notebook font-18"></i>{{ $course->languages_name }}
                                                 </li>
                                             </ul>
                                             <a href="{{ route('course.details', $course->name) }}" style="display:block;"
                                                 class="course-tag">
-                                                <h5>Détail</h5>
+                                                <h5>{{ __('home.text5') }}
+                                                </h5>
                                             </a>
                                         </div>
                                     </div>
@@ -433,20 +434,18 @@
             <div class="section-title">
                 <div class="row">
                     <div class="col-lg-4">
-                        <h3 class="font-28 mt-0"><span class="text-theme-colored2">À propos </span>de nous</h3>
+                        <h3 class="font-28 mt-0"><span class="text-theme-colored2">{{ __('home.title3') }}</span> {{ __('home.title7') }}</h3>
                         <div class="line-bottom-theme-colored2"></div>
                         @foreach ($about as $item)
                             <img src="{{ url('storage') }}/{{ $item->photo }}" class="img-fullwidth" alt="">
                             <p class="mt-15" style="text-align:justify;hyphens:auto;">{{ $item->description }}</p>
                             <a href="{{ route('about.index') }}" class="mt-15 btn btn-colored btn-sm btn-theme-colored2">
-                                Lire
-                                plus</a>
+                                {{ __('home.text2') }}</a>
                         @endforeach
                     </div>
                     @if (count($evenements) > 0)
                         <div class="col-lg-4">
-                            <h3 class="font-28 mt-md-30 mt-0"><span class="text-theme-colored2">Évènements</span> à
-                                venir
+                            <h3 class="font-28 mt-md-30 mt-0"><span class="text-theme-colored2">{{ __('home.title4') }}</span> {{ __('home.title8') }}
                             </h3>
                             <div class="line-bottom-theme-colored2"></div>
                             @foreach ($evenements as $evenement)
@@ -497,7 +496,7 @@
                         </div>
                     @endif
                     <div class="col-lg-4">
-                        <h3 class="font-28 mt-md-30 mt-0"><span class="text-theme-colored2">Pourquoi </span>nous?
+                        <h3 class="font-28 mt-md-30 mt-0"><span class="text-theme-colored2">{{ __('home.title10') }} </span> {{ __('home.title11') }}
                         </h3>
                         <div class="line-bottom-theme-colored2"></div>
                         <div class="panel-group accordion-stylished-left-border accordion-icon-filled accordion-no-border accordion-icon-left accordion-icon-filled-theme-colored2 custom-style"
@@ -582,8 +581,8 @@
             <div class="section-title mb-40">
                 <div class="row">
                     <div class="col-md-12">
-                        <h2 class="title text-uppercase mb-5">Notre <span class="text-theme-colored2">Blog</span></h2>
-                        <h5 class="font-16  mt-5" style="color:#1f3344;">Récemment</h5>
+                        <h2 class="title text-uppercase mb-5">{{ __('home.title5') }} <span class="text-theme-colored2"> {{ __('home.title9') }}</span></h2>
+                        <h5 class="font-16  mt-5" style="color:#1f3344;">{{ __('home.text4') }}</h5>
                     </div>
                 </div>
             </div>
@@ -614,15 +613,14 @@
                                 <div class="post-meta">
                                     <ul class="list-inline pull-left flip">
                                         <ul class="list-inline pull-left flip">
-                                            <li><i class="lnr lnr-users text-theme-colored2 font-20"></i>Par
+                                            <li><i class="lnr lnr-users text-theme-colored2 font-20"></i>{{ __('home.text3') }}
                                                 {{ $blog->description }}</li>
                                         </ul>
 
                                     </ul>
 
                                     <a href="{{ route('blog-actualités.show', $blog->id) }}"
-                                        class="text-theme-colored2 font-14 text-gray-darkgray pull-right flip">Lire
-                                        plus
+                                        class="text-theme-colored2 font-14 text-gray-darkgray pull-right flip">{{ __('home.text2') }}
                                     </a>
                                 </div>
                             </article>
@@ -637,7 +635,7 @@
     <section class="clients ">
 
         <div class="container pt-40 pb-40 ">
-            <h3 class=" font-38 font-weight-700 mt-10 mb-0" style="color:#1f3344;"><span>Partenaires</span>
+            <h3 class=" font-38 font-weight-700 mt-10 mb-0" style="color:#1f3344;"><span>{{ __('home.title6') }}</span>
             </h3>
             <div class="row">
                 <div class="col-md-12">

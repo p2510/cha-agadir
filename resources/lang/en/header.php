@@ -43,5 +43,8 @@ return [
     'subtitle30'=>'Doctoral program',
     'subtitle31'=>'Executive Training',
     'subtitle32'=>'Farm Manager',
+    'info1'=>'Contact',
+    'info2'=>'in regards to',
+    'info3'=>'OUR TRAINING',
 
 ];
