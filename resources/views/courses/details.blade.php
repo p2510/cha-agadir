@@ -69,10 +69,10 @@
   <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js')}}></script>
 <![endif]-->
 <style>
-.iti {
-  width: 100%;
-  display: block;
-}
+    .iti {
+        width: 100%;
+        display: block;
+    }
 </style>
 
 
@@ -158,7 +158,8 @@
 
                             @if (count($logo_url) > 0)
                                 @foreach ($logo_url as $item)
-                                    <a class="menuzord-brand  flip mt-20 mt-sm-10 mb-sm-20 pt-5" href="{{route('home')}}"><img
+                                    <a class="menuzord-brand  flip mt-20 mt-sm-10 mb-sm-20 pt-5"
+                                        href="{{ route('home') }}"><img
                                             src="{{ url('storage') }}/{{ $item->logo }}" alt=""></a>
                                 @endforeach
                             @endif
@@ -171,7 +172,7 @@
 
                                 <li @if (Route::current()->getName() == 'home') class='active' @endif>
                                     <a href="{{ route('home') }}" class="font-14 text-uppercase"
-                                        style="padding: 10px 10px 10px 10px; ">Accueil</a>
+                                        style="padding: 10px 10px 10px 10px; ">{{ __('header.title1') }}</a>
                                 </li>
                                 <li><a href="#home" class="font-14 text-uppercase"
                                         style="padding: 10px 10px 10px 10px;">École</a>
@@ -183,7 +184,7 @@
                                         <li><a href="{{ route('campus.index') }}">Vie Estudiantine</a></li>
                                         <li><a href="{{ route('evenement.index') }}">Évènements</a></li>
                                         <li><a href="{{ route('blog-actualités.index') }}">Blog/Actualités</a></li>
-                                        <li><a href="{{ route('media.index') }}">Galerie</a></li>
+                                        <li><a href="{{ route('media.index') }}">{{ __('header.title1') }}</a></li>
                                         <li><a href="{{ route('video.index') }}">Vidéos</a></li>
                                     </ul>
                                 </li>
@@ -221,7 +222,7 @@
                                                 <li><a href="{{ route('course.details', 'Locust Science') }}">
                                                         Locust Science </a></li>
                                                 <li><a href="{{ route('course.details', 'Sciences Acridiennes') }}">
-                                                    Sciences Acridiennes</a></li>
+                                                        Sciences Acridiennes</a></li>
                                             </ul>
                                         </li>
 
@@ -273,15 +274,15 @@
                                 </li>
 
                                 <li><a href="{{ route('search.index') }}" style="padding: 10px 10px 10px 10px;"
-                                        class="font-14 text-uppercase">Recherche</a>
+                                        class="font-14 text-uppercase">{{ __('header.title4') }}</a>
                                 <li><a href="{{ route('center.index') }}" style="padding: 10px 10px 10px 10px;"
                                         class="font-14 text-uppercase">Centre d’Excellence</a>
                                 <li><a href="{{ route('experience.index') }}" style="padding: 10px 10px 10px 10px;"
-                                        class="font-14 text-uppercase">Ferme Expérimentale</a>
+                                        class="font-14 text-uppercase">{{ __('header.title6') }}</a>
                                 <li><a href="{{ route('impact.index') }}" style="padding: 10px 10px 10px 10px;"
-                                        class="font-14 text-uppercase">Impact Cluster</a>
+                                        class="font-14 text-uppercase">{{ __('header.title7') }}</a>
                                 <li><a href="{{ route('business.index') }}" style="padding: 10px 10px 10px 10px;"
-                                        class="font-14 text-uppercase">Agri-Business </a>
+                                        class="font-14 text-uppercase">{{ __('header.title8') }} </a>
 
                             </ul>
 
@@ -311,7 +312,7 @@
 
                                 <li @if (Route::current()->getName() == 'home') class='active' @endif>
                                     <a href="{{ route('home') }}" class="font-14 text-uppercase"
-                                        style="padding: 10px 10px 10px 10px; ">Accueil</a>
+                                        style="padding: 10px 10px 10px 10px; ">{{ __('header.title1') }}</a>
                                 </li>
                                 <li><a href="#home" class="font-14 text-uppercase"
                                         style="padding: 10px 10px 10px 10px;">École</a>
@@ -323,7 +324,7 @@
                                         <li><a href="{{ route('campus.index') }}">Vie Estudiantine</a></li>
                                         <li><a href="{{ route('evenement.index') }}">Évènements</a></li>
                                         <li><a href="{{ route('blog-actualités.index') }}">Blog/Actualités</a></li>
-                                        <li><a href="{{ route('media.index') }}">Galerie</a></li>
+                                        <li><a href="{{ route('media.index') }}">{{ __('header.title1') }}</a></li>
                                         <li><a href="{{ route('video.index') }}">Vidéos</a></li>
                                     </ul>
                                 </li>
@@ -361,7 +362,7 @@
                                                 <li><a href="{{ route('course.details', 'Locust Science') }}">
                                                         Locust Science </a></li>
                                                 <li><a href="{{ route('course.details', 'Sciences Acridiennes') }}">
-                                                    Sciences Acridiennes</a></li>
+                                                        Sciences Acridiennes</a></li>
                                             </ul>
                                         </li>
 
@@ -413,15 +414,15 @@
                                 </li>
 
                                 <li><a href="{{ route('search.index') }}" style="padding: 10px 10px 10px 10px;"
-                                        class="font-14 text-uppercase">Recherche</a>
+                                        class="font-14 text-uppercase">{{ __('header.title4') }}</a>
                                 <li><a href="{{ route('center.index') }}" style="padding: 10px 10px 10px 10px;"
                                         class="font-14 text-uppercase">Centre d’Excellence</a>
                                 <li><a href="{{ route('experience.index') }}" style="padding: 10px 10px 10px 10px;"
-                                        class="font-14 text-uppercase">Ferme Expérimentale</a>
+                                        class="font-14 text-uppercase">{{ __('header.title6') }}</a>
                                 <li><a href="{{ route('impact.index') }}" style="padding: 10px 10px 10px 10px;"
-                                        class="font-14 text-uppercase">Impact Cluster</a>
+                                        class="font-14 text-uppercase">{{ __('header.title7') }}</a>
                                 <li><a href="{{ route('business.index') }}" style="padding: 10px 10px 10px 10px;"
-                                        class="font-14 text-uppercase">Agri-Business </a>
+                                        class="font-14 text-uppercase">{{ __('header.title8') }} </a>
 
                             </ul>
 
@@ -464,7 +465,7 @@
                         <div class="row">
                             <div class="col-md-6">
                                 <ol class="breadcrumb text-left mt-10 white">
-                                    <li><a href="/">Accueil</a></li>
+                                    <li><a href="/">{{ __('header.title1') }}</a></li>
                                     <li><a href="{{ route('course.index') }}">formations</a></li>
 
                                     <li class='text-white'>
@@ -536,14 +537,14 @@
                                             </li>
                                         @endif
                                         @if ($course->duration)
-                                        <li>
-                                            <i class="pe-7s-notebook text-theme-colored2 font-48"></i>
-                                            <div class="pull-right ml-10">
-                                                <span>Langue</span>
-                                                <h5 class="mt-0">{{ $course->languages_name}} </h5>
-                                            </div>
-                                        </li>
-                                    @endif
+                                            <li>
+                                                <i class="pe-7s-notebook text-theme-colored2 font-48"></i>
+                                                <div class="pull-right ml-10">
+                                                    <span>Langue</span>
+                                                    <h5 class="mt-0">{{ $course->languages_name }} </h5>
+                                                </div>
+                                            </li>
+                                        @endif
 
                                     </ul>
 
@@ -879,7 +880,7 @@
                                         </div>
 
                                         <div class="tab-pane fade" id="tab3">
-                                            <h4 class="line-bottom-theme-colored2 mb-20">Télécharger</h4>
+                                            <h4 class="line-bottom-theme-colored2 mb-20">{{ __('home.text8') }}</h4>
                                             <div class="row">
                                                 @foreach ($downloads as $download)
                                                     <div class="col-md-3">
@@ -1156,18 +1157,17 @@
                                                                     </div>
                                                                     <div class="col-sm-12">
 
-                                                                        <div class="form-group mb-10" >
+                                                                        <div class="form-group mb-10">
                                                                             <div>
                                                                                 <label for="phone"
                                                                                     class=" font-12 text-white"
                                                                                     style=" width:100%;"> Numéro de
                                                                                     téléphone</label>
                                                                             </div>
-                                                                                <input name="phone"
-                                                                                    class="form-control"
-                                                                                    id="phone" type="tel"
-                                                                                    value="+212" required>
-                                                                        
+                                                                            <input name="phone" class="form-control"
+                                                                                id="phone" type="tel"
+                                                                                value="+212" required>
+
                                                                             <input name="indice" class="form-control"
                                                                                 id="indice" type="hidden"
                                                                                 value="212" required>
@@ -2041,7 +2041,8 @@
                 </div>
                 <div class="col-sm-6 col-md-3">
                     <div class="widget dark">
-                        <h4 class="widget-title line-bottom-theme-colored2" style="color:#1f3344;">Liens rapides</h4>
+                        <h4 class="widget-title line-bottom-theme-colored2" style="color:#1f3344;">Liens rapides
+                        </h4>
                         <div class="row clearfix">
                             <div class="col-xs-12 col-sm-6 col-md-6">
                                 <ul>
@@ -2051,7 +2052,8 @@
 
 
                                     <li><a href="{{ route('media.index') }}"
-                                            style="color:#1f3344;font-weight:normal;">Galerie</a></li>
+                                            style="color:#1f3344;font-weight:normal;">{{ __('header.title1') }}</a>
+                                    </li>
                                     <li><a href="{{ route('video.index') }}"
                                             style="color:#1f3344;font-weight:normal;">Vidéos</a></li>
                                 </ul>
@@ -2091,9 +2093,11 @@
                         <div class="latest-posts">
                             @foreach ($latest_blog as $item)
                                 <article class="post media-post clearfix pb-0 mb-10">
-                                    <a class="post-thumb" href="{{ route('blog-actualités.show', $item->id) }}"><img
+                                    <a class="post-thumb"
+                                        href="{{ route('blog-actualités.show', $item->id) }}"><img
                                             src="{{ url('storage') }}/{{ $item->photo }}" width="80px"
-                                            height="55px" style="object-fit:cover;" alt="{{ $item->title }}"></a>
+                                            height="55px" style="object-fit:cover;"
+                                            alt="{{ $item->title }}"></a>
                                     <div class="post-right">
                                         <h5 class="post-title mt-0 mb-5"><a
                                                 href="{{ route('blog-actualités.show', $item->id) }}"
@@ -2126,7 +2130,8 @@
                                 @if (count($logo_url) > 0)
                                     @foreach ($logo_url as $item)
                                         <a class="menuzord-brand  flip mt-20 mt-sm-10 mb-sm-20 pt-20 "
-                                            href="{{route('home')}}"><img src="{{ url('storage') }}/{{ $item->logo }}"
+                                            href="{{ route('home') }}"><img
+                                                src="{{ url('storage') }}/{{ $item->logo }}"
                                                 alt=""></a>
                                     @endforeach
                                 @endif

@@ -19,8 +19,8 @@
                     <div class="row">
                         <div class="col-md-6">
                             <ol class="breadcrumb text-left mt-10 " style="color:rgb(45, 69, 88);font-weight:bold;">
-                                <li><a href="/">Accueil</a></li>
-                                <li>Vie estudiantine</li>
+                                <li><a href="/">{{ __('header.title1') }}</a></li>
+                                <li>{{ __('header.subtitle4') }}</li>
                             </ol>
                         </div>
                     </div>
@@ -40,7 +40,7 @@
                         </div>
                         <div class="col-md-12">
                             <h2 class="text-uppercasetext-theme-colored mt-0 mb-0 mt-sm-30"><span
-                                    class="text-theme-colored2">Vie estudiantine</span></h2>
+                                    class="text-theme-colored2">{{ __('header.subtitle4') }}</span></h2>
                             <div class="mt-30 mb-0">
 
                                 <ul class="styled-icons m-0">
@@ -82,7 +82,7 @@
                         </div>
                     @endforeach
 
-                    <button class="accordion">TÉLÉCHARGER</button>
+                    <button class="accordion">{{ __('home.text8') }}</button>
                     <div class="panel">
                         @foreach ($downloads as $key => $download)
                             <div><a href="{{ url('storage') }}/{{ $download->file }}"
@@ -120,137 +120,137 @@
             transition: max-height 0.2s ease-out;
         }
     </style>
-        <style>
-            .share {
-                width: 90px;
-                height: 90px;
-                margin: 10px;
-                color: #3498db;
-                overflow: hidden;
-                position: relative;
-                border-radius: 30%;
-                background: #f1f1f1;
-                text-decoration: none;
-                box-shadow: 0 5px 15px -5px #00000070;
-                display: inline-flex;
-                align-items: center;
-                justify-content: center;
-    
-                padding: 28px 28px 28px 28px;
-    
-            }
-    
-            .share i {
-                font-size: 26px;
-                transition: 0.2s linear;
-            }
-    
-            .fb:before {
-                content: "";
-                width: 120%;
-                height: 120%;
-                left: -110%;
+    <style>
+        .share {
+            width: 90px;
+            height: 90px;
+            margin: 10px;
+            color: #3498db;
+            overflow: hidden;
+            position: relative;
+            border-radius: 30%;
+            background: #f1f1f1;
+            text-decoration: none;
+            box-shadow: 0 5px 15px -5px #00000070;
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+
+            padding: 28px 28px 28px 28px;
+
+        }
+
+        .share i {
+            font-size: 26px;
+            transition: 0.2s linear;
+        }
+
+        .fb:before {
+            content: "";
+            width: 120%;
+            height: 120%;
+            left: -110%;
+            top: 90%;
+            position: absolute;
+            background: rgb(35, 35, 170);
+            transform: rotate(45deg);
+            background-image: radial-gradient(circle farthest-corner at 10% 20%, rgb(35, 35, 170) 0%, rgb(35, 35, 170) 100%);
+        }
+
+        .fb:hover i {
+            color: #f1f1f1;
+            transform: scale(1.3);
+        }
+
+        .fb:hover:before {
+            top: -10%;
+            left: -10%;
+            -webkit-animation: animation1 0.7s 1;
+            animation: animation1 0.7s 1;
+        }
+
+        .wa:before {
+            content: "";
+            width: 120%;
+            height: 120%;
+            left: -110%;
+            top: 90%;
+            position: absolute;
+            background: green;
+            transform: rotate(45deg);
+            background-image: radial-gradient(circle farthest-corner at 10% 20%, green 0%, green 100%);
+        }
+
+        .wa:hover i {
+            color: #f1f1f1;
+            transform: scale(1.3);
+        }
+
+        .wa:hover:before {
+            top: -10%;
+            left: -10%;
+            -webkit-animation: animation1 0.7s 1;
+            animation: animation1 0.7s 1;
+        }
+
+        .lin:before {
+            content: "";
+            width: 120%;
+            height: 120%;
+            left: -110%;
+            top: 90%;
+            position: absolute;
+            background: #56ccf2;
+            transform: rotate(45deg);
+            background-image: radial-gradient(circle farthest-corner at 10% 20%, #56ccf2 0%, #3498db 100%);
+        }
+
+        .lin:hover i {
+            color: #f1f1f1;
+            transform: scale(1.3);
+        }
+
+        .lin:hover:before {
+            top: -10%;
+            left: -10%;
+            -webkit-animation: animation1 0.7s 1;
+            animation: animation1 0.7s 1;
+        }
+
+        @-webkit-keyframes animation1 {
+            0% {
                 top: 90%;
-                position: absolute;
-                background: rgb(35, 35, 170);
-                transform: rotate(45deg);
-                background-image: radial-gradient(circle farthest-corner at 10% 20%, rgb(35, 35, 170) 0%, rgb(35, 35, 170) 100%);
+                left: -110%;
             }
-    
-            .fb:hover i {
-                color: #f1f1f1;
-                transform: scale(1.3);
+
+            50% {
+                top: -30%;
+                left: 10%;
             }
-    
-            .fb:hover:before {
+
+            100% {
                 top: -10%;
                 left: -10%;
-                -webkit-animation: animation1 0.7s 1;
-                animation: animation1 0.7s 1;
             }
-    
-            .wa:before {
-                content: "";
-                width: 120%;
-                height: 120%;
-                left: -110%;
+        }
+
+        @keyframes animation1 {
+            0% {
                 top: 90%;
-                position: absolute;
-                background: green;
-                transform: rotate(45deg);
-                background-image: radial-gradient(circle farthest-corner at 10% 20%, green 0%, green 100%);
+                left: -110%;
             }
-    
-            .wa:hover i {
-                color: #f1f1f1;
-                transform: scale(1.3);
+
+            50% {
+                top: -30%;
+                left: 10%;
             }
-    
-            .wa:hover:before {
+
+            100% {
                 top: -10%;
                 left: -10%;
-                -webkit-animation: animation1 0.7s 1;
-                animation: animation1 0.7s 1;
             }
-    
-            .lin:before {
-                content: "";
-                width: 120%;
-                height: 120%;
-                left: -110%;
-                top: 90%;
-                position: absolute;
-                background: #56ccf2;
-                transform: rotate(45deg);
-                background-image: radial-gradient(circle farthest-corner at 10% 20%, #56ccf2 0%, #3498db 100%);
-            }
-    
-            .lin:hover i {
-                color: #f1f1f1;
-                transform: scale(1.3);
-            }
-    
-            .lin:hover:before {
-                top: -10%;
-                left: -10%;
-                -webkit-animation: animation1 0.7s 1;
-                animation: animation1 0.7s 1;
-            }
-    
-            @-webkit-keyframes animation1 {
-                0% {
-                    top: 90%;
-                    left: -110%;
-                }
-    
-                50% {
-                    top: -30%;
-                    left: 10%;
-                }
-    
-                100% {
-                    top: -10%;
-                    left: -10%;
-                }
-            }
-    
-            @keyframes animation1 {
-                0% {
-                    top: 90%;
-                    left: -110%;
-                }
-    
-                50% {
-                    top: -30%;
-                    left: 10%;
-                }
-    
-                100% {
-                    top: -10%;
-                    left: -10%;
-                }
-            }
-        </style>
+        }
+    </style>
     <script>
         var acc = document.getElementsByClassName("accordion");
         var i;

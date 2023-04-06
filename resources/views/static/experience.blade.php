@@ -20,7 +20,7 @@
                     <div class="row">
                         <div class="col-md-6">
                             <ol class="breadcrumb text-left mt-10 " style="color:rgb(45, 69, 88);font-weight:bold;">
-                                <li><a href="/">Accueil</a></li>
+                                <li><a href="/">{{ __('header.title1') }}</a></li>
                                 <li>Ferme exprérimentale</li>
                             </ol>
                         </div>
@@ -80,7 +80,7 @@
                             <div style="text-align:justify;hyphens:auto;color:#1f3344;">{!! $data->content !!}</div>
                         </div>
                     @endforeach
-                    <button class="accordion">TÉLÉCHARGER</button>
+                    <button class="accordion">{{ __('home.text8') }}</button>
                     <div class="panel">
                         @foreach ($downloads as $key => $download)
                             <div><a href="{{ url('storage') }}/{{ $download->file }}"

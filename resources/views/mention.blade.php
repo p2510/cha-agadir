@@ -21,7 +21,7 @@
                     <div class="row">
                         <div class="col-md-6">
                             <ol class="breadcrumb text-left mt-10 font-14" style="color:rgb(45, 69, 88);font-weight:bold;">
-                                <li><a href="/">Accueil</a></li>
+                                <li><a href="/">{{__('header.title1')}}</a></li>
                                 <li>Mentions légales?</li>
                             </ol>
                         </div>

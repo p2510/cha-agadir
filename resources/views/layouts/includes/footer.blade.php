@@ -4,7 +4,7 @@
         <div class="col-sm-6 col-md-3">
             <div class="widget dark">
 
-                <h4 class="widget-title line-bottom-theme-colored2" style="color:#1f3344;">Coordonnées</h4>
+                <h4 class="widget-title line-bottom-theme-colored2" style="color:#1f3344;">{{ __('footer.title1') }}</h4>
 
                 <span style="color:#1f3344;">
 
@@ -32,32 +32,32 @@
         </div>
         <div class="col-sm-6 col-md-3">
             <div class="widget dark">
-                <h4 class="widget-title line-bottom-theme-colored2" style="color:#1f3344;">Liens rapides</h4>
+                <h4 class="widget-title line-bottom-theme-colored2" style="color:#1f3344;">{{ __('footer.title2') }}</h4>
                 <div class="row clearfix">
                     <div class="col-xs-12 col-sm-6 col-md-6">
                         <ul>
 
                             <li><a href="{{ route('course.index') }}"
-                                    style="color:#1f3344;font-weight:normal;">Formations</a></li>
+                                    style="color:#1f3344;font-weight:normal;">{{ __('footer.subtitle1') }}</a></li>
 
 
                             <li><a href="{{ route('media.index') }}"
-                                    style="color:#1f3344;font-weight:normal;">Galerie</a></li>
+                                    style="color:#1f3344;font-weight:normal;">{{ __('footer.subtitle2') }}</a></li>
                             <li><a href="{{ route('video.index') }}"
-                                    style="color:#1f3344;font-weight:normal;">Vidéos</a></li>
+                                    style="color:#1f3344;font-weight:normal;">{{ __('footer.subtitle3') }}</a></li>
                         </ul>
                     </div>
                 </div>
             </div>
             <div class="widget dark">
-                <h5 class="widget-title line-bottom-theme-colored2" style="color:#1f3344;">Newsletter</h5>
+                <h5 class="widget-title line-bottom-theme-colored2" style="color:#1f3344;">{{ __('footer.title5') }}</h5>
                 <!-- Mailchimp Subscription Form Starts Here -->
                 <form id="mailchimp-subscription-form-footer" class="newsletter-form"
                     action="{{ route('newsletter.store') }}" method="post">
                     @csrf
                     <div class="input-group">
                         <input type="email" id="mce-EMAIL" data-height="45px" class="form-control input-xs"
-                            placeholder="Votre email" name="email" value="{{ old('email') }}">
+                            placeholder="{{__('footer.placehoderNewsletter')}}" name="email" value="{{ old('email') }}">
 
                         <span class="input-group-btn">
                             <button type="submit" class="btn btn-colored btn-theme-colored2 btn-sm m-0"
@@ -77,7 +77,7 @@
         </div>
         <div class="col-sm-6 col-md-3">
             <div class="widget dark">
-                <h4 class="widget-title line-bottom-theme-colored2" style="color:#1f3344;">Derniers posts</h4>
+                <h4 class="widget-title line-bottom-theme-colored2" style="color:#1f3344;">{{ __('footer.title3') }}</h4>
                 <div class="latest-posts">
                     @foreach ($latest_blog as $item)
                         <article class="post media-post clearfix pb-0 mb-10">
@@ -99,17 +99,17 @@
 
         <div class="col-sm-6 col-md-3">
             <div class="widget dark">
-                <h4 class="widget-title line-bottom-theme-colored2" style="color:#1f3344;">Ouvert</h4>
+                <h4 class="widget-title line-bottom-theme-colored2" style="color:#1f3344;">{{ __('footer.title4') }}</h4>
                 <div class="opening-hours">
                     <ul class="list-border">
-                        <li class="clearfix" style="color:#1f3344;"> <span> Lun - vendredi : </span>
+                        <li class="clearfix" style="color:#1f3344;"> <span> {{ __('footer.day1') }} - {{ __('footer.day2') }}: </span>
                             <div class="value pull-right"> 8.30 am – 4h30 pm</div>
                         </li>
-                        <li class="clearfix" style="color:#1f3344;"> <span> Sam : </span>
-                            <div class="value pull-right bg-theme-colored2 text-white closed">Fermé</div>
+                        <li class="clearfix" style="color:#1f3344;"> <span> {{ __('footer.day3') }} : </span>
+                            <div class="value pull-right bg-theme-colored2 text-white closed">{{ __('footer.indicatorday') }}</div>
                         </li>
-                        <li class="clearfix" style="color:#1f3344;"> <span> Dim : </span>
-                            <div class="value pull-right bg-theme-colored2 text-white closed">Fermé</div>
+                        <li class="clearfix" style="color:#1f3344;"> <span> {{ __('footer.day4') }} : </span>
+                            <div class="value pull-right bg-theme-colored2 text-white closed">{{ __('footer.indicatorday') }}</div>
                         </li>
 
                         @if (count($logo_url) > 0)
@@ -133,17 +133,17 @@
 
                 <div class="col-md-6">
                     <p class="font-14 sm-text-center m-0">Copyright &copy;2023 <span class="text-theme-colored2">CHA
-                            Agadir</span>. Tous droits réservés </p>
+                            Agadir</span>. {{__('footer.text1')}} </p>
                 </div>
                 <div class="col-md-6 text-right">
                     <div class="widget no-border m-0">
                         <ul class="list-inline sm-text-center mt-5 font-14">
                             <li>
-                                <a href="{{route('mention.index')}}">Mentions légales</a>
+                                <a href="{{route('mention.index')}}">{{__('footer.text2')}}</a>
                             </li>
                             <li>|</li>
                             <li>
-                                <a href="{{route('contact.create')}}">Nous joindre</a>
+                                <a href="{{route('contact.create')}}">{{__('footer.text3')}}</a>
                             </li>
                             <li>|</li>
                             <li class="text-white" style="position:relative; top:3px;">

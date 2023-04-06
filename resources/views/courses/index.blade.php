@@ -1,31 +1,31 @@
 @extends('layouts.app')
 @section('content')
-<style>
-    section>.container,
-    section>.container-fluid {
-        padding-top: 0px;
-        padding-bottom: 0px;
+    <style>
+        section>.container,
+        section>.container-fluid {
+            padding-top: 0px;
+            padding-bottom: 0px;
 
 
-    }
+        }
 
-    .pb-30 {
-        padding-bottom: 0px !important;
-    }
+        .pb-30 {
+            padding-bottom: 0px !important;
+        }
 
-    .pt-30 {
-        padding-top: 0px !important;
-    }
+        .pt-30 {
+            padding-top: 0px !important;
+        }
 
-    .mb-30 {
-        margin-bottom: 0px !important;
-    }
+        .mb-30 {
+            margin-bottom: 0px !important;
+        }
 
-    .mt-30 {
-        margin-top: 0px !important;
-    }
-</style>
-<div style="background-color:white;border-top:solid 2px rgb(45, 69, 88) ; padding-bottom:14px;"></div>
+        .mt-30 {
+            margin-top: 0px !important;
+        }
+    </style>
+    <div style="background-color:white;border-top:solid 2px rgb(45, 69, 88) ; padding-bottom:14px;"></div>
     <div class="main-content">
         <!-- Section: inner-header -->
         <section class="container">
@@ -36,7 +36,7 @@
                         <div class="row">
                             <div class="col-md-6">
                                 <ol class="breadcrumb text-left mt-10" style="color:rgb(45, 69, 88);font-weight:bold;">
-                                    <li><a href="/">Accueil</a></li>
+                                    <li><a href="/">{{ __('header.title1') }}</a></li>
                                     <li>Formation</li>
                                 </ol>
                             </div>
@@ -64,7 +64,8 @@
                                 <!-- Portfolio Item Start -->
 
                                 @foreach ($courses as $course)
-                                    <div class="item gallery-item  a{{ $course->degree_id }}" style="padding-bottom:20px;padding-right:10px;">
+                                    <div class="item gallery-item  a{{ $course->degree_id }}"
+                                        style="padding-bottom:20px;padding-right:10px;">
                                         <div class="course-single-item bg-white border-1px clearfix">
                                             <a href="{{ route('course.details', $course->name) }}" class="course-thumb">
                                                 <img class="img-fullwidth" alt=""
@@ -90,9 +91,9 @@
                                                         {{ $course->accroche }} [...]</p>
                                                 </a>
                                                 <!--  <div class="author-thumb">
-                                                            <img src="{{ url('storage') }}/{{ $course->responsables_photo }}"
-                                                                alt="" class="img-circle">
-                                                        </div>-->
+                                                                <img src="{{ url('storage') }}/{{ $course->responsables_photo }}"
+                                                                    alt="" class="img-circle">
+                                                            </div>-->
                                             </div>
                                             <a href="{{ route('course.details', $course->name) }}" style="display: block"
                                                 class="course-meta">

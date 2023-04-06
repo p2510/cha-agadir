@@ -22,8 +22,8 @@
                         <div class="row">
                             <div class="col-md-6">
                                 <ol class="breadcrumb text-left mt-10" style="color:rgb(45, 69, 88);font-weight:bold;">
-                                    <li><a href="/">Accueil</a></li>
-                                    <li>Vidéos</li>
+                                    <li><a href="/">{{ __('header.title1') }}</a></li>
+                                    <li>{{ __('header.subtitle8') }}</li>
                                 </ol>
                             </div>
                         </div>
@@ -39,7 +39,7 @@
                 <div class="section-content">
                     <div class="row">
                         <div class="col-md-12">
-                     
+
                             <div class="portfolio-filter">
                                 <a href="#" class="active" data-filter="*">Tous</a>
                                 @foreach ($categories as $category)
@@ -52,7 +52,6 @@
                                 data-lightbox="gallery">
                                 <!-- Portfolio Item Start -->
                                 @foreach ($videos as $video)
-                               
                                     <div class="gallery-item  a{{ $video->category_video_id }}">
                                         <iframe width="420" height="345"
                                             src="https://www.youtube.com/embed/{{ $video->video }}?rel=0">
@@ -83,7 +82,8 @@
                 align-items: center;
             }
         }
-        .gallery-item{
+
+        .gallery-item {
             padding-left: 7px;
             margin-bottom: 7px;
         }

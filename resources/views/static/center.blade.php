@@ -20,8 +20,8 @@
                     <div class="row">
                         <div class="col-md-6">
                             <ol class="breadcrumb text-left mt-10 " style="color:rgb(45, 69, 88);font-weight:bold;">
-                                <li><a href="/">Accueil</a></li>
-                                <li>Centre d'excellence</li>
+                                <li><a href="/">{{ __('header.title1') }}</a></li>
+                                <li>{{ __('header.title5') }}</li>
                             </ol>
                         </div>
                     </div>
@@ -40,7 +40,7 @@
                         </div>
                         <div class="col-md-12">
                             <h2 class="text-uppercasetext-theme-colored mt-0 mb-0 mt-sm-30"><span
-                                    class="text-theme-colored2">Centre d'excellence</span></h2>
+                                    class="text-theme-colored2">{{ __('header.title5') }}</span></h2>
                             <div class="mt-30 mb-0">
                                 <ul class="styled-icons m-0">
 
@@ -80,7 +80,7 @@
                             <div style="text-align:justify;hyphens:auto;color:#1f3344;">{!! $data->content !!}</div>
                         </div>
                     @endforeach
-                    <button class="accordion">TÉLÉCHARGER</button>
+                    <button class="accordion">{{ __('home.text8') }}</button>
                     <div class="panel">
                         @foreach ($downloads as $key => $download)
                             <div><a href="{{ url('storage') }}/{{ $download->file }}"

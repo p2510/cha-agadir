@@ -1,0 +1,20 @@
+<?php
+return [
+'title1'=>'Contact details',
+'title2'=>'Quick links',
+'title3'=>'Latest posts',
+'title4'=>'Open',
+'title5'=>'Newsletter',
+'subtitle1'=>'Formations',
+'subtitle2'=>'Gallery',
+'subtitle3'=>'Videos',
+'day1'=>'Mon',
+'day2'=>'Fri',
+'day3'=>'Sat',
+'day4'=>'Sun',
+'indicatorday'=>'Close',
+'placehoderNewsletter'=>'Your email',
+'text1'=>'All rights reserved',
+'text2'=>'Legal Notice',
+'text3'=>'Contact U.S',
+];

@@ -38,7 +38,7 @@
                         <div class="row">
                             <div class="col-md-6">
                                 <ol class="breadcrumb text-left mt-10" style="color:rgb(45, 69, 88);font-weight:bold;">
-                                    <li><a href="/">Accueil</a></li>
+                                    <li><a href="/">{{ __('header.title1') }}</a></li>
                                     <li><a href="{{ route('blog-actualités.index') }}">Blog</a></li>
                                     <li>
 
@@ -248,7 +248,8 @@
                                                         <div id="collapse{{ $item->id }}"
                                                             class="panel-collapse collapse" role="tabpanel"
                                                             aria-labelledby="heading{{ $item->id }}">
-                                                            <div class="panel-body" style="text-align:justify;hyphens:auto;">
+                                                            <div class="panel-body"
+                                                                style="text-align:justify;hyphens:auto;">
                                                                 {{ $item->description }}
 
                                                             </div>

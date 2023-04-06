@@ -19,7 +19,7 @@ return [
     'text4'=>'Recently',
     'text5'=>'Details',
     'text6'=>'do not display anymore',
-    'text7'=>'Download',
-
-
+    'text7'=>'Download', 
+    'text8'=>'DOWNLOAD', 
+    
 ];

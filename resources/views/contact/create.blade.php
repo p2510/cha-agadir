@@ -15,26 +15,26 @@
 
     <section class="container">
 
-            <div class="inner-header divider ">
-                <div class="  ">
-                    <!-- Section Content -->
-                    <div class="section-content">
-                        <div class="row">
-                            <div class="col-md-6">
-                                <ol class="breadcrumb text-left" style="color:rgb(45, 69, 88);font-weight:bold;">
-                                    <li><a href="/">Accueil</a></li>
-                                    <li>Contact</li>
-                                </ol>
-                            </div>
+        <div class="inner-header divider ">
+            <div class="  ">
+                <!-- Section Content -->
+                <div class="section-content">
+                    <div class="row">
+                        <div class="col-md-6">
+                            <ol class="breadcrumb text-left" style="color:rgb(45, 69, 88);font-weight:bold;">
+                                <li><a href="/">{{ __('header.title1') }}</a></li>
+                                <li>Contact</li>
+                            </ol>
                         </div>
                     </div>
                 </div>
             </div>
+        </div>
     </section>
 
     <!-- Divider: Contact -->
 
-    <section >
+    <section>
         <div class="container  pb-70">
             <div class="row pt-10">
                 <div class="col-md-5">

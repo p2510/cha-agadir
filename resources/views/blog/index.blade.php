@@ -29,7 +29,7 @@
                         <div class="row">
                             <div class="col-md-6">
                                 <ol class="breadcrumb text-left mt-10" style="color:rgb(45, 69, 88);font-weight:bold;">
-                                    <li><a href="/">Accueil</a></li>
+                                    <li><a href="/">{{ __('header.title1') }}</a></li>
 
                                     <li>
                                         Blog
@@ -57,7 +57,8 @@
                                             $getDays = date('d', strtotime($blog->created_at));
                                             $getYears = date('Y', strtotime($blog->created_at));
                                         @endphp
-                                        <div class="post-date"><span>{{ $getDays }}</span><br><span> {{ $getMonth }}</span>  <br><span>{{$getYears}}</span>
+                                        <div class="post-date"><span>{{ $getDays }}</span><br><span>
+                                                {{ $getMonth }}</span> <br><span>{{ $getYears }}</span>
                                         </div>
                                     </div>
                                     <div class="post-description border-1px p-20">

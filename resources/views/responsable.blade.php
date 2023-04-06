@@ -20,8 +20,8 @@
                             <div class="row">
                                 <div class="col-md-6">
                                     <ol class="breadcrumb text-left mt-10" style="color:rgb(45, 69, 88);font-weight:bold;">
-                                        <li><a href="/">Accueil</a></li>
-                                        <li>Corps professoral et staff </li>
+                                        <li><a href="/">{{__('header.title1')}}</a></li>
+                                        <li>{{__('header.subtitle3')}} </li>
                                     </ol>
                                 </div>
                             </div>
