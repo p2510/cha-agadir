@@ -96,7 +96,7 @@
                                             <p>{{ $evenement->accroche }} [...] </p>
                                             </p>
                                             <a href="{{ route('evenement.show', $evenement->title) }}"
-                                                class="btn btn-theme-colored2 mt-5">Découvrir </a>
+                                                class="btn btn-theme-colored2 mt-5"> {{__('home.btn1')}} </a>
                                         </div>
                                     </div>
                                 </div>

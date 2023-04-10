@@ -40,8 +40,8 @@
                         <div class="row">
                             <div class="col-md-6">
                                 <ol class="breadcrumb text-left mt-10" style="color:rgb(45, 69, 88);font-weight:bold;">
-                                    <li><a href="/">Acceuil</a></li>
-                                    <li><a href="{{ route('evenement.index') }}">Évènements</a></li>
+                                    <li><a href="/">{{__('header.title1')}} </a></li>
+                                    <li><a href="{{ route('evenement.index') }}">{{__("header.subtitle5")}}</a></li>
                                     <li>
                                         @if ($evenements->title)
                                             {{ $evenements->title }}
@@ -154,34 +154,34 @@
                         <ul>
                             <li>
                                 @if ($evenements->title)
-                                    <h5>Sujet:</h5>
+                                    <h5>{{__('event.subtitle1')}}:</h5>
                                     <p>{{ $evenements->title }}</p>
                                 @endif
                             </li>
                             <li>
                                 @if ($evenements->location)
-                                    <h5>Lieu:</h5>
+                                    <h5>{{__('event.subtitle2')}}:</h5>
                                     <p>{{ $evenements->location }}</p>
                                 @endif
 
                             </li>
                             <li>
                                 @if ($evenements->start_at)
-                                    <h5>Date début:</h5>
+                                    <h5>{{__('event.subtitle3')}}:</h5>
                                     <p>{{ $evenements->start_at }}</p>
                                 @endif
 
                             </li>
                             <li>
                                 @if ($evenements->end_at)
-                                    <h5>Date fin:</h5>
+                                    <h5>{{__('event.subtitle4')}}:</h5>
                                     <p>{{ $evenements->end_at }}</p>
                                 @endif
 
                             </li>
                             <li>
                                 @if (count($evenementPages) > 0)
-                                    <h5 style="font-weight:bold;color:#F88147;font-size:18px;">Téléchargement :</h5>
+                                    <h5 style="font-weight:bold;color:#F88147;font-size:18px;">{{__('event.subtitle5')}} :</h5>
                                     @foreach ($evenementPages as $item)
                                         <p><a style="text-decoration:underline;color:#1f3344;"
                                                 href="{{ url('storage') }}/{{ $item->file }}"
@@ -258,7 +258,7 @@
                 <div class="section-title">
                     <div class="row">
                         <div class="col-md-6 col-md-offset-3 text-center">
-                            <h3 class="title text-white pt-10" style="margin-bottom:-6px;">Je suis interessé(e)</h3>
+                            <h3 class="title text-white pt-10" style="margin-bottom:-6px;">{{__('event.subtitle6')}}</h3>
                         </div>
                     </div>
                 </div>
@@ -272,7 +272,7 @@
                             <div class="row">
                                 <div class="col-sm-12">
                                     <div class="form-group">
-                                        <input type="text" placeholder="Votre nom et prénom" name="name"
+                                        <input type="text" placeholder="{{__('event.formtext1')}}" name="name"
                                             required value="{{ old('name') }}" class="form-control">
                                         @if ($errors->has('name'))
                                             <span class="text-danger">{{ $errors->first('name') }}</span>
@@ -281,7 +281,7 @@
                                 </div>
                                 <div class="col-sm-6">
                                     <div class="form-group">
-                                        <input type="text" placeholder="Votre E-mail" name="email"
+                                        <input type="text" placeholder="{{__('event.formtext2')}}" name="email"
                                             class="form-control" required value="{{ old('email') }}">
                                         @if ($errors->has('email'))
                                             <span class="text-danger">{{ $errors->first('email') }}</span>
@@ -290,7 +290,7 @@
                                 </div>
                                 <div class="col-sm-6">
                                     <div class="form-group">
-                                        <input type="text" placeholder="Téléphone " name="phone"
+                                        <input type="text" placeholder="{{__('event.formtext3')}}" name="phone"
                                             class="form-control" required value="{{ old('phone') }}">
                                         @if ($errors->has('phone'))
                                             <span class="text-danger">{{ $errors->first('phone') }}</span>
@@ -299,7 +299,7 @@
                                 </div>
                                 <div class="col-sm-6">
                                     <div class="form-group">
-                                        <input type="text" placeholder="Organisme " name="organism"
+                                        <input type="text" placeholder="{{__('event.formtext4')}}" name="organism"
                                             class="form-control" required value="{{ old('organism') }}">
                                         @if ($errors->has('organism'))
                                             <span class="text-danger">{{ $errors->first('organism') }}</span>
@@ -308,7 +308,7 @@
                                 </div>
                                 <div class="col-sm-6">
                                     <div class="form-group">
-                                        <input type="text" placeholder="Poste " name="poste" class="form-control"
+                                        <input type="text" placeholder="{{__('event.formtext5')}}" name="poste" class="form-control"
                                             required value="{{ old('poste') }}">
                                         @if ($errors->has('poste'))
                                             <span class="text-danger">{{ $errors->first('poste') }}</span>
@@ -316,9 +316,7 @@
                                     </div>
                                 </div>
                                 <div class="col-xs-12 col-sm-12 font-12 text-white mb-10" style="text-align:justify;hyphens:auto;">
-                                    Conformément à la loi 09-08, vous disposez d'un
-                                    droit d'accès, de rectification et d'opposition
-                                    au traitement de vos données personnelles.
+                                    {{__('event.formtext6')}}
                                 </div>
 
 
@@ -327,11 +325,8 @@
                                         <div class="font-12 text-white " style="text-align:justify;hyphens:auto;width:100%;">
                                              <input name="accepted" value='accepted'
                                             type="checkbox" required >
-                                            J'ai lu et j'accepte <a class="text-white" style="font-weight:normal;text-decoration:underline;" href="{{route('mention.index')}}"> les conditions
-                                            générales d'utilisation </a>, notamment la
-                                            mention relative
-                                            á la protection des données
-                                            personnelles.<strong
+                                            {{__('event.formtext7')}} <a class="text-white" style="font-weight:normal;text-decoration:underline;" href="{{route('mention.index')}}"> {{__('event.formtext8')}} </a>, notamment la
+                                            {{__('event.formtext9')}}.<strong
                                                 style="color:red;">*</strong>
                                         </div>
                                     </div>
@@ -346,7 +341,7 @@
                                     <div class="form-group text-center">
 
                                         <button class="btn btn-white btn-theme-colored2 btn-sm btn-block mt-20 pt-10 pb-10"
-                                            type="submit">ENVOYER</button>
+                                            type="submit">{{__('event.btn1')}}</button>
                                     </div>
                                 </div>
 

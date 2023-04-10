@@ -72,14 +72,14 @@
                                     <div class="post-meta">
                                         <ul class="list-inline pull-left flip">
                                             <ul class="list-inline pull-left flip">
-                                                <li><i class="lnr lnr-users text-theme-colored2 font-20"></i>Par
+                                                <li><i class="lnr lnr-users text-theme-colored2 font-20"></i>{{__('home.text3')}} 
                                                     {{ $blog->description }}</li>
                                             </ul>
 
                                         </ul>
 
                                         <a href="{{ route('blog-actualités.show', $blog->id) }}"
-                                            class="text-theme-colored2 font-14 text-gray-darkgray pull-right flip">Lire plus
+                                            class="text-theme-colored2 font-14 text-gray-darkgray pull-right flip">{{__('home.text2')}} 
                                         </a>
                                     </div>
                                 </article>
