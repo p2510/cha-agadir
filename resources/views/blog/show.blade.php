@@ -82,7 +82,7 @@
                                         </div>
                                         <div class="post-meta">
                                             <ul class="list-inline pull-left flip">
-                                                <li><i class="lnr lnr-users text-theme-colored2 font-20"></i>Par
+                                                <li><i class="lnr lnr-users text-theme-colored2 font-20"></i>{{__('home.text3')}}
                                                     {{ $blogs->description }}</li>
                                             </ul>
                                         </div>
@@ -141,7 +141,7 @@
                         <div class="sidebar sidebar-right mt-sm-30">
 
                             <div class="widget">
-                                <h5 class="widget-title">Catégories</h5>
+                                <h5 class="widget-title">{{__('blog.subtitle1')}}</h5>
                                 <div class="categories">
                                     <ul class="list list-border angle-double-right">
                                         @foreach ($categories as $category)
@@ -154,7 +154,7 @@
                                 </div>
                             </div>
                             <div class="widget">
-                                <h5 class="widget-title">Derniers posts</h5>
+                                <h5 class="widget-title">{{__('blog.subtitle2')}}</h5>
                                 <div class="latest-posts">
 
                                     @foreach ($latests as $latest)
@@ -175,7 +175,7 @@
                                 </div>
                             </div>
                             <div class="widget">
-                                <h5 class="widget-title">Évènements à venir</h5>
+                                <h5 class="widget-title">{{__('blog.subtitle3')}}</h5>
                                 <div class="latest-posts">
 
                                     @foreach ($evenements as $evenement)
@@ -204,11 +204,11 @@
                                 </div>
                             </div>
                             <div class="widget">
-                                <h5 class="widget-title">Pourquoi nous</h5>
+                                <h5 class="widget-title">{{__('blog.subtitle4')}}</h5>
                                 <div class="latest-posts">
 
-                                    <h3 class="font-28 mt-md-30 mt-0"><span class="text-theme-colored2">Pourquoi
-                                        </span>nous?
+                                    <h3 class="font-28 mt-md-30 mt-0"><span class="text-theme-colored2">{{__('blog.subtitle5')}}
+                                        </span>{{__('blog.subtitle6')}}
                                     </h3>
                                     <div class="line-bottom-theme-colored2"></div>
                                     <div class="panel-group accordion-stylished-left-border accordion-icon-filled accordion-no-border accordion-icon-left accordion-icon-filled-theme-colored2 custom-style"
