@@ -510,7 +510,7 @@
                                             <li>
                                                 <i class="pe-7s-ribbon text-theme-colored2 font-48"></i>
                                                 <div class="pull-right ml-5">
-                                                    <span>Diplôme</span>
+                                                    <span>{{__('course.title1') }}</span>
                                                     <h5 class="mt-0">{!! $course->grade !!}</h5>
                                                 </div>
                                             </li>
@@ -522,7 +522,7 @@
                                             <li>
                                                 <i class="pe-7s-refresh-2 text-theme-colored2 font-48"></i>
                                                 <div class="pull-right ml-10">
-                                                    <span>Rythme</span>
+                                                    <span>{{__('course.title2') }}</span>
                                                     <h5 class="mt-0">{{ $course->modalitiy_name }}</h5>
                                                 </div>
                                             </li>
@@ -531,8 +531,8 @@
                                             <li>
                                                 <i class="pe-7s-timer text-theme-colored2 font-48"></i>
                                                 <div class="pull-right ml-10">
-                                                    <span>Durée</span>
-                                                    <h5 class="mt-0">{{ $course->duration }} Mois</h5>
+                                                    <span>{{__('course.title3') }}</span>
+                                                    <h5 class="mt-0">{{ $course->duration }} {{__('course.text1') }}</h5>
                                                 </div>
                                             </li>
                                         @endif
@@ -540,7 +540,7 @@
                                             <li>
                                                 <i class="pe-7s-notebook text-theme-colored2 font-48"></i>
                                                 <div class="pull-right ml-10">
-                                                    <span>Langue</span>
+                                                    <span>{{__('course.title4') }}</span>
                                                     <h5 class="mt-0">{{ $course->languages_name }} </h5>
                                                 </div>
                                             </li>
@@ -564,13 +564,13 @@
                                         <li><a href="#tab2" data-toggle="tab"
                                                 style="font-size:18px; font-weight:bold;">ADMISSION</a></li>
                                         <li><a href="#tab5" data-toggle="tab"
-                                                style="font-size:18px; font-weight:bold;">PROGRAMME</a></li>
+                                                style="font-size:18px; font-weight:bold;">{{__('course.title7') }}</a></li>
                                         <li><a href="#tab6" data-toggle="tab"
-                                                style="font-size:18px; font-weight:bold;">CARRIÈRE</a></li>
+                                                style="font-size:18px; font-weight:bold;">{{__('course.title8') }}</a></li>
                                         <li><a href="#tab3" data-toggle="tab"
-                                                style="font-size:18px; font-weight:bold;">DOCUMENTS</a></li>
+                                                style="font-size:18px; font-weight:bold;">{{__('course.title9') }}</a></li>
                                         <li><a href="#tab4" data-toggle="tab"
-                                                style="font-size:18px; font-weight:bold;">TÉMOIGNAGES</a></li>
+                                                style="font-size:18px; font-weight:bold;">{{__('course.title10') }}</a></li>
 
                                     </ul>
 
@@ -588,7 +588,7 @@
 
                                     <div id="myTabContent" class="tab-content">
                                         <div class="tab-pane fade in active" id="tab1">
-                                            <h4 class="line-bottom-theme-colored2 mb-15">Description de la formation
+                                            <h4 class="line-bottom-theme-colored2 mb-15">{{__('course.subtitle1') }}
                                             </h4>
 
                                             <div style="text-align:justify;hyphens:auto;"> {!! $course->description !!}
@@ -599,7 +599,7 @@
                                                             class="pe-7s-timer font-26 vertical-align-middle text-theme-colored2 mr-10 "></i>
                                                         <span class=" font-16 "
                                                             style="color:#1f3344;font-weight:bold;">
-                                                            Durée :</span> {{ $course->duration }} Mois
+                                                            {{__('course.title3') }} :</span> {{ $course->duration }} Mois
                                                     </li>
                                                 @endif
 
@@ -607,7 +607,7 @@
                                                     <li><i
                                                             class="pe-7s-global font-26 vertical-align-middle text-theme-colored2  mr-10"></i>
                                                         <span class="font-16" style="color:#1f3344;font-weight:bold;">
-                                                            Lieu : </span>
+                                                            {{__('course.subtitle2') }} : </span>
                                                         {{ $course->location->name }}
                                                     </li>
                                                 @endif
@@ -615,7 +615,7 @@
                                                     <li> <i
                                                             class="pe-7s-prev font-26 vertical-align-middle text-theme-colored2 mr-10"></i>
                                                         <span class="font-16" style="color:#1f3344;font-weight:bold;">
-                                                            Rythme
+                                                            {{__('course.title2') }}
                                                             : </span>{{ $course->modalitiy_name }}
                                                     </li>
                                                 @endif
@@ -623,7 +623,7 @@
                                                     <li><i
                                                             class="pe-7s-notebook  font-26 vertical-align-middle text-theme-colored2 mr-10 "></i>
                                                         <span class="font-16"
-                                                            style="color:#1f3344;font-weight:bold;">Langue
+                                                            style="color:#1f3344;font-weight:bold;">{{__('course.title4') }}
                                                             :</span> {{ $course->languages_name }}
                                                     </li>
                                                 @endif
@@ -650,7 +650,7 @@
                                                                             <div class="media-body">
                                                                                 <h5 class=" @if (!isset($design->size)) media-heading comment-heading  font-16 @else media-heading comment-heading @endif "
                                                                                     style=" @if (isset($design->color)) color:{{ $design->color }}; @endif  @if (isset($design->size)) font-size:{{ $design->size }}; @endif">
-                                                                                    Prérequis et admission </h5>
+                                                                                    {{__('course.subtitle3') }} </h5>
                                                                                 <div class="comment-date"
                                                                                     style="font-size:16px;text-align:justify;hyphens:auto;">
                                                                                     {!! $course->admission !!}</div>
@@ -677,7 +677,7 @@
                                                                             <div class="media-body">
                                                                                 <h5 class=" @if (!isset($design->size)) media-heading comment-heading  font-16 @else media-heading comment-heading @endif "
                                                                                     style=" @if (isset($design->color)) color:{{ $design->color }}; @endif  @if (isset($design->size)) font-size:{{ $design->size }}; @endif">
-                                                                                    Dossier </h5>
+                                                                                    {{__('course.subtitle4') }} </h5>
                                                                                 <div class="comment-date"
                                                                                     style="font-size:16px;text-align:justify;hyphens:auto;">
                                                                                     {!! $course->dossier !!}</div>
@@ -706,7 +706,7 @@
                                                                             <div class="media-body">
                                                                                 <h5 class=" @if (!isset($design->size)) media-heading comment-heading  font-16 @else media-heading comment-heading @endif "
                                                                                     style=" @if (isset($design->color)) color:{{ $design->color }}; @endif  @if (isset($design->size)) font-size:{{ $design->size }}; @endif">
-                                                                                    Candidature </h5>
+                                                                                    {{__('course.subtitle5') }} </h5>
                                                                                 <div class="comment-date"
                                                                                     style="font-size:16px;text-align:justify;hyphens:auto;">
                                                                                     {!! $course->candidature !!}</div>
@@ -733,7 +733,7 @@
                                                                             <div class="media-body">
                                                                                 <h5 class=" @if (!isset($design->size)) media-heading comment-heading  font-16 @else media-heading comment-heading @endif "
                                                                                     style=" @if (isset($design->color)) color:{{ $design->color }}; @endif  @if (isset($design->size)) font-size:{{ $design->size }}; @endif">
-                                                                                    Date limite </h5>
+                                                                                    {{__('course.subtitle6') }} </h5>
                                                                                 <div class="comment-date"
                                                                                     style="font-size:16px;">
                                                                                     {{ $course->datelimite }}</div>
@@ -760,7 +760,7 @@
                                                                             <div class="media-body">
                                                                                 <h5 class=" @if (!isset($design->size)) media-heading comment-heading  font-16 @else media-heading comment-heading @endif "
                                                                                     style=" @if (isset($design->color)) color:{{ $design->color }}; @endif  @if (isset($design->size)) font-size:{{ $design->size }}; @endif">
-                                                                                    Modalité de selection </h5>
+                                                                                    {{__('course.subtitle7') }} </h5>
                                                                                 <div class="comment-date"
                                                                                     style="font-size:16px;text-align:justify;hyphens:auto;">
                                                                                     {!! $course->selection !!}</div>
@@ -787,7 +787,7 @@
                                                                             <div class="media-body">
                                                                                 <h5 class=" @if (!isset($design->size)) media-heading comment-heading  font-16 @else media-heading comment-heading @endif "
                                                                                     style=" @if (isset($design->color)) color:{{ $design->color }}; @endif  @if (isset($design->size)) font-size:{{ $design->size }}; @endif">
-                                                                                    Prochaine rentrée </h5>
+                                                                                    {{__('course.subtitle8') }} </h5>
                                                                                 <div class="comment-date"
                                                                                     style="font-size:16px;">
                                                                                     @php
@@ -814,13 +814,13 @@
                                         </div>
 
                                         <div class="tab-pane fade" id="tab4">
-                                            <h4 class="line-bottom-theme-colored2 mb-20">Témoignages</h4>
+                                            <h4 class="line-bottom-theme-colored2 mb-20">{{__('course.subtitle13') }}</h4>
                                             <div style="font-size:16px;">
                                                 {!! $courses[0]->review !!} </div>
                                         </div>
 
                                         <div class="tab-pane fade" id="tab5">
-                                            <h4 class="line-bottom-theme-colored2 mb-20">Programme</h4>
+                                            <h4 class="line-bottom-theme-colored2 mb-20">{{__('course.subtitle9') }}</h4>
 
                                             <div class="container-block">
                                                 <div class="accordion">
@@ -837,7 +837,7 @@
                                                                     @if ($program->hours)
                                                                         <p
                                                                             style="margin-right:7%; text-decoration:underline;">
-                                                                            {{ $program->hours }} heures</p>
+                                                                            {{ $program->hours }} {{__('course.subtitle10') }}</p>
                                                                     @endif
                                                                 </div>
                                                                 <div class="accordion-body">
@@ -859,7 +859,7 @@
                                                                     @endif
                                                                     @if ($program->hours)
                                                                         <p style="margin-right:7%;">
-                                                                            {{ $program->hours }} heures</p>
+                                                                            {{ $program->hours }} {{__('course.subtitle10') }}</p>
                                                                     @endif
                                                                 </div>
                                                                 <div class="accordion-body">
@@ -916,7 +916,7 @@
 
                                                                                     <h5 class=" @if (!isset($design->size)) media-heading comment-heading  font-16 @else media-heading comment-heading @endif "
                                                                                         style=" @if (isset($design->color)) color:{{ $design->color }}; @endif  @if (isset($design->size)) font-size:{{ $design->size }}; @endif">
-                                                                                        Diplôme </h5>
+                                                                                        {{__('course.title1') }} </h5>
 
                                                                                     <div class="comment-date"
                                                                                         style="font-size:16px;text-align:justify;hyphens:auto;">
@@ -942,7 +942,7 @@
 
                                                                                     <h5 class=" @if (!isset($design->size)) media-heading comment-heading  font-16 @else media-heading comment-heading @endif "
                                                                                         style=" @if (isset($design->color)) color:{{ $design->color }}; @endif  @if (isset($design->size)) font-size:{{ $design->size }}; @endif">
-                                                                                        Profil / Compétences à acquérir
+                                                                                        {{__('course.subtitle11') }}
                                                                                     </h5>
 
                                                                                     <div class="comment-date"
@@ -969,7 +969,7 @@
 
                                                                                     <h5 class=" @if (!isset($design->size)) media-heading comment-heading  font-16 @else media-heading comment-heading @endif "
                                                                                         style=" @if (isset($design->color)) color:{{ $design->color }}; @endif  @if (isset($design->size)) font-size:{{ $design->size }}; @endif">
-                                                                                        Débouchés </h5>
+                                                                                        {{__('course.subtitle12') }} </h5>
 
                                                                                     <div class="comment-date"
                                                                                         style="font-size:16px;text-align:justify;hyphens:auto;">
@@ -1208,7 +1208,7 @@
                                                                             <input name="grade" required
                                                                                 value="{{ old('grade') }}"
                                                                                 style="background-color:white;color: gray;"
-                                                                                placeholder="Diplôme et spécialité"
+                                                                                placeholder="{{__('course.title1') }} et spécialité"
                                                                                 class="form-control" type="text">
                                                                         </div>
                                                                         @if ($errors->has('grade'))
@@ -1467,14 +1467,14 @@
                                             <li> <i
                                                     class="pe-7s-timer font-26 vertical-align-middle text-theme-colored2 mr-10 "></i>
                                                 <span class=" font-16 " style="font-weight:bold;color:#1f3344;">
-                                                    Durée :</span> {{ $course->duration }} Mois
+                                                    {{__('course.title3') }} :</span> {{ $course->duration }} Mois
                                             </li>
                                         @endif
 
                                         @if ($course->location->name)
                                             <li><i
                                                     class="pe-7s-global font-26 vertical-align-middle text-theme-colored2  mr-10"></i>
-                                                <span class="font-16" style="font-weight:bold;color:#1f3344;"> Lieu :
+                                                <span class="font-16" style="font-weight:bold;color:#1f3344;"> {{__('course.subtitle2') }} :
                                                 </span>
                                                 {{ $course->location->name }}
                                             </li>
@@ -1482,14 +1482,14 @@
                                         @if ($course->modalitiy_name)
                                             <li> <i
                                                     class="pe-7s-prev font-26 vertical-align-middle text-theme-colored2 mr-10"></i>
-                                                <span class="font-16" style="font-weight:bold;color:#1f3344;"> Rythme
+                                                <span class="font-16" style="font-weight:bold;color:#1f3344;"> {{__('course.title2') }}
                                                     : </span>{{ $course->modalitiy_name }}
                                             </li>
                                         @endif
                                         @if ($course->languages_name)
                                             <li><i
                                                     class="pe-7s-notebook  font-26 vertical-align-middle text-theme-colored2 mr-10 "></i>
-                                                <span class="font-16" style="font-weight:bold;color:#1f3344;">Langue
+                                                <span class="font-16" style="font-weight:bold;color:#1f3344;">{{__('course.title4') }}
                                                     :</span> {{ $course->languages_name }}
                                             </li>
                                         @endif
@@ -1515,7 +1515,7 @@
                                                 <div>
                                                     <h5 class=" @if (!isset($design->size)) font-20 @endif "
                                                         style="  @if (isset($design->color)) color:{{ $design->color }}; @endif  @if (isset($design->size)) font-size:{{ $design->size }}; @endif">
-                                                        Prérequis et admission </h5>
+                                                        {{__('course.subtitle3') }} </h5>
                                                     <div class="font-16"
                                                         style="text-align:justify;hyphens:auto;font-size:16px;padding-right:10px;padding-left:10px;">
                                                         {!! $course->admission !!}</div>
@@ -1525,7 +1525,7 @@
                                                 <div>
                                                     <h5 class=" @if (!isset($design->size)) font-20 @endif "
                                                         style="  @if (isset($design->color)) color:{{ $design->color }}; @endif  @if (isset($design->size)) font-size:{{ $design->size }}; @endif">
-                                                        Dossier </h5>
+                                                        {{__('course.subtitle4') }} </h5>
                                                     <div class="font-16"
                                                         style="text-align:justify;hyphens:auto;font-size:16px;padding-right:10px;padding-left:10px;">
                                                         {!! $course->dossier !!}</div>
@@ -1535,7 +1535,7 @@
                                                 <div>
                                                     <h5 class=" @if (!isset($design->size)) font-20 @endif "
                                                         style="  @if (isset($design->color)) color:{{ $design->color }}; @endif  @if (isset($design->size)) font-size:{{ $design->size }}; @endif">
-                                                        Candidature</h5>
+                                                        {{__('course.subtitle5') }}</h5>
                                                     <div class="font-16"
                                                         style="text-align:justify;hyphens:auto;font-size:16px;padding-right:10px;padding-left:10px;">
                                                         {!! $course->candidature !!}</div>
@@ -1545,7 +1545,7 @@
                                                 <div>
                                                     <h5 class=" @if (!isset($design->size)) font-20 @endif "
                                                         style="  @if (isset($design->color)) color:{{ $design->color }}; @endif  @if (isset($design->size)) font-size:{{ $design->size }}; @endif">
-                                                        Date limite</h5>
+                                                        {{__('course.subtitle6') }}</h5>
                                                     <div class="font-16"
                                                         style="text-align:justify;hyphens:auto;font-size:16px;padding-right:10px;padding-left:10px;">
                                                         {!! $course->datelimite !!}</div>
@@ -1555,7 +1555,7 @@
                                                 <div>
                                                     <h5 class=" @if (!isset($design->size)) font-20 @endif "
                                                         style="  @if (isset($design->color)) color:{{ $design->color }}; @endif  @if (isset($design->size)) font-size:{{ $design->size }}; @endif">
-                                                        Modalité de selection</h5>
+                                                        {{__('course.subtitle7') }}</h5>
                                                     <div class="font-16"
                                                         style="text-align:justify;hyphens:auto;font-size:16px;padding-right:10px;padding-left:10px;">
                                                         {!! $course->selection !!}</div>
@@ -1565,7 +1565,7 @@
                                                 <div>
                                                     <h5 class=" @if (!isset($design->size)) font-20 @endif "
                                                         style="  @if (isset($design->color)) color:{{ $design->color }}; @endif  @if (isset($design->size)) font-size:{{ $design->size }}; @endif">
-                                                        Prochaine rentrée</h5>
+                                                        {{__('course.subtitle8') }}</h5>
                                                     <div class="font-16"
                                                         style="text-align:justify;hyphens:auto;font-size:16px;padding-right:10px;padding-left:10px;">
                                                         @php
@@ -1585,7 +1585,7 @@
                             <div class="item">
                                 <div class="text"
                                     style="display: flex;justify-content:space-between;padding-left:4px;padding-right:4px;">
-                                    <p> PROGRAMME</p>
+                                    <p> {{__('course.title7') }}</p>
                                     <span> <svg xmlns="http://www.w3.org/2000/svg" class="icon" fill="none"
                                             viewBox="0 0 24 24" stroke="currentColor">
                                             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
@@ -1608,7 +1608,7 @@
                                                     @if ($program->hours)
                                                         <p
                                                             style="font-weight:bold;text-decoration:underline; font-size:16px;padding-right:10px;">
-                                                            {{ $program->hours }} heures
+                                                            {{ $program->hours }} {{__('course.subtitle10') }}
                                                         </p>
                                                     @endif
                                                 </div>
@@ -1625,7 +1625,7 @@
                             <div class="item">
                                 <div class="text"
                                     style="display: flex;justify-content:space-between;padding-left:4px;padding-right:4px;">
-                                    <p>CARRIÈRE</p>
+                                    <p>{{__('course.title8') }}</p>
                                     <span> <svg xmlns="http://www.w3.org/2000/svg" class="icon" fill="none"
                                             viewBox="0 0 24 24" stroke="currentColor">
                                             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
@@ -1641,7 +1641,7 @@
                                                 <div>
                                                     <h5 class=" @if (!isset($design->size)) font-20 @endif "
                                                         style="  @if (isset($design->color)) color:{{ $design->color }}; @endif  @if (isset($design->size)) font-size:{{ $design->size }}; @endif">
-                                                        Diplôme</h5>
+                                                        {{__('course.title1') }}</h5>
                                                     <div class="font-16"
                                                         style=" text-align:justify;hyphens:auto;font-size:16px;padding-right:10px;padding-left:10px;">
                                                         {!! $course->grade !!}</div>
@@ -1651,7 +1651,7 @@
                                                 <div>
                                                     <h5 class=" @if (!isset($design->size)) font-20 @endif "
                                                         style="  @if (isset($design->color)) color:{{ $design->color }}; @endif  @if (isset($design->size)) font-size:{{ $design->size }}; @endif">
-                                                        Profil / Compétences à acquérir</h5>
+                                                        {{__('course.subtitle11') }}</h5>
                                                     <div class="font-16"
                                                         style=" text-align:justify;hyphens:auto;font-size:16px;padding-right:10px;padding-left:10px;">
                                                         {!! $course->profile !!}</div>
@@ -1661,7 +1661,7 @@
                                                 <div>
                                                     <h5 class=" @if (!isset($design->size)) font-20 @endif "
                                                         style="  @if (isset($design->color)) color:{{ $design->color }}; @endif  @if (isset($design->size)) font-size:{{ $design->size }}; @endif">
-                                                        Débouchés</h5>
+                                                        {{__('course.subtitle12') }}</h5>
                                                     <div class="font-16"
                                                         style="text-align:justify;hyphens:auto;font-size:16px;padding-right:10px;padding-left:10px;">
                                                         {!! $course->opportunity !!}</div>
@@ -1675,7 +1675,7 @@
                             <div class="item">
                                 <div class="text"
                                     style="display: flex;justify-content:space-between;padding-left:4px;padding-right:4px;">
-                                    <p> DOCUMENTS</p>
+                                    <p> {{__('course.title9') }}</p>
                                     <span> <svg xmlns="http://www.w3.org/2000/svg" class="icon" fill="none"
                                             viewBox="0 0 24 24" stroke="currentColor">
                                             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
@@ -1701,7 +1701,7 @@
                             <div class="item">
                                 <div class="text"
                                     style="display: flex;justify-content:space-between;padding-left:4px;padding-right:4px;">
-                                    <p> TÉMOIGNAGES</p>
+                                    <p> {{__('course.title10') }}</p>
                                     <span> <svg xmlns="http://www.w3.org/2000/svg" class="icon" fill="none"
                                             viewBox="0 0 24 24" stroke="currentColor">
                                             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
@@ -1919,7 +1919,7 @@
                                                                         <input name="grade"
                                                                             value="{{ old('grade') }}"
                                                                             style="background-color:white;color: gray;"
-                                                                            placeholder="Diplôme et spécialité"
+                                                                            placeholder="{{__('course.title1') }} et spécialité"
                                                                             class="form-control" type="text"
                                                                             required>
                                                                     </div>

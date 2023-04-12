@@ -99,7 +99,7 @@
                                                 class="course-meta">
                                                 <ul class="list-inline">
                                                     <li><i class="ficon-clock font-18"></i>
-                                                        {{ $course->duration }} Mois
+                                                        {{ $course->duration }} {{__('home.text1')}}
 
                                                     </li>
                                                     <li>
@@ -109,7 +109,7 @@
                                                 </ul>
                                                 <div class="course-tag">
 
-                                                    <h5>Détail</h5>
+                                                    <h5>{{__('home.text5')}}</h5>
                                                 </div>
                                             </a>
                                         </div>
