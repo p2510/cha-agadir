@@ -25,11 +25,20 @@ return [
     'subtitle11'=>'Profil / Compétences à acquérir',
     'subtitle12'=>'Débouchés',
     'subtitle13'=>'Témoignages',
-    'subtitle14'=>'',
-    'subtitle15'=>'',
-    'subtitle16'=>'',
-    'subtitle17'=>'',
+    'subtitle14'=>'Remplir le formulaire',
+    'text1'=>'Mlle',
+    'text2'=>'Mme',
+    'text3'=>'M',
+    'text4'=>'Nom',
+    'text5'=>'Prénom',
+    'text6'=>'E-mail',
+    'text7'=>'Province',
+    'text8'=>'Numéro de téléphone',
+    'text9'=>"Niveau d'études",
+    'text10'=>'Province',
+    'text11'=>'et spécialité',
+    'text12'=>'ENVOYER',
+    'text13'=>'Cycles'
 
-    
 
 ];

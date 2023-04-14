@@ -25,6 +25,20 @@ return [
     'subtitle11'=>'Profile / Skills to acquire',
     'subtitle12'=>'Opportunities',
     'subtitle13'=>'Testimonials',
+    'subtitle14'=>'Fill in the form',
+    'text1'=>'Miss',
+    'text2'=>'mrs',
+    'text3'=>'M',
+    'text4'=>'Name',
+    'text5'=>'Surname',
+    'text6'=>'Email',
+    'text7'=>'Province',
+    'text8'=>'Phone number',
+    'text9'=>"level of studies",
+    'text10'=>'Province',
+    'text11'=>'and specialty',
+    'text12'=>'SEND',
+    'text13'=>'Degrees'
 
 
     

@@ -81,13 +81,13 @@
                                         </div>
                                         <div class="course-meta">
                                             <ul class="list-inline">
-                                                <li><i class="ficon-clock font-18"></i> {{ $course->duration }} Mois</li>
+                                                <li><i class="ficon-clock font-18"></i> {{ $course->duration }} {{__('home.text1')}}</li>
                                                 <li><i class="pe-7s-notebook font-18"></i>{{ $course->languages_name }}
                                                 </li>
                                             </ul>
                                             <a href="{{ route('course.details', $course->name) }}" style="display:block;"
                                                 class="course-tag">
-                                                <h5>Détail</h5>
+                                                <h5>{{__('home.text5')}}</h5>
                                             </a>
                                         </div>
                                     </div>

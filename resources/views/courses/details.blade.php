@@ -86,8 +86,23 @@
             <div class="header-top bg-theme-colored border-top-theme-colored2-2px sm-text-center">
                 <div class="container">
                     <div class="row">
+                        <div class="col-md-1 ">
 
-                        <div class="col-md-4">
+                            <div class="widget">
+                                <a href=""></a>
+                                <select class="language-selector" id="switchlang">
+                                    <option value="fr" @if (App::currentLocale() == 'fr') selected @endif>Fançais
+                                    </option>
+                                    <option value="en" @if (App::currentLocale() == 'en') selected @endif>English
+                                    </option>
+                                </select>
+                            </div>
+
+
+
+                        </div>
+
+                        <div class="col-md-3">
                             <div class="widget">
 
                                 <ul class="styled-icons icon-sm icon-white">
@@ -96,11 +111,11 @@
                                     <li><a href="#"><i class="fa fa-instagram"></i></a></li>
                                     <li><a href="#"><i class="fa fa-linkedin"></i></a></li>
                                     <li><a href="#"><i class="fa fa-youtube"></i></a></li>
+
                                 </ul>
                             </div>
                         </div>
                         <div class="col-md-8">
-
                             <div class="widget">
                                 <ul class="list-inline text-right flip sm-text-center">
 
@@ -113,17 +128,14 @@
                                         </svg>
                                     </li>
                                     <li>
-                                        <a class="text-white" href="{{ route('contact.create') }}">
-
-
-                                            Contact
-
-                                        </a>
+                                        <a class="text-white"
+                                            href="{{ route('contact.create') }}">{{ __('header.info1') }}</a>
                                     </li>
 
                                     <li class="text-white">|</li>
                                     <li>
-                                        <a class="text-white" href="{{ route('about.index') }}">À propos</a>
+                                        <a class="text-white"
+                                            href="{{ route('about.index') }}">{{ __('header.info2') }}</a>
                                     </li>
                                     <li class="text-white">|</li>
                                     <li class="text-white" style="position:relative; top:3px;">
@@ -140,19 +152,20 @@
                                     <li>
                                         <a href="{{ route('course.index') }}"
                                             class="btn btn-dark btn-circled btn-theme-colored2 btn-sm  pr-30 pl-30 "
-                                            style="font-weight: bold; animation: blink 1s ease-in-out infinite;">NOS
-                                            FORMATIONS</a>
+                                            style="font-weight: bold; animation: blink 1s ease-in-out infinite;">{{ __('header.info3') }}</a>
                                     </li>
+
                                 </ul>
                             </div>
                         </div>
+
                     </div>
                 </div>
             </div>
 
 
             <div class="header-nav">
-                <div class="header-nav-wrapper bg-white">
+                <div class="header-nav-wrapper navbar-scrolltofixed bg-white">
                     <div class="container">
                         <div style="display:flex;justify-content:center;width:100%;">
 
@@ -175,96 +188,103 @@
                                         style="padding: 10px 10px 10px 10px; ">{{ __('header.title1') }}</a>
                                 </li>
                                 <li><a href="#home" class="font-14 text-uppercase"
-                                        style="padding: 10px 10px 10px 10px;">École</a>
+                                        style="padding: 10px 10px 10px 10px;">{{ __('header.title2') }}</a>
                                     <ul class="dropdown">
-                                        <li><a href="{{ route('director.index') }}">Mot du directeur</a></li>
-                                        <li><a href="{{ route('about.index') }}">Qui sommes-nous ?</a></li>
-                                        <li><a href="{{ route('responsable.index') }}">Corps Professoral / Staff</a>
+                                        <li><a href="{{ route('director.index') }}">{{ __('header.subtitle1') }}</a>
                                         </li>
-                                        <li><a href="{{ route('campus.index') }}">Vie Estudiantine</a></li>
-                                        <li><a href="{{ route('evenement.index') }}">Évènements</a></li>
-                                        <li><a href="{{ route('blog-actualités.index') }}">Blog/Actualités</a></li>
-                                        <li><a href="{{ route('media.index') }}">{{ __('header.title1') }}</a></li>
-                                        <li><a href="{{ route('video.index') }}">Vidéos</a></li>
+                                        <li><a href="{{ route('about.index') }}">{{ __('header.subtitle2') }}</a>
+                                        </li>
+                                        <li><a
+                                                href="{{ route('responsable.index') }}">{{ __('header.subtitle3') }}</a>
+                                        </li>
+                                        <li><a href="{{ route('campus.index') }}">{{ __('header.subtitle4') }}</a>
+                                        </li>
+                                        <li><a href="{{ route('evenement.index') }}">{{ __('header.subtitle5') }}</a>
+                                        </li>
+                                        <li><a
+                                                href="{{ route('blog-actualités.index') }}">{{ __('header.subtitle6') }}</a>
+                                        </li>
+                                        <li><a href="{{ route('media.index') }}">{{ __('header.subtitle7') }}</a>
+                                        </li>
+                                        <li><a href="{{ route('video.index') }}">{{ __('header.subtitle8') }}</a>
+                                        </li>
                                     </ul>
                                 </li>
                                 <li @if (Route::current()->getName() == 'course.index') class="active" @endif><a
                                         href="{{ route('course.index') }}" style="padding: 10px 10px 10px 10px;"
-                                        class="font-14 text-uppercase d-inline">Formations</a>
+                                        class="font-14 text-uppercase d-inline">{{ __('header.title3') }}</a>
                                     <ul class="dropdown" style="padding-left: -50px;">
                                         <li style="padding-left: -50px;">
                                             <a href="{{ route('degree.show', "Ingénieur d'État") }}"
-                                                style="padding-left: -50px">Ingénieur
-                                                d’État en Agronomie</a>
+                                                style="padding-left: -50px">{{ __('header.subtitle9') }}</a>
                                             <ul class="dropdown">
                                                 <li><a
-                                                        href="{{ route('course.details', 'Horticulture') }}">Horticulture</a>
+                                                        href="{{ route('course.details', 'Horticulture') }}">{{ __('header.subtitle10') }}</a>
                                                 </li>
-                                                <li><a href="{{ route('course.details', 'Protection des Plantes') }}">Protection
-                                                        des Plantes</a></li>
+                                                <li><a
+                                                        href="{{ route('course.details', 'Protection des Plantes') }}">{{ __('header.subtitle11') }}</a>
+                                                </li>
                                                 <li><a
                                                         href="{{ route('course.details', 'Architecture du Paysage') }}">
-                                                        Architecture du Paysage</a></li>
+                                                        {{ __('header.subtitle12') }}</a></li>
 
                                             </ul>
 
                                         </li>
-                                        <li><a href="{{ route('degree.show', 'Master') }}">International
-                                                Master</a>
+                                        <li><a
+                                                href="{{ route('degree.show', 'Master') }}">{{ __('header.subtitle13') }}</a>
                                             <ul class="dropdown">
                                                 <li><a
-                                                        href="{{ route('course.details', 'Water & Sustainable Horticulture') }}">Water
-                                                        & Sustainaible Horticulture </a></li>
+                                                        href="{{ route('course.details', 'Water & Sustainable Horticulture') }}">{{ __('header.subtitle14') }}</a>
+                                                </li>
                                                 <li><a
-                                                        href="{{ route('course.details', 'Architecture du Paysage') }}">
-                                                        Architecture du Paysage </a>
+                                                        href="{{ route('course.details', 'Architecture du Paysage') }}">{{ __('header.subtitle15') }}</a>
                                                 </li>
                                                 <li><a href="{{ route('course.details', 'Locust Science') }}">
-                                                        Locust Science </a></li>
+                                                        {{ __('header.subtitle16') }}</a></li>
                                                 <li><a href="{{ route('course.details', 'Sciences Acridiennes') }}">
-                                                        Sciences Acridiennes</a></li>
+                                                        {{ __('header.subtitle17') }}</a></li>
                                             </ul>
                                         </li>
 
-                                        <li><a href="{{ route('degree.show', 'Licence pro') }}">Licence
-                                                professionnelle</a>
+                                        <li><a href="{{ route('degree.show', 'Licence pro') }}">
+                                                {{ __('header.subtitle18') }}</a>
                                             <ul class="dropdown">
                                                 <li><a
-                                                        href="{{ route('course.details', 'Horticulture Ornementale et Espaces verts') }}">Horticulture
-                                                        Ornementale et <br class="break"> Espaces verts</a></li>
-                                                <li><a href="{{ route('course.details', 'Aménagement du Paysage') }}">Aménagement
-                                                        du Paysage</a>
+                                                        href="{{ route('course.details', 'Horticulture Ornementale et Espaces verts') }}">
+                                                        {{ __('header.subtitle19') }} <br class="break">
+                                                        {{ __('header.subtitle20') }} </a></li>
+                                                <li><a href="{{ route('course.details', 'Aménagement du Paysage') }}">{{ __('header.subtitle21') }}
+                                                    </a>
                                                 </li>
                                             </ul>
                                         </li>
-                                        <li><a href="{{ route('degree.show', 'Technicien sp.') }}">Technicien
-                                                Spécialisé</a>
+                                        <li><a href="{{ route('degree.show', 'Technicien sp.') }}">{{ __('header.subtitle22') }}
+                                            </a>
                                             <ul class="dropdown">
                                                 <li><a
-                                                        href="{{ route('course.details', 'Technico-Commercial en Productions Horticoles') }}">Technico-Commercial
-                                                        en Productions <br class="break"> Horticoles</a></li>
+                                                        href="{{ route('course.details', 'Technico-Commercial en Productions Horticoles') }}">{{ __('header.subtitle23') }}
+                                                        <br class="break">{{ __('header.subtitle24') }} </a></li>
                                                 <li><a
-                                                        href="{{ route('course.details', 'Conditionnement et Valorisation des Produits Agricoles') }}">Conditionnement
-                                                        et Valorisation <br class="break"> des Produits Agricoles</a>
+                                                        href="{{ route('course.details', 'Conditionnement et Valorisation des Produits Agricoles') }}">{{ __('header.subtitle25') }}
+                                                        <br class="break">{{ __('header.subtitle26') }} </a>
                                                 </li>
                                                 <li><a
-                                                        href="{{ route('course.details', 'Cultures Ornementales et Aménagement des Espaces Verts') }}">Cultures
-                                                        Ornementales et <br class="break"> Aménagement des Espaces
-                                                        Verts</a></li>
-                                                <li><a href="Aquaculture">Aquaculture</a>
+                                                        href="{{ route('course.details', 'Cultures Ornementales et Aménagement des Espaces Verts') }}">{{ __('header.subtitle27') }}
+                                                        <br class="break"> {{ __('header.subtitle28') }}</a></li>
+                                                <li><a href="Aquaculture">{{ __('header.subtitle29') }}</a>
                                                 </li>
                                             </ul>
                                         </li>
-                                        <li><a href="{{ route('course.details', 'Programme Doctoral') }}">Programme
-                                                Doctoral</a>
+                                        <li><a
+                                                href="{{ route('course.details', 'Programme Doctoral') }}">{{ __('header.subtitle30') }}</a>
 
                                         </li>
-                                        <li><a href="{{ route('degree.show', 'Formation Exécutive') }}">Formation
-                                                Exécutive<span class="label label-danger">New</span></a>
+                                        <li><a href="{{ route('degree.show', 'Formation Exécutive') }}">{{ __('header.subtitle31') }}
+                                                <span class="label label-danger">New</span></a>
                                             <ul class="dropdown">
                                                 <li><a href="{{ route('course.details', 'Farm Manager') }}">
-                                                        Farm
-                                                        Manager</a>
+                                                        {{ __('header.subtitle32') }}</a>
                                                 </li>
                                             </ul>
                                         </li>
@@ -276,153 +296,13 @@
                                 <li><a href="{{ route('search.index') }}" style="padding: 10px 10px 10px 10px;"
                                         class="font-14 text-uppercase">{{ __('header.title4') }}</a>
                                 <li><a href="{{ route('center.index') }}" style="padding: 10px 10px 10px 10px;"
-                                        class="font-14 text-uppercase">Centre d’Excellence</a>
+                                        class="font-14 text-uppercase">{{ __('header.title5') }}</a>
                                 <li><a href="{{ route('experience.index') }}" style="padding: 10px 10px 10px 10px;"
                                         class="font-14 text-uppercase">{{ __('header.title6') }}</a>
                                 <li><a href="{{ route('impact.index') }}" style="padding: 10px 10px 10px 10px;"
                                         class="font-14 text-uppercase">{{ __('header.title7') }}</a>
                                 <li><a href="{{ route('business.index') }}" style="padding: 10px 10px 10px 10px;"
-                                        class="font-14 text-uppercase">{{ __('header.title8') }} </a>
-
-                            </ul>
-
-                        </nav>
-                    </div>
-                </div>
-            </div>
-
-            <!-- this is for mobile version only -->
-            <div class="header-nav header-mobile-version">
-                <div class="header-nav-wrapper bg-white">
-                    <div class="container">
-                        <div style="display:flex;justify-content:center;width:100%;">
-
-                            @if (count($logo_url) > 0)
-                                @foreach ($logo_url as $item)
-                                    <a class="menuzord-brand  flip mt-20 mt-sm-10 mb-sm-20 pt-5" href="/"><img
-                                            src="{{ url('storage') }}/{{ $item->logo }}" alt=""></a>
-                                @endforeach
-                            @endif
-                        </div>
-
-                        <nav id="menuzord-mobile-version" class="menuzord default theme-colored">
-
-
-                            <ul class="menuzord-menu list-unstyled">
-
-                                <li @if (Route::current()->getName() == 'home') class='active' @endif>
-                                    <a href="{{ route('home') }}" class="font-14 text-uppercase"
-                                        style="padding: 10px 10px 10px 10px; ">{{ __('header.title1') }}</a>
-                                </li>
-                                <li><a href="#home" class="font-14 text-uppercase"
-                                        style="padding: 10px 10px 10px 10px;">École</a>
-                                    <ul class="dropdown">
-                                        <li><a href="{{ route('director.index') }}">Mot du directeur</a></li>
-                                        <li><a href="{{ route('about.index') }}">Qui sommes-nous ?</a></li>
-                                        <li><a href="{{ route('responsable.index') }}">Corps Professoral / Staff</a>
-                                        </li>
-                                        <li><a href="{{ route('campus.index') }}">Vie Estudiantine</a></li>
-                                        <li><a href="{{ route('evenement.index') }}">Évènements</a></li>
-                                        <li><a href="{{ route('blog-actualités.index') }}">Blog/Actualités</a></li>
-                                        <li><a href="{{ route('media.index') }}">{{ __('header.title1') }}</a></li>
-                                        <li><a href="{{ route('video.index') }}">Vidéos</a></li>
-                                    </ul>
-                                </li>
-                                <li @if (Route::current()->getName() == 'course.index') class="active" @endif><a
-                                        href="{{ route('course.index') }}" style="padding: 10px 10px 10px 10px;"
-                                        class="font-14 text-uppercase d-inline">Formations</a>
-                                    <ul class="dropdown" style="padding-left: -50px;">
-                                        <li style="padding-left: -50px;">
-                                            <a href="{{ route('degree.show', "Ingénieur d'État") }}"
-                                                style="padding-left: -50px">Ingénieur
-                                                d’État en Agronomie</a>
-                                            <ul class="dropdown">
-                                                <li><a
-                                                        href="{{ route('course.details', 'Horticulture') }}">Horticulture</a>
-                                                </li>
-                                                <li><a href="{{ route('course.details', 'Protection des Plantes') }}">Protection
-                                                        des Plantes</a></li>
-                                                <li><a
-                                                        href="{{ route('course.details', 'Architecture du Paysage') }}">
-                                                        Architecture du Paysage</a></li>
-
-                                            </ul>
-
-                                        </li>
-                                        <li><a href="{{ route('degree.show', 'Master') }}">International
-                                                Master</a>
-                                            <ul class="dropdown">
-                                                <li><a
-                                                        href="{{ route('course.details', 'Water & Sustainable Horticulture') }}">Water
-                                                        & Sustainaible Horticulture </a></li>
-                                                <li><a
-                                                        href="{{ route('course.details', 'Architecture du Paysage') }}">
-                                                        Architecture du Paysage </a>
-                                                </li>
-                                                <li><a href="{{ route('course.details', 'Locust Science') }}">
-                                                        Locust Science </a></li>
-                                                <li><a href="{{ route('course.details', 'Sciences Acridiennes') }}">
-                                                        Sciences Acridiennes</a></li>
-                                            </ul>
-                                        </li>
-
-                                        <li><a href="{{ route('degree.show', 'Licence pro') }}">Licence
-                                                professionnelle</a>
-                                            <ul class="dropdown">
-                                                <li><a
-                                                        href="{{ route('course.details', 'Horticulture Ornementale et Espaces verts') }}">Horticulture
-                                                        Ornementale et <br class="break"> Espaces verts</a></li>
-                                                <li><a href="{{ route('course.details', 'Aménagement du Paysage') }}">Aménagement
-                                                        du Paysage</a>
-                                                </li>
-                                            </ul>
-                                        </li>
-                                        <li><a href="{{ route('degree.show', 'Technicien sp.') }}">Technicien
-                                                Spécialisé</a>
-                                            <ul class="dropdown">
-                                                <li><a
-                                                        href="{{ route('course.details', 'Technico-Commercial en Productions Horticoles') }}">Technico-Commercial
-                                                        en Productions <br class="break"> Horticoles</a></li>
-                                                <li><a
-                                                        href="{{ route('course.details', 'Conditionnement et Valorisation des Produits Agricoles') }}">Conditionnement
-                                                        et Valorisation <br class="break"> des Produits Agricoles</a>
-                                                </li>
-                                                <li><a
-                                                        href="{{ route('course.details', 'Cultures Ornementales et Aménagement des Espaces Verts') }}">Cultures
-                                                        Ornementales et <br class="break"> Aménagement des Espaces
-                                                        Verts</a></li>
-                                                <li><a href="Aquaculture">Aquaculture</a>
-                                                </li>
-                                            </ul>
-                                        </li>
-                                        <li><a href="{{ route('course.details', 'Programme Doctoral') }}">Programme
-                                                Doctoral</a>
-
-                                        </li>
-                                        <li><a href="{{ route('degree.show', 'Formation Exécutive') }}">Formation
-                                                Exécutive<span class="label label-danger">New</span></a>
-                                            <ul class="dropdown">
-                                                <li><a href="{{ route('course.details', 'Farm Manager') }}">
-                                                        Farm
-                                                        Manager</a>
-                                                </li>
-                                            </ul>
-                                        </li>
-
-
-                                    </ul>
-                                </li>
-
-                                <li><a href="{{ route('search.index') }}" style="padding: 10px 10px 10px 10px;"
-                                        class="font-14 text-uppercase">{{ __('header.title4') }}</a>
-                                <li><a href="{{ route('center.index') }}" style="padding: 10px 10px 10px 10px;"
-                                        class="font-14 text-uppercase">Centre d’Excellence</a>
-                                <li><a href="{{ route('experience.index') }}" style="padding: 10px 10px 10px 10px;"
-                                        class="font-14 text-uppercase">{{ __('header.title6') }}</a>
-                                <li><a href="{{ route('impact.index') }}" style="padding: 10px 10px 10px 10px;"
-                                        class="font-14 text-uppercase">{{ __('header.title7') }}</a>
-                                <li><a href="{{ route('business.index') }}" style="padding: 10px 10px 10px 10px;"
-                                        class="font-14 text-uppercase">{{ __('header.title8') }} </a>
+                                        class="font-14 text-uppercase">{{ __('header.title8') }}</a>
 
                             </ul>
 
@@ -431,6 +311,7 @@
                 </div>
             </div>
         </header>
+
         @if (session()->has('successNewsletter'))
             <div class="container">
                 <div class="row">
@@ -454,6 +335,42 @@
                 </div>
             </div>
         @endif
+
+        <style>
+            @media only screen and (min-width:500px) {
+                .break {
+                    display: none;
+                }
+
+
+            }
+
+            @media only screen and (max-width:500px) {
+                .break {
+                    display: block;
+                }
+
+
+            }
+
+            .language-selector {
+                background-color: transparent !important;
+                color: white;
+            }
+
+            .language-selector option {
+
+                background-color: #1F334560;
+            }
+        </style>
+        <script>
+            const switchlang = document.getElementById('switchlang');
+
+            switchlang.addEventListener('change', () => {
+                window.location.href = `/langue/${switchlang.value}`
+            })
+        </script>
+
 
 
         <div class="main-content">
@@ -510,7 +427,7 @@
                                             <li>
                                                 <i class="pe-7s-ribbon text-theme-colored2 font-48"></i>
                                                 <div class="pull-right ml-5">
-                                                    <span>{{__('course.title1') }}</span>
+                                                    <span>{{ __('course.title1') }}</span>
                                                     <h5 class="mt-0">{!! $course->grade !!}</h5>
                                                 </div>
                                             </li>
@@ -522,7 +439,7 @@
                                             <li>
                                                 <i class="pe-7s-refresh-2 text-theme-colored2 font-48"></i>
                                                 <div class="pull-right ml-10">
-                                                    <span>{{__('course.title2') }}</span>
+                                                    <span>{{ __('course.title2') }}</span>
                                                     <h5 class="mt-0">{{ $course->modalitiy_name }}</h5>
                                                 </div>
                                             </li>
@@ -531,8 +448,9 @@
                                             <li>
                                                 <i class="pe-7s-timer text-theme-colored2 font-48"></i>
                                                 <div class="pull-right ml-10">
-                                                    <span>{{__('course.title3') }}</span>
-                                                    <h5 class="mt-0">{{ $course->duration }} {{__('course.text1') }}</h5>
+                                                    <span>{{ __('course.title3') }}</span>
+                                                    <h5 class="mt-0">{{ $course->duration }}
+                                                        {{ __('course.text1') }}</h5>
                                                 </div>
                                             </li>
                                         @endif
@@ -540,7 +458,7 @@
                                             <li>
                                                 <i class="pe-7s-notebook text-theme-colored2 font-48"></i>
                                                 <div class="pull-right ml-10">
-                                                    <span>{{__('course.title4') }}</span>
+                                                    <span>{{ __('course.title4') }}</span>
                                                     <h5 class="mt-0">{{ $course->languages_name }} </h5>
                                                 </div>
                                             </li>
@@ -564,13 +482,17 @@
                                         <li><a href="#tab2" data-toggle="tab"
                                                 style="font-size:18px; font-weight:bold;">ADMISSION</a></li>
                                         <li><a href="#tab5" data-toggle="tab"
-                                                style="font-size:18px; font-weight:bold;">{{__('course.title7') }}</a></li>
+                                                style="font-size:18px; font-weight:bold;">{{ __('course.title7') }}</a>
+                                        </li>
                                         <li><a href="#tab6" data-toggle="tab"
-                                                style="font-size:18px; font-weight:bold;">{{__('course.title8') }}</a></li>
+                                                style="font-size:18px; font-weight:bold;">{{ __('course.title8') }}</a>
+                                        </li>
                                         <li><a href="#tab3" data-toggle="tab"
-                                                style="font-size:18px; font-weight:bold;">{{__('course.title9') }}</a></li>
+                                                style="font-size:18px; font-weight:bold;">{{ __('course.title9') }}</a>
+                                        </li>
                                         <li><a href="#tab4" data-toggle="tab"
-                                                style="font-size:18px; font-weight:bold;">{{__('course.title10') }}</a></li>
+                                                style="font-size:18px; font-weight:bold;">{{ __('course.title10') }}</a>
+                                        </li>
 
                                     </ul>
 
@@ -588,7 +510,7 @@
 
                                     <div id="myTabContent" class="tab-content">
                                         <div class="tab-pane fade in active" id="tab1">
-                                            <h4 class="line-bottom-theme-colored2 mb-15">{{__('course.subtitle1') }}
+                                            <h4 class="line-bottom-theme-colored2 mb-15">{{ __('course.subtitle1') }}
                                             </h4>
 
                                             <div style="text-align:justify;hyphens:auto;"> {!! $course->description !!}
@@ -599,7 +521,8 @@
                                                             class="pe-7s-timer font-26 vertical-align-middle text-theme-colored2 mr-10 "></i>
                                                         <span class=" font-16 "
                                                             style="color:#1f3344;font-weight:bold;">
-                                                            {{__('course.title3') }} :</span> {{ $course->duration }} Mois
+                                                            {{ __('course.title3') }} :</span>
+                                                        {{ $course->duration }} Mois
                                                     </li>
                                                 @endif
 
@@ -607,7 +530,7 @@
                                                     <li><i
                                                             class="pe-7s-global font-26 vertical-align-middle text-theme-colored2  mr-10"></i>
                                                         <span class="font-16" style="color:#1f3344;font-weight:bold;">
-                                                            {{__('course.subtitle2') }} : </span>
+                                                            {{ __('course.subtitle2') }} : </span>
                                                         {{ $course->location->name }}
                                                     </li>
                                                 @endif
@@ -615,7 +538,7 @@
                                                     <li> <i
                                                             class="pe-7s-prev font-26 vertical-align-middle text-theme-colored2 mr-10"></i>
                                                         <span class="font-16" style="color:#1f3344;font-weight:bold;">
-                                                            {{__('course.title2') }}
+                                                            {{ __('course.title2') }}
                                                             : </span>{{ $course->modalitiy_name }}
                                                     </li>
                                                 @endif
@@ -623,7 +546,7 @@
                                                     <li><i
                                                             class="pe-7s-notebook  font-26 vertical-align-middle text-theme-colored2 mr-10 "></i>
                                                         <span class="font-16"
-                                                            style="color:#1f3344;font-weight:bold;">{{__('course.title4') }}
+                                                            style="color:#1f3344;font-weight:bold;">{{ __('course.title4') }}
                                                             :</span> {{ $course->languages_name }}
                                                     </li>
                                                 @endif
@@ -650,7 +573,7 @@
                                                                             <div class="media-body">
                                                                                 <h5 class=" @if (!isset($design->size)) media-heading comment-heading  font-16 @else media-heading comment-heading @endif "
                                                                                     style=" @if (isset($design->color)) color:{{ $design->color }}; @endif  @if (isset($design->size)) font-size:{{ $design->size }}; @endif">
-                                                                                    {{__('course.subtitle3') }} </h5>
+                                                                                    {{ __('course.subtitle3') }} </h5>
                                                                                 <div class="comment-date"
                                                                                     style="font-size:16px;text-align:justify;hyphens:auto;">
                                                                                     {!! $course->admission !!}</div>
@@ -677,7 +600,7 @@
                                                                             <div class="media-body">
                                                                                 <h5 class=" @if (!isset($design->size)) media-heading comment-heading  font-16 @else media-heading comment-heading @endif "
                                                                                     style=" @if (isset($design->color)) color:{{ $design->color }}; @endif  @if (isset($design->size)) font-size:{{ $design->size }}; @endif">
-                                                                                    {{__('course.subtitle4') }} </h5>
+                                                                                    {{ __('course.subtitle4') }} </h5>
                                                                                 <div class="comment-date"
                                                                                     style="font-size:16px;text-align:justify;hyphens:auto;">
                                                                                     {!! $course->dossier !!}</div>
@@ -706,7 +629,7 @@
                                                                             <div class="media-body">
                                                                                 <h5 class=" @if (!isset($design->size)) media-heading comment-heading  font-16 @else media-heading comment-heading @endif "
                                                                                     style=" @if (isset($design->color)) color:{{ $design->color }}; @endif  @if (isset($design->size)) font-size:{{ $design->size }}; @endif">
-                                                                                    {{__('course.subtitle5') }} </h5>
+                                                                                    {{ __('course.subtitle5') }} </h5>
                                                                                 <div class="comment-date"
                                                                                     style="font-size:16px;text-align:justify;hyphens:auto;">
                                                                                     {!! $course->candidature !!}</div>
@@ -733,7 +656,7 @@
                                                                             <div class="media-body">
                                                                                 <h5 class=" @if (!isset($design->size)) media-heading comment-heading  font-16 @else media-heading comment-heading @endif "
                                                                                     style=" @if (isset($design->color)) color:{{ $design->color }}; @endif  @if (isset($design->size)) font-size:{{ $design->size }}; @endif">
-                                                                                    {{__('course.subtitle6') }} </h5>
+                                                                                    {{ __('course.subtitle6') }} </h5>
                                                                                 <div class="comment-date"
                                                                                     style="font-size:16px;">
                                                                                     {{ $course->datelimite }}</div>
@@ -760,7 +683,7 @@
                                                                             <div class="media-body">
                                                                                 <h5 class=" @if (!isset($design->size)) media-heading comment-heading  font-16 @else media-heading comment-heading @endif "
                                                                                     style=" @if (isset($design->color)) color:{{ $design->color }}; @endif  @if (isset($design->size)) font-size:{{ $design->size }}; @endif">
-                                                                                    {{__('course.subtitle7') }} </h5>
+                                                                                    {{ __('course.subtitle7') }} </h5>
                                                                                 <div class="comment-date"
                                                                                     style="font-size:16px;text-align:justify;hyphens:auto;">
                                                                                     {!! $course->selection !!}</div>
@@ -787,7 +710,7 @@
                                                                             <div class="media-body">
                                                                                 <h5 class=" @if (!isset($design->size)) media-heading comment-heading  font-16 @else media-heading comment-heading @endif "
                                                                                     style=" @if (isset($design->color)) color:{{ $design->color }}; @endif  @if (isset($design->size)) font-size:{{ $design->size }}; @endif">
-                                                                                    {{__('course.subtitle8') }} </h5>
+                                                                                    {{ __('course.subtitle8') }} </h5>
                                                                                 <div class="comment-date"
                                                                                     style="font-size:16px;">
                                                                                     @php
@@ -814,13 +737,15 @@
                                         </div>
 
                                         <div class="tab-pane fade" id="tab4">
-                                            <h4 class="line-bottom-theme-colored2 mb-20">{{__('course.subtitle13') }}</h4>
+                                            <h4 class="line-bottom-theme-colored2 mb-20">
+                                                {{ __('course.subtitle13') }}</h4>
                                             <div style="font-size:16px;">
                                                 {!! $courses[0]->review !!} </div>
                                         </div>
 
                                         <div class="tab-pane fade" id="tab5">
-                                            <h4 class="line-bottom-theme-colored2 mb-20">{{__('course.subtitle9') }}</h4>
+                                            <h4 class="line-bottom-theme-colored2 mb-20">{{ __('course.subtitle9') }}
+                                            </h4>
 
                                             <div class="container-block">
                                                 <div class="accordion">
@@ -837,7 +762,8 @@
                                                                     @if ($program->hours)
                                                                         <p
                                                                             style="margin-right:7%; text-decoration:underline;">
-                                                                            {{ $program->hours }} {{__('course.subtitle10') }}</p>
+                                                                            {{ $program->hours }}
+                                                                            {{ __('course.subtitle10') }}</p>
                                                                     @endif
                                                                 </div>
                                                                 <div class="accordion-body">
@@ -859,7 +785,8 @@
                                                                     @endif
                                                                     @if ($program->hours)
                                                                         <p style="margin-right:7%;">
-                                                                            {{ $program->hours }} {{__('course.subtitle10') }}</p>
+                                                                            {{ $program->hours }}
+                                                                            {{ __('course.subtitle10') }}</p>
                                                                     @endif
                                                                 </div>
                                                                 <div class="accordion-body">
@@ -916,7 +843,8 @@
 
                                                                                     <h5 class=" @if (!isset($design->size)) media-heading comment-heading  font-16 @else media-heading comment-heading @endif "
                                                                                         style=" @if (isset($design->color)) color:{{ $design->color }}; @endif  @if (isset($design->size)) font-size:{{ $design->size }}; @endif">
-                                                                                        {{__('course.title1') }} </h5>
+                                                                                        {{ __('course.title1') }}
+                                                                                    </h5>
 
                                                                                     <div class="comment-date"
                                                                                         style="font-size:16px;text-align:justify;hyphens:auto;">
@@ -942,7 +870,7 @@
 
                                                                                     <h5 class=" @if (!isset($design->size)) media-heading comment-heading  font-16 @else media-heading comment-heading @endif "
                                                                                         style=" @if (isset($design->color)) color:{{ $design->color }}; @endif  @if (isset($design->size)) font-size:{{ $design->size }}; @endif">
-                                                                                        {{__('course.subtitle11') }}
+                                                                                        {{ __('course.subtitle11') }}
                                                                                     </h5>
 
                                                                                     <div class="comment-date"
@@ -969,7 +897,8 @@
 
                                                                                     <h5 class=" @if (!isset($design->size)) media-heading comment-heading  font-16 @else media-heading comment-heading @endif "
                                                                                         style=" @if (isset($design->color)) color:{{ $design->color }}; @endif  @if (isset($design->size)) font-size:{{ $design->size }}; @endif">
-                                                                                        {{__('course.subtitle12') }} </h5>
+                                                                                        {{ __('course.subtitle12') }}
+                                                                                    </h5>
 
                                                                                     <div class="comment-date"
                                                                                         style="font-size:16px;text-align:justify;hyphens:auto;">
@@ -1007,7 +936,7 @@
                                                         <div>
                                                             <h4 class="text-uppercase m-0" style="color:white">
 
-                                                                Je suis interessé(e)
+                                                                {{ __('event.subtitle6') }}
                                                             </h4>
                                                             @if (session()->has('success'))
                                                                 <h6 class='alert alert-success' role="alert">
@@ -1018,7 +947,7 @@
                                                                 </h6>
                                                             @endif
                                                             <div class="line-bottom-theme-colored2 mb-30  "></div>
-                                                            <p class="text-white">Remplir le formulaire.</p>
+                                                            <p class="text-white">{{ __('course.subtitle14') }}.</p>
                                                             <form class="mt-30" method="post"
                                                                 action="{{ route('interested', $course->id) }}">
                                                                 @csrf
@@ -1026,7 +955,7 @@
                                                                     <div class="col-sm-12 text-white">
                                                                         <div class="row">
                                                                             <label for="gender"
-                                                                                class="col-xs-2 col-sm-2">Mlle</label>
+                                                                                class="col-xs-2 col-sm-2">{{ __('course.text1') }}</label>
                                                                             <div
                                                                                 class="col-xs-2 col-col-sm-2 form-group mb-10">
 
@@ -1035,7 +964,7 @@
                                                                                     type="radio">
                                                                             </div>
                                                                             <label for=""
-                                                                                class="col-xs-2 col-sm-2">Mme</label>
+                                                                                class="col-xs-2 col-sm-2">{{ __('course.text2') }}</label>
 
                                                                             <div
                                                                                 class="col-xs-2 col-sm-2 form-group mb-10">
@@ -1044,7 +973,7 @@
                                                                                     type="radio">
                                                                             </div>
                                                                             <label for=""
-                                                                                class="col-xs-2 col-sm-2">M</label>
+                                                                                class="col-xs-2 col-sm-2">{{ __('course.text3') }}</label>
 
                                                                             <div
                                                                                 class="col-xs-2 col-sm-2 form-group mb-10">
@@ -1069,7 +998,7 @@
                                                                             <input name="name" class="form-control"
                                                                                 style="background-color:white;color: gray;"
                                                                                 required type="text"
-                                                                                placeholder="Nom"
+                                                                                placeholder="{{ __('course.text4') }}"
                                                                                 value="{{ old('name') }}">
                                                                         </div>
                                                                         @if ($errors->has('name'))
@@ -1082,7 +1011,7 @@
 
                                                                         <div class="form-group mb-12">
                                                                             <input name="surname" class="form-control"
-                                                                                placeholder="Prénom"
+                                                                                placeholder="{{ __('course.text5') }}"
                                                                                 style="background-color:white;color: gray;"
                                                                                 required type="text"
                                                                                 value="{{ old('surname') }}">
@@ -1095,7 +1024,7 @@
                                                                     <div class="col-sm-12">
                                                                         <div class="form-group mb-12">
                                                                             <input name="email" required
-                                                                                placeholder="E-mail"
+                                                                                placeholder="{{ __('course.text6') }}"
                                                                                 style="background-color:white;color: gray;"
                                                                                 class="form-control  email"
                                                                                 type="email"
@@ -1161,8 +1090,8 @@
                                                                             <div>
                                                                                 <label for="phone"
                                                                                     class=" font-12 text-white"
-                                                                                    style=" width:100%;"> Numéro de
-                                                                                    téléphone</label>
+                                                                                    style=" width:100%;">
+                                                                                    {{ __('course.text8') }}</label>
                                                                             </div>
                                                                             <input name="phone" class="form-control"
                                                                                 id="phone" type="tel"
@@ -1188,8 +1117,8 @@
                                                                                 value="{{ old('level') }}"
                                                                                 style="background-color:white;color: gray;"
                                                                                 class="form-control" required>
-                                                                                <option value="_" selected>Niveau
-                                                                                    d'études</option>
+                                                                                <option value="_" selected>
+                                                                                    {{ __('course.text9') }}</option>
                                                                                 @foreach ($levels as $level)
                                                                                     <option
                                                                                         value="{{ $level }}">
@@ -1208,7 +1137,7 @@
                                                                             <input name="grade" required
                                                                                 value="{{ old('grade') }}"
                                                                                 style="background-color:white;color: gray;"
-                                                                                placeholder="{{__('course.title1') }} et spécialité"
+                                                                                placeholder="{{ __('course.title1') }} {{ __('course.text11') }}"
                                                                                 class="form-control" type="text">
                                                                         </div>
                                                                         @if ($errors->has('grade'))
@@ -1219,9 +1148,7 @@
                                                                 </div>
                                                                 <div class="col-xs-12 col-sm-12 font-10 text-white mb-10"
                                                                     style="text-align:justify;hyphens:auto;">
-                                                                    Conformément à la loi 09-08, vous disposez d'un
-                                                                    droit d'accès, de rectification et d'opposition
-                                                                    au traitement de vos données personnelles.
+                                                                    {{ __('event.formtext6') }}
                                                                 </div>
 
 
@@ -1233,15 +1160,12 @@
                                                                             style="text-align:justify;hyphens:auto;width:100%;">
                                                                             <input name="accepted" value='accepted'
                                                                                 type="checkbox" required>
-                                                                            J'ai lu et j'accepte <a class="text-white"
+                                                                            {{ __('event.formtext7') }} <a
+                                                                                class="text-white"
                                                                                 style="font-weight:normal;text-decoration:underline;"
                                                                                 href="{{ route('mention.index') }}">
-                                                                                les conditions
-                                                                                générales d'utilisation</a> , notamment
-                                                                            la
-                                                                            mention relative
-                                                                            á la protection des données
-                                                                            personnelles.<strong
+                                                                                {{ __('event.formtext8') }}</a> ,
+                                                                            {{ __('event.formtext9') }}<strong
                                                                                 style="color:red;">*</strong>
                                                                         </div>
                                                                     </div>
@@ -1261,7 +1185,7 @@
                                                                     <button type="submit"
                                                                         class="btn btn-theme-colored2 font-18"
                                                                         style="width:100%;font-weight:bold;"
-                                                                        data-loading-text="Patientez...">ENVOYER</button>
+                                                                        data-loading-text="Patientez...">{{ __('course.text12') }}</button>
                                                                 </div>
                                                             </form>
 
@@ -1274,7 +1198,8 @@
                                     </div>
 
                                     <div class="widget border-1px bg-silver-deep p-15">
-                                        <h4 class="widget-title line-bottom-theme-colored2 mb-10 font-18">Cycles</h4>
+                                        <h4 class="widget-title line-bottom-theme-colored2 mb-10 font-18">
+                                            {{ __('course.text13') }}</h4>
                                         <div class="categories">
                                             <ul class="list-border">
                                                 @foreach ($degrees as $degree)
@@ -1467,14 +1392,15 @@
                                             <li> <i
                                                     class="pe-7s-timer font-26 vertical-align-middle text-theme-colored2 mr-10 "></i>
                                                 <span class=" font-16 " style="font-weight:bold;color:#1f3344;">
-                                                    {{__('course.title3') }} :</span> {{ $course->duration }} Mois
+                                                    {{ __('course.title3') }} :</span> {{ $course->duration }} Mois
                                             </li>
                                         @endif
 
                                         @if ($course->location->name)
                                             <li><i
                                                     class="pe-7s-global font-26 vertical-align-middle text-theme-colored2  mr-10"></i>
-                                                <span class="font-16" style="font-weight:bold;color:#1f3344;"> {{__('course.subtitle2') }} :
+                                                <span class="font-16" style="font-weight:bold;color:#1f3344;">
+                                                    {{ __('course.subtitle2') }} :
                                                 </span>
                                                 {{ $course->location->name }}
                                             </li>
@@ -1482,14 +1408,16 @@
                                         @if ($course->modalitiy_name)
                                             <li> <i
                                                     class="pe-7s-prev font-26 vertical-align-middle text-theme-colored2 mr-10"></i>
-                                                <span class="font-16" style="font-weight:bold;color:#1f3344;"> {{__('course.title2') }}
+                                                <span class="font-16" style="font-weight:bold;color:#1f3344;">
+                                                    {{ __('course.title2') }}
                                                     : </span>{{ $course->modalitiy_name }}
                                             </li>
                                         @endif
                                         @if ($course->languages_name)
                                             <li><i
                                                     class="pe-7s-notebook  font-26 vertical-align-middle text-theme-colored2 mr-10 "></i>
-                                                <span class="font-16" style="font-weight:bold;color:#1f3344;">{{__('course.title4') }}
+                                                <span class="font-16"
+                                                    style="font-weight:bold;color:#1f3344;">{{ __('course.title4') }}
                                                     :</span> {{ $course->languages_name }}
                                             </li>
                                         @endif
@@ -1515,7 +1443,7 @@
                                                 <div>
                                                     <h5 class=" @if (!isset($design->size)) font-20 @endif "
                                                         style="  @if (isset($design->color)) color:{{ $design->color }}; @endif  @if (isset($design->size)) font-size:{{ $design->size }}; @endif">
-                                                        {{__('course.subtitle3') }} </h5>
+                                                        {{ __('course.subtitle3') }} </h5>
                                                     <div class="font-16"
                                                         style="text-align:justify;hyphens:auto;font-size:16px;padding-right:10px;padding-left:10px;">
                                                         {!! $course->admission !!}</div>
@@ -1525,7 +1453,7 @@
                                                 <div>
                                                     <h5 class=" @if (!isset($design->size)) font-20 @endif "
                                                         style="  @if (isset($design->color)) color:{{ $design->color }}; @endif  @if (isset($design->size)) font-size:{{ $design->size }}; @endif">
-                                                        {{__('course.subtitle4') }} </h5>
+                                                        {{ __('course.subtitle4') }} </h5>
                                                     <div class="font-16"
                                                         style="text-align:justify;hyphens:auto;font-size:16px;padding-right:10px;padding-left:10px;">
                                                         {!! $course->dossier !!}</div>
@@ -1535,7 +1463,7 @@
                                                 <div>
                                                     <h5 class=" @if (!isset($design->size)) font-20 @endif "
                                                         style="  @if (isset($design->color)) color:{{ $design->color }}; @endif  @if (isset($design->size)) font-size:{{ $design->size }}; @endif">
-                                                        {{__('course.subtitle5') }}</h5>
+                                                        {{ __('course.subtitle5') }}</h5>
                                                     <div class="font-16"
                                                         style="text-align:justify;hyphens:auto;font-size:16px;padding-right:10px;padding-left:10px;">
                                                         {!! $course->candidature !!}</div>
@@ -1545,7 +1473,7 @@
                                                 <div>
                                                     <h5 class=" @if (!isset($design->size)) font-20 @endif "
                                                         style="  @if (isset($design->color)) color:{{ $design->color }}; @endif  @if (isset($design->size)) font-size:{{ $design->size }}; @endif">
-                                                        {{__('course.subtitle6') }}</h5>
+                                                        {{ __('course.subtitle6') }}</h5>
                                                     <div class="font-16"
                                                         style="text-align:justify;hyphens:auto;font-size:16px;padding-right:10px;padding-left:10px;">
                                                         {!! $course->datelimite !!}</div>
@@ -1555,7 +1483,7 @@
                                                 <div>
                                                     <h5 class=" @if (!isset($design->size)) font-20 @endif "
                                                         style="  @if (isset($design->color)) color:{{ $design->color }}; @endif  @if (isset($design->size)) font-size:{{ $design->size }}; @endif">
-                                                        {{__('course.subtitle7') }}</h5>
+                                                        {{ __('course.subtitle7') }}</h5>
                                                     <div class="font-16"
                                                         style="text-align:justify;hyphens:auto;font-size:16px;padding-right:10px;padding-left:10px;">
                                                         {!! $course->selection !!}</div>
@@ -1565,7 +1493,7 @@
                                                 <div>
                                                     <h5 class=" @if (!isset($design->size)) font-20 @endif "
                                                         style="  @if (isset($design->color)) color:{{ $design->color }}; @endif  @if (isset($design->size)) font-size:{{ $design->size }}; @endif">
-                                                        {{__('course.subtitle8') }}</h5>
+                                                        {{ __('course.subtitle8') }}</h5>
                                                     <div class="font-16"
                                                         style="text-align:justify;hyphens:auto;font-size:16px;padding-right:10px;padding-left:10px;">
                                                         @php
@@ -1585,7 +1513,7 @@
                             <div class="item">
                                 <div class="text"
                                     style="display: flex;justify-content:space-between;padding-left:4px;padding-right:4px;">
-                                    <p> {{__('course.title7') }}</p>
+                                    <p> {{ __('course.title7') }}</p>
                                     <span> <svg xmlns="http://www.w3.org/2000/svg" class="icon" fill="none"
                                             viewBox="0 0 24 24" stroke="currentColor">
                                             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
@@ -1608,7 +1536,7 @@
                                                     @if ($program->hours)
                                                         <p
                                                             style="font-weight:bold;text-decoration:underline; font-size:16px;padding-right:10px;">
-                                                            {{ $program->hours }} {{__('course.subtitle10') }}
+                                                            {{ $program->hours }} {{ __('course.subtitle10') }}
                                                         </p>
                                                     @endif
                                                 </div>
@@ -1625,7 +1553,7 @@
                             <div class="item">
                                 <div class="text"
                                     style="display: flex;justify-content:space-between;padding-left:4px;padding-right:4px;">
-                                    <p>{{__('course.title8') }}</p>
+                                    <p>{{ __('course.title8') }}</p>
                                     <span> <svg xmlns="http://www.w3.org/2000/svg" class="icon" fill="none"
                                             viewBox="0 0 24 24" stroke="currentColor">
                                             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
@@ -1641,7 +1569,7 @@
                                                 <div>
                                                     <h5 class=" @if (!isset($design->size)) font-20 @endif "
                                                         style="  @if (isset($design->color)) color:{{ $design->color }}; @endif  @if (isset($design->size)) font-size:{{ $design->size }}; @endif">
-                                                        {{__('course.title1') }}</h5>
+                                                        {{ __('course.title1') }}</h5>
                                                     <div class="font-16"
                                                         style=" text-align:justify;hyphens:auto;font-size:16px;padding-right:10px;padding-left:10px;">
                                                         {!! $course->grade !!}</div>
@@ -1651,7 +1579,7 @@
                                                 <div>
                                                     <h5 class=" @if (!isset($design->size)) font-20 @endif "
                                                         style="  @if (isset($design->color)) color:{{ $design->color }}; @endif  @if (isset($design->size)) font-size:{{ $design->size }}; @endif">
-                                                        {{__('course.subtitle11') }}</h5>
+                                                        {{ __('course.subtitle11') }}</h5>
                                                     <div class="font-16"
                                                         style=" text-align:justify;hyphens:auto;font-size:16px;padding-right:10px;padding-left:10px;">
                                                         {!! $course->profile !!}</div>
@@ -1661,7 +1589,7 @@
                                                 <div>
                                                     <h5 class=" @if (!isset($design->size)) font-20 @endif "
                                                         style="  @if (isset($design->color)) color:{{ $design->color }}; @endif  @if (isset($design->size)) font-size:{{ $design->size }}; @endif">
-                                                        {{__('course.subtitle12') }}</h5>
+                                                        {{ __('course.subtitle12') }}</h5>
                                                     <div class="font-16"
                                                         style="text-align:justify;hyphens:auto;font-size:16px;padding-right:10px;padding-left:10px;">
                                                         {!! $course->opportunity !!}</div>
@@ -1675,7 +1603,7 @@
                             <div class="item">
                                 <div class="text"
                                     style="display: flex;justify-content:space-between;padding-left:4px;padding-right:4px;">
-                                    <p> {{__('course.title9') }}</p>
+                                    <p> {{ __('course.title9') }}</p>
                                     <span> <svg xmlns="http://www.w3.org/2000/svg" class="icon" fill="none"
                                             viewBox="0 0 24 24" stroke="currentColor">
                                             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
@@ -1701,7 +1629,7 @@
                             <div class="item">
                                 <div class="text"
                                     style="display: flex;justify-content:space-between;padding-left:4px;padding-right:4px;">
-                                    <p> {{__('course.title10') }}</p>
+                                    <p> {{ __('course.title10') }}</p>
                                     <span> <svg xmlns="http://www.w3.org/2000/svg" class="icon" fill="none"
                                             viewBox="0 0 24 24" stroke="currentColor">
                                             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
@@ -1726,7 +1654,7 @@
                                                     <div>
                                                         <h4 class="text-uppercase m-0" style="color:white">
 
-                                                            Je suis interessé(e)
+                                                            {{ __('event.subtitle6') }}
                                                         </h4>
                                                         @if (session()->has('success'))
                                                             <h6 class='alert alert-success' role="alert">
@@ -1737,7 +1665,7 @@
                                                             </h6>
                                                         @endif
                                                         <div class="line-bottom-theme-colored2 mb-30  "></div>
-                                                        <p class="text-white">Remplir le formulaire.</p>
+                                                        <p class="text-white">{{ __('course.subtitle14') }}.</p>
                                                         <form class="mt-30" method="post"
                                                             action="{{ route('interested', $course->id) }}">
                                                             @csrf
@@ -1745,7 +1673,7 @@
                                                                 <div class="col-sm-12 text-white">
                                                                     <div class="row">
                                                                         <label for="gender"
-                                                                            class="col-xs-2 col-sm-2">Mlle</label>
+                                                                            class="col-xs-2 col-sm-2">{{ __('course.text1') }}</label>
                                                                         <div
                                                                             class="col-xs-2 col-col-sm-2 form-group mb-10">
 
@@ -1754,7 +1682,7 @@
                                                                                 required>
                                                                         </div>
                                                                         <label for=""
-                                                                            class="col-xs-2 col-sm-2">Mme</label>
+                                                                            class="col-xs-2 col-sm-2">{{ __('course.text2') }}</label>
 
                                                                         <div
                                                                             class="col-xs-2 col-sm-2 form-group mb-10">
@@ -1763,7 +1691,7 @@
                                                                                 required>
                                                                         </div>
                                                                         <label for=""
-                                                                            class="col-xs-2 col-sm-2">M</label>
+                                                                            class="col-xs-2 col-sm-2">{{ __('course.text3') }}</label>
 
                                                                         <div
                                                                             class="col-xs-2 col-sm-2 form-group mb-10">
@@ -1787,7 +1715,8 @@
                                                                     <div class="form-group mb-12">
                                                                         <input name="name" class="form-control"
                                                                             style="background-color:white;color: gray;"
-                                                                            required type="text" placeholder="Nom"
+                                                                            required type="text"
+                                                                            placeholder="{{ __('course.text4') }}"
                                                                             value="{{ old('name') }}">
                                                                     </div>
                                                                     @if ($errors->has('name'))
@@ -1800,7 +1729,7 @@
 
                                                                     <div class="form-group mb-12">
                                                                         <input name="surname" class="form-control"
-                                                                            placeholder="Prénom"
+                                                                            placeholder="{{ __('course.text5') }}"
                                                                             style="background-color:white;color: gray;"
                                                                             required type="text"
                                                                             value="{{ old('surname') }}">
@@ -1813,7 +1742,7 @@
                                                                 <div class="col-sm-12">
                                                                     <div class="form-group mb-12">
                                                                         <input name="email" required
-                                                                            placeholder="E-mail"
+                                                                            placeholder="{{ __('course.text6') }}"
                                                                             style="background-color:white;color: gray;"
                                                                             class="form-control  email" type="email"
                                                                             value="{{ old('email') }}">
@@ -1874,8 +1803,8 @@
                                                                         <div>
                                                                             <label for="phone"
                                                                                 class=" font-12 text-white"
-                                                                                style=" width:100%;"> Numéro de
-                                                                                téléphone</label>
+                                                                                style=" width:100%;">
+                                                                                {{ __('course.text8') }}</label>
                                                                         </div>
                                                                         <input name="phone" class="form-control"
                                                                             id="phone1" type="tel"
@@ -1919,7 +1848,7 @@
                                                                         <input name="grade"
                                                                             value="{{ old('grade') }}"
                                                                             style="background-color:white;color: gray;"
-                                                                            placeholder="{{__('course.title1') }} et spécialité"
+                                                                            placeholder="{{ __('course.title1') }} {{ __('course.text11') }}"
                                                                             class="form-control" type="text"
                                                                             required>
                                                                     </div>
@@ -1932,9 +1861,7 @@
 
                                                             <div class="col-xs-12 col-sm-12 font-10 text-white mb-10"
                                                                 style="text-align:justify;hyphens:auto;">
-                                                                Conformément à la loi 09-08, vous disposez d'un
-                                                                droit d'accès, de rectification et d'opposition
-                                                                au traitement de vos données personnelles.
+                                                                {{ __('event.formtext6') }}
                                                             </div>
 
 
@@ -1946,7 +1873,8 @@
                                                                         style="text-align:justify;hyphens:auto;width:100%;">
                                                                         <input name="accepted" value='accepted'
                                                                             type="checkbox" required>
-                                                                        J'ai lu et j'accepte <a class="text-white"
+                                                                        {{ __('event.formtext7') }} <a
+                                                                            class="text-white"
                                                                             style="font-weight:normal;text-decoration:underline;"
                                                                             href="{{ route('mention.index') }}"> les
                                                                             conditions
@@ -1972,7 +1900,7 @@
                                                                 <button type="submit"
                                                                     class="btn btn-theme-colored2 font-18"
                                                                     style="width:100%;font-weight:bold;"
-                                                                    data-loading-text="Patientez...">ENVOYER</button>
+                                                                    data-loading-text="Patientez...">{{ __('course.text12') }}</button>
                                                             </div>
                                                         </form>
 
@@ -1985,7 +1913,8 @@
                                 </div>
 
                                 <div class="widget border-1px bg-silver-deep p-15">
-                                    <h4 class="widget-title line-bottom-theme-colored2 mb-10 font-18">Cycles</h4>
+                                    <h4 class="widget-title line-bottom-theme-colored2 mb-10 font-18">
+                                        {{ __('course.text13') }}</h4>
                                     <div class="categories">
                                         <ul class="list-border">
                                             @foreach ($degrees as $degree)
@@ -2011,22 +1940,21 @@
             <div class="container pt-60 pb-20">
                 <div class="col-sm-6 col-md-3">
                     <div class="widget dark">
-
-                        <h4 class="widget-title line-bottom-theme-colored2" style="color:#1f3344;">Coordonnées</h4>
-
+        
+                        <h4 class="widget-title line-bottom-theme-colored2" style="color:#1f3344;">{{ __('footer.title1') }}</h4>
+        
                         <span style="color:#1f3344;">
-
+        
                             Complexe Horticole d’Agadir, km 2 route d’Azrou,
                             B.P. 121 Ait Melloul 80150 - Agadir
                         </span>
-
+        
                         <ul class="list-inline">
                             <li class="m-0 pl-10 pr-10"> <i class="fa fa-phone mr-5"></i> <a href="#"
                                     style="color:#1f3344; font-size:12px;">(+212) 0528-241-006/240-155</a>
                             </li>
                             <li class="m-0 pl-10 pr-10"> <i class="fa fa-envelope-o mr-5"></i> <a
-                                    href="mail:contact@cha-agadir.ma" style="color:#1f3344;">contact@cha-agadir.ma</a>
-                            </li>
+                                    href="mailto:contact@cha-agadir.ma" style="color:#1f3344;">contact@cha-agadir.ma</a> </li>
                             <li class="m-0 pl-10 pr-10"> <i class="fa fa-globe mr-5"></i> <a href="#"
                                     style="color:#1f3344;">www.cha-agadir.ma</a> </li>
                         </ul>
@@ -2035,133 +1963,124 @@
                             <li><a href="#"><i class="fa fa-instagram"></i></a></li>
                             <li><a href="#"><i class="fa fa-youtube"></i></a></li>
                             <li><a href="#"><i class="fa fa-linkedin"></i></a></li>
-
+        
                         </ul>
                     </div>
                 </div>
                 <div class="col-sm-6 col-md-3">
                     <div class="widget dark">
-                        <h4 class="widget-title line-bottom-theme-colored2" style="color:#1f3344;">Liens rapides
-                        </h4>
+                        <h4 class="widget-title line-bottom-theme-colored2" style="color:#1f3344;">{{ __('footer.title2') }}</h4>
                         <div class="row clearfix">
                             <div class="col-xs-12 col-sm-6 col-md-6">
                                 <ul>
-
+        
                                     <li><a href="{{ route('course.index') }}"
-                                            style="color:#1f3344;font-weight:normal;">Formations</a></li>
-
-
+                                            style="color:#1f3344;font-weight:normal;">{{ __('footer.subtitle1') }}</a></li>
+        
+        
                                     <li><a href="{{ route('media.index') }}"
-                                            style="color:#1f3344;font-weight:normal;">{{ __('header.title1') }}</a>
-                                    </li>
+                                            style="color:#1f3344;font-weight:normal;">{{ __('footer.subtitle2') }}</a></li>
                                     <li><a href="{{ route('video.index') }}"
-                                            style="color:#1f3344;font-weight:normal;">Vidéos</a></li>
+                                            style="color:#1f3344;font-weight:normal;">{{ __('footer.subtitle3') }}</a></li>
                                 </ul>
                             </div>
                         </div>
                     </div>
                     <div class="widget dark">
-                        <h5 class="widget-title line-bottom-theme-colored2" style="color:#1f3344;">Newsletter</h5>
+                        <h5 class="widget-title line-bottom-theme-colored2" style="color:#1f3344;">{{ __('footer.title5') }}</h5>
                         <!-- Mailchimp Subscription Form Starts Here -->
                         <form id="mailchimp-subscription-form-footer" class="newsletter-form"
                             action="{{ route('newsletter.store') }}" method="post">
                             @csrf
-
                             <div class="input-group">
-                                <input type="email" id="mce-EMAIL" data-height="45px"
-                                    class="form-control input-xs" placeholder="Votre email" name="email"
-                                    value="{{ old('email') }}">
-
+                                <input type="email" id="mce-EMAIL" data-height="45px" class="form-control input-xs"
+                                    placeholder="{{__('footer.placehoderNewsletter')}}" name="email" value="{{ old('email') }}">
+        
                                 <span class="input-group-btn">
                                     <button type="submit" class="btn btn-colored btn-theme-colored2 btn-sm m-0"
                                         data-height="45px">OK</button>
                                 </span>
+                              
+        
                             </div>
                             @if ($errors->has('email'))
-                                <span class="text-danger">{{ $errors->first('email') }}</span>
-                            @endif
+                            <span class="text-danger">{{ $errors->first('email') }}</span>
+                        @endif
                         </form>
                         <!-- Mailchimp Subscription Form Validation-->
-
+        
                         <!-- Mailchimp Subscription Form Ends Here -->
                     </div>
                 </div>
                 <div class="col-sm-6 col-md-3">
                     <div class="widget dark">
-                        <h4 class="widget-title line-bottom-theme-colored2" style="color:#1f3344;">Derniers posts
-                        </h4>
+                        <h4 class="widget-title line-bottom-theme-colored2" style="color:#1f3344;">{{ __('footer.title3') }}</h4>
                         <div class="latest-posts">
                             @foreach ($latest_blog as $item)
                                 <article class="post media-post clearfix pb-0 mb-10">
-                                    <a class="post-thumb"
-                                        href="{{ route('blog-actualités.show', $item->id) }}"><img
-                                            src="{{ url('storage') }}/{{ $item->photo }}" width="80px"
-                                            height="55px" style="object-fit:cover;"
-                                            alt="{{ $item->title }}"></a>
+                                    <a class="post-thumb" href="{{ route('blog-actualités.show', $item->id) }}"><img
+                                            src="{{ url('storage') }}/{{ $item->photo }}" width="80px" height="55px"
+                                            style="object-fit:cover;" alt="{{ $item->title }}"></a>
                                     <div class="post-right">
                                         <h5 class="post-title mt-0 mb-5"><a
                                                 href="{{ route('blog-actualités.show', $item->id) }}"
                                                 style="color:#1f3344;">{{ $item->title }}</a></h5>
-                                        <p class="post-date mb-0 font-12" style="color:#1f3344;">
-                                            {{ $item->created_at }}</p>
+                                        <p class="post-date mb-0 font-12" style="color:#1f3344;"> {{ $item->created_at }}</p>
                                     </div>
                                 </article>
                             @endforeach
-
+        
                         </div>
                     </div>
                 </div>
-
+        
                 <div class="col-sm-6 col-md-3">
                     <div class="widget dark">
-                        <h4 class="widget-title line-bottom-theme-colored2" style="color:#1f3344;">Ouvert</h4>
+                        <h4 class="widget-title line-bottom-theme-colored2" style="color:#1f3344;">{{ __('footer.title4') }}</h4>
                         <div class="opening-hours">
                             <ul class="list-border">
-                                <li class="clearfix" style="color:#1f3344;"> <span> Lun - vendredi : </span>
+                                <li class="clearfix" style="color:#1f3344;"> <span> {{ __('footer.day1') }} - {{ __('footer.day2') }}: </span>
                                     <div class="value pull-right"> 8.30 am – 4h30 pm</div>
                                 </li>
-                                <li class="clearfix" style="color:#1f3344;"> <span> Sam : </span>
-                                    <div class="value pull-right bg-theme-colored2 text-white closed">Fermé</div>
+                                <li class="clearfix" style="color:#1f3344;"> <span> {{ __('footer.day3') }} : </span>
+                                    <div class="value pull-right bg-theme-colored2 text-white closed">{{ __('footer.indicatorday') }}</div>
                                 </li>
-                                <li class="clearfix" style="color:#1f3344;"> <span> Dim : </span>
-                                    <div class="value pull-right bg-theme-colored2 text-white closed">Fermé</div>
+                                <li class="clearfix" style="color:#1f3344;"> <span> {{ __('footer.day4') }} : </span>
+                                    <div class="value pull-right bg-theme-colored2 text-white closed">{{ __('footer.indicatorday') }}</div>
                                 </li>
-
+        
                                 @if (count($logo_url) > 0)
                                     @foreach ($logo_url as $item)
-                                        <a class="menuzord-brand  flip mt-20 mt-sm-10 mb-sm-20 pt-20 "
-                                            href="{{ route('home') }}"><img
-                                                src="{{ url('storage') }}/{{ $item->logo }}"
-                                                alt=""></a>
+                                        <a class="menuzord-brand  flip mt-20 mt-sm-10 mb-sm-20 pt-20 " href="{{route('home')}}"><img
+                                                src="{{ url('storage') }}/{{ $item->logo }}" alt=""></a>
                                     @endforeach
                                 @endif
-
+        
                             </ul>
                         </div>
                     </div>
-
+        
                 </div>
-
+        
             </div>
-
+        
             <div class="footer-bottom">
                 <div class="container pt-20 pb-20">
                     <div class="row">
-
+        
                         <div class="col-md-6">
-                            <p class="font-14 sm-text-center m-0">Copyright &copy;2023 <span
-                                    class="text-theme-colored2">CHA
-                                    Agadir</span>. Tous droits réservés </p>
+                            <p class="font-14 sm-text-center m-0">Copyright &copy;2023 <span class="text-theme-colored2">CHA
+                                    Agadir</span>. {{__('footer.text1')}} </p>
                         </div>
                         <div class="col-md-6 text-right">
                             <div class="widget no-border m-0">
                                 <ul class="list-inline sm-text-center mt-5 font-14">
                                     <li>
-                                        <a href="{{ route('mention.index') }}">Mentions légales</a>
+                                        <a href="{{route('mention.index')}}">{{__('footer.text2')}}</a>
                                     </li>
                                     <li>|</li>
                                     <li>
-                                        <a href="{{ route('about.index') }}">Nous joindre</a>
+                                        <a href="{{route('contact.create')}}">{{__('footer.text3')}}</a>
                                     </li>
                                     <li>|</li>
                                     <li class="text-white" style="position:relative; top:3px;">
@@ -2172,7 +2091,7 @@
                                         </svg>
                                     </li>
                                     <li style="font-weight:bold;">
-                                        (+212) 0528-241-006 / 240-155
+                                       (+212) 0528-241-006 / 240-155
                                     </li>
                                 </ul>
                             </div>
