@@ -14,6 +14,7 @@ use Illuminate\Http\Request;
 use App\Http\Utils\Countries;
 use App\Http\Utils\Provinces;
 use Illuminate\Support\Facades\DB;
+use Illuminate\Support\Facades\App;
 
 class CourseController extends Controller
 {
@@ -83,8 +84,15 @@ class CourseController extends Controller
         ->join('languages','languages.id','=','courses.language_id')
         ->join('modes','modes.id','=','courses.mode_id')
         ->leftjoin('responsables','responsables.id','=','courses.responsable_id')
-        ->select('courses.*','modalities.name as modalitiy_name','degrees.name as degrees_name','responsables.surname as responsables_surname','languages.name as languages_name','modes.name as modes_name','responsables.name as responsables_name')
-        ->get();
+        ->select('courses.*','modalities.name as modalitiy_name','modalities.name_en as modalitiy_name_en','degrees.name as degrees_name','responsables.surname as responsables_surname','languages.name as languages_name','modes.name as modes_name','responsables.name as responsables_name')
+        ->get()
+        ->map(function ($item){
+          if (App::isLocale('en')) {
+              $item->modalitiy_name=$item->modalitiy_name_en;
+          }
+          return $item;
+         });
+        
 
         
         foreach ($val as $key => $item) {

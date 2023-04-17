@@ -45,7 +45,8 @@ class Modality extends Resource
     {
         return [
             //ID::make()->sortable(),
-            Text::make('Nom','name'),
+            Text::make('Nom (Fr)','name'),
+            Text::make('Nom (En)','name_en'),
             
         ];
     }
