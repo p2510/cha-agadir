@@ -92,11 +92,7 @@ class CourseController extends Controller
         ->join('modes','modes.id','=','courses.mode_id')
         ->leftjoin('responsables','responsables.id','=','courses.responsable_id')
         ->select('courses.*','modalities.name as modalitiy_name','modalities.name_en as modalitiy_name_en','degrees.name as degrees_name','responsables.surname as responsables_surname','languages.name as languages_name','modes.name as modes_name','responsables.name as responsables_name')
-        ->get()
-        ;
-        
-
-        
+        ->get();
         foreach ($val as $key => $item) {
             Carbon::parse($item->datelimite)->locale('FR_fr')->diffForHumans();
             if (App::isLocale('en')) {
@@ -116,7 +112,15 @@ class CourseController extends Controller
         }
        
 
-        $programs=Program::where('course_id',$course->id)->get();
+        $programs=Program::where('course_id',$course->id)->get()
+        ->map(function ($item){
+          if (App::isLocale('en')) {
+              $item->title=$item->title_en;
+              $item->description=$item->description_en;
+          }
+          return $item;
+        })
+        ;
         $downloads=Download::where('course_id',$course->id)->get();
         $degrees=Degree::all();
         $design=Design::first();

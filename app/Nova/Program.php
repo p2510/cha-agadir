@@ -48,9 +48,17 @@ class Program extends Resource
     {
         return [
            // ID::make()->sortable(),
-            Text::make('tiitre','title'),
+            Text::make('tiitre (Fr)','title'),
+            Text::make('tiitre (En)','title_en'),
             Number::make('heure','hours'),
-            NovaTinyMCE::make('description')->options([
+            NovaTinyMCE::make('Description (Fr)','description')->options([
+                'plugins' => [
+                    'lists','preview','anchor','pagebreak','image','wordcount','fullscreen','directionality'
+                ],
+                'toolbar' => 'undo redo | styles | bold italic forecolor backcolor | alignleft aligncenter alignright alignjustify | image | bullist numlist outdent indent | link',
+                'use_lfm' => true
+            ]),
+            NovaTinyMCE::make('Description (En)','description_en')->options([
                 'plugins' => [
                     'lists','preview','anchor','pagebreak','image','wordcount','fullscreen','directionality'
                 ],
