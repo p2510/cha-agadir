@@ -1127,7 +1127,12 @@
                                                                                 @foreach ($levels as $level)
                                                                                     <option
                                                                                         value="{{ $level }}">
-                                                                                        {{ $level }}</option>
+                                                                                        @if (App::isLocale('en'))
+                                                                                            {{ $level->name_en }}
+                                                                                        @else
+                                                                                            {{ $level->name }}
+                                                                                        @endif
+                                                                                    </option>
                                                                                 @endforeach
                                                                             </select>
 
@@ -1403,7 +1408,8 @@
                                             <li> <i
                                                     class="pe-7s-timer font-26 vertical-align-middle text-theme-colored2 mr-10 "></i>
                                                 <span class=" font-16 " style="font-weight:bold;color:#1f3344;">
-                                                    {{ __('course.title3') }} :</span> {{ $course->duration }} {{ __('home.text1') }}
+                                                    {{ __('course.title3') }} :</span> {{ $course->duration }}
+                                                {{ __('home.text1') }}
                                             </li>
                                         @endif
 
@@ -1840,11 +1846,16 @@
                                                                             value="{{ old('level') }}"
                                                                             style="background-color:white;color: gray;"
                                                                             class="form-control  " required>
-                                                                            <option value="_" selected>Niveau
-                                                                                d'études</option>
+                                                                            <option value="_" selected>
+                                                                                {{ __('course.text9') }}</option>
                                                                             @foreach ($levels as $level)
                                                                                 <option value="{{ $level }}">
-                                                                                    {{ $level }}</option>
+                                                                                    @if (App::isLocale('en'))
+                                                                                        {{ $level->name_en }}
+                                                                                    @else
+                                                                                        {{ $level->name }}
+                                                                                    @endif
+                                                                                </option>
                                                                             @endforeach
                                                                         </select>
 

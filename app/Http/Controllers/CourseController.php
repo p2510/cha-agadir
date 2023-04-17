@@ -10,6 +10,7 @@ use App\Models\Timing;
 use App\Models\Program;
 use App\Models\Download;
 use App\Http\Utils\Levels;
+use App\Models\Curriculum;
 use Illuminate\Http\Request;
 use App\Http\Utils\Countries;
 use App\Http\Utils\Provinces;
@@ -131,7 +132,6 @@ class CourseController extends Controller
         ->orderByDesc('courses.created_at')
         ->limit(3)->get();
         
-      
         $countries= [
             "Maroc",
              "Afghanistan",
@@ -616,20 +616,7 @@ class CourseController extends Controller
            
        ];
        
-       $levels=[
-            "Bac",
-            "Bac+1",
-            "Technicien",
-          "Technicien spécialisé",
-             "Bac+2/DUT/DEUG",
-            "Bac+3/Licence",
-             "Bac+4/Master 1",
-            "Bac+5/Master 2",
-           "MBA",
-            "Ingénieur",
-           "Doctorat",
-          "Autres",
-         ];
+       $levels=Curriculum::all();
         
       
       
