@@ -76,7 +76,12 @@
                                                 <div class="course-top-part">
                                                     <a href="{{ route('course.details', $course->name) }}">
                                                         <h4 class="mt-5 mb-5">
-                                                            {{ $course->name }}</h4>
+                                                            @if (App::isLocale('en'))
+                                                                {{ $course->name_en }}
+                                                            @else
+                                                                {{ $course->name }}
+                                                            @endif
+                                                        </h4>
                                                     </a>
 
                                                     <a href="{{ route('course.details', $course->name) }}">
@@ -91,15 +96,15 @@
                                                         {{ $course->accroche }} [...]</p>
                                                 </a>
                                                 <!--  <div class="author-thumb">
-                                                                <img src="{{ url('storage') }}/{{ $course->responsables_photo }}"
-                                                                    alt="" class="img-circle">
-                                                            </div>-->
+                                                                    <img src="{{ url('storage') }}/{{ $course->responsables_photo }}"
+                                                                        alt="" class="img-circle">
+                                                                </div>-->
                                             </div>
                                             <a href="{{ route('course.details', $course->name) }}" style="display: block"
                                                 class="course-meta">
                                                 <ul class="list-inline">
                                                     <li><i class="ficon-clock font-18"></i>
-                                                        {{ $course->duration }} {{__('home.text1')}}
+                                                        {{ $course->duration }} {{ __('home.text1') }}
 
                                                     </li>
                                                     <li>
@@ -109,7 +114,7 @@
                                                 </ul>
                                                 <div class="course-tag">
 
-                                                    <h5>{{__('home.text5')}}</h5>
+                                                    <h5>{{ __('home.text5') }}</h5>
                                                 </div>
                                             </a>
                                         </div>

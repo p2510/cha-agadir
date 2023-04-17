@@ -57,10 +57,19 @@ class Course extends Resource
             BelongsTo::make('Cycle','degree','App\Nova\Degree'),
             BelongsTo::make('Responsable','responsable','App\Nova\Responsable')->nullable(),
             Number::make("Rang",'position'),
-            Text::make('Intitulé de la formation','name'),
+            Text::make('Intitulé de la formation (Fr)','name'),
+            Text::make('Intitulé de la formation (En)','name_en'),
             Image::make('Photo'),
             //CKEditor5Classic::make('description'),
-            NovaTinyMCE::make('description')
+            NovaTinyMCE::make('Description (Fr)','description')
+            ->options([
+                'plugins' => [
+                    'lists','preview','anchor','pagebreak','image','wordcount','fullscreen','directionality'
+                ],
+                'toolbar' => 'undo redo | styles | bold italic forecolor backcolor | alignleft aligncenter alignright alignjustify | image | bullist numlist outdent indent | link',
+                'use_lfm' => true
+            ]),
+            NovaTinyMCE::make('Description (En)','description_en')
             ->options([
                 'plugins' => [
                     'lists','preview','anchor','pagebreak','image','wordcount','fullscreen','directionality'
@@ -69,7 +78,8 @@ class Course extends Resource
                 'use_lfm' => true
             ]),
            
-            Textarea::make('Accroche','accroche'),
+            Textarea::make('Accroche (Fr)','accroche'),
+            Textarea::make('Accroche (En)','accroche_en'),
             
             //Trix::make('Description','description'),
             //Textarea::make('Description','description'),
@@ -80,21 +90,42 @@ class Course extends Resource
             BelongsTo::make('Type de formation','trainingType', 'App\Nova\TrainingType'),
             BelongsTo::make('Rythme', 'modality','App\Nova\Modality'),
             BelongsTo::make('Langue','language','App\Nova\Language'),
-            NovaTinyMCE::make('Prérequis et admission','admission')->options([
+            NovaTinyMCE::make('Prérequis et admission (Fr)','admission')->options([
                 'plugins' => [
                     'lists','preview','anchor','pagebreak','image','wordcount','fullscreen','directionality'
                 ],
                 'toolbar' => 'undo redo | styles | bold italic forecolor backcolor | alignleft aligncenter alignright alignjustify | image | bullist numlist outdent indent | link',
                 'use_lfm' => true
             ]),
-            NovaTinyMCE::make('Dossier','dossier')->options([
+            NovaTinyMCE::make('Prérequis et admission (En)','admission_en')->options([
                 'plugins' => [
                     'lists','preview','anchor','pagebreak','image','wordcount','fullscreen','directionality'
                 ],
                 'toolbar' => 'undo redo | styles | bold italic forecolor backcolor | alignleft aligncenter alignright alignjustify | image | bullist numlist outdent indent | link',
                 'use_lfm' => true
             ]),
-            NovaTinyMCE::make('Candidature','candidature')->options([
+            NovaTinyMCE::make('Dossier (Fr)','dossier')->options([
+                'plugins' => [
+                    'lists','preview','anchor','pagebreak','image','wordcount','fullscreen','directionality'
+                ],
+                'toolbar' => 'undo redo | styles | bold italic forecolor backcolor | alignleft aligncenter alignright alignjustify | image | bullist numlist outdent indent | link',
+                'use_lfm' => true
+            ]),
+            NovaTinyMCE::make('Dossier (En)','dossier_en')->options([
+                'plugins' => [
+                    'lists','preview','anchor','pagebreak','image','wordcount','fullscreen','directionality'
+                ],
+                'toolbar' => 'undo redo | styles | bold italic forecolor backcolor | alignleft aligncenter alignright alignjustify | image | bullist numlist outdent indent | link',
+                'use_lfm' => true
+            ]),
+            NovaTinyMCE::make('Candidature (Fr)','candidature')->options([
+                'plugins' => [
+                    'lists','preview','anchor','pagebreak','image','wordcount','fullscreen','directionality'
+                ],
+                'toolbar' => 'undo redo | styles | bold italic forecolor backcolor | alignleft aligncenter alignright alignjustify | image | bullist numlist outdent indent | link',
+                'use_lfm' => true
+            ]),
+            NovaTinyMCE::make('Candidature (En)','candidature_en')->options([
                 'plugins' => [
                     'lists','preview','anchor','pagebreak','image','wordcount','fullscreen','directionality'
                 ],
@@ -102,7 +133,14 @@ class Course extends Resource
                 'use_lfm' => true
             ]),
             DateTime::make('Date limite','datelimite'),
-            NovaTinyMCE::make('Modaliés de selection','selection')->options([
+            NovaTinyMCE::make('Modaliés de selection (Fr)','selection')->options([
+                'plugins' => [
+                    'lists','preview','anchor','pagebreak','image','wordcount','fullscreen','directionality'
+                ],
+                'toolbar' => 'undo redo | styles | bold italic forecolor backcolor | alignleft aligncenter alignright alignjustify | image | bullist numlist outdent indent | link',
+                'use_lfm' => true
+            ]),
+            NovaTinyMCE::make('Modaliés de selection (En)','selection_en')->options([
                 'plugins' => [
                     'lists','preview','anchor','pagebreak','image','wordcount','fullscreen','directionality'
                 ],
@@ -111,7 +149,14 @@ class Course extends Resource
             ]),
             Date::make('Date rentrée','daterentre'),
 
-            NovaTinyMCE::make('Diplôme','grade')->options([
+            NovaTinyMCE::make('Diplôme (Fr)','grade')->options([
+                'plugins' => [
+                    'lists','preview','anchor','pagebreak','image','wordcount','fullscreen','directionality'
+                ],
+                'toolbar' => 'undo redo | styles | bold italic forecolor backcolor | alignleft aligncenter alignright alignjustify | image | bullist numlist outdent indent | link',
+                'use_lfm' => true
+            ]),
+            NovaTinyMCE::make('Diplôme (En)','grade_en')->options([
                 'plugins' => [
                     'lists','preview','anchor','pagebreak','image','wordcount','fullscreen','directionality'
                 ],
@@ -119,14 +164,28 @@ class Course extends Resource
                 'use_lfm' => true
             ]),
 
-            NovaTinyMCE::make('Profile - Compétences','profile')->options([
+            NovaTinyMCE::make('Profile - Compétences (Fr)','profile')->options([
                 'plugins' => [
                     'lists','preview','anchor','pagebreak','image','wordcount','fullscreen','directionality'
                 ],
                 'toolbar' => 'undo redo | styles | bold italic forecolor backcolor | alignleft aligncenter alignright alignjustify | image | bullist numlist outdent indent | link',
                 'use_lfm' => true
             ]),
-            NovaTinyMCE::make('Débouchés','opportunity')->options([
+            NovaTinyMCE::make('Profile - Compétences (En)','profile_en')->options([
+                'plugins' => [
+                    'lists','preview','anchor','pagebreak','image','wordcount','fullscreen','directionality'
+                ],
+                'toolbar' => 'undo redo | styles | bold italic forecolor backcolor | alignleft aligncenter alignright alignjustify | image | bullist numlist outdent indent | link',
+                'use_lfm' => true
+            ]),
+            NovaTinyMCE::make('Débouchés (Fr)','opportunity')->options([
+                'plugins' => [
+                    'lists','preview','anchor','pagebreak','image','wordcount','fullscreen','directionality'
+                ],
+                'toolbar' => 'undo redo | styles | bold italic forecolor backcolor | alignleft aligncenter alignright alignjustify | image | bullist numlist outdent indent | link',
+                'use_lfm' => true
+            ]), 
+            NovaTinyMCE::make('Débouchés (En)','opportunity_en')->options([
                 'plugins' => [
                     'lists','preview','anchor','pagebreak','image','wordcount','fullscreen','directionality'
                 ],
@@ -135,7 +194,14 @@ class Course extends Resource
             ]), 
            
 
-            NovaTinyMCE::make('Témoignages','review')->options([
+            NovaTinyMCE::make('Témoignages (Fr)','review')->options([
+                'plugins' => [
+                    'lists','preview','anchor','pagebreak','image','wordcount','fullscreen','directionality'
+                ],
+                'toolbar' => 'undo redo | styles | bold italic forecolor backcolor | alignleft aligncenter alignright alignjustify | image | bullist numlist outdent indent | link',
+                'use_lfm' => true
+            ]),
+            NovaTinyMCE::make('Témoignages (En)','review_en')->options([
                 'plugins' => [
                     'lists','preview','anchor','pagebreak','image','wordcount','fullscreen','directionality'
                 ],

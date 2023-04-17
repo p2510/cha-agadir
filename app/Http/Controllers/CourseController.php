@@ -34,12 +34,19 @@ class CourseController extends Controller
         ->leftjoin('responsables','responsables.id','=','courses.responsable_id')
         ->select('courses.*','modalities.name as modalitiy_name','degrees.name as degrees_name','responsables.surname as responsables_surname','languages.name as languages_name','modes.name as modes_name','responsables.photo as responsables_photo')
         ->orderBy('courses.position','Asc')
-        ->get();
+        ->get()
+        ;
         
         
         foreach ($courses as $key => $item) {
             $item->datelimite=Carbon::parse($item->datelimite)->toObject();
             $item->description=substr($item->description,0,200);    
+          
+            if (App::isLocale('en')) {
+              $item->accroche=$item->accroche_en;
+            }
+          
+             
         } 
         
         return view('courses.index')->with([
@@ -86,18 +93,28 @@ class CourseController extends Controller
         ->leftjoin('responsables','responsables.id','=','courses.responsable_id')
         ->select('courses.*','modalities.name as modalitiy_name','modalities.name_en as modalitiy_name_en','degrees.name as degrees_name','responsables.surname as responsables_surname','languages.name as languages_name','modes.name as modes_name','responsables.name as responsables_name')
         ->get()
-        ->map(function ($item){
-          if (App::isLocale('en')) {
-              $item->modalitiy_name=$item->modalitiy_name_en;
-          }
-          return $item;
-         });
+        ;
         
 
         
         foreach ($val as $key => $item) {
             Carbon::parse($item->datelimite)->locale('FR_fr')->diffForHumans();
+            if (App::isLocale('en')) {
+              $item->name=$item->name_en;            
+              $item->description=$item->description_en;
+              $item->accroche=$item->accroche_en;            
+              $item->admission=$item->admission_en;            
+              $item->dossier=$item->dossier_en;            
+              $item->candidature=$item->candidature_en;            
+              $item->selection=$item->selection_en;            
+              $item->grade=$item->grade_en;            
+              $item->profile=$item->profile_en;            
+              $item->opportunity=$item->opportunity_en;            
+              $item->review=$item->review_en;            
+              $item->modalitiy_name=$item->modalitiy_name_en;
+          }
         }
+       
 
         $programs=Program::where('course_id',$course->id)->get();
         $downloads=Download::where('course_id',$course->id)->get();

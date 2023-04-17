@@ -394,7 +394,13 @@
                                         <div class="course-details clearfix p-20 pt-15">
                                             <div class="course-top-part">
                                                 <a href="{{ route('course.details', $course->name) }}">
-                                                    <h4 class="mt-5 mb-5">{{ $course->name }}</h4>
+                                                    <h4 class="mt-5 mb-5">
+                                                        @if (App::isLocale('en'))
+                                                        {{ $course->name_en }}
+                                                        @else 
+                                                        {{ $course->name }}
+                                                        @endif
+                                                    </h4>
                                                 </a>
                                                 <a href="{{ route('course.details', $course->name) }}">
                                                     <h4 class="mt-5 mb-5">{{ $course->degrees_name }}</h4>

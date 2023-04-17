@@ -36,7 +36,13 @@ class HomeController extends Controller
         ->leftjoin('responsables','responsables.id','=','courses.responsable_id')
         ->select('courses.*','modalities.name as modalitiy_name','modalities.name_en as modalitiy_name_en','degrees.name as degrees_name','degrees.id as degrees_id','languages.name as languages_name','responsables.photo as responsables_photo')
         ->orderBy('courses.position','Asc')
-        ->get();
+        ->get()->map(function ($item){
+            if (App::isLocale('en')) {
+                $item->accroche=$item->accroche_en;
+                
+            }
+            return $item;
+       });
         $slides=Slide::all();    
         $degrees=Degree::all();
         

@@ -450,7 +450,7 @@
                                                 <div class="pull-right ml-10">
                                                     <span>{{ __('course.title3') }}</span>
                                                     <h5 class="mt-0">{{ $course->duration }}
-                                                        {{ __('course.text1') }}</h5>
+                                                        {{ __('home.text1') }}</h5>
                                                 </div>
                                             </li>
                                         @endif
@@ -522,7 +522,7 @@
                                                         <span class=" font-16 "
                                                             style="color:#1f3344;font-weight:bold;">
                                                             {{ __('course.title3') }} :</span>
-                                                        {{ $course->duration }} Mois
+                                                        {{ $course->duration }} {{ __('home.text1') }}
                                                     </li>
                                                 @endif
 
