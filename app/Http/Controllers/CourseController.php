@@ -26,24 +26,24 @@ class CourseController extends Controller
     public function index()
     {
 
-      $degrees=Degree::all();
+        $degrees=Degree::all();
         $courses=DB::table('courses')->join('modalities','modalities.id','=','courses.modality_id')
         ->join('degrees','degrees.id','=','courses.degree_id')
         ->join('languages','languages.id','=','courses.language_id')
         ->join('modes','modes.id','=','courses.mode_id')
         ->leftjoin('responsables','responsables.id','=','courses.responsable_id')
-        ->select('courses.*','modalities.name as modalitiy_name','degrees.name as degrees_name','responsables.surname as responsables_surname','languages.name as languages_name','modes.name as modes_name','responsables.photo as responsables_photo')
+        ->select('courses.*','modalities.name as modalitiy_name','degrees.name as degrees_name','degrees.name_en as degrees_name_en','responsables.surname as responsables_surname','languages.name as languages_name','modes.name as modes_name','responsables.photo as responsables_photo')
         ->orderBy('courses.position','Asc')
-        ->get()
-        ;
+        ->get();
         
         
         foreach ($courses as $key => $item) {
             $item->datelimite=Carbon::parse($item->datelimite)->toObject();
             $item->description=substr($item->description,0,200);    
-          
+           
             if (App::isLocale('en')) {
               $item->accroche=$item->accroche_en;
+              $item->degrees_name=$item->degrees_name_en;
             }
           
              
@@ -91,7 +91,7 @@ class CourseController extends Controller
         ->join('languages','languages.id','=','courses.language_id')
         ->join('modes','modes.id','=','courses.mode_id')
         ->leftjoin('responsables','responsables.id','=','courses.responsable_id')
-        ->select('courses.*','modalities.name as modalitiy_name','modalities.name_en as modalitiy_name_en','degrees.name as degrees_name','responsables.surname as responsables_surname','languages.name as languages_name','modes.name as modes_name','responsables.name as responsables_name')
+        ->select('courses.*','modalities.name as modalitiy_name','modalities.name_en as modalitiy_name_en','degrees.name as degrees_name','degrees.name_en as degrees_name_en','responsables.surname as responsables_surname','languages.name as languages_name','modes.name as modes_name','responsables.name as responsables_name')
         ->get();
         foreach ($val as $key => $item) {
             Carbon::parse($item->datelimite)->locale('FR_fr')->diffForHumans();
@@ -108,6 +108,7 @@ class CourseController extends Controller
               $item->opportunity=$item->opportunity_en;            
               $item->review=$item->review_en;            
               $item->modalitiy_name=$item->modalitiy_name_en;
+              $item->degrees_name=$item->degrees_name_en;
           }
         }
        
@@ -119,8 +120,7 @@ class CourseController extends Controller
               $item->description=$item->description_en;
           }
           return $item;
-        })
-        ;
+        });
         $downloads=Download::where('course_id',$course->id)->get();
         $degrees=Degree::all();
         $design=Design::first();

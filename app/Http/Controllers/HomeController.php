@@ -34,11 +34,12 @@ class HomeController extends Controller
         ->join('degrees','degrees.id','=','courses.degree_id')
         ->join('languages','languages.id','=','courses.language_id')
         ->leftjoin('responsables','responsables.id','=','courses.responsable_id')
-        ->select('courses.*','modalities.name as modalitiy_name','modalities.name_en as modalitiy_name_en','degrees.name as degrees_name','degrees.id as degrees_id','languages.name as languages_name','responsables.photo as responsables_photo')
+        ->select('courses.*','modalities.name as modalitiy_name','modalities.name_en as modalitiy_name_en','degrees.name as degrees_name','degrees.name_en as degrees_name_en','degrees.id as degrees_id','languages.name as languages_name','responsables.photo as responsables_photo')
         ->orderBy('courses.position','Asc')
         ->get()->map(function ($item){
             if (App::isLocale('en')) {
                 $item->accroche=$item->accroche_en;
+               $item->degrees_name=$item->degrees_name_en;
                 
             }
             return $item;

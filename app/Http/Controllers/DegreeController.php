@@ -6,6 +6,7 @@ use Carbon\Carbon;
 use App\Models\Degree;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
+use Illuminate\Support\Facades\App;
 
 class DegreeController extends Controller
 {
@@ -52,6 +53,7 @@ class DegreeController extends Controller
     {
         $getId=Degree::where('name',$res)->get('id');
         $courses=[];
+        $degree_name='';
        // dd($getId[0]->id);
         
         if (count($getId)>0) {
@@ -60,14 +62,20 @@ class DegreeController extends Controller
             ->join('languages','languages.id','=','courses.language_id')
             ->join('modes','modes.id','=','courses.mode_id')
             ->leftjoin('responsables','responsables.id','=','courses.responsable_id')
-            ->select('courses.*','modalities.name as modalitiy_name','degrees.name as degrees_name','languages.name as languages_name','modes.name as modes_name','responsables.photo as responsables_photo','responsables.surname as responsables_surname')
+            ->select('courses.*','modalities.name as modalitiy_name','degrees.name as degrees_name','degrees.name_en as degrees_name_en','languages.name as languages_name','modes.name as modes_name','responsables.photo as responsables_photo','responsables.surname as responsables_surname')
             ->get();
            
            
             
             foreach ($courses as $key => $item) {
                 $item->datelimite=Carbon::parse($item->datelimite)->toObject();
-                $item->description=substr($item->description,0,200);    
+                $item->description=substr($item->description,0,200);
+                 
+                if (App::isLocale('en')) {
+                    $item->accroche=$item->accroche_en;
+                    $item->degrees_name=$item->degrees_name_en;
+                  }  
+                $degree_name =$item->degrees_name;
             } 
         }
   
@@ -75,7 +83,7 @@ class DegreeController extends Controller
         
         return view('degree.show')->with([
             'courses'=>$courses,
-            'degrees_name'=>$res,
+            'degrees_name'=>$degree_name,
         ]);
     }
 

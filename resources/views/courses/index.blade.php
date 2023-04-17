@@ -52,10 +52,21 @@
                         <div class="col-md-12">
                             <!-- Portfolio Filter -->
                             <div class="portfolio-filter">
-                                <a href="#" class="active" data-filter="*">Tous</a>
+                                <a href="#" class="active" data-filter="*">
+                                    @if (App::isLocale('en'))
+                                        All
+                                    @else
+                                        Tous
+                                    @endif
+                                </a>
                                 @foreach ($degrees as $degree)
-                                    <a href="#a{{ $degree->id }}" class=""
-                                        data-filter=".a{{ $degree->id }}">{{ $degree->name }}</a>
+                                    <a href="#a{{ $degree->id }}" class="" data-filter=".a{{ $degree->id }}">
+                                        @if (App::isLocale('en'))
+                                            {{ $degree->name_en }}
+                                        @else
+                                            {{ $degree->name }}
+                                        @endif
+                                    </a>
                                 @endforeach
                             </div>
                             <!-- End Portfolio Filter -->
@@ -86,6 +97,7 @@
 
                                                     <a href="{{ route('course.details', $course->name) }}">
                                                         <h4 class="mt-5 mb-5">
+                                                            
                                                             {{ $course->degrees_name }}
                                                         </h4>
                                                     </a>
@@ -96,9 +108,9 @@
                                                         {{ $course->accroche }} [...]</p>
                                                 </a>
                                                 <!--  <div class="author-thumb">
-                                                                    <img src="{{ url('storage') }}/{{ $course->responsables_photo }}"
-                                                                        alt="" class="img-circle">
-                                                                </div>-->
+                                                                            <img src="{{ url('storage') }}/{{ $course->responsables_photo }}"
+                                                                                alt="" class="img-circle">
+                                                                        </div>-->
                                             </div>
                                             <a href="{{ route('course.details', $course->name) }}" style="display: block"
                                                 class="course-meta">

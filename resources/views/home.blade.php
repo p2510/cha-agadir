@@ -373,7 +373,8 @@
             <div class="section-title mb-40">
                 <div class="row">
                     <div class="col-md-12">
-                        <h2 class="title text-uppercase mb-5">{{ __('home.title1') }} <span class="text-theme-colored2"> {{ __('home.title2') }}</span>
+                        <h2 class="title text-uppercase mb-5">{{ __('home.title1') }} <span class="text-theme-colored2">
+                                {{ __('home.title2') }}</span>
                         </h2>
                     </div>
                 </div>
@@ -396,14 +397,17 @@
                                                 <a href="{{ route('course.details', $course->name) }}">
                                                     <h4 class="mt-5 mb-5">
                                                         @if (App::isLocale('en'))
-                                                        {{ $course->name_en }}
-                                                        @else 
-                                                        {{ $course->name }}
+                                                            {{ $course->name_en }}
+                                                        @else
+                                                            {{ $course->name }}
                                                         @endif
                                                     </h4>
                                                 </a>
                                                 <a href="{{ route('course.details', $course->name) }}">
-                                                    <h4 class="mt-5 mb-5">{{ $course->degrees_name }}</h4>
+                                                    <h4 class="mt-5 mb-5">
+                                                        {{ $course->degrees_name }}
+                                                    
+                                                    </h4>
                                                 </a>
                                             </div>
                                             <a href="{{ route('course.details', $course->name) }}"
@@ -415,7 +419,8 @@
                                         </div>
                                         <div class="course-meta">
                                             <ul class="list-inline">
-                                                <li><i class="ficon-clock font-18"></i> {{ $course->duration }} {{ __('home.text1') }}</li>
+                                                <li><i class="ficon-clock font-18"></i> {{ $course->duration }}
+                                                    {{ __('home.text1') }}</li>
                                                 <li><i class="pe-7s-notebook font-18"></i>{{ $course->languages_name }}
                                                 </li>
                                             </ul>
@@ -440,7 +445,8 @@
             <div class="section-title">
                 <div class="row">
                     <div class="col-lg-4">
-                        <h3 class="font-28 mt-0"><span class="text-theme-colored2">{{ __('home.title3') }}</span> {{ __('home.title7') }}</h3>
+                        <h3 class="font-28 mt-0"><span class="text-theme-colored2">{{ __('home.title3') }}</span>
+                            {{ __('home.title7') }}</h3>
                         <div class="line-bottom-theme-colored2"></div>
                         @foreach ($about as $item)
                             <img src="{{ url('storage') }}/{{ $item->photo }}" class="img-fullwidth" alt="">
@@ -451,7 +457,8 @@
                     </div>
                     @if (count($evenements) > 0)
                         <div class="col-lg-4">
-                            <h3 class="font-28 mt-md-30 mt-0"><span class="text-theme-colored2">{{ __('home.title4') }}</span> {{ __('home.title8') }}
+                            <h3 class="font-28 mt-md-30 mt-0"><span
+                                    class="text-theme-colored2">{{ __('home.title4') }}</span> {{ __('home.title8') }}
                             </h3>
                             <div class="line-bottom-theme-colored2"></div>
                             @foreach ($evenements as $evenement)
@@ -502,7 +509,8 @@
                         </div>
                     @endif
                     <div class="col-lg-4">
-                        <h3 class="font-28 mt-md-30 mt-0"><span class="text-theme-colored2">{{ __('home.title10') }} </span> {{ __('home.title11') }}
+                        <h3 class="font-28 mt-md-30 mt-0"><span class="text-theme-colored2">{{ __('home.title10') }}
+                            </span> {{ __('home.title11') }}
                         </h3>
                         <div class="line-bottom-theme-colored2"></div>
                         <div class="panel-group accordion-stylished-left-border accordion-icon-filled accordion-no-border accordion-icon-left accordion-icon-filled-theme-colored2 custom-style"
@@ -587,7 +595,8 @@
             <div class="section-title mb-40">
                 <div class="row">
                     <div class="col-md-12">
-                        <h2 class="title text-uppercase mb-5">{{ __('home.title5') }} <span class="text-theme-colored2"> {{ __('home.title9') }}</span></h2>
+                        <h2 class="title text-uppercase mb-5">{{ __('home.title5') }} <span class="text-theme-colored2">
+                                {{ __('home.title9') }}</span></h2>
                         <h5 class="font-16  mt-5" style="color:#1f3344;">{{ __('home.text4') }}</h5>
                     </div>
                 </div>
@@ -619,7 +628,8 @@
                                 <div class="post-meta">
                                     <ul class="list-inline pull-left flip">
                                         <ul class="list-inline pull-left flip">
-                                            <li><i class="lnr lnr-users text-theme-colored2 font-20"></i>{{ __('home.text3') }}
+                                            <li><i
+                                                    class="lnr lnr-users text-theme-colored2 font-20"></i>{{ __('home.text3') }}
                                                 {{ $blog->description }}</li>
                                         </ul>
 
@@ -650,7 +660,7 @@
                     <div class="owl-carousel-6col clients-logo transparent text-center">
                         @if (count($partners) > 0)
                             @foreach ($partners as $partner)
-                                <div class="item"> <a href="{{route('home')}}"><img
+                                <div class="item"> <a href="{{ route('home') }}"><img
                                             src="{{ url('storage') }}/{{ $partner->photo }}" alt=""></a>
                                 </div>
                             @endforeach
