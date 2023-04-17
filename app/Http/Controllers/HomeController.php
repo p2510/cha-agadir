@@ -15,6 +15,7 @@ use App\Models\Partner;
 use App\Models\Responsable;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
+use Illuminate\Support\Facades\App;
 
 class HomeController extends Controller
 {
@@ -52,7 +53,14 @@ class HomeController extends Controller
             $item->description=substr($item->description,0,60);
             return $item;
        });
-       $popup=Popup::where('active',true)->limit(1)->get();
+       $popup=Popup::where('active',true)->limit(1)->get()->map(function ($item){
+            if (App::isLocale('en')) {
+                $item->title=$item->title_en;
+                $item->description=$item->description_en;
+                
+            }
+            return $item;
+       });
        $about=About::latest('id')->limit(1)->get();
        $whyus=Whyus::all();
        $barres=Barre::all();

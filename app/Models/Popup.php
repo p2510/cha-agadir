@@ -11,7 +11,9 @@ class Popup extends Model
     protected $fillable=[
         'active',
         'title',
+        'title_en',
         'description',
+        'description_en',
         'url',
         'file',
         'image',

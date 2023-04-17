@@ -47,13 +47,15 @@ class Popup extends Resource
         return [
             ID::make()->sortable(),
             Boolean::make('Activer','active'),
-            Text::make('Titre','title'),
+            Text::make('Titre (Fr) ','title'),
+            Text::make('Titre (En) ','title_en'),
             Text::make('Lien','url'),
             Image::make('Image de fond','image')->disk('public')
             ->storeAs(function (Request $request) {
                     return $request->image->getClientOriginalName();
             }),
-            Textarea::make('Description','description'),
+            Textarea::make('Description (Fr','description'),
+            Textarea::make('Description (En)','description_en'),
             File::make('Un fichier','file')->disk('public')
             ->storeAs(function (Request $request) {
                     return $request->file->getClientOriginalName();
