@@ -51,13 +51,20 @@ class Slide extends Resource
         return [
             ID::make()->sortable(),
             Text::make('Lien','url'),
-            Text::make('Sujet','subject'),
-            Text::make('Titre','title'),
-            Textarea::make('Decription','description'),
-            Image::make('Une image','photo')->disk('public')
+            Text::make('Sujet (Fr)','subject'),
+            Text::make('Sujet (En)','subject_en'),
+            Text::make('Titre (Fr)','title'),
+            Text::make('Titre (En)','title_en'),
+            Textarea::make('Decription (Fr)','description'),
+            Textarea::make('Decription (En)','description_en'),
+            Image::make('Une image (Fr)','photo')->disk('public')
             ->storeAs(function (Request $request) {
                     return $request->photo->getClientOriginalName();
                  }),
+            Image::make('Une image (En)','photo_en')->disk('public')
+             ->storeAs(function (Request $request) {
+                         return $request->photo->getClientOriginalName() ;
+                  }),
         ];
     }
 

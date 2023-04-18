@@ -45,7 +45,8 @@ class Barre extends Resource
         return [
             ID::make()->sortable(),
             Textarea::make('Icône','icon'),
-            Text::make('Titre','title'),
+            Text::make('Titre (Fr)','title'),
+            Text::make('Titre (En)','title_en'),
             Number::make('Valeur','valeur'),
         ];
     }

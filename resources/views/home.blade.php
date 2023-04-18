@@ -406,7 +406,7 @@
                                                 <a href="{{ route('course.details', $course->name) }}">
                                                     <h4 class="mt-5 mb-5">
                                                         {{ $course->degrees_name }}
-                                                    
+
                                                     </h4>
                                                 </a>
                                             </div>
@@ -579,7 +579,12 @@
                             <h2 data-animation-duration="2000" data-value="{{ $barre->valeur }}"
                                 class="animate-number text-theme-colored2 font-42 font-weight-600 mt-0 mb-15">0</h2>
                             <h5 class="text-white text-uppercase">
-                                {{ $barre->title }}
+                                @if (App::isLocale('en'))
+                                {{ $barre->title_en }}
+
+                                @else
+                                    {{ $barre->title }}
+                                @endif
 
                             </h5>
                         </div>

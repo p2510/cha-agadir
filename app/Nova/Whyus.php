@@ -43,8 +43,10 @@ class Whyus extends Resource
     {
         return [
             ID::make()->sortable(),
-            Text::make('Titre','title'),
-            Textarea::make('Description','description'),
+            Text::make('Titre (Fr)','title'),
+            Text::make('Titre (En)','title_en'),
+            Textarea::make('Description (Fr)','description'),
+            Textarea::make('Description (En)','description_en'),
         ];
     }
 

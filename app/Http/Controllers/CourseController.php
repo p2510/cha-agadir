@@ -617,10 +617,7 @@ class CourseController extends Controller
        ];
        
        $levels=Curriculum::all();
-        
-      
-      
-      
+
          return view('courses.details')->with([
             'courses'=>$val,
             'programs'=> $programs, 

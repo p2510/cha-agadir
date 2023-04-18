@@ -9,6 +9,7 @@ use App\Models\CategoryBlog;
 use Illuminate\Http\Request;
 use Jorenvh\Share\ShareFacade;
 use Illuminate\Support\Facades\DB;
+use Illuminate\Support\Facades\App;
 
 class BlogController extends Controller
 {
@@ -45,9 +46,13 @@ class BlogController extends Controller
         $shareLinkedin=ShareFacade::currentPage()->linkedin()->getRawLinks();   
              
         $evenements=DB::table('evenements')->orderBy('created_at','Desc')->limit(3)->get();
-        $whyus=Whyus::all();
-    
-
+        $whyus=Whyus::all()->map(function ($item){
+            if (App::isLocale('en')) {
+                $item->title=$item->title_en;
+                $item->description=$item->description_en;
+                }
+                return $item;
+            });
 
         return view('blog.show')->with(['blogs'=>$blogs,'categories'=>$categories,'latests'=>$latests,'shareFacebook'=>$shareFacebook,'shareWhatsapp'=>$shareWhatsapp,'shareLinkedin'=>$shareLinkedin,'evenements'=>$evenements,'whyus'=> $whyus]);
     }
