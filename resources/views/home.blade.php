@@ -484,7 +484,13 @@
                                         </div>
                                         <div class="event-content pt-5">
                                             <h5 class="media-heading font-16 mb-5"><a class="font-weight-600"
-                                                    href="{{ route('evenement.show', $evenement->title) }}">{{ $evenement->title }}</a>
+                                                    href="{{ route('evenement.show', $evenement->title) }}">
+                                                    @if (App::isLocale('en'))
+                                                        {{ $evenement->title_en }}
+                                                    @else
+                                                        {{ $evenement->title }}
+                                                    @endif
+                                                </a>
                                             </h5>
                                             <span class="mr-10"><i class="fa fa-clock-o text-theme-colored2"></i>
                                                 @php
@@ -580,8 +586,7 @@
                                 class="animate-number text-theme-colored2 font-42 font-weight-600 mt-0 mb-15">0</h2>
                             <h5 class="text-white text-uppercase">
                                 @if (App::isLocale('en'))
-                                {{ $barre->title_en }}
-
+                                    {{ $barre->title_en }}
                                 @else
                                     {{ $barre->title }}
                                 @endif

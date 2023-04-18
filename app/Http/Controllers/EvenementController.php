@@ -9,6 +9,7 @@ use Jorenvh\Share\ShareFacade;
 use App\Jobs\JobMessageEvenement;
 use App\Mail\SendMessageEvenement;
 use App\Models\EvenementInterested;
+use Illuminate\Support\Facades\App;
 use Illuminate\Support\Facades\Mail;
 
 class EvenementController extends Controller
@@ -30,13 +31,20 @@ class EvenementController extends Controller
 
     public function show(Evenement $evenement)
     {
-         
+         $data=Evenement::where('id',$evenement->id)->get()->map(function ($item){
+          if (App::isLocale('en')) {
+              $item->title=$item->title_en;
+              $item->description=$item->description_en;
+          }
+          return $item;
+         });
+
          $shareFacebook=ShareFacade::currentPage()->facebook()->getRawLinks();
          $shareWhatsapp=ShareFacade::currentPage()->whatsapp()->getRawLinks();
          $shareLinkedin=ShareFacade::currentPage()->linkedin()->getRawLinks();
          $evenementPages=Evenementpage::where('evenement_id',$evenement->id)->get();
          
-        return view('evenement.show')->with(['evenements'=>$evenement,'evenementPages'=>$evenementPages,'shareFacebook'=>$shareFacebook,'shareWhatsapp'=>$shareWhatsapp,'shareLinkedin'=>$shareLinkedin]);
+        return view('evenement.show')->with(['evenements'=>$data,'evenementPages'=>$evenementPages,'shareFacebook'=>$shareFacebook,'shareWhatsapp'=>$shareWhatsapp,'shareLinkedin'=>$shareLinkedin]);
     }
 
     public function signIn($id,Request $request)

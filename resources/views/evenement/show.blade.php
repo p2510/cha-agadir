@@ -30,6 +30,8 @@
             margin-top: 0px !important;
         }
     </style>
+    @foreach ($evenements as $evenement )
+        
     <div class="main-content">
         <div class="inner-header divider" style="border-top:solid 2px rgb(45, 69, 88) ;">
             <!-- Section: inner-header -->
@@ -40,12 +42,16 @@
                         <div class="row">
                             <div class="col-md-6">
                                 <ol class="breadcrumb text-left mt-10" style="color:rgb(45, 69, 88);font-weight:bold;">
-                                    <li><a href="/">{{__('header.title1')}} </a></li>
-                                    <li><a href="{{ route('evenement.index') }}">{{__("header.subtitle5")}}</a></li>
+                                    <li><a href="/">{{ __('header.title1') }} </a></li>
+                                    <li><a href="{{ route('evenement.index') }}">{{ __('header.subtitle5') }}</a></li>
                                     <li>
-                                        @if ($evenements->title)
-                                            {{ $evenements->title }}
-                                        @endif
+
+                                    
+                                            @if ($evenement->title_en)
+                                                {{ $evenement->title_en }}
+                                            @endif
+                                        
+
                                     </li>
                                 </ol>
                             </div>
@@ -85,12 +91,12 @@
                 <div class="row text-center">
                     <div class="col-md-12">
                         @php
-                            $year = date('Y', strtotime($evenements->start_at));
-                            $month = date('M', strtotime($evenements->start_at));
-                            $day = date('d', strtotime($evenements->start_at));
-                            $hour = date('H', strtotime($evenements->start_at));
-                            $minute = date('i', strtotime($evenements->start_at));
-                            $second = date('s', strtotime($evenements->start_at));
+                            $year = date('Y', strtotime($evenement->start_at));
+                            $month = date('M', strtotime($evenement->start_at));
+                            $day = date('d', strtotime($evenement->start_at));
+                            $hour = date('H', strtotime($evenement->start_at));
+                            $minute = date('i', strtotime($evenement->start_at));
+                            $second = date('s', strtotime($evenement->start_at));
                         @endphp
                         <input type="hidden" name="year" value='{{ $year }}' id="year">
                         <input type="hidden" name="month" value='{{ $month }}' id="month">
@@ -102,41 +108,79 @@
                             style="color:white; font-family:'Courier New', Courier, monospace;font-weight:bold;"></h2>
 
                         <!-- Final Countdown Timer Script -->
-                        <script language="javascript" type="text/javascript">
-                            //get start date 
-                            let year = document.getElementById('year').value;
-                            let month = document.getElementById('month').value;
-                            let day = document.getElementById('day').value;
-                            let hour = document.getElementById('hour').value;
-                            let minute = document.getElementById('minute').value;
-                            let second = document.getElementById('second').value;
-                            //get end date 
-                            var countDownDate = new Date(`${month} ${day}, ${year} ${hour}:${day}:${second}`).getTime();
-                            // Update the count down every 1 second
-                            var x = setInterval(function() {
+                        @if (App::isLocale('en'))
+                            <script language="javascript" type="text/javascript">
+                                //get start date 
+                                let year = document.getElementById('year').value;
+                                let month = document.getElementById('month').value;
+                                let day = document.getElementById('day').value;
+                                let hour = document.getElementById('hour').value;
+                                let minute = document.getElementById('minute').value;
+                                let second = document.getElementById('second').value;
+                                //get end date 
+                                var countDownDate = new Date(`${month} ${day}, ${year} ${hour}:${day}:${second}`).getTime();
+                                // Update the count down every 1 second
+                                var x = setInterval(function() {
 
-                                // Get today's date and time
-                                var now = new Date().getTime();
+                                    // Get today's date and time
+                                    var now = new Date().getTime();
 
-                                // Find the distance between now and the count down date
-                                var distance = countDownDate - now;
+                                    // Find the distance between now and the count down date
+                                    var distance = countDownDate - now;
 
-                                // Time calculations for days, hours, minutes and seconds
-                                var days = Math.floor(distance / (1000 * 60 * 60 * 24));
-                                var hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
-                                var minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
-                                var seconds = Math.floor((distance % (1000 * 60)) / 1000);
-                                // Display the result in the element with id"
-                                document.getElementById("count_down_date").innerHTML = days + " Jours  " + hours + "H:" +
-                                    minutes + "M:" + seconds + "S";
+                                    // Time calculations for days, hours, minutes and seconds
+                                    var days = Math.floor(distance / (1000 * 60 * 60 * 24));
+                                    var hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+                                    var minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+                                    var seconds = Math.floor((distance % (1000 * 60)) / 1000);
+                                    // Display the result in the element with id"
+                                    document.getElementById("count_down_date").innerHTML = days + " Days " + hours + "H:" +
+                                        minutes + "M:" + seconds + "S";
 
-                                // If the count down is finished, write some text
-                                if (distance < 0) {
-                                    clearInterval(x);
-                                    document.getElementById("count_down_date").innerHTML = "Expiré";
-                                }
-                            }, 1000);
-                        </script>
+                                    // If the count down is finished, write some text
+                                    if (distance < 0) {
+                                        clearInterval(x);
+                                        document.getElementById("count_down_date").innerHTML = "Expiré";
+                                    }
+                                }, 1000);
+                            </script>
+                        @else
+                            <script language="javascript" type="text/javascript">
+                                //get start date 
+                                let year = document.getElementById('year').value;
+                                let month = document.getElementById('month').value;
+                                let day = document.getElementById('day').value;
+                                let hour = document.getElementById('hour').value;
+                                let minute = document.getElementById('minute').value;
+                                let second = document.getElementById('second').value;
+                                //get end date 
+                                var countDownDate = new Date(`${month} ${day}, ${year} ${hour}:${day}:${second}`).getTime();
+                                // Update the count down every 1 second
+                                var x = setInterval(function() {
+
+                                    // Get today's date and time
+                                    var now = new Date().getTime();
+
+                                    // Find the distance between now and the count down date
+                                    var distance = countDownDate - now;
+
+                                    // Time calculations for days, hours, minutes and seconds
+                                    var days = Math.floor(distance / (1000 * 60 * 60 * 24));
+                                    var hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+                                    var minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+                                    var seconds = Math.floor((distance % (1000 * 60)) / 1000);
+                                    // Display the result in the element with id"
+                                    document.getElementById("count_down_date").innerHTML = days + " Jours  " + hours + "H:" +
+                                        minutes + "M:" + seconds + "S";
+
+                                    // If the count down is finished, write some text
+                                    if (distance < 0) {
+                                        clearInterval(x);
+                                        document.getElementById("count_down_date").innerHTML = "Expiré";
+                                    }
+                                }, 1000);
+                            </script>
+                        @endif
 
 
 
@@ -153,35 +197,38 @@
                     <div class="col-md-4">
                         <ul>
                             <li>
-                                @if ($evenements->title)
-                                    <h5>{{__('event.subtitle1')}}:</h5>
-                                    <p>{{ $evenements->title }}</p>
+                                @if ($evenement->title)
+                                    <h5>{{ __('event.subtitle1') }}:</h5>
+                                    <p>
+                                        {{ $evenement->title }}
+                                    </p>
                                 @endif
                             </li>
                             <li>
-                                @if ($evenements->location)
-                                    <h5>{{__('event.subtitle2')}}:</h5>
-                                    <p>{{ $evenements->location }}</p>
-                                @endif
-
-                            </li>
-                            <li>
-                                @if ($evenements->start_at)
-                                    <h5>{{__('event.subtitle3')}}:</h5>
-                                    <p>{{ $evenements->start_at }}</p>
+                                @if ($evenement->location)
+                                    <h5>{{ __('event.subtitle2') }}:</h5>
+                                    <p>{{ $evenement->location }}</p>
                                 @endif
 
                             </li>
                             <li>
-                                @if ($evenements->end_at)
-                                    <h5>{{__('event.subtitle4')}}:</h5>
-                                    <p>{{ $evenements->end_at }}</p>
+                                @if ($evenement->start_at)
+                                    <h5>{{ __('event.subtitle3') }}:</h5>
+                                    <p>{{ $evenement->start_at }}</p>
+                                @endif
+
+                            </li>
+                            <li>
+                                @if ($evenement->end_at)
+                                    <h5>{{ __('event.subtitle4') }}:</h5>
+                                    <p>{{ $evenement->end_at }}</p>
                                 @endif
 
                             </li>
                             <li>
                                 @if (count($evenementPages) > 0)
-                                    <h5 style="font-weight:bold;color:#F88147;font-size:18px;">{{__('event.subtitle5')}} :</h5>
+                                    <h5 style="font-weight:bold;color:#F88147;font-size:18px;">{{ __('event.subtitle5') }}
+                                        :</h5>
                                     @foreach ($evenementPages as $item)
                                         <p><a style="text-decoration:underline;color:#1f3344;"
                                                 href="{{ url('storage') }}/{{ $item->file }}"
@@ -231,7 +278,7 @@
                     </div>
                     <div class="col-md-8">
                         <div>
-                            <div class="item"><img src="{{ url('storage') }}/{{ $evenements->photo }}" alt="">
+                            <div class="item"><img src="{{ url('storage') }}/{{ $evenement->photo }}" alt="">
                             </div>
 
                         </div>
@@ -239,8 +286,8 @@
                 </div>
                 <div class="row mt-60">
                     <div class="col-md-12">
-                        <h4 class="mt-0">{{ $evenements->title }}</h4>
-                        <div style="text-align:justify;hyphens:auto;font-size:16px; color:#1f3344;">{!! $evenements->description !!}
+                        <h4 class="mt-0">{{ $evenement->title }}</h4>
+                        <div style="text-align:justify;hyphens:auto;font-size:16px; color:#1f3344;">{!! $evenement->description !!}
                         </div>
                     </div>
 
@@ -249,113 +296,123 @@
             </div>
         </section>
 
-        @if ( $evenements->active)
-            
-        
-        <!-- Section: Registration Form -->
-        <section style="background-color:#1f3344;">
-            <div class="container-fluid">
-                <div class="section-title">
-                    <div class="row">
-                        <div class="col-md-6 col-md-offset-3 text-center">
-                            <h3 class="title text-white pt-10" style="margin-bottom:-6px;">{{__('event.subtitle6')}}</h3>
+        @if ($evenement->active)
+            <!-- Section: Registration Form -->
+            <section style="background-color:#1f3344;">
+                <div class="container-fluid">
+                    <div class="section-title">
+                        <div class="row">
+                            <div class="col-md-6 col-md-offset-3 text-center">
+                                <h3 class="title text-white pt-10" style="margin-bottom:-6px;">
+                                    {{ __('event.subtitle6') }}</h3>
+                            </div>
                         </div>
                     </div>
-                </div>
-                <div class="row">
-                    <div class="col-md-6 col-md-offset-3">
+                    <div class="row">
+                        <div class="col-md-6 col-md-offset-3">
 
-                        <form id="booking-form" name="booking-form" method="post"
-                            action="{{ route('evenement.signin', $evenements->id) }}" enctype="multipart/form-data">
-                            @csrf
+                            <form id="booking-form" name="booking-form" method="post"
+                                action="{{ route('evenement.signin', $evenement->id) }}" enctype="multipart/form-data">
+                                @csrf
 
-                            <div class="row">
-                                <div class="col-sm-12">
-                                    <div class="form-group">
-                                        <input type="text" placeholder="{{__('event.formtext1')}}" name="name"
-                                            required value="{{ old('name') }}" class="form-control">
-                                        @if ($errors->has('name'))
-                                            <span class="text-danger">{{ $errors->first('name') }}</span>
-                                        @endif
+                                <div class="row">
+                                    <div class="col-sm-12">
+                                        <div class="form-group">
+                                            <input type="text" placeholder="{{ __('event.formtext1') }}"
+                                                name="name" required value="{{ old('name') }}"
+                                                class="form-control">
+                                            @if ($errors->has('name'))
+                                                <span class="text-danger">{{ $errors->first('name') }}</span>
+                                            @endif
+                                        </div>
                                     </div>
-                                </div>
-                                <div class="col-sm-6">
-                                    <div class="form-group">
-                                        <input type="text" placeholder="{{__('event.formtext2')}}" name="email"
-                                            class="form-control" required value="{{ old('email') }}">
-                                        @if ($errors->has('email'))
-                                            <span class="text-danger">{{ $errors->first('email') }}</span>
-                                        @endif
+                                    <div class="col-sm-6">
+                                        <div class="form-group">
+                                            <input type="text" placeholder="{{ __('event.formtext2') }}"
+                                                name="email" class="form-control" required
+                                                value="{{ old('email') }}">
+                                            @if ($errors->has('email'))
+                                                <span class="text-danger">{{ $errors->first('email') }}</span>
+                                            @endif
+                                        </div>
                                     </div>
-                                </div>
-                                <div class="col-sm-6">
-                                    <div class="form-group">
-                                        <input type="text" placeholder="{{__('event.formtext3')}}" name="phone"
-                                            class="form-control" required value="{{ old('phone') }}">
-                                        @if ($errors->has('phone'))
-                                            <span class="text-danger">{{ $errors->first('phone') }}</span>
-                                        @endif
+                                    <div class="col-sm-6">
+                                        <div class="form-group">
+                                            <input type="text" placeholder="{{ __('event.formtext3') }}"
+                                                name="phone" class="form-control" required
+                                                value="{{ old('phone') }}">
+                                            @if ($errors->has('phone'))
+                                                <span class="text-danger">{{ $errors->first('phone') }}</span>
+                                            @endif
+                                        </div>
                                     </div>
-                                </div>
-                                <div class="col-sm-6">
-                                    <div class="form-group">
-                                        <input type="text" placeholder="{{__('event.formtext4')}}" name="organism"
-                                            class="form-control" required value="{{ old('organism') }}">
-                                        @if ($errors->has('organism'))
-                                            <span class="text-danger">{{ $errors->first('organism') }}</span>
-                                        @endif
+                                    <div class="col-sm-6">
+                                        <div class="form-group">
+                                            <input type="text" placeholder="{{ __('event.formtext4') }}"
+                                                name="organism" class="form-control" required
+                                                value="{{ old('organism') }}">
+                                            @if ($errors->has('organism'))
+                                                <span class="text-danger">{{ $errors->first('organism') }}</span>
+                                            @endif
+                                        </div>
                                     </div>
-                                </div>
-                                <div class="col-sm-6">
-                                    <div class="form-group">
-                                        <input type="text" placeholder="{{__('event.formtext5')}}" name="poste" class="form-control"
-                                            required value="{{ old('poste') }}">
-                                        @if ($errors->has('poste'))
-                                            <span class="text-danger">{{ $errors->first('poste') }}</span>
-                                        @endif
+                                    <div class="col-sm-6">
+                                        <div class="form-group">
+                                            <input type="text" placeholder="{{ __('event.formtext5') }}"
+                                                name="poste" class="form-control" required
+                                                value="{{ old('poste') }}">
+                                            @if ($errors->has('poste'))
+                                                <span class="text-danger">{{ $errors->first('poste') }}</span>
+                                            @endif
+                                        </div>
                                     </div>
-                                </div>
-                                <div class="col-xs-12 col-sm-12 font-12 text-white mb-10" style="text-align:justify;hyphens:auto;">
-                                    {{__('event.formtext6')}}
-                                </div>
+                                    <div class="col-xs-12 col-sm-12 font-12 text-white mb-10"
+                                        style="text-align:justify;hyphens:auto;">
+                                        {{ __('event.formtext6') }}
+                                    </div>
 
 
-                                <div class="col-xs-12 col-sm-12 ">
-                                    <div class="mb-10">
-                                        <div class="font-12 text-white " style="text-align:justify;hyphens:auto;width:100%;">
-                                             <input name="accepted" value='accepted'
-                                            type="checkbox" required >
-                                            {{__('event.formtext7')}} <a class="text-white" style="font-weight:normal;text-decoration:underline;" href="{{route('mention.index')}}"> {{__('event.formtext8')}} </a>, notamment la
-                                            {{__('event.formtext9')}}.<strong
-                                                style="color:red;">*</strong>
+                                    <div class="col-xs-12 col-sm-12 ">
+                                        <div class="mb-10">
+                                            <div class="font-12 text-white "
+                                                style="text-align:justify;hyphens:auto;width:100%;">
+                                                <input name="accepted" value='accepted' type="checkbox" required>
+                                                {{ __('event.formtext7') }} <a class="text-white"
+                                                    style="font-weight:normal;text-decoration:underline;"
+                                                    href="{{ route('mention.index') }}"> {{ __('event.formtext8') }}
+                                                </a>, notamment la
+                                                {{ __('event.formtext9') }}.<strong style="color:red;">*</strong>
+                                            </div>
+                                        </div>
+
+                                        @if ($errors->has('accepted'))
+                                            <span class="text-danger">{{ $errors->first('accepted') }}</span>
+                                        @endif
+                                    </div>
+
+                                    <div class="col-sm-12">
+                                        <div class="form-group text-center">
+
+                                            <button
+                                                class="btn btn-white btn-theme-colored2 btn-sm btn-block mt-20 pt-10 pb-10"
+                                                type="submit">{{ __('event.btn1') }}</button>
                                         </div>
                                     </div>
 
-                                    @if ($errors->has('accepted'))
-                                        <span
-                                            class="text-danger">{{ $errors->first('accepted') }}</span>
-                                    @endif
                                 </div>
+                            </form>
 
-                                <div class="col-sm-12">
-                                    <div class="form-group text-center">
-
-                                        <button class="btn btn-white btn-theme-colored2 btn-sm btn-block mt-20 pt-10 pb-10"
-                                            type="submit">{{__('event.btn1')}}</button>
-                                    </div>
-                                </div>
-
-                            </div>
-                        </form>
-
+                        </div>
                     </div>
                 </div>
-            </div>
-        </section>
+            </section>
         @endif
 
 
     </div>
+    @endforeach
+
+
     <style>
         .share {
             width: 90px;

@@ -32,8 +32,8 @@
                         <div class="row">
                             <div class="col-md-6">
                                 <ol class="breadcrumb text-left mt-10" style="color:rgb(45, 69, 88);font-weight:bold;">
-                                    <li><a href="/">{{__('header.title1')}}</a></li>
-                                    <li>{{__('header.subtitle5')}}</li>
+                                    <li><a href="/">{{ __('header.title1') }}</a></li>
+                                    <li>{{ __('header.subtitle5') }}</li>
                                 </ol>
                             </div>
                         </div>
@@ -75,7 +75,13 @@
                                             </div>
                                         </div>
                                         <div class="event-grid-details border-1px bg-white clearfix p-20 pt-10 pb-20">
-                                            <h5 class="text-uppercase font-weight-600 font-18 mb-10">{{ $evenement->title }}
+                                            <h5 class="text-uppercase font-weight-600 font-18 mb-10">
+
+                                                @if (App::isLocale('en'))
+                                                    {{ $evenement->title_en }}
+                                                @else
+                                                    {{ $evenement->title }}
+                                                @endif
                                             </h5>
                                             <ul class="font-14">
                                                 <li> <i class="fa fa-map-marker text-theme-colored2"></i>
@@ -93,10 +99,16 @@
                                                     @endphp</li>
                                             </ul>
                                             <p class="mt-10">
-                                            <p>{{ $evenement->accroche }} [...] </p>
+                                            <p>
+                                                @if (App::isLocale('en'))
+                                                    {{ $evenement->accroche_en }}
+                                                @else
+                                                    {{ $evenement->accroche }}
+                                                @endif [...]
+                                            </p>
                                             </p>
                                             <a href="{{ route('evenement.show', $evenement->title) }}"
-                                                class="btn btn-theme-colored2 mt-5"> {{__('home.btn1')}} </a>
+                                                class="btn btn-theme-colored2 mt-5"> {{ __('home.btn1') }} </a>
                                         </div>
                                     </div>
                                 </div>

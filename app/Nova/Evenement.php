@@ -50,15 +50,24 @@ class Evenement extends Resource
         return [
             ID::make()->sortable(),
             Boolean::make('Activation d\'inscription ','active'),
-            Text::make('Titre','title'),
-            NovaTinyMCE::make('Description','description')->options([
+            Text::make('Titre (Fr)','title'),
+            Text::make('Titre (En)','title_en'),
+            NovaTinyMCE::make('Description (Fr)','description')->options([
                 'plugins' => [
                     'lists','preview','anchor','pagebreak','image','wordcount','fullscreen','directionality'
                 ],
                 'toolbar' => 'undo redo | styles | bold italic forecolor backcolor | alignleft aligncenter alignright alignjustify | image | bullist numlist outdent indent | link',
                 'use_lfm' => true
             ]),
-            Textarea::make('Accroche','accroche'),
+            NovaTinyMCE::make('Description (En)','description_en')->options([
+                'plugins' => [
+                    'lists','preview','anchor','pagebreak','image','wordcount','fullscreen','directionality'
+                ],
+                'toolbar' => 'undo redo | styles | bold italic forecolor backcolor | alignleft aligncenter alignright alignjustify | image | bullist numlist outdent indent | link',
+                'use_lfm' => true
+            ]),
+            Textarea::make('Accroche (Fr)','accroche'),
+            Textarea::make('Accroche (En)','accroche_en'),
             DateTime::make('Date début ','start_at'),
             DateTime::make('Date fin ','end_at'),
             Text::make('Lieu','location'),
