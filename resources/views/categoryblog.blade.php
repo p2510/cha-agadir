@@ -59,8 +59,7 @@
                                                     </div>
                                                 </div>
                                                 <p class="mt-10">{!! $blog->description !!} [...]</p>
-                                                <a href="{{ route('blog-actualités.show', $blog->id) }}" class="btn-read-more">Lire
-                                                    plus</a>
+                                                <a href="{{ route('blog-actualités.show', $blog->id) }}" class="btn-read-more">{{__('home.text2')}}</a>
                                                 <div class="clearfix"></div>
                                             </div>
                                         </article>
