@@ -32,7 +32,8 @@
         </div>
         <div class="col-sm-6 col-md-3">
             <div class="widget dark">
-                <h4 class="widget-title line-bottom-theme-colored2" style="color:#1f3344;">{{ __('footer.title2') }}</h4>
+                <h4 class="widget-title line-bottom-theme-colored2" style="color:#1f3344;">{{ __('footer.title2') }}
+                </h4>
                 <div class="row clearfix">
                     <div class="col-xs-12 col-sm-6 col-md-6">
                         <ul>
@@ -50,25 +51,27 @@
                 </div>
             </div>
             <div class="widget dark">
-                <h5 class="widget-title line-bottom-theme-colored2" style="color:#1f3344;">{{ __('footer.title5') }}</h5>
+                <h5 class="widget-title line-bottom-theme-colored2" style="color:#1f3344;">{{ __('footer.title5') }}
+                </h5>
                 <!-- Mailchimp Subscription Form Starts Here -->
                 <form id="mailchimp-subscription-form-footer" class="newsletter-form"
                     action="{{ route('newsletter.store') }}" method="post">
                     @csrf
                     <div class="input-group">
                         <input type="email" id="mce-EMAIL" data-height="45px" class="form-control input-xs"
-                            placeholder="{{__('footer.placehoderNewsletter')}}" name="email" value="{{ old('email') }}">
+                            placeholder="{{ __('footer.placehoderNewsletter') }}" name="email"
+                            value="{{ old('email') }}">
 
                         <span class="input-group-btn">
                             <button type="submit" class="btn btn-colored btn-theme-colored2 btn-sm m-0"
                                 data-height="45px">OK</button>
                         </span>
-                      
+
 
                     </div>
                     @if ($errors->has('email'))
-                    <span class="text-danger">{{ $errors->first('email') }}</span>
-                @endif
+                        <span class="text-danger">{{ $errors->first('email') }}</span>
+                    @endif
                 </form>
                 <!-- Mailchimp Subscription Form Validation-->
 
@@ -77,7 +80,8 @@
         </div>
         <div class="col-sm-6 col-md-3">
             <div class="widget dark">
-                <h4 class="widget-title line-bottom-theme-colored2" style="color:#1f3344;">{{ __('footer.title3') }}</h4>
+                <h4 class="widget-title line-bottom-theme-colored2" style="color:#1f3344;">{{ __('footer.title3') }}
+                </h4>
                 <div class="latest-posts">
                     @foreach ($latest_blog as $item)
                         <article class="post media-post clearfix pb-0 mb-10">
@@ -86,8 +90,13 @@
                                     style="object-fit:cover;" alt="{{ $item->title }}"></a>
                             <div class="post-right">
                                 <h5 class="post-title mt-0 mb-5"><a
-                                        href="{{ route('blog-actualités.show', $item->id) }}"
-                                        style="color:#1f3344;">{{ $item->title }}</a></h5>
+                                        href="{{ route('blog-actualités.show', $item->id) }}" style="color:#1f3344;">
+                                        @if (App::isLocale('en'))
+                                            {{ $item->title_en }}
+                                        @else
+                                            {{ $item->title }}
+                                        @endif
+                                    </a></h5>
                                 <p class="post-date mb-0 font-12" style="color:#1f3344;"> {{ $item->created_at }}</p>
                             </div>
                         </article>
@@ -99,23 +108,28 @@
 
         <div class="col-sm-6 col-md-3">
             <div class="widget dark">
-                <h4 class="widget-title line-bottom-theme-colored2" style="color:#1f3344;">{{ __('footer.title4') }}</h4>
+                <h4 class="widget-title line-bottom-theme-colored2" style="color:#1f3344;">{{ __('footer.title4') }}
+                </h4>
                 <div class="opening-hours">
                     <ul class="list-border">
-                        <li class="clearfix" style="color:#1f3344;"> <span> {{ __('footer.day1') }} - {{ __('footer.day2') }}: </span>
+                        <li class="clearfix" style="color:#1f3344;"> <span> {{ __('footer.day1') }} -
+                                {{ __('footer.day2') }}: </span>
                             <div class="value pull-right"> 8.30 am – 4h30 pm</div>
                         </li>
                         <li class="clearfix" style="color:#1f3344;"> <span> {{ __('footer.day3') }} : </span>
-                            <div class="value pull-right bg-theme-colored2 text-white closed">{{ __('footer.indicatorday') }}</div>
+                            <div class="value pull-right bg-theme-colored2 text-white closed">
+                                {{ __('footer.indicatorday') }}</div>
                         </li>
                         <li class="clearfix" style="color:#1f3344;"> <span> {{ __('footer.day4') }} : </span>
-                            <div class="value pull-right bg-theme-colored2 text-white closed">{{ __('footer.indicatorday') }}</div>
+                            <div class="value pull-right bg-theme-colored2 text-white closed">
+                                {{ __('footer.indicatorday') }}</div>
                         </li>
 
                         @if (count($logo_url) > 0)
                             @foreach ($logo_url as $item)
-                                <a class="menuzord-brand  flip mt-20 mt-sm-10 mb-sm-20 pt-20 " href="{{route('home')}}"><img
-                                        src="{{ url('storage') }}/{{ $item->logo }}" alt=""></a>
+                                <a class="menuzord-brand  flip mt-20 mt-sm-10 mb-sm-20 pt-20 "
+                                    href="{{ route('home') }}"><img src="{{ url('storage') }}/{{ $item->logo }}"
+                                        alt=""></a>
                             @endforeach
                         @endif
 
@@ -133,17 +147,17 @@
 
                 <div class="col-md-6">
                     <p class="font-14 sm-text-center m-0">Copyright &copy;2023 <span class="text-theme-colored2">CHA
-                            Agadir</span>. {{__('footer.text1')}} </p>
+                            Agadir</span>. {{ __('footer.text1') }} </p>
                 </div>
                 <div class="col-md-6 text-right">
                     <div class="widget no-border m-0">
                         <ul class="list-inline sm-text-center mt-5 font-14">
                             <li>
-                                <a href="{{route('mention.index')}}">{{__('footer.text2')}}</a>
+                                <a href="{{ route('mention.index') }}">{{ __('footer.text2') }}</a>
                             </li>
                             <li>|</li>
                             <li>
-                                <a href="{{route('contact.create')}}">{{__('footer.text3')}}</a>
+                                <a href="{{ route('contact.create') }}">{{ __('footer.text3') }}</a>
                             </li>
                             <li>|</li>
                             <li class="text-white" style="position:relative; top:3px;">
@@ -154,7 +168,7 @@
                                 </svg>
                             </li>
                             <li style="font-weight:bold;">
-                               (+212) 0528-241-006 / 240-155
+                                (+212) 0528-241-006 / 240-155
                             </li>
                         </ul>
                     </div>

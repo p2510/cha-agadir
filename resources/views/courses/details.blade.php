@@ -2062,7 +2062,13 @@
                                     <div class="post-right">
                                         <h5 class="post-title mt-0 mb-5"><a
                                                 href="{{ route('blog-actualités.show', $item->id) }}"
-                                                style="color:#1f3344;">{{ $item->title }}</a></h5>
+                                                style="color:#1f3344;">
+                                                @if (App::isLocale('en'))
+                                                    {{ $item->title_en }}
+                                                @else
+                                                    {{ $item->title }}
+                                                @endif
+                                            </a></h5>
                                         <p class="post-date mb-0 font-12" style="color:#1f3344;">
                                             {{ $item->created_at }}</p>
                                     </div>

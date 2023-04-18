@@ -47,14 +47,23 @@ class Blog extends Resource
         return [
             ID::make()->sortable(),
             BelongsTo::make('Catégories','blog','App\Nova\CategoryBlog'),
-            Text::make('Titre','title'),
+            Text::make('Titre (Fr)','title'),
+            Text::make('Titre (En)','title_en'),
             Text::make('Auteur','description'),
-            Textarea::make('Accroche','accroche'),
+            Textarea::make('Accroche (Fr)','accroche'),
+            Textarea::make('Accroche (En)','accroche_en'),
             Image::make('Une image','photo')->disk('public')
             ->storeAs(function (Request $request) {
                     return $request->photo->getClientOriginalName();
                  }),
-            NovaTinyMCE::make('Contenu','content')->options([
+            NovaTinyMCE::make('Contenu (Fr)','content')->options([
+                'plugins' => [
+                    'lists','preview','anchor','pagebreak','image','wordcount','fullscreen','directionality'
+                ],
+                'toolbar' => 'undo redo | styles | bold italic forecolor backcolor | alignleft aligncenter alignright alignjustify | image | bullist numlist outdent indent | link',
+                'use_lfm' => true
+            ]),
+            NovaTinyMCE::make('Contenu (En)','content_en')->options([
                 'plugins' => [
                     'lists','preview','anchor','pagebreak','image','wordcount','fullscreen','directionality'
                 ],

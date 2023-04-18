@@ -20,7 +20,14 @@ class BlogController extends Controller
      */
     public function index()
     {
-        $blogs=DB::table('blogs')->select('blogs.*')->get();
+        $blogs=DB::table('blogs')->select('blogs.*')->get()->map(function ($item){
+            if (App::isLocale('en')) {
+                $item->accroche=$item->accroche_en;
+                $item->title=$item->title_en;
+                
+            }
+            return $item;
+       });
         return view('blog.index')->with(['blogs'=>$blogs]);
     }
 
@@ -34,10 +41,24 @@ class BlogController extends Controller
      */
     public function show($id)
     {
-        $blogs=Blog::findOrFail($id);
+        $blogs=Blog::where('id',$id)->get()->map(function ($item){
+            if (App::isLocale('en')) {
+                $item->accroche=$item->accroche_en;
+                $item->title=$item->title_en;
+                $item->content=$item->content_en;
+                
+            }
+            return $item;
+       });
         $categories=CategoryBlog::all();
         $latests=DB::table('blogs')->limit(3)->orderBy('created_at')->get()->map(function($item,$key){
              $item->description=substr($item->description,0,60);
+             if (App::isLocale('en')) {
+                $item->accroche=$item->accroche_en;
+                $item->title=$item->title_en;
+                $item->content=$item->content_en;
+                
+            }
              return $item;
         });
         
