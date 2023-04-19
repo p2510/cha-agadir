@@ -6,6 +6,7 @@ namespace App\Http\Controllers;
 use App\Models\Mediavideo;
 use Illuminate\Http\Request;
 use App\Models\CategoryVideo;
+use Illuminate\Support\Facades\App;
 
 class VideoController extends Controller
 {
@@ -18,7 +19,13 @@ class VideoController extends Controller
     public function __invoke(Request $request)
     {
         $videos=Mediavideo::all();
-        $categories=CategoryVideo::all();
+        $categories=CategoryVideo::all()->map(function ($item){
+            if (App::isLocale('en')) {
+                $item->name=$item->name_en;
+                
+            }
+            return $item;
+       });
 
 
         return view('video')->with([

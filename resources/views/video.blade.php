@@ -41,7 +41,11 @@
                         <div class="col-md-12">
 
                             <div class="portfolio-filter">
-                                <a href="#" class="active" data-filter="*">Tous</a>
+                                <a href="#" class="active" data-filter="*">  @if (App::isLocale('en'))
+                                    All
+                                @else
+                                    Tous
+                                @endif</a>
                                 @foreach ($categories as $category)
                                     <a href="#a{{ $category->id }}" class=""
                                         data-filter=".a{{ $category->id }}">{{ $category->name }}</a>
