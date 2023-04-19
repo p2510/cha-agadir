@@ -21,8 +21,14 @@
                     <div class="row">
                         <div class="col-md-6">
                             <ol class="breadcrumb text-left mt-10 font-14" style="color:rgb(45, 69, 88);font-weight:bold;">
-                                <li><a href="/">{{__('header.title1')}}</a></li>
-                                <li>Mentions légales?</li>
+                                <li><a href="/">{{ __('header.title1') }}</a></li>
+                                <li>
+                                    @if (App::isLocale('en'))
+                                        Legal Notice?
+                                    @else
+                                        Mentions légales?
+                                    @endif
+                                </li>
                             </ol>
                         </div>
                     </div>
@@ -36,12 +42,17 @@
             <div class="section-content">
                 <div class="row" style="font-size:16px;">
                     @foreach ($datas as $data)
-                 
                         <div class="col-md-12">
                             <h2 class="text-uppercase text-theme-colored mt-0 mb-0 mt-sm-30"><span
-                                    class="text-theme-colored2">Mentions légales</span></h2>
+                                    class="text-theme-colored2">
+                                    @if (App::isLocale('en'))
+                                        Legal Notice
+                                    @else
+                                        Mentions légales 
+                                    @endif
+                                </span></h2>
 
-                
+
                             <h4 class="mt-5 mb-15"></h4>
                             <div style="text-align:justify;hyphens:auto;">{!! $data->content !!}</div>
                         </div>
