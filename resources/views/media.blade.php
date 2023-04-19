@@ -23,8 +23,8 @@
                         <div class="row">
                             <div class="col-md-6">
                                 <ol class="breadcrumb text-left mt-10" style="color:rgb(45, 69, 88);font-weight:bold;">
-                                    <li><a href="/">{{ __('header.subtitle7') }}</a></li>
-                                    <li>{{ __('header.title1') }}</li>
+                                    <li><a href="/">{{ __('header.title1') }}</a></li>
+                                    <li>{{ __('header.subtitle7') }}</li>
                                 </ol>
                             </div>
                         </div>
@@ -42,7 +42,13 @@
                         <div class="col-md-12">
                             <!-- Portfolio Filter -->
                             <div class="portfolio-filter">
-                                <a href="#" class="active" data-filter="*">Tous</a>
+                                <a href="#" class="active" data-filter="*">
+                                    @if (App::isLocale('en'))
+                                        All
+                                    @else
+                                        Tous
+                                    @endif
+                                </a>
                                 @foreach ($categories as $category)
                                     <a href="#a{{ $category->id }}" class=""
                                         data-filter=".a{{ $category->id }}">{{ $category->name }}</a>

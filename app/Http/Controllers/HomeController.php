@@ -75,7 +75,13 @@ class HomeController extends Controller
             }
             return $item;
        });
-       $about=About::latest('id')->limit(1)->get();
+       $about=About::latest('id')->limit(1)->get()->map(function ($item){
+        if (App::isLocale('en')) {
+            $item->description=$item->description_en;
+            $item->content=$item->content_en;
+        }
+        return $item;
+   });;
        $whyus=Whyus::all()->map(function ($item){
         if (App::isLocale('en')) {
             $item->title=$item->title_en;

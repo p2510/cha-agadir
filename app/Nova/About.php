@@ -44,12 +44,20 @@ class About extends Resource
     {
         return [
             ID::make()->sortable(),
-            Textarea::make('Description','description'),
+            Textarea::make('Description (Fr)','description'),
+            Textarea::make('Description (En)','description_en'),
             Image::make('Une image','photo')->disk('public')
             ->storeAs(function (Request $request) {
                     return $request->photo->getClientOriginalName();
             }),
-            NovaTinyMCE::make('contenu','content')->options([
+            NovaTinyMCE::make('contenu (Fr)','content')->options([
+                'plugins' => [
+                    'lists','preview','anchor','pagebreak','image','wordcount','fullscreen','directionality'
+                ],
+                'toolbar' => 'undo redo | styles | bold italic forecolor backcolor | alignleft aligncenter alignright alignjustify | image | bullist numlist outdent indent | link',
+                'use_lfm' => true
+            ]),
+            NovaTinyMCE::make('contenu (En)','content_en')->options([
                 'plugins' => [
                     'lists','preview','anchor','pagebreak','image','wordcount','fullscreen','directionality'
                 ],

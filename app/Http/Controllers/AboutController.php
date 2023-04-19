@@ -6,6 +6,7 @@ use App\Models\About;
 use App\Models\Downloadpage;
 use Illuminate\Http\Request;
 use Jorenvh\Share\ShareFacade;
+use Illuminate\Support\Facades\App;
 
 class AboutController extends Controller
 {
@@ -17,7 +18,13 @@ class AboutController extends Controller
      */
     public function __invoke(Request $request)
     {
-        $datas=About::latest('id')->limit(1)->get();
+        $datas=About::latest('id')->limit(1)->get()->map(function ($item){
+            if (App::isLocale('en')) {
+                $item->description=$item->description_en;
+                $item->content=$item->content_en;
+            }
+            return $item;
+       });
         $shareFacebook=ShareFacade::currentPage()->facebook()->getRawLinks();
         $shareWhatsapp=ShareFacade::currentPage()->whatsapp()->getRawLinks();
         $shareLinkedin=ShareFacade::currentPage()->linkedin()->getRawLinks();
