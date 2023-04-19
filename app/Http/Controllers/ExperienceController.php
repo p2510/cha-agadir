@@ -6,6 +6,7 @@ use App\Models\Experience;
 use App\Models\Downloadpage;
 use Illuminate\Http\Request;
 use Jorenvh\Share\ShareFacade;
+use Illuminate\Support\Facades\App;
 
 class ExperienceController extends Controller
 {
@@ -17,7 +18,12 @@ class ExperienceController extends Controller
      */
     public function __invoke(Request $request)
     {
-        $datas=Experience::latest('id')->limit(1)->get();
+        $datas=Experience::latest('id')->limit(1)->get()->map(function ($item){
+            if (App::isLocale('en')) {
+                $item->content=$item->content_en;
+            }
+            return $item;
+       });
         $shareFacebook=ShareFacade::currentPage()->facebook()->getRawLinks();
         $downloads=Downloadpage::where('pagename','ferme-experiementale')->get();
 

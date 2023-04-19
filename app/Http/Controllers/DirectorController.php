@@ -7,6 +7,7 @@ use App\Models\Director;
 use App\Models\Downloadpage;
 use Illuminate\Http\Request;
 use Jorenvh\Share\ShareFacade;
+use Illuminate\Support\Facades\App;
 
 class DirectorController extends Controller
 {
@@ -18,7 +19,12 @@ class DirectorController extends Controller
      */
     public function __invoke(Request $request)
     {
-        $datas=Director::latest('id')->limit(1)->get();
+        $datas=Director::latest('id')->limit(1)->get()->map(function ($item){
+            if (App::isLocale('en')) {
+                $item->content=$item->content_en;
+            }
+            return $item;
+       });
         $shareFacebook=ShareFacade::currentPage()->facebook()->getRawLinks();
      
          $shareWhatsapp=ShareFacade::currentPage()->whatsapp()->getRawLinks();

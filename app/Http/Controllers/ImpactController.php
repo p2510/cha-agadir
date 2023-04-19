@@ -6,6 +6,7 @@ use App\Models\Impact;
 use App\Models\Downloadpage;
 use Illuminate\Http\Request;
 use Jorenvh\Share\ShareFacade;
+use Illuminate\Support\Facades\App;
 
 class ImpactController extends Controller
 {
@@ -17,7 +18,12 @@ class ImpactController extends Controller
      */
     public function __invoke(Request $request)
     {
-        $datas=Impact::latest('id')->limit(1)->get();
+        $datas=Impact::latest('id')->limit(1)->get()->map(function ($item){
+            if (App::isLocale('en')) {
+                $item->content=$item->content_en;
+            }
+            return $item;
+       });
         $shareFacebook=ShareFacade::currentPage()->facebook()->getRawLinks();
         
 
