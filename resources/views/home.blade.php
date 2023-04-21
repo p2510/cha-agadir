@@ -367,7 +367,7 @@
     @endif
     <!-- Section: Courses -->
 
-    <section id="courses" class="bg-white" style="margin-top: 10px;">
+    <section id="courses" class="bg-white" style="margin-top: 50px;">
         <div class="container">
             <div class="section-title mb-40">
                 <div class="row">
