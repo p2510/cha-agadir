@@ -73,9 +73,11 @@
                                             @php
                                                 $getMonth = date('F', strtotime($blog->created_at));
                                                 $getDays = date('d', strtotime($blog->created_at));
+                                            $getYears = date('Y', strtotime($blog->created_at));
+
                                             @endphp
-                                            <div class="post-date"><span>{{ $getDays }} </span><br> {{ $getMonth }}
-                                            </div>
+                                           <div class="post-date"><span>{{ $getMonth }}</span><br> {{ $getDays }} , {{$getYears}}
+                                           </div>
                                             <div class="post-description border-1px p-20">
                                                 <span>
                                                     <h3 class="post-title font-weight-600 mt-0 mb-5">{{ $blog->title }}
@@ -171,7 +173,7 @@
                                                     <h5 class="post-title mt-0"><a
                                                             href="{{ route('blog-actualités.show', $latest->id) }}">{{ $latest->title }}</a>
                                                     </h5>
-                                                    <p>{{ $latest->description }}...</p>
+                                                    <p>{{ $latest->created_at }}</p>
                                                 </div>
                                             </article>
                                         @endforeach
@@ -200,12 +202,8 @@
                                                         </a>
                                                     </h5>
                                                     <p>
-                                                        {{ $evenement->location }} à
-                                                        @php
-                                                            
-                                                            $start_at = date('H:i', strtotime($evenement->start_at));
-                                                            echo $start_at;
-                                                        @endphp
+                                                      
+                                                       {{$evenement->start_at}}
 
                                                     </p>
                                                 </div>
@@ -215,14 +213,10 @@
                                     </div>
                                 </div>
                                 <div class="widget">
-                                    <h5 class="widget-title">{{ __('blog.subtitle4') }}</h5>
+                                    <h5 class="widget-title">{{ __('blog.subtitle4') }} ?</h5>
                                     <div class="latest-posts">
 
-                                        <h3 class="font-28 mt-md-30 mt-0"><span
-                                                class="text-theme-colored2">{{ __('blog.subtitle5') }}
-                                            </span>{{ __('blog.subtitle6') }}
-                                        </h3>
-                                        <div class="line-bottom-theme-colored2"></div>
+                                       
                                         <div class="panel-group accordion-stylished-left-border accordion-icon-filled accordion-no-border accordion-icon-left accordion-icon-filled-theme-colored2 custom-style"
                                             id="accordion6" role="tablist" aria-multiselectable="true">
                                             <div class="panel panel-default">
