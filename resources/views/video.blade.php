@@ -58,9 +58,11 @@
                                 @foreach ($videos as $video)
                                     <div class="gallery-item  a{{ $video->category_video_id }}">
                                         <iframe width="420" height="345"
-                                            src="https://www.youtube.com/embed/{{ $video->video }}?rel=0">
+                                            src="https://www.youtube.com/embed/{{ $video->video }}?rel=0" allowfullscreen>
                                         </iframe>
+                                        <p style="text-align: center;">{{ $video->title}}</p>
                                     </div>
+                                   
                                 @endforeach
                             </div>
                             <!-- End Portfolio Gallery Grid -->
