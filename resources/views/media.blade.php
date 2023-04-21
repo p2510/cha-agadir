@@ -42,7 +42,7 @@
                         <div class="col-md-12">
                             <!-- Portfolio Filter -->
                             <div class="portfolio-filter">
-                                <a href="#" class="active" data-filter="*">
+                                <a href="#" class="active reset" data-filter="*">
                                     @if (App::isLocale('en'))
                                         All
                                     @else
@@ -50,10 +50,32 @@
                                     @endif
                                 </a>
                                 @foreach ($categories as $category)
-                                    <a href="#a{{ $category->id }}" class=""
+                                    <a href="#a{{ $category->id }}" class="category" id="id{{ $category->id }}"
                                         data-filter=".a{{ $category->id }}">{{ $category->name }}</a>
                                 @endforeach
+                                @foreach ($categories as $category)
+                                    <input type="hidden"   @if (App::isLocale('en')) value="{{ $category->description_en }}"  @else value="{{ $category->description }}"  @endif
+                                        class="id{{ $category->id }}">
+                                @endforeach
                             </div>
+                            <p id="descriptionCategory"></p>
+                            <script>
+                                let category = document.querySelectorAll(".category");
+                                let reset = document.querySelector(".reset");
+                                let descriptionCategory=document.getElementById("descriptionCategory");
+                                category.forEach(item => {
+                                    item.addEventListener('click', () => {
+                                        let input = document.querySelector('.' + item.id)
+                                        descriptionCategory.innerHTML=input.value
+                                    })
+                                });
+                                reset.addEventListener('click', () => {
+                                    descriptionCategory.innerHTML=''
+
+                                })                             
+
+                            </script>
+                          
                             <!-- End Portfolio Filter -->
 
                             <div class="gallery-isotope default-animation-effect grid-3 gutter-small clearfix"
@@ -65,9 +87,7 @@
                                             <img class="img-fullwidth" src="{{ url('storage') }}/{{ $media->photo }}"
                                                 alt="{{ $media->title }}">
                                             <div class="overlay-shade"></div>
-                                            <div class="text-holder">
-                                                <div class="title text-center">{{ $media->title }}</div>
-                                            </div>
+
                                             <div class="icons-holder">
                                                 <div class="icons-holder-inner">
                                                     <div

@@ -6,6 +6,7 @@ use Laravel\Nova\Fields\ID;
 use Illuminate\Http\Request;
 use Laravel\Nova\Fields\Text;
 use Laravel\Nova\Fields\HasMany;
+use Laravel\Nova\Fields\Textarea;
 use Laravel\Nova\Http\Requests\NovaRequest;
 
 class CategoryMedia extends Resource
@@ -45,6 +46,8 @@ class CategoryMedia extends Resource
             ID::make()->sortable(),
             Text::make('Nom (Fr)','name'),
             Text::make('Nom (En)','name_en'),
+            Textarea::make('Description (Fr)','description'),
+            Textarea::make('Description (En)','description_en'),
             HasMany::make('Catégories','Media','App\Nova\Media'),
 
         ];
