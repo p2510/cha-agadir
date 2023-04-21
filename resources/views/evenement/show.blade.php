@@ -387,8 +387,7 @@
                                                 {{ __('event.formtext7') }} <a class="text-white"
                                                     style="font-weight:normal;text-decoration:underline;"
                                                     href="{{ route('mention.index') }}"> {{ __('event.formtext8') }}
-                                                </a>, notamment la
-                                                {{ __('event.formtext9') }}.<strong style="color:red;">*</strong>
+                                                </a>,{{ __('event.formtext9') }}.<strong style="color:red;">*</strong>
                                             </div>
                                         </div>
 

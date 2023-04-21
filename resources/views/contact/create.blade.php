@@ -129,7 +129,7 @@
                                     J'ai lu et j'accepte <a
                                         style="font-weight:normal;text-decoration:underline;color:#1f3344;"
                                         href="{{ route('mention.index') }}"> les conditions
-                                        générales d'utilisation</a> , notamment la
+                                        générales d'utilisation</a>,notamment la
                                     mention relative
                                     á la protection des données
                                     personnelles.<strong style="color:red;">*</strong>
