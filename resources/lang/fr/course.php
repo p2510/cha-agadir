@@ -18,7 +18,7 @@ return [
     'subtitle4'=>'Dossier',
     'subtitle5'=>'Candidature',
     'subtitle6'=>'Date limite',
-    'subtitle7'=>'Modalité de selection',
+    'subtitle7'=>'Modalité de sélection',
     'subtitle8'=>'Prochaine rentrée',
     'subtitle9'=>'Programme',
     'subtitle10'=>'heures',
