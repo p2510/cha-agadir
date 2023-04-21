@@ -66,7 +66,7 @@
                                                 style="word-break: break-word;">
                                                 {{ $blog->title }}</h5>
                                         </a>
-                                        <p style="text-align:justify;hyphens:auto;">>{{ $blog->accroche }} [...]</p>
+                                        <p style="text-align:justify;hyphens:auto;">{{ $blog->accroche }} [...]</p>
                                     </div>
                                     <div class="post-meta">
                                         <ul class="list-inline pull-left flip">
