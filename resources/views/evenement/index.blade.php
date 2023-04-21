@@ -99,7 +99,7 @@
                                                     @endphp</li>
                                             </ul>
                                             <p class="mt-10">
-                                            <p>
+                                            <p style="text-align:justify;hyphens:auto;">
                                                 @if (App::isLocale('en'))
                                                     {{ $evenement->accroche_en }}
                                                 @else
