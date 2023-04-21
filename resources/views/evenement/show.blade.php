@@ -47,9 +47,16 @@
                                     <li>
 
                                     
+                                        @if (App::isLocale('en'))
                                             @if ($evenement->title_en)
                                                 {{ $evenement->title_en }}
                                             @endif
+                                            @else 
+                                            @if ($evenement->title)
+                                            {{ $evenement->title }}
+                                        @endif
+                                        @endif
+
                                         
 
                                     </li>
