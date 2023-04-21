@@ -367,7 +367,77 @@
     @endif
     <!-- Section: Courses -->
 
+    <section id="courses" class="bg-white" style="margin-top: 10px;">
+        <div class="container">
+            <div class="section-title mb-40">
+                <div class="row">
+                    <div class="col-md-12">
+                        <h2 class="title text-uppercase mb-5">{{ __('home.title1') }} <span class="text-theme-colored2">
+                                {{ __('home.title2') }}</span>
+                        </h2>
+                    </div>
+                </div>
+            </div>
+            <div class="section-content">
+                <div class="row">
+                    <div class="col-md-12">
+                        <div class="owl-carousel-3col owl-nav-top" data-nav="tru">
+                            @foreach ($courses as $course)
+                                <div class="item">
+                                    <div class="course-single-item bg-white border-1px clearfix">
+                                        <a href="{{ route('course.details', $course->name) }}" style="display:block;"
+                                            class="course-thumb">
+                                            <img class="img-fullwidth" alt=""
+                                                src="{{ url('storage') }}/{{ $course->photo }}">
 
+                                        </a>
+                                        <div class="course-details clearfix p-20 pt-15">
+                                            <div class="course-top-part">
+                                                <a href="{{ route('course.details', $course->name) }}">
+                                                    <h4 class="mt-5 mb-5">
+                                                        @if (App::isLocale('en'))
+                                                            {{ $course->name_en }}
+                                                        @else
+                                                            {{ $course->name }}
+                                                        @endif
+                                                    </h4>
+                                                </a>
+                                                <a href="{{ route('course.details', $course->name) }}">
+                                                    <h4 class="mt-5 mb-5">
+                                                        {{ $course->degrees_name }}
+
+                                                    </h4>
+                                                </a>
+                                            </div>
+                                            <a href="{{ route('course.details', $course->name) }}"
+                                                class="course-description mt-15 mb-0" style="display:block">
+                                                <p class="course-description mt-15 mb-0"
+                                                    style="font-weight:normal;text-align:justify;hyphens:auto;">
+                                                    {{ $course->accroche }} [...]</p>
+                                            </a>
+                                        </div>
+                                        <div class="course-meta">
+                                            <ul class="list-inline">
+                                                <li><i class="ficon-clock font-18"></i> {{ $course->duration }}
+                                                    {{ __('home.text1') }}</li>
+                                                <li><i class="pe-7s-notebook font-18"></i>{{ $course->languages_name }}
+                                                </li>
+                                            </ul>
+                                            <a href="{{ route('course.details', $course->name) }}" style="display:block;"
+                                                class="course-tag">
+                                                <h5>{{ __('home.text5') }}
+                                                </h5>
+                                            </a>
+                                        </div>
+                                    </div>
+                                </div>
+                            @endforeach
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
 
     <!-- Section About -->
     <section id="about">
