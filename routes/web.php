@@ -41,7 +41,7 @@ Route::prefix('/test')->group(function () {
 Route::get('/', [HomeController::class, '__invoke'])->name('home');
 Route::get('/nos-formations/{course}', [CourseController::class, 'show'])->name('course.details');
 Route::get('/formation/{res}', [CourseController::class, 'showByName'])->name('course.byname');
-Route::get('/formation', [CourseController::class, 'index'])->name('course.index');
+Route::get('/formations', [CourseController::class, 'index'])->name('course.index');
 Route::get('/cycle', [DegreeController::class, 'index'])->name('degree.index');
 Route::get('/cycle/{res}', [DegreeController::class, 'show'])->name('degree.show');
 Route::post('/interested/{id}', [InterestedController::class, '__invoke'])->name('interested');
