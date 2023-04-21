@@ -623,17 +623,18 @@
                                     @php
                                         $getMonth = date('F', strtotime($blog->created_at));
                                         $getDays = date('d', strtotime($blog->created_at));
+                                        $getYears = date('Y', strtotime($evenement->start_at));
                                     @endphp
-                                    <div class="post-date"><span>{{ $getDays }} </span><br> {{ $getMonth }}
+                                    <div class="post-date"><span>{{ $getMonth }}</span><br> {{ $getDays }} , {{$getYears}}
                                     </div>
 
                                 </div>
                                 <div class="post-description border-1px p-20">
                                     <a href="{{ route('blog-actualités.show', $blog->id) }}">
-                                        <h3 class="post-title font-weight-600 mt-0 mb-15" style="word-break: break-word;">
-                                            {{ $blog->title }}</h3>
+                                        <h5 class="post-title font-weight-600 font-16 mt-0 mb-15" style="word-break: break-word;">
+                                            {{ $blog->title }}</h5>
                                     </a>
-                                    <p> {{ $blog->accroche }} [...]</p>
+                                    <p style="text-align:justify;hyphens:auto;"> {{ $blog->accroche }} [...]</p>
                                 </div>
                                 <div class="post-meta">
                                     <ul class="list-inline pull-left flip">

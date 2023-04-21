@@ -11,7 +11,7 @@ return [
     'title6' => 'Ferme Expérimentale',
     'title7' => 'Impact Cluster',
     'title8' => 'Agri-Business',
-    'subtitle1'=>'Mot du directeur',
+    'subtitle1'=>'Mot du Directeur',
     'subtitle2'=>'Qui sommes-nous ?',
     'subtitle3'=>'Corps Professoral / Staff',
     'subtitle4'=>'Vie Estudiantine',
