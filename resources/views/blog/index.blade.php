@@ -57,17 +57,16 @@
                                             $getDays = date('d', strtotime($blog->created_at));
                                             $getYears = date('Y', strtotime($blog->created_at));
                                         @endphp
-                                        <div class="post-date"><span>{{ $getDays }}</span><br><span>
-                                                {{ $getMonth }}</span> <br><span>{{ $getYears }}</span>
-                                        </div>
+                                      <div class="post-date"><span>{{ $getMonth }}</span><br> {{ $getDays }} , {{$getYears}}
+                                      </div>
                                     </div>
                                     <div class="post-description border-1px p-20">
                                         <a href="{{ route('blog-actualités.show', $blog->id) }}">
-                                            <h3 class="post-title font-weight-600 mt-0 mb-15"
+                                            <h5 class="post-title font-16 font-weight-600 mt-0 mb-15"
                                                 style="word-break: break-word;">
-                                                {{ $blog->title }}</h3>
+                                                {{ $blog->title }}</h5>
                                         </a>
-                                        <p>{{ $blog->accroche }} [...]</p>
+                                        <p style="text-align:justify;hyphens:auto;">>{{ $blog->accroche }} [...]</p>
                                     </div>
                                     <div class="post-meta">
                                         <ul class="list-inline pull-left flip">
