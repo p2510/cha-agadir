@@ -42,7 +42,7 @@ class SendMessageInterested extends Mailable
     public function envelope()
     {
         return new Envelope(
-            from: new Address('contact@cha-agadir.com', 'Cha Agadir'),
+            from: new Address('contact@cha-agadir.ma', 'Cha Agadir'),
             subject: 'Inscription formation',
         );
     }
