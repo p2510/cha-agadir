@@ -46,8 +46,8 @@ class SendMessageEvenement extends Mailable
     public function envelope()
     {
         return new Envelope(
-            from: new Address('contact@cha-agadir.ma', 'Cha Agadir'),
-            subject: 'Inscription évènement',
+            //from: new Address('contact@cha-agadir.ma', 'Cha Agadir'),
+            //subject: 'Inscription évènement',
         );
     }
 
