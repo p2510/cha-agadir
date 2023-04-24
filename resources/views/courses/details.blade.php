@@ -964,7 +964,7 @@
                                                                             <div
                                                                                 class="col-xs-2 col-col-sm-2 form-group mb-10">
 
-                                                                                <input name="gender" required
+                                                                                <input name="gender" 
                                                                                     value='Mlle' class=""
                                                                                     type="radio">
                                                                             </div>
@@ -973,7 +973,7 @@
 
                                                                             <div
                                                                                 class="col-xs-2 col-sm-2 form-group mb-10">
-                                                                                <input name="gender" required
+                                                                                <input name="gender" 
                                                                                     value='Mme' class=""
                                                                                     type="radio">
                                                                             </div>
@@ -982,7 +982,7 @@
 
                                                                             <div
                                                                                 class="col-xs-2 col-sm-2 form-group mb-10">
-                                                                                <input name="gender" required
+                                                                                <input name="gender" 
                                                                                     value='Mr' type="radio"
                                                                                     aria-="true">
                                                                             </div>
@@ -1002,7 +1002,7 @@
                                                                         <div class="form-group mb-12">
                                                                             <input name="name" class="form-control"
                                                                                 style="background-color:white;color: gray;"
-                                                                                required type="text"
+                                                                                 type="text"
                                                                                 placeholder="{{ __('course.text4') }}"
                                                                                 value="{{ old('name') }}">
                                                                         </div>
@@ -1018,7 +1018,7 @@
                                                                             <input name="surname" class="form-control"
                                                                                 placeholder="{{ __('course.text5') }}"
                                                                                 style="background-color:white;color: gray;"
-                                                                                required type="text"
+                                                                                 type="text"
                                                                                 value="{{ old('surname') }}">
                                                                         </div>
                                                                         @if ($errors->has('surname'))
@@ -1028,7 +1028,7 @@
                                                                     </div>
                                                                     <div class="col-sm-12">
                                                                         <div class="form-group mb-12">
-                                                                            <input name="email" required
+                                                                            <input name="email" 
                                                                                 placeholder="{{ __('course.text6') }}"
                                                                                 style="background-color:white;color: gray;"
                                                                                 class="form-control  email"
@@ -1046,7 +1046,7 @@
 
                                                                         <div class="form-group mb-12">
                                                                             <select name="country" id="countries"
-                                                                                required
+                                                                                
                                                                                 style="background-color:white;color: gray;"
                                                                                 value="{{ old('country') }}"
                                                                                 class="form-control  ">
@@ -1067,7 +1067,7 @@
 
 
                                                                         <div class="form-group mb-10">
-                                                                            <select name="province" required
+                                                                            <select name="province" 
                                                                                 id="province" class="form-control"
                                                                                 style="background-color:white;color: gray;"
                                                                                 value="{{ old('province') }}">
@@ -1100,11 +1100,11 @@
                                                                             </div>
                                                                             <input name="phone" class="form-control"
                                                                                 id="phone" type="tel"
-                                                                                value="+212" required>
+                                                                                value="+212" >
 
                                                                             <input name="indice" class="form-control"
                                                                                 id="indice" type="hidden"
-                                                                                value="212" required>
+                                                                                value="212" >
                                                                         </div>
                                                                         @if ($errors->has('phone'))
                                                                             <span
@@ -1121,18 +1121,23 @@
                                                                             <select name="level"
                                                                                 value="{{ old('level') }}"
                                                                                 style="background-color:white;color: gray;"
-                                                                                class="form-control" required>
+                                                                                class="form-control" >
                                                                                 <option value="_" selected>
                                                                                     {{ __('course.text9') }}</option>
                                                                                 @foreach ($levels as $level)
+                                                                                @if (App::isLocale('en'))
                                                                                     <option
-                                                                                        value="{{ $level }}">
-                                                                                        @if (App::isLocale('en'))
+                                                                                        value="{{ $level->name_en }}">
+                                                                                        
                                                                                             {{ $level->name_en }}
                                                                                         @else
+                                                                                        <option
+                                                                                        value="{{ $level->name}}">
+                                                                                        
                                                                                             {{ $level->name }}
-                                                                                        @endif
+                                                                                       
                                                                                     </option>
+                                                                                    @endif
                                                                                 @endforeach
                                                                             </select>
 
@@ -1144,7 +1149,7 @@
                                                                     </div>
                                                                     <div class="col-sm-12">
                                                                         <div class="form-group mb-10">
-                                                                            <input name="grade" required
+                                                                            <input name="grade" 
                                                                                 value="{{ old('grade') }}"
                                                                                 style="background-color:white;color: gray;"
                                                                                 placeholder="{{ __('course.title1') }} {{ __('course.text11') }}"
@@ -1169,7 +1174,7 @@
                                                                         <div class="font-10 text-white "
                                                                             style="text-align:justify;hyphens:auto;width:100%;">
                                                                             <input name="accepted" value='accepted'
-                                                                                type="checkbox" required>
+                                                                                type="checkbox" >
                                                                             {{ __('event.formtext7') }} <a
                                                                                 class="text-white"
                                                                                 style="font-weight:normal;text-decoration:underline;"
@@ -1695,7 +1700,7 @@
 
                                                                             <input name="gender" value='Mlle'
                                                                                 class="" type="radio"
-                                                                                required>
+                                                                                >
                                                                         </div>
                                                                         <label for=""
                                                                             class="col-xs-2 col-sm-2">{{ __('course.text2') }}</label>
@@ -1704,7 +1709,7 @@
                                                                             class="col-xs-2 col-sm-2 form-group mb-10">
                                                                             <input name="gender" value='Mme'
                                                                                 class="" type="radio"
-                                                                                required>
+                                                                                >
                                                                         </div>
                                                                         <label for=""
                                                                             class="col-xs-2 col-sm-2">{{ __('course.text3') }}</label>
@@ -1713,7 +1718,7 @@
                                                                             class="col-xs-2 col-sm-2 form-group mb-10">
                                                                             <input name="gender" value='Mr'
                                                                                 type="radio" aria-="true"
-                                                                                required>
+                                                                                >
                                                                         </div>
                                                                     </div>
 
@@ -1731,7 +1736,7 @@
                                                                     <div class="form-group mb-12">
                                                                         <input name="name" class="form-control"
                                                                             style="background-color:white;color: gray;"
-                                                                            required type="text"
+                                                                             type="text"
                                                                             placeholder="{{ __('course.text4') }}"
                                                                             value="{{ old('name') }}">
                                                                     </div>
@@ -1747,7 +1752,7 @@
                                                                         <input name="surname" class="form-control"
                                                                             placeholder="{{ __('course.text5') }}"
                                                                             style="background-color:white;color: gray;"
-                                                                            required type="text"
+                                                                             type="text"
                                                                             value="{{ old('surname') }}">
                                                                     </div>
                                                                     @if ($errors->has('surname'))
@@ -1757,7 +1762,7 @@
                                                                 </div>
                                                                 <div class="col-sm-12">
                                                                     <div class="form-group mb-12">
-                                                                        <input name="email" required
+                                                                        <input name="email" 
                                                                             placeholder="{{ __('course.text6') }}"
                                                                             style="background-color:white;color: gray;"
                                                                             class="form-control  email" type="email"
@@ -1774,7 +1779,7 @@
 
                                                                     <div class="form-group mb-12">
                                                                         <select name="country" id="countries1"
-                                                                            required
+                                                                            
                                                                             style="background-color:white;color: gray;"
                                                                             value="{{ old('country') }}"
                                                                             class="form-control  ">
@@ -1792,7 +1797,7 @@
 
                                                                 <div class="col-sm-12 " id="provinces1">
                                                                     <div class="form-group mb-10">
-                                                                        <select name="province" required
+                                                                        <select name="province" 
                                                                             id="province1" class="form-control"
                                                                             style="background-color:white;color: gray;"
                                                                             value="{{ old('province') }}">
@@ -1824,7 +1829,7 @@
                                                                         </div>
                                                                         <input name="phone" class="form-control"
                                                                             id="phone1" type="tel"
-                                                                            value="+212" required>
+                                                                            value="+212" >
                                                                         <input name="indice1" class="form-control"
                                                                             id="indice1" type="hidden"
                                                                             value="212">
@@ -1844,7 +1849,7 @@
                                                                         <select name="level"
                                                                             value="{{ old('level') }}"
                                                                             style="background-color:white;color: gray;"
-                                                                            class="form-control  " required>
+                                                                            class="form-control  " >
                                                                             <option value="_" selected>
                                                                                 {{ __('course.text9') }}</option>
                                                                             @foreach ($levels as $level)
@@ -1871,7 +1876,7 @@
                                                                             style="background-color:white;color: gray;"
                                                                             placeholder="{{ __('course.title1') }} {{ __('course.text11') }}"
                                                                             class="form-control" type="text"
-                                                                            required>
+                                                                            >
                                                                     </div>
                                                                     @if ($errors->has('grade'))
                                                                         <span
@@ -1893,7 +1898,7 @@
                                                                     <div class="font-10 text-white "
                                                                         style="text-align:justify;hyphens:auto;width:100%;">
                                                                         <input name="accepted" value='accepted'
-                                                                            type="checkbox" required>
+                                                                            type="checkbox" >
                                                                         {{ __('event.formtext7') }} <a
                                                                             class="text-white"
                                                                             style="font-weight:normal;text-decoration:underline;"
