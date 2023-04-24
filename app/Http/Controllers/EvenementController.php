@@ -52,7 +52,7 @@ class EvenementController extends Controller
       $data=$request->validate([
         'name'=>['required','string','max:150'],
         'email'=>['email','required'],
-        'phone'=>['required','digits_between:8,12'],
+        'phone'=>['required','string','min:8'],
         'organism'=>['required','string'],
         'poste'=>['required','string'],
         'accepted'=>['required','string']

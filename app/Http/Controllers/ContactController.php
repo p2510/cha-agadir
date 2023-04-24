@@ -32,12 +32,12 @@ class ContactController extends Controller
         'name'=>['string','required','max:50'],
         'email'=>['email','required'],
         'subject'=>['string','required','max:60'],
-        'phone'=>['required','string','min:8','max:12'],
+        'phone'=>['required','string','min:8'],
         'message'=>['required','min:10','string'],
         'accepted'=>['required','string']
        ]);
        Contact::create($data);
-       Mail::to($request->email)->send(new SendContactMessage($request->name,$request->subject));
+       //Mail::to($request->email)->send(new SendContactMessage($request->name,$request->subject));
        return redirect()->back()->with('success','succès');
     }
 
