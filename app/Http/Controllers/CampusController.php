@@ -6,6 +6,7 @@ use App\Models\Campus;
 use App\Models\Downloadpage;
 use Illuminate\Http\Request;
 use Jorenvh\Share\ShareFacade;
+use Illuminate\Support\Facades\App;
 
 class CampusController extends Controller
 {
