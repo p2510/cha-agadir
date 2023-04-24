@@ -32,7 +32,7 @@ class ContactController extends Controller
         'name'=>['string','required','max:50'],
         'email'=>['email','required'],
         'subject'=>['string','required','max:60'],
-        'phone'=>['required','digits_between:8,12'],
+        'phone'=>['required','string','min:8','max:12'],
         'message'=>['required','min:10','string'],
         'accepted'=>['required','string']
        ]);

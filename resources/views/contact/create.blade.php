@@ -65,7 +65,7 @@
                             <div class="col-sm-6">
                                 <div class="form-group mb-30">
                                     <input id="form_name" name="name" value="{{ old('name') }}" class="form-control"
-                                        type="text" placeholder="Votre nom" required>
+                                        type="text" placeholder="Nom" required>
                                 </div>
 
                                 @if ($errors->has('name'))
@@ -75,10 +75,10 @@
                             <div class="col-sm-6">
                                 <div class="form-group mb-30">
                                     <input id="form_email" name="email" value="{{ old('email') }}"
-                                        class="form-control required email" type="email" placeholder="votre e-mail"
+                                        class="form-control required email" type="email" placeholder="E-mail"
                                         required>
                                 </div>
-                                @if ($errors->has('nemail'))
+                                @if ($errors->has('email'))
                                     <span class="text-danger">{{ $errors->first('email') }}</span>
                                 @endif
                             </div>
@@ -87,7 +87,7 @@
                             <div class="col-sm-6">
                                 <div class="form-group mb-30">
                                     <input id="form_subject" name="subject" value="{{ old('subject') }}"
-                                        class="form-control " type="text" placeholder="Votre sujet " required>
+                                        class="form-control " type="text" placeholder="Sujet" required>
                                 </div>
                                 @if ($errors->has('subject'))
                                     <span class="text-danger">{{ $errors->first('subject') }}</span>
@@ -96,7 +96,7 @@
                             <div class="col-sm-6">
                                 <div class="form-group mb-30">
                                     <input id="form_phone" name="phone" value="{{ old('phone') }}" class="form-control"
-                                        type="text" placeholder="Votre téléphone" required>
+                                        type="text" placeholder="Téléphone" required>
                                 </div>
                                 @if ($errors->has('phone'))
                                     <span class="text-danger">{{ $errors->first('phone') }}</span>
@@ -106,7 +106,7 @@
 
                         <div class="form-group mb-30">
                             <textarea id="form_message" name="message" value="{{ old('message') }}" class="form-control" required rows="7"
-                                placeholder="Votre message "></textarea>
+                                placeholder="Message "></textarea>
                             @if ($errors->has('message'))
                                 <span class="text-danger">{{ $errors->first('message') }}</span>
                             @endif
