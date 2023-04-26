@@ -18,7 +18,7 @@ class ContactController extends Controller
     public function create()
     {
         $countries= [
-            "Maroc",
+             "Maroc",
              "Afghanistan",
              "Afrique du Sud",
              "Albanie",
@@ -273,7 +273,11 @@ class ContactController extends Controller
             "Zambie",
             "Zimbabwe"
          ];
-        return view("contact.create")->with([
+         
+        
+
+         
+         return view("contact.create")->with([
             'countries'=>$countries,
 
         ]);

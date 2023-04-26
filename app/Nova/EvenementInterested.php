@@ -49,6 +49,8 @@ class EvenementInterested extends Resource
             Text::make('E-mail','email'),
             Text::make('Organisme','organism'),
             Text::make('Poste','poste'),
+            Text::make('Pays','country'),
+            Text::make('Province','province'),
             Text::make('Téléphone','phone'),
             BelongsTo::make('Évènement','evenement','App\Nova\Evenement'),
             DateTime::make('Crée le','created_at'),
