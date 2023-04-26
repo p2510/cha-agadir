@@ -45,8 +45,6 @@
                                     <li><a href="/">{{ __('header.title1') }} </a></li>
                                     <li><a href="{{ route('evenement.index') }}">{{ __('header.subtitle5') }}</a></li>
                                     <li>
-
-                                    
                                         @if (App::isLocale('en'))
                                             @if ($evenement->title_en)
                                                 {{ $evenement->title_en }}

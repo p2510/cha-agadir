@@ -145,7 +145,8 @@ return [
         'province'=>'province',
         'level'=>'niveau d\'études',
         'grade'=>'diplôme et spécialité',
-        'organism'=>'organisme'
+        'organism'=>'organisme',
+        'city'=>'ville'
 
     ]
 ];

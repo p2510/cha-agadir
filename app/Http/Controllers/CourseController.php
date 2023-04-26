@@ -388,7 +388,8 @@ class CourseController extends Controller
             "Zambie",
             "Zimbabwe"
          ];
-        $provinces= [
+       
+         $provinces= [
         
             "Al Haouz"
            ,

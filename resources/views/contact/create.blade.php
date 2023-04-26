@@ -6,9 +6,11 @@
         section>.container-fluid {
             padding-top: 0px;
             padding-bottom: 0px;
+        }
 
-
-
+        .iti {
+            width: 100%;
+            display: block;
         }
     </style>
     <div style="background-color:white;border-top:solid 2px rgb(45, 69, 88) ; padding-bottom:14px;"></div>
@@ -65,7 +67,7 @@
                             <div class="col-sm-6">
                                 <div class="form-group mb-30">
                                     <input id="form_name" name="name" value="{{ old('name') }}" class="form-control"
-                                        type="text" placeholder="Nom" required>
+                                        type="text" placeholder="Nom et Prénom" required>
                                 </div>
 
                                 @if ($errors->has('name'))
@@ -75,8 +77,7 @@
                             <div class="col-sm-6">
                                 <div class="form-group mb-30">
                                     <input id="form_email" name="email" value="{{ old('email') }}"
-                                        class="form-control required email" type="email" placeholder="E-mail"
-                                        required>
+                                        class="form-control required email" type="email" placeholder="E-mail" required>
                                 </div>
                                 @if ($errors->has('email'))
                                     <span class="text-danger">{{ $errors->first('email') }}</span>
@@ -95,11 +96,36 @@
                             </div>
                             <div class="col-sm-6">
                                 <div class="form-group mb-30">
-                                    <input id="form_phone" name="phone" value="{{ old('phone') }}" class="form-control"
-                                        type="text" placeholder="Téléphone" required>
+                                    <input name="phone" class="form-control" id="phone" type="tel" value="+212">
+                                    <input name="indice" class="form-control" id="indice" type="hidden" value="212">
                                 </div>
                                 @if ($errors->has('phone'))
                                     <span class="text-danger">{{ $errors->first('phone') }}</span>
+                                @endif
+                            </div>
+                        </div>
+
+                        <div class="row">
+                            <div class="col-sm-6">
+                                <div class="form-group mb-30">
+                                    <select name="country" id="countries1" style="background-color:white;color: gray;"
+                                        value="{{ old('country') }}" class="form-control  ">
+                                        @foreach ($countries as $country)
+                                            <option value="{{ $country }}">
+                                                {{ $country }}</option>
+                                        @endforeach
+                                    </select>
+                                </div>
+                                @if ($errors->has('country'))
+                                    <span class="text-danger">{{ $errors->first('country') }}</span>
+                                @endif
+                            </div>
+                            <div class="col-sm-6">
+                                <div class="form-group mb-30">
+                                    <input name="city" class="form-control" type="text" placeholder="Ville">
+                                </div>
+                                @if ($errors->has('city'))
+                                    <span class="text-danger">{{ $errors->first('city') }}</span>
                                 @endif
                             </div>
                         </div>
@@ -179,4 +205,31 @@
         </div>
     </section>
     </div>
+    <script>
+        const phoneInputField = document.querySelector("#phone");
+        let indice = document.querySelector("#indice");
+
+        const phoneInput = window.intlTelInput(phoneInputField, {});
+
+        var country = phoneInput.getSelectedCountryData();
+
+
+        phoneInputField.addEventListener("countrychange", function() {
+            country = phoneInput.getSelectedCountryData();
+            indice.value = country.dialCode
+        });
+
+        const phoneInputField1 = document.querySelector("#phone1");
+        let indice1 = document.querySelector("#indice1");
+
+        const phoneInput1 = window.intlTelInput(phoneInputField1, {});
+
+        var country1 = phoneInput1.getSelectedCountryData();
+
+
+        phoneInputField1.addEventListener("countrychange", function() {
+            country1 = phoneInput1.getSelectedCountryData();
+            indice1.value = country1.dialCode
+        });
+    </script>
 @endsection

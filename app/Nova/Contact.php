@@ -47,6 +47,8 @@ class Contact extends Resource
             Text::make('Nom','name'),
             Text::make('E-mail','email'),
             Text::make('Sujet','subject'),
+            Text::make('Pays','country'),
+            Text::make('Ville','city'),
             Text::make('Téléphone','phone'),
             Text::make('Message','message'),
             DateTime::make('Crée le','created_at'),
