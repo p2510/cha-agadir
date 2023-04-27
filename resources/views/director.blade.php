@@ -38,7 +38,7 @@
                         </div>
                         <div class="col-md-12">
                             <h2 class="text-uppercasetext-theme-colored mt-0 mb-0 mt-sm-30"><span
-                                    class="text-theme-colored2">{{__('header.subtitle1')}}</span></h2>
+                                    class="text-theme-colored2" style="text-transform:uppercase;">{{__('header.subtitle1')}}</span></h2>
 
 
                             <div class="mt-30 mb-0">
@@ -81,7 +81,7 @@
                             <div style="text-align:justify;hyphens:auto;color:#1f3344;">{!! $data->content !!}</div>
                         </div>
                     @endforeach
-                    <button class="accordion">{{__('home.text8')}}</button>
+                    <button class="accordion" >{{__('home.text8')}}</button>
                     <div class="panel">
                         @foreach ($downloads as $key => $download)
                             <div><a href="{{ url('storage') }}/{{ $download->file }}"

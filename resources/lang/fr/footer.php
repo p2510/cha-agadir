@@ -8,6 +8,7 @@ return [
 'subtitle1'=>'Formations',
 'subtitle2'=>'Galerie',
 'subtitle3'=>'Vidéos',
+'subtitle4'=>' Complexe Horticole d\'Agadir, km 2 route d\'Azrou,B.P. 121 Ait Melloul 80150 - Agadir',
 'day1'=>'Lun',
 'day2'=>'Vendredi',
 'day3'=>'Sam',

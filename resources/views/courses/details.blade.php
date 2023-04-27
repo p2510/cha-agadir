@@ -819,8 +819,7 @@
 
                                                         <h5 class="mb-0 font-16">{{ $download->name }}</h5>
                                                         <a href="{{ url('storage') }}/{{ $download->file }}"
-                                                            target="_blank">Cliquer
-                                                            ici</a>
+                                                            target="_blank">{{ __('course.text14') }}</a>
                                                     </div>
                                                 @endforeach
 
@@ -828,7 +827,7 @@
                                             </div>
                                         </div>
                                         <div class="tab-pane fade" id="tab6">
-                                            <h4 class="line-bottom-theme-colored2 mb-20">Carrière</h4>
+                                            <h4 class="line-bottom-theme-colored2 mb-20" >{{ __('course.subtitle15') }}</h4>
                                             <div class="row">
                                                 <div class="row">
                                                     <div class="col-md-12">
@@ -1978,8 +1977,8 @@
 
                         <span style="color:#1f3344;">
 
-                            Complexe Horticole d’Agadir, km 2 route d’Azrou,
-                            B.P. 121 Ait Melloul 80150 - Agadir
+                            {{ __('footer.subtitle4') }}
+
                         </span>
 
                         <ul class="list-inline">
@@ -2090,7 +2089,7 @@
                         <div class="opening-hours">
                             <ul class="list-border">
                                 <li class="clearfix" style="color:#1f3344;"> <span> {{ __('footer.day1') }} -
-                                        {{ __('footer.day2') }}: </span>
+                                        {{ __('footer.day2') }} : </span>
                                     <div class="value pull-right"> 8.30 am – 4h30 pm</div>
                                 </li>
                                 <li class="clearfix" style="color:#1f3344;"> <span> {{ __('footer.day3') }} :

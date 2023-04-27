@@ -1,7 +1,7 @@
 <?php 
 return [
     'subtitle1'=>'Subject',
-    'subtitle2'=>'Place',
+    'subtitle2'=>'Location',
     'subtitle3'=>'Start date',
     'subtitle4'=>'End date',
     'subtitle5'=>'Download ',
@@ -9,7 +9,7 @@ return [
     'formtext1'=>'Your first and last name',
     'formtext2'=>'Your email',
     'formtext3'=>'Phone',
-    'formtext4'=>'Organism',
+    'formtext4'=>'Compagny',
     'formtext5'=>'Job',
     'formtext6'=>"In accordance with law 09-08, you have a right of access, rectification and opposition to the processing of your personal data..",
     'formtext7'=>"I have read and accept",

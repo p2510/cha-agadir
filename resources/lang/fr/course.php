@@ -26,6 +26,7 @@ return [
     'subtitle12'=>'Débouchés',
     'subtitle13'=>'Témoignages',
     'subtitle14'=>'Remplir le formulaire',
+    'subtitle15'=>'Carrière',
     'text1'=>'Mlle',
     'text2'=>'Mme',
     'text3'=>'M',
@@ -38,7 +39,9 @@ return [
     'text10'=>'Province',
     'text11'=>'et spécialité',
     'text12'=>'ENVOYER',
-    'text13'=>'Cycles'
+    'text13'=>'Cycles',
+    'text14'=>'Cliquer ici'
+
 
 
 ];

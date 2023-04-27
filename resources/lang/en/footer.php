@@ -1,13 +1,14 @@
 <?php
 return [
-'title1'=>'Contact details',
+'title1'=>'Contact',
 'title2'=>'Quick links',
 'title3'=>'Latest posts',
-'title4'=>'Open',
+'title4'=>'Opening hours',
 'title5'=>'Newsletter',
-'subtitle1'=>'Formations',
+'subtitle1'=>'Our training',
 'subtitle2'=>'Gallery',
 'subtitle3'=>'Videos',
+'subtitle4'=>' Agadir Horticultural Complex',
 'day1'=>'Mon',
 'day2'=>'Fri',
 'day3'=>'Sat',
@@ -15,6 +16,6 @@ return [
 'indicatorday'=>'Close',
 'placehoderNewsletter'=>'Your email',
 'text1'=>'All rights reserved',
-'text2'=>'Legal Notice',
-'text3'=>'Contact U.S',
+'text2'=>'Legal notice',
+'text3'=>'Contact us',
 ];
