@@ -40,7 +40,7 @@
         <div class="container  pb-70">
             <div class="row pt-10">
                 <div class="col-md-5">
-                    <h4 class="mt-0 mb-30 line-bottom-theme-colored2">Nous trouver</h4>
+                    <h4 class="mt-0 mb-30 line-bottom-theme-colored2">{{__('contact.title1')}}</h4>
                     <!-- Google Map HTML Codes -->
                     <iframe
                         src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d723.7731107777314!2d-9.476822224020928!3d30.35479968641361!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0xdb3c61795413197%3A0x404955676be14a54!2sComplexe%20horticole%20d&#39;Agadir!5e0!3m2!1sfr!2sma!4v1675327226532!5m2!1sfr!2sma"
@@ -52,7 +52,7 @@
                     <script src="js/google-map-init.js"></script>
                 </div>
                 <div class="col-md-7">
-                    <h4 class="mt-0 mb-30 line-bottom-theme-colored2">Vous voulez nous joindre ?</h4>
+                    <h4 class="mt-0 mb-30 line-bottom-theme-colored2">{{__('contact.title2')}}</h4>
                     @if (session()->has('success'))
                         <h6 class='alert alert-success' role="alert">
                             Votre formulaire a été envoyé avec succès et nous vous remercions pour votre intérêt.
@@ -67,7 +67,7 @@
                             <div class="col-sm-6">
                                 <div class="form-group mb-30">
                                     <input id="form_name" name="name" value="{{ old('name') }}" class="form-control"
-                                        type="text" placeholder="Nom et Prénom" required>
+                                        type="text" placeholder="{{__('contact.formtext1')}}" required>
                                 </div>
 
                                 @if ($errors->has('name'))
@@ -88,7 +88,7 @@
                             <div class="col-sm-6">
                                 <div class="form-group mb-30">
                                     <input id="form_subject" name="subject" value="{{ old('subject') }}"
-                                        class="form-control " type="text" placeholder="Sujet" required>
+                                        class="form-control " type="text" placeholder="{{__('contact.formtext2')}}" required>
                                 </div>
                                 @if ($errors->has('subject'))
                                     <span class="text-danger">{{ $errors->first('subject') }}</span>
@@ -122,7 +122,7 @@
                             </div>
                             <div class="col-sm-6">
                                 <div class="form-group mb-30">
-                                    <input name="city" class="form-control" type="text" placeholder="Ville">
+                                    <input name="city" class="form-control" type="text" placeholder="{{__('contact.formtext3')}}">
                                 </div>
                                 @if ($errors->has('city'))
                                     <span class="text-danger">{{ $errors->first('city') }}</span>
@@ -140,9 +140,7 @@
                         </div>
                         <div class="col-xs-12 col-sm-12 font-10  mb-10"
                             style="text-align:justify;hyphens:auto;color:#1f3344;">
-                            Conformément à la loi 09-08, vous disposez d'un
-                            droit d'accès, de rectification et d'opposition
-                            au traitement de vos données personnelles.
+                            {{ __('event.formtext6') }}
                         </div>
 
 
@@ -152,13 +150,9 @@
 
                                 <div class="font-10 " style="text-align:justify;hyphens:auto;width:100%;color:#1f3344;">
                                     <input name="accepted" value='accepted' type="checkbox" required>
-                                    J'ai lu et j'accepte <a
+                                    {{ __('event.formtext7') }} <a
                                         style="font-weight:normal;text-decoration:underline;color:#1f3344;"
-                                        href="{{ route('mention.index') }}"> les conditions
-                                        générales d'utilisation</a>,notamment la
-                                    mention relative
-                                    á la protection des données
-                                    personnelles.<strong style="color:red;">*</strong>
+                                        href="{{ route('mention.index') }}"> {{ __('event.formtext8') }}</a>,{{ __('event.formtext9') }}.<strong style="color:red;">*</strong>
                                 </div>
                             </div>
 
@@ -170,9 +164,9 @@
                             <input id="form_botcheck" name="form_botcheck" class="form-control" type="hidden"
                                 value="" />
                             <button type="submit" class="btn btn-flat btn-default bg-hover-theme-colored mr-5"
-                                data-loading-text="Please wait...">Soumettre </button>
+                                data-loading-text="Please wait...">{{__('contact.btn1')}}</button>
                             <button type="reset"
-                                class="btn btn-flat btn-theme-colored2 bg-hover-theme-colored">Annuler</button>
+                                class="btn btn-flat btn-theme-colored2 bg-hover-theme-colored">{{__('contact.btn2')}}</button>
                         </div>
                     </form>
                 </div>
@@ -181,16 +175,15 @@
                 <div class="col-sm-12 col-md-4">
                     <div class="contact-info text-center bg-silver-light border-1px pt-60 pb-60">
                         <i class="fa fa-phone font-36 mb-10 text-theme-colored2"></i>
-                        <h4>Téléphone</h4>
+                        <h4>{{__('contact.title3')}}</h4>
                         <h6 class="text-gray">(+212) 0528-241-006 / 240-155</h6>
                     </div>
                 </div>
                 <div class="col-sm-12 col-md-4">
                     <div class="contact-info text-center bg-silver-light border-1px pt-60 pb-60">
                         <i class="fa fa-map-marker font-36 mb-10 text-theme-colored2"></i>
-                        <h4>Addresse</h4>
-                        <h6 class="text-gray">Complexe Horticole d’Agadir, km 2 route d’Azrou, B.P. 121 Ait Melloul
-                            80150 - Agadir</h6>
+                        <h4>{{__('contact.title4')}}</h4>
+                        <h6 class="text-gray">{{__('contact.title5')}}</h6>
                     </div>
                 </div>
                 <div class="col-sm-12 col-md-4">
