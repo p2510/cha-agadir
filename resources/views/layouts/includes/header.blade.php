@@ -171,7 +171,7 @@
                                     <li>
                                         <a href="{{ route('course.index') }}"
                                             class="btn btn-dark btn-circled btn-theme-colored2 btn-sm  pr-30 pl-30 "
-                                            style="font-weight: bold; animation: blink 1s ease-in-out infinite;">{{ __('header.info3') }}</a>
+                                            style="font-weight: bold; animation: blink 2s ease-in-out infinite;">{{ __('header.info3') }}</a>
                                     </li>
 
                                 </ul>
