@@ -2,7 +2,7 @@
 
 return [
     'title1'=>'Degree',
-    'title2'=>'Rythm',
+    'title2'=>'Rhythm',
     'title3'=>'Duration',
     'title4'=>'Language',
     'title5'=>'DESCRIPTION',
@@ -15,7 +15,7 @@ return [
     'subtitle2'=>'Location',
     
     'subtitle3'=>'Admission requirement',
-    'subtitle4'=>'Admission requirement',
+    'subtitle4'=>'Admission file',
     'subtitle5'=>'Registration',
     'subtitle6'=>'Deadline',
     'subtitle7'=>'Selection',

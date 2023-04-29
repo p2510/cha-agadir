@@ -383,7 +383,7 @@
                             <div class="col-md-6">
                                 <ol class="breadcrumb text-left mt-10 white">
                                     <li><a href="/">{{ __('header.title1') }}</a></li>
-                                    <li><a href="{{ route('course.index') }}">Formations</a></li>
+                                    <li><a href="{{ route('course.index') }}">{{ __('header.title3') }}</a></li>
 
                                     <li class='text-white'>
                                         @foreach ($courses as $course)
