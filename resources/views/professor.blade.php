@@ -21,7 +21,7 @@
                                 <div class="col-md-6">
                                     <ol class="breadcrumb text-left mt-10" style="color:rgb(45, 69, 88);font-weight:bold;">
                                         <li><a href="/">{{__('header.title1')}}</a></li>
-                                        <li>{{__('header.subtitle3')}} </li>
+                                        <li>{{__('header.subtitle33')}} </li>
                                     </ol>
                                 </div>
                             </div>
@@ -357,7 +357,7 @@
                     </div>
                 </section>
             @else
-                <h2 class="text-theme-colored2 font-36">Il n'y a pas de responsable </h2>
+                <h2 class="text-theme-colored2 font-36">Il n'y a pas de professeur</h2>
             @endif
 
 

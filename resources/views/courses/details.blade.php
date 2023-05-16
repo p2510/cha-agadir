@@ -362,6 +362,8 @@
 
                 background-color: #1F334560;
             }
+
+       
         </style>
         <script>
             const switchlang = document.getElementById('switchlang');
@@ -827,7 +829,8 @@
                                             </div>
                                         </div>
                                         <div class="tab-pane fade" id="tab6">
-                                            <h4 class="line-bottom-theme-colored2 mb-20" >{{ __('course.subtitle15') }}</h4>
+                                            <h4 class="line-bottom-theme-colored2 mb-20">
+                                                {{ __('course.subtitle15') }}</h4>
                                             <div class="row">
                                                 <div class="row">
                                                     <div class="col-md-12">
@@ -963,27 +966,24 @@
                                                                             <div
                                                                                 class="col-xs-2 col-col-sm-2 form-group mb-10">
 
-                                                                                <input name="gender" 
-                                                                                    value='Mlle' class=""
-                                                                                    type="radio">
+                                                                                <input name="gender" value='Mlle'
+                                                                                    class="" type="radio">
                                                                             </div>
                                                                             <label for=""
                                                                                 class="col-xs-2 col-sm-2">{{ __('course.text2') }}</label>
 
                                                                             <div
                                                                                 class="col-xs-2 col-sm-2 form-group mb-10">
-                                                                                <input name="gender" 
-                                                                                    value='Mme' class=""
-                                                                                    type="radio">
+                                                                                <input name="gender" value='Mme'
+                                                                                    class="" type="radio">
                                                                             </div>
                                                                             <label for=""
                                                                                 class="col-xs-2 col-sm-2">{{ __('course.text3') }}</label>
 
                                                                             <div
                                                                                 class="col-xs-2 col-sm-2 form-group mb-10">
-                                                                                <input name="gender" 
-                                                                                    value='Mr' type="radio"
-                                                                                    aria-="true">
+                                                                                <input name="gender" value='Mr'
+                                                                                    type="radio" aria-="true">
                                                                             </div>
                                                                         </div>
 
@@ -1001,7 +1001,7 @@
                                                                         <div class="form-group mb-12">
                                                                             <input name="name" class="form-control"
                                                                                 style="background-color:white;color: gray;"
-                                                                                 type="text"
+                                                                                type="text"
                                                                                 placeholder="{{ __('course.text4') }}"
                                                                                 value="{{ old('name') }}">
                                                                         </div>
@@ -1017,7 +1017,7 @@
                                                                             <input name="surname" class="form-control"
                                                                                 placeholder="{{ __('course.text5') }}"
                                                                                 style="background-color:white;color: gray;"
-                                                                                 type="text"
+                                                                                type="text"
                                                                                 value="{{ old('surname') }}">
                                                                         </div>
                                                                         @if ($errors->has('surname'))
@@ -1027,7 +1027,7 @@
                                                                     </div>
                                                                     <div class="col-sm-12">
                                                                         <div class="form-group mb-12">
-                                                                            <input name="email" 
+                                                                            <input name="email"
                                                                                 placeholder="{{ __('course.text6') }}"
                                                                                 style="background-color:white;color: gray;"
                                                                                 class="form-control  email"
@@ -1045,7 +1045,6 @@
 
                                                                         <div class="form-group mb-12">
                                                                             <select name="country" id="countries"
-                                                                                
                                                                                 style="background-color:white;color: gray;"
                                                                                 value="{{ old('country') }}"
                                                                                 class="form-control  ">
@@ -1066,8 +1065,8 @@
 
 
                                                                         <div class="form-group mb-10">
-                                                                            <select name="province" 
-                                                                                id="province" class="form-control"
+                                                                            <select name="province" id="province"
+                                                                                class="form-control"
                                                                                 style="background-color:white;color: gray;"
                                                                                 value="{{ old('province') }}">
                                                                                 <option value="_" selected>
@@ -1099,11 +1098,11 @@
                                                                             </div>
                                                                             <input name="phone" class="form-control"
                                                                                 id="phone" type="tel"
-                                                                                value="+212" >
+                                                                                value="+212">
 
                                                                             <input name="indice" class="form-control"
                                                                                 id="indice" type="hidden"
-                                                                                value="212" >
+                                                                                value="212">
                                                                         </div>
                                                                         @if ($errors->has('phone'))
                                                                             <span
@@ -1120,22 +1119,22 @@
                                                                             <select name="level"
                                                                                 value="{{ old('level') }}"
                                                                                 style="background-color:white;color: gray;"
-                                                                                class="form-control" >
+                                                                                class="form-control">
                                                                                 <option value="_" selected>
                                                                                     {{ __('course.text9') }}</option>
                                                                                 @foreach ($levels as $level)
-                                                                                @if (App::isLocale('en'))
-                                                                                    <option
-                                                                                        value="{{ $level->name_en }}">
-                                                                                        
+                                                                                    @if (App::isLocale('en'))
+                                                                                        <option
+                                                                                            value="{{ $level->name_en }}">
+
                                                                                             {{ $level->name_en }}
                                                                                         @else
                                                                                         <option
-                                                                                        value="{{ $level->name}}">
-                                                                                        
+                                                                                            value="{{ $level->name }}">
+
                                                                                             {{ $level->name }}
-                                                                                       
-                                                                                    </option>
+
+                                                                                        </option>
                                                                                     @endif
                                                                                 @endforeach
                                                                             </select>
@@ -1148,7 +1147,7 @@
                                                                     </div>
                                                                     <div class="col-sm-12">
                                                                         <div class="form-group mb-10">
-                                                                            <input name="grade" 
+                                                                            <input name="grade"
                                                                                 value="{{ old('grade') }}"
                                                                                 style="background-color:white;color: gray;"
                                                                                 placeholder="{{ __('course.title1') }} {{ __('course.text11') }}"
@@ -1173,7 +1172,7 @@
                                                                         <div class="font-10 text-white "
                                                                             style="text-align:justify;hyphens:auto;width:100%;">
                                                                             <input name="accepted" value='accepted'
-                                                                                type="checkbox" >
+                                                                                type="checkbox">
                                                                             {{ __('event.formtext7') }} <a
                                                                                 class="text-white"
                                                                                 style="font-weight:normal;text-decoration:underline;"
@@ -1265,8 +1264,8 @@
                                 }
 
                                 .head_course {
-                                    margin-left: 100px;
-                                    margin-right: 100px;
+                                    margin-left: 50px;
+                                    margin-right: 50px;
                                 }
 
                                 .section-content {
@@ -1698,8 +1697,7 @@
                                                                             class="col-xs-2 col-col-sm-2 form-group mb-10">
 
                                                                             <input name="gender" value='Mlle'
-                                                                                class="" type="radio"
-                                                                                >
+                                                                                class="" type="radio">
                                                                         </div>
                                                                         <label for=""
                                                                             class="col-xs-2 col-sm-2">{{ __('course.text2') }}</label>
@@ -1707,8 +1705,7 @@
                                                                         <div
                                                                             class="col-xs-2 col-sm-2 form-group mb-10">
                                                                             <input name="gender" value='Mme'
-                                                                                class="" type="radio"
-                                                                                >
+                                                                                class="" type="radio">
                                                                         </div>
                                                                         <label for=""
                                                                             class="col-xs-2 col-sm-2">{{ __('course.text3') }}</label>
@@ -1716,8 +1713,7 @@
                                                                         <div
                                                                             class="col-xs-2 col-sm-2 form-group mb-10">
                                                                             <input name="gender" value='Mr'
-                                                                                type="radio" aria-="true"
-                                                                                >
+                                                                                type="radio" aria-="true">
                                                                         </div>
                                                                     </div>
 
@@ -1735,7 +1731,7 @@
                                                                     <div class="form-group mb-12">
                                                                         <input name="name" class="form-control"
                                                                             style="background-color:white;color: gray;"
-                                                                             type="text"
+                                                                            type="text"
                                                                             placeholder="{{ __('course.text4') }}"
                                                                             value="{{ old('name') }}">
                                                                     </div>
@@ -1751,7 +1747,7 @@
                                                                         <input name="surname" class="form-control"
                                                                             placeholder="{{ __('course.text5') }}"
                                                                             style="background-color:white;color: gray;"
-                                                                             type="text"
+                                                                            type="text"
                                                                             value="{{ old('surname') }}">
                                                                     </div>
                                                                     @if ($errors->has('surname'))
@@ -1761,7 +1757,7 @@
                                                                 </div>
                                                                 <div class="col-sm-12">
                                                                     <div class="form-group mb-12">
-                                                                        <input name="email" 
+                                                                        <input name="email"
                                                                             placeholder="{{ __('course.text6') }}"
                                                                             style="background-color:white;color: gray;"
                                                                             class="form-control  email" type="email"
@@ -1778,7 +1774,6 @@
 
                                                                     <div class="form-group mb-12">
                                                                         <select name="country" id="countries1"
-                                                                            
                                                                             style="background-color:white;color: gray;"
                                                                             value="{{ old('country') }}"
                                                                             class="form-control  ">
@@ -1796,8 +1791,8 @@
 
                                                                 <div class="col-sm-12 " id="provinces1">
                                                                     <div class="form-group mb-10">
-                                                                        <select name="province" 
-                                                                            id="province1" class="form-control"
+                                                                        <select name="province" id="province1"
+                                                                            class="form-control"
                                                                             style="background-color:white;color: gray;"
                                                                             value="{{ old('province') }}">
                                                                             <option value="_" selected>
@@ -1828,7 +1823,7 @@
                                                                         </div>
                                                                         <input name="phone" class="form-control"
                                                                             id="phone1" type="tel"
-                                                                            value="+212" >
+                                                                            value="+212">
                                                                         <input name="indice1" class="form-control"
                                                                             id="indice1" type="hidden"
                                                                             value="212">
@@ -1848,7 +1843,7 @@
                                                                         <select name="level"
                                                                             value="{{ old('level') }}"
                                                                             style="background-color:white;color: gray;"
-                                                                            class="form-control  " >
+                                                                            class="form-control  ">
                                                                             <option value="_" selected>
                                                                                 {{ __('course.text9') }}</option>
                                                                             @foreach ($levels as $level)
@@ -1874,8 +1869,7 @@
                                                                             value="{{ old('grade') }}"
                                                                             style="background-color:white;color: gray;"
                                                                             placeholder="{{ __('course.title1') }} {{ __('course.text11') }}"
-                                                                            class="form-control" type="text"
-                                                                            >
+                                                                            class="form-control" type="text">
                                                                     </div>
                                                                     @if ($errors->has('grade'))
                                                                         <span
@@ -1897,7 +1891,7 @@
                                                                     <div class="font-10 text-white "
                                                                         style="text-align:justify;hyphens:auto;width:100%;">
                                                                         <input name="accepted" value='accepted'
-                                                                            type="checkbox" >
+                                                                            type="checkbox">
                                                                         {{ __('event.formtext7') }} <a
                                                                             class="text-white"
                                                                             style="font-weight:normal;text-decoration:underline;"

@@ -19,6 +19,7 @@ use App\Http\Controllers\MentionController;
 use App\Http\Controllers\BusinessController;
 use App\Http\Controllers\DirectorController;
 use App\Http\Controllers\EvenementController;
+use App\Http\Controllers\ProfessorController;
 use App\Http\Controllers\ExperienceController;
 use App\Http\Controllers\InterestedController;
 use App\Http\Controllers\NewsletterController;
@@ -57,8 +58,9 @@ Route::get('/se-desabonner', [NewsletterController::class, 'create'])->name('new
 Route::post('/se-desabonner', [NewsletterController::class, 'unsubscribe'])->name('newsletter.unsubscribe.store');
 Route::get('/qui-sommes-nous', [AboutController::class, '__invoke'])->name('about.index');
 Route::get('/mot-du-directeur', [DirectorController::class, '__invoke'])->name('director.index');
-Route::get('/corps-professoral-staff', [ResponsableController::class, '__invoke'])->name('responsable.index');
-Route::get('/corps-professoral-staff', [ResponsableController::class, '__invoke'])->name('responsable.index');
+Route::get('/notre-équipe', [ResponsableController::class, '__invoke'])->name('responsable.index');
+Route::get('/notre-équipe/{responsable}', [ResponsableController::class, 'show'])->name('responsable.show');
+Route::get('/profésseur', [ProfessorController::class, '__invoke'])->name('professor.index');
 Route::get('/galerie', [MediaController::class, '__invoke'])->name('media.index');
 Route::get('/videos', [VideoController::class, '__invoke'])->name('video.index');
 Route::get('/vie-estudiantine', [CampusController::class, '__invoke'])->name('campus.index');
@@ -72,6 +74,7 @@ Route::get('/ferme-experiementale', [ExperienceController::class, '__invoke'])->
 Route::get('/impact-cluster', [ImpactController::class, '__invoke'])->name('impact.index');
 Route::get('/agri-business', [BusinessController::class, '__invoke'])->name('business.index');
 });
+
 
 
 // swith lang

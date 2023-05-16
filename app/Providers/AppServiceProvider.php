@@ -4,6 +4,7 @@ namespace App\Providers;
 
 use App\Models\Logo;
 use Illuminate\Support\Facades\DB;
+use Illuminate\Pagination\Paginator;
 use Illuminate\Support\Facades\View;
 use Illuminate\Support\ServiceProvider;
 
@@ -32,6 +33,7 @@ class AppServiceProvider extends ServiceProvider
         View::share('latest_blog', $latest_blog);
         $logo_url=Logo::latest('id')->limit(1)->get();
         View::share('logo_url',  $logo_url);
+        Paginator::useBootstrap();
 
         
     }

@@ -24,6 +24,10 @@ class Responsable extends Model
         'photo',
         'gsm'
     ];
+    public function getRouteKeyName()
+    {
+        return 'name';
+    }
     /**
      * Get all of the courses for the Responsable
      *

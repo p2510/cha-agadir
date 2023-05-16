@@ -216,6 +216,9 @@
                                         <li><a
                                                 href="{{ route('responsable.index') }}">{{ __('header.subtitle3') }}</a>
                                         </li>
+                                        <li><a
+                                                href="{{ route('professor.index') }}">{{ __('header.subtitle33') }}</a>
+                                        </li>
                                         <li><a href="{{ route('campus.index') }}">{{ __('header.subtitle4') }}</a>
                                         </li>
                                         <li><a href="{{ route('evenement.index') }}">{{ __('header.subtitle5') }}</a>
