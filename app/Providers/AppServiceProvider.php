@@ -33,7 +33,6 @@ class AppServiceProvider extends ServiceProvider
         View::share('latest_blog', $latest_blog);
         $logo_url=Logo::latest('id')->limit(1)->get();
         View::share('logo_url',  $logo_url);
-        Paginator::useBootstrap();
 
         
     }
