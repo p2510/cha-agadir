@@ -17,7 +17,7 @@ class ResponsableController extends Controller
      */
     public function __invoke(Request $request)
     {
-        $responsables=DB::table('Responsables')->paginate(8)/*->map(function ($item){
+        $responsables=DB::table('responsables')->paginate(8)/*->map(function ($item){
             if (App::isLocale('en')) {
                 $item->statut=$item->statut_en;
                 $item->poste=$item->poste_en;
