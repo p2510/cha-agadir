@@ -119,6 +119,8 @@
 
                     </div>
                 </div>
+                {!! $evenements->withQueryString()->links() !!}
+
             </div>
         </section>
 

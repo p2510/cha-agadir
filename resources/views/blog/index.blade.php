@@ -57,28 +57,42 @@
                                             $getDays = date('d', strtotime($blog->created_at));
                                             $getYears = date('Y', strtotime($blog->created_at));
                                         @endphp
-                                      <div class="post-date"><span>{{ $getMonth }}</span><br> {{ $getDays }} , {{$getYears}}
-                                      </div>
+                                        <div class="post-date"><span>{{ $getMonth }}</span><br> {{ $getDays }} ,
+                                            {{ $getYears }}
+                                        </div>
                                     </div>
                                     <div class="post-description border-1px p-20">
                                         <a href="{{ route('blog-actualités.show', $blog->id) }}">
                                             <h5 class="post-title font-16 font-weight-600 mt-0 mb-15"
                                                 style="word-break: break-word;">
-                                                {{ $blog->title }}</h5>
+                                                @if (App::isLocale('en'))
+                                                    {{ $blog->title_en }}
+                                                @else
+                                                    {{ $blog->title }}
+                                                @endif
+                                            </h5>
                                         </a>
-                                        <p style="text-align:justify;hyphens:auto;">{{ $blog->accroche }} [...]</p>
+                                        <p style="text-align:justify;hyphens:auto;">
+                                            @if (App::isLocale('en'))
+                                                {{ $blog->accroche_en }} [...]
+                                            @else
+                                                {{ $blog->accroche }} [...]
+                                            @endif
+
+                                        </p>
                                     </div>
                                     <div class="post-meta">
                                         <ul class="list-inline pull-left flip">
                                             <ul class="list-inline pull-left flip">
-                                                <li><i class="lnr lnr-users text-theme-colored2 font-20"></i>{{__('home.text3')}} 
+                                                <li><i
+                                                        class="lnr lnr-users text-theme-colored2 font-20"></i>{{ __('home.text3') }}
                                                     {{ $blog->description }}</li>
                                             </ul>
 
                                         </ul>
 
                                         <a href="{{ route('blog-actualités.show', $blog->id) }}"
-                                            class="text-theme-colored2 font-14 text-gray-darkgray pull-right flip">{{__('home.text2')}} 
+                                            class="text-theme-colored2 font-14 text-gray-darkgray pull-right flip">{{ __('home.text2') }}
                                         </a>
                                     </div>
                                 </article>
@@ -88,6 +102,7 @@
 
 
                     </div>
+                    {!! $blogs->withQueryString()->links() !!}
                 </div>
             </div>
         </section>

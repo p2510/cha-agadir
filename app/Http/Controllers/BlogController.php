@@ -20,18 +20,10 @@ class BlogController extends Controller
      */
     public function index()
     {
-        $blogs=DB::table('blogs')->select('blogs.*')->get()->map(function ($item){
-            if (App::isLocale('en')) {
-                $item->accroche=$item->accroche_en;
-                $item->title=$item->title_en;
-                
-            }
-            return $item;
-       });
+        $blogs=DB::table('blogs')->select('blogs.*')->orderBy('created_at','Desc')->paginate(6);
         return view('blog.index')->with(['blogs'=>$blogs]);
     }
 
-  
 
     /**
      * Display the specified resource.

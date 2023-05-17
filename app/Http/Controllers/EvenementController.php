@@ -8,6 +8,7 @@ use App\Models\Evenementpage;
 use Jorenvh\Share\ShareFacade;
 use App\Jobs\JobMessageEvenement;
 use App\Mail\SendMessageEvenement;
+use Illuminate\Support\Facades\DB;
 use App\Models\EvenementInterested;
 use Illuminate\Support\Facades\App;
 use Illuminate\Support\Facades\Mail;
@@ -21,12 +22,9 @@ class EvenementController extends Controller
      */
     public function index()
     {
-        $evenements=Evenement::all();
+        $evenements=DB::table('evenements')->orderBy('start_at','Asc')->paginate(6);
         return view('evenement.index')->with(['evenements'=>$evenements]);
     }
-
-   
-
 
 
     public function show(Evenement $evenement)
