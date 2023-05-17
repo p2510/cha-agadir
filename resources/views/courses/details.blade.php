@@ -362,8 +362,6 @@
 
                 background-color: #1F334560;
             }
-
-       
         </style>
         <script>
             const switchlang = document.getElementById('switchlang');
@@ -1972,6 +1970,8 @@
                         <span style="color:#1f3344;">
 
                             {{ __('footer.subtitle4') }}
+                            <br>
+                            {{ __('footer.subtitle5') }}
 
                         </span>
 

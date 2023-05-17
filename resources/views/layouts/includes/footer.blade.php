@@ -7,7 +7,9 @@
                 <h4 class="widget-title line-bottom-theme-colored2" style="color:#1f3344;">{{ __('footer.title1') }}</h4>
 
                 <span style="color:#1f3344;">
-                    {{ __('footer.subtitle4') }}
+                    {{ __('footer.subtitle4') }} <br>
+                    {{ __('footer.subtitle5') }} 
+
                    
                 </span>
 
