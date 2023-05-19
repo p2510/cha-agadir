@@ -4,7 +4,7 @@ return [
     'subtitle2'=>'Lieu',
     'subtitle3'=>'Date début',
     'subtitle4'=>'Date fin',
-    'subtitle5'=>'Téléchargement ',
+    'subtitle5'=>'Médias',
     'subtitle6'=>'Je suis interessé(e)',
     'formtext1'=>'Nom et Prénom',
     'formtext2'=>'E-mail',

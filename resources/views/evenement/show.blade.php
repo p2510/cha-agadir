@@ -236,7 +236,7 @@
                                             {{ __('event.subtitle5') }}
                                             :</h5>
                                         @foreach ($evenementPages as $item)
-                                            <p><a style="text-decoration:underline;color:#1f3344;"
+                                            <p><a class="filename"  style="text-decoration:underline;"
                                                     href="{{ url('storage') }}/{{ $item->file }}"
                                                     target='_blank'>{{ $item->filename }}</a></p>
                                         @endforeach
@@ -516,6 +516,14 @@
     @endforeach
 
     <style>
+         .filename {
+            color: #1f3344;
+            margin-bottom: 2px;
+        }
+
+        .filename:hover {
+            color: #F88147;
+        }
         .iti {
             width: 100%;
             display: block;

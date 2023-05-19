@@ -18,7 +18,7 @@ return [
     'text3'=>'By',
     'text4'=>'Recently',
     'text5'=>'Details',
-    'text6'=>'do not display anymore',
+    'text6'=>'Do not display anymore',
     'text7'=>'Download', 
     'text8'=>'MEDIAS', 
     

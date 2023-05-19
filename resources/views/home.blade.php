@@ -406,6 +406,7 @@
             </section>
         </div>
     @endif
+
     <!-- Section: Courses -->
 
     <section id="courses" class="bg-white" style="margin-top: 50px;">

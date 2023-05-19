@@ -85,7 +85,7 @@
                     <button class="accordion">{{ __('home.text8') }}</button>
                     <div class="panel">
                         @foreach ($downloads as $key => $download)
-                            <div><a href="{{ url('storage') }}/{{ $download->file }}"
+                            <div><a class="filename"  href="{{ url('storage') }}/{{ $download->file }}"
                                     target='_blank'>{{ $download->filename }}</a></div>
                         @endforeach
                     </div>
@@ -96,6 +96,13 @@
     </section>
 
     <style>
+             .filename{
+            color:#1f3344;
+            margin-bottom: 2px;
+        }
+        .filename:hover{
+            color:#F88147;
+        }
         .accordion {
             color: #fff;
             background-color: #1F3345;

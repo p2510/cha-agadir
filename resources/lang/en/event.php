@@ -4,7 +4,7 @@ return [
     'subtitle2'=>'Location',
     'subtitle3'=>'Start date',
     'subtitle4'=>'End date',
-    'subtitle5'=>'Download ',
+    'subtitle5'=>'Medias',
     'subtitle6'=>"I'am interested",
     'formtext1'=>'Your first and last name',
     'formtext2'=>'Your email',
