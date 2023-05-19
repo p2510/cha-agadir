@@ -5,6 +5,7 @@ use Illuminate\Support\Facades\App;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\BlogController;
 use App\Http\Controllers\HomeController;
+use App\Http\Controllers\TeamController;
 use App\Http\Controllers\AboutController;
 use App\Http\Controllers\MediaController;
 use App\Http\Controllers\VideoController;
@@ -19,11 +20,9 @@ use App\Http\Controllers\MentionController;
 use App\Http\Controllers\BusinessController;
 use App\Http\Controllers\DirectorController;
 use App\Http\Controllers\EvenementController;
-use App\Http\Controllers\ProfessorController;
 use App\Http\Controllers\ExperienceController;
 use App\Http\Controllers\InterestedController;
 use App\Http\Controllers\NewsletterController;
-use App\Http\Controllers\ResponsableController;
 use App\Http\Controllers\CategoryBlogController;
   
 /*
@@ -58,9 +57,9 @@ Route::get('/se-desabonner', [NewsletterController::class, 'create'])->name('new
 Route::post('/se-desabonner', [NewsletterController::class, 'unsubscribe'])->name('newsletter.unsubscribe.store');
 Route::get('/qui-sommes-nous', [AboutController::class, '__invoke'])->name('about.index');
 Route::get('/mot-du-directeur', [DirectorController::class, '__invoke'])->name('director.index');
-Route::get('/notre-équipe', [ResponsableController::class, '__invoke'])->name('responsable.index');
-Route::get('/notre-équipe/{responsable}', [ResponsableController::class, 'show'])->name('responsable.show');
-Route::get('/profésseur', [ProfessorController::class, '__invoke'])->name('professor.index');
+Route::get('/notre-équipe', [TeamController::class, 'index_team'])->name('index.team');
+Route::get('/profésseur', [TeamController::class, 'index_professor'])->name('index.professor');
+Route::get('/profésseur/{responsable}', [TeamController::class, 'show_professor'])->name('show.professor');
 Route::get('/galerie', [MediaController::class, '__invoke'])->name('media.index');
 Route::get('/videos', [VideoController::class, '__invoke'])->name('video.index');
 Route::get('/vie-estudiantine', [CampusController::class, '__invoke'])->name('campus.index');

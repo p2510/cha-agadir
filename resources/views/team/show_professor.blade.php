@@ -22,7 +22,7 @@
                         <div class="col-md-6">
                             <ol class="breadcrumb text-left mt-10" style="color:rgb(45, 69, 88);font-weight:bold;">
                                 <li><a href="/">{{ __('header.title1') }}</a></li>
-                                <li><a href="{{route('responsable.index')}}">{{ __('header.subtitle3') }}</a> </li>
+                                <li><a href="{{route('index.professor')}}">{{ __('header.subtitle33') }}</a> </li>
                                 <li>{{ $responsable->name }} </li>
                             </ol>
                         </div>

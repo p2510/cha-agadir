@@ -21,7 +21,7 @@
                             <div class="col-md-6">
                                 <ol class="breadcrumb text-left mt-10" style="color:rgb(45, 69, 88);font-weight:bold;">
                                     <li><a href="/">{{ __('header.title1') }}</a></li>
-                                    <li>{{ __('header.subtitle3') }} </li>
+                                    <li>{{ __('header.subtitle33') }} </li>
                                 </ol>
                             </div>
                         </div>
@@ -44,7 +44,7 @@
                                         <!-- Portfolio Item Start -->
                                         <div class="gallery-item ">
                                             <div class="team-members mb-40">
-                                                <a href="{{route('responsable.show',$responsable->name)}}" class="team-thumb mr-0">
+                                                <a href="{{route('show.professor',$responsable->name)}}" class="team-thumb mr-0">
                                                     <img src="{{ asset('storage') }}/{{ $responsable->photo }}"
                                                         alt="" class="img-fullwidth">
                                                 </a>

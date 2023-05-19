@@ -214,10 +214,10 @@
                                         <li><a href="{{ route('about.index') }}">{{ __('header.subtitle2') }}</a>
                                         </li>
                                         <li><a
-                                                href="{{ route('responsable.index') }}">{{ __('header.subtitle3') }}</a>
+                                                href="{{ route('index.team') }}">{{ __('header.subtitle3') }}</a>
                                         </li>
                                         <li><a
-                                                href="{{ route('professor.index') }}">{{ __('header.subtitle33') }}</a>
+                                                href="{{ route('index.professor') }}">{{ __('header.subtitle33') }}</a>
                                         </li>
                                         <li><a href="{{ route('campus.index') }}">{{ __('header.subtitle4') }}</a>
                                         </li>
