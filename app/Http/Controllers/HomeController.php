@@ -49,7 +49,7 @@ class HomeController extends Controller
                 $item->subject=$item->subject_en;
                 $item->title=$item->title_en;
                 $item->description=$item->description_en;
-                $item->photo=$item->photo_en;
+                
             }
             return $item;
        });    

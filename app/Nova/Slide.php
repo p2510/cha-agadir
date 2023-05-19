@@ -57,13 +57,13 @@ class Slide extends Resource
             Text::make('Titre (En)','title_en'),
             Textarea::make('Decription (Fr)','description'),
             Textarea::make('Decription (En)','description_en'),
-            Image::make('Une image (Fr)','photo')->disk('public')
+            Image::make('Une image PC','photo')->disk('public')
             ->storeAs(function (Request $request) {
                     return $request->photo->getClientOriginalName();
                  }),
-            Image::make('Une image (En)','photo_en')->disk('public')
+            Image::make('Une image  Mobile' ,'photo_en')->disk('public')
              ->storeAs(function (Request $request) {
-                         return $request->photo->getClientOriginalName() ;
+                         return $request->photo_en->getClientOriginalName() ;
                   }),
         ];
     }

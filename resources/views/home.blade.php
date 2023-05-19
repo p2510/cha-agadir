@@ -19,13 +19,16 @@
                 </button>
             </div>
 
+
             <ul data-slides>
 
                 @foreach ($slides as $slide)
                     @if ($loop->first)
                         <li class="slide" data-active>
                             <span class="slidepot slidepot_item"></span>
-                            <img src="{{ url('storage') }}/{{ $slide->photo }}" alt="Nature Image #1">
+                            <img id="photo_pc0" src="{{ url('storage') }}/{{ $slide->photo }}" alt="{{ $slide->title }}">
+                            <img id="photo_mobile0" src="{{ url('storage') }}/{{ $slide->photo_en }}"
+                                alt="{{ $slide->title }}">
                             <h3>{{ $slide->subject }}</h2>
                                 <h1>{{ $slide->title }}</h1>
                             </h3>
@@ -37,7 +40,9 @@
                     @else
                         <li class="slide">
                             <span class="slidepot slidepot_item"></span>
-                            <img src="{{ url('storage') }}/{{ $slide->photo }}" alt="Nature Image #2">
+                            <img id="photo_pc1" src="{{ url('storage') }}/{{ $slide->photo }}"
+                                alt="{{ $slide->title }}">
+                            <img id="photo_mobile1"src="{{ url('storage') }}/{{ $slide->photo_en }}" alt="{{ $slide->title }}">
                             <h3>{{ $slide->subject }}</h2>
                                 <h1>{{ $slide->title }}</h1>
                             </h3>
@@ -53,6 +58,7 @@
             </ul>
         </div>
     </section>
+
     <style>
         *,
         *::before,
@@ -152,6 +158,7 @@
             }
 
 
+
         }
 
         @media only screen and (max-width: 900px) {
@@ -161,6 +168,7 @@
                 text-align: justify;
             }
 
+
         }
 
         @media only screen and (min-width: 600px) {
@@ -169,6 +177,23 @@
                 top: 68%;
                 z-index: 2;
             }
+
+            #photo_pc0 {
+                display: block;
+            }
+
+            #photo_mobile0 {
+                display: none;
+            }
+            
+            #photo_pc1 {
+                display: block;
+            }
+
+            #photo_mobile1 {
+                display: none;
+            }
+
         }
 
         @media only screen and (max-width: 600px) {
@@ -196,6 +221,22 @@
 
                 font-size: 11px;
             }
+
+            #photo_pc0 {
+                display: none;
+            }
+
+            #photo_mobile0 {
+                display:block;
+            }
+            #photo_pc1 {
+                display: none;
+            }
+
+            #photo_mobile1 {
+                display:block;
+            }
+            
 
 
 
@@ -625,13 +666,15 @@
                                         $getDays = date('d', strtotime($blog->created_at));
                                         $getYears = date('Y', strtotime($evenement->start_at));
                                     @endphp
-                                    <div class="post-date"><span>{{ $getMonth }}</span><br> {{ $getDays }} , {{$getYears}}
+                                    <div class="post-date"><span>{{ $getMonth }}</span><br> {{ $getDays }} ,
+                                        {{ $getYears }}
                                     </div>
 
                                 </div>
                                 <div class="post-description border-1px p-20">
                                     <a href="{{ route('blog-actualités.show', $blog->id) }}">
-                                        <h5 class="post-title font-weight-600 font-16 mt-0 mb-15" style="word-break: break-word;">
+                                        <h5 class="post-title font-weight-600 font-16 mt-0 mb-15"
+                                            style="word-break: break-word;">
                                             {{ $blog->title }}</h5>
                                     </a>
                                     <p style="text-align:justify;hyphens:auto;"> {{ $blog->accroche }} [...]</p>
