@@ -533,7 +533,7 @@ class EvenementController extends Controller
     {
       $data=$request->validate([
         'name'=>['required','string','max:150'],
-        'name'=>['activity','string'],
+        'activity'=>['required','string'],
         'email'=>['email','required'],
         'phone'=>['required','string','min:8'],
         'organism'=>['required','string'],

@@ -46,6 +46,7 @@ class EvenementInterested extends Resource
         return [
             ID::make()->sortable(),
             Text::make('Nom et prénom','name'),
+            Text::make('Activité','activity'),
             Text::make('E-mail','email'),
             Text::make('Organisme','organism'),
             Text::make('Poste','poste'),

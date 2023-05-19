@@ -10,7 +10,8 @@ class EvenementInterested extends Model
 {
     use HasFactory;
     protected $fillable=[
-        'name','email','phone','organism','poste','country','province','accepted','evenement_id'
+       
+        'name', 'activity','email','phone','organism','poste','country','province','accepted','evenement_id'
     ];
     public function evenement() {
         return $this->BelongsTo(Evenement::class);
