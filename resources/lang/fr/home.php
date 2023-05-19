@@ -21,7 +21,7 @@ return [
     'text5'=>'Détails',
     'text6'=>'Ne plus afficher',
     'text7'=>'Télécharger',
-    'text8'=>'TÉLÉCHARGER', 
+    'text8'=>'MÉDIAS', 
 
 
 ];
