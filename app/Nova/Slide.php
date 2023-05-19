@@ -9,6 +9,7 @@ use Laravel\Nova\Fields\Text;
 use Laravel\Nova\Fields\Image;
 use Laravel\Nova\Fields\Number;
 use Laravel\Nova\Fields\Textarea;
+use Outl1ne\NovaColorField\Color;
 use Emilianotisato\NovaTinyMCE\NovaTinyMCE;
 use Laravel\Nova\Http\Requests\NovaRequest;
 
@@ -57,6 +58,7 @@ class Slide extends Resource
             Text::make('Titre (En)','title_en'),
             Textarea::make('Decription (Fr)','description'),
             Textarea::make('Decription (En)','description_en'),
+            Color::make('Couleur','color'),
             Image::make('Une image PC','photo')->disk('public')
             ->storeAs(function (Request $request) {
                     return $request->photo->getClientOriginalName();

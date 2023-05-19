@@ -29,10 +29,10 @@
                             <img id="photo_pc0" src="{{ url('storage') }}/{{ $slide->photo }}" alt="{{ $slide->title }}">
                             <img id="photo_mobile0" src="{{ url('storage') }}/{{ $slide->photo_en }}"
                                 alt="{{ $slide->title }}">
-                            <h3>{{ $slide->subject }}</h2>
-                                <h1>{{ $slide->title }}</h1>
+                            <h3 style="color:{{ $slide->color }};">{{ $slide->subject }}</h2>
+                                <h1 style="color:{{ $slide->color }};">{{ $slide->title }}</h1>
                             </h3>
-                            <div> {!! $slide->description !!}</div>
+                            <div style="color:{{ $slide->color }};"> {!! $slide->description !!}</div>
 
                             <a href="{{ $slide->url }}"
                                 class="btn btn-dark btn-circled btn-theme-colored2 btn-xl mr-10 pr-30 pl-30">{{ __('home.btn1') }}</a>
@@ -43,10 +43,10 @@
                             <img id="photo_pc1" src="{{ url('storage') }}/{{ $slide->photo }}"
                                 alt="{{ $slide->title }}">
                             <img id="photo_mobile1"src="{{ url('storage') }}/{{ $slide->photo_en }}" alt="{{ $slide->title }}">
-                            <h3>{{ $slide->subject }}</h2>
-                                <h1>{{ $slide->title }}</h1>
+                            <h3 style="color:{{ $slide->color }};">{{ $slide->subject }}</h2>
+                                <h1 style="color:{{ $slide->color }};">{{ $slide->title }}</h1>
                             </h3>
-                            <div> {{ $slide->description }}</div>
+                            <div style="color:{{ $slide->color }};"> {{ $slide->description }}</div>
 
 
                             <a href="{{ $slide->url }}"
