@@ -18,7 +18,8 @@ class Evenement extends Model
         'location',
         'photo',
         'accroche',
-        'active'
+        'active',
+        'activity'
     ];
     public function getRouteKeyName()
     {

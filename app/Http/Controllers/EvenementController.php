@@ -533,13 +533,14 @@ class EvenementController extends Controller
     {
       $data=$request->validate([
         'name'=>['required','string','max:150'],
+        'name'=>['activity','string'],
         'email'=>['email','required'],
         'phone'=>['required','string','min:8'],
         'organism'=>['required','string'],
         'country'=>['required','string'],
         'province'=>['string'],
         'poste'=>['required','string'],
-        'accepted'=>['required','string']
+        'accepted'=>['required','string'],
       ]);
       $data['evenement_id']=$id;
       $data['phone']='+'.$request->indice . ' | ' . $data['phone'];
