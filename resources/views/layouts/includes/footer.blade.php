@@ -115,7 +115,7 @@
                     <ul class="list-border">
                         <li class="clearfix" style="color:#1f3344;"> <span> {{ __('footer.day1') }} -
                                 {{ __('footer.day2') }} : </span>
-                            <div class="value pull-right"> 8.30 am – 4h30 pm</div>
+                            <div class="value pull-right"> 8:30 am – 4:30 pm</div>
                         </li>
                         <li class="clearfix" style="color:#1f3344;"> <span> {{ __('footer.day3') }} : </span>
                             <div class="value pull-right bg-theme-colored2 text-white closed">
