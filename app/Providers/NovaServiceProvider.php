@@ -36,6 +36,7 @@ use App\Nova\Experience;
 use App\Nova\Interested;
 use App\Nova\Mediavideo;
 use App\Nova\Newsletter;
+use App\Nova\Coursevideo;
 use App\Nova\Responsable;
 use App\Nova\CategoryBlog;
 use App\Nova\Downloadpage;
@@ -131,6 +132,7 @@ class NovaServiceProvider extends NovaApplicationServiceProvider
                         
                     ])->collapsable(),
                     MenuItem::resource(Downloadpage::class),
+                    MenuItem::resource(Coursevideo::class),
 
                     MenuSection::make('newsletter', [
                         MenuItem::resource(Newsletter::class),

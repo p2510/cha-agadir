@@ -412,9 +412,9 @@
                                     {{ $course->degree->name }}
                                 @endif
                             </h3>
-                            <div class="col-sm-12 col-md-9"
-                                style="background-color:rgb(249, 249, 249); border-radius:5px;">
-                                <div class="single-service">
+                            <div class="col-sm-12 col-md-9">
+                                <div class="single-service"
+                                    style="background-color:rgb(249, 249, 249); border-radius:5px;">
 
                                     <!--<img src="{{ url('storage') }}/{{ $course->photo }}" style="width:100%;" alt="">-->
                                     <ul class="list-inline mt-20 mb-15">
@@ -932,6 +932,21 @@
 
 
                                 </div>
+
+                                <div id="gallery1" class="gallery-isotope default-animation-effect grid-3 gutter-small clearfix"
+                                    data-lightbox="gallery" style="margin-top:6px;">
+                                    @foreach ($coursevideos as $coursevideo)
+                                        <div class="gallery-item">
+                                            <p style="text-align: center; background-color:#F88147;color:black;">
+                                                {{ $coursevideo->title }}</p>
+                                            <iframe width="220" height="145"
+                                                src="https://www.youtube.com/embed/{{ $coursevideo->video }}?rel=0"
+                                                allowfullscreen>
+                                            </iframe>
+                                        </div>
+                                    @endforeach
+                                </div>
+
                             </div>
                             <div class="col-sm-12 col-md-3 form" style="background-color:  #1f3344;">
                                 <div class="sidebar sidebar-left mt-sm-30 ml-30 ml-sm-0">
@@ -1234,6 +1249,7 @@
 
                                 </div>
                             </div>
+
                         </div>
                         <style>
                             @import url('https://fonts.googleapis.com/css2?family=Raleway:wght@500&display=swap');
@@ -1248,12 +1264,19 @@
 
 
                             @media screen and (min-width: 768px) {
+                                #gallery1{
+                                    display: block;
+                                }
+                                #gallery2{
+                                    display: none;
+                                }
                                 #mobile_pade {
 
                                     display: none;
 
 
                                 }
+
 
                                 .form1 {
                                     display: none;
@@ -1274,6 +1297,12 @@
                             }
 
                             @media screen and (max-width: 768px) {
+                                #gallery1{
+                                    display: none;
+                                }
+                                #gallery2{
+                                    display: block;
+                                }
                                 .form1 {
                                     display: block;
                                 }
@@ -1661,7 +1690,19 @@
                                 </div>
                             </div>
                         </div>
-
+                        <div id="gallery2" class="gallery-isotope default-animation-effect grid-3 gutter-small clearfix"
+                        data-lightbox="gallery" style="margin-top:6px;">
+                        @foreach ($coursevideos as $coursevideo)
+                            <div class="gallery-item">
+                                <p style="text-align: center; background-color:#F88147;color:black;">
+                                    {{ $coursevideo->title }}</p>
+                                <iframe width="220" height="145"
+                                    src="https://www.youtube.com/embed/{{ $coursevideo->video }}?rel=0"
+                                    allowfullscreen>
+                                </iframe>
+                            </div>
+                        @endforeach
+                    </div>
 
                         <div class="col-sm-12 col-md-3 form1 mr-10 ml-10" style="background-color:  #1f3344;">
                             <div class="sidebar sidebar-left mt-sm-30 ml-30 ml-sm-0">

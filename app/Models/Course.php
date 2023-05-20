@@ -10,8 +10,8 @@ use App\Models\Download;
 use App\Models\Language;
 use App\Models\Location;
 use App\Models\Modality;
-use App\Models\Coursepage;
 use App\Models\Interested;
+use App\Models\Coursevideo;
 use App\Models\Responsable;
 use App\Models\TrainingType;
 use Illuminate\Database\Eloquent\Model;
@@ -98,8 +98,8 @@ class Course extends Model
         return $this->hasMany(Interested::class, 'course_id', 'local_key');
     }
 
-    public function coursepages() {
-        return $this->hasMany(Coursepage::class);
+    public function coursevideos() {
+        return $this->hasMany(Coursevideo::class);
     }
 
     protected $casts = [

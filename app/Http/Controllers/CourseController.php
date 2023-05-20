@@ -11,6 +11,7 @@ use App\Models\Program;
 use App\Models\Download;
 use App\Http\Utils\Levels;
 use App\Models\Curriculum;
+use App\Models\Coursevideo;
 use Illuminate\Http\Request;
 use App\Http\Utils\Countries;
 use App\Http\Utils\Provinces;
@@ -125,6 +126,12 @@ class CourseController extends Controller
         $downloads=Download::where('course_id',$course->id)->get()->map(function ($item){         
           if (App::isLocale('en')) {
               $item->name=$item->name_en;
+          }
+          return $item;
+         });
+         $coursevideos=Coursevideo::where('course_id',$course->id)->get()->map(function ($item){         
+          if (App::isLocale('en')) {
+              $item->title=$item->title_en;
           }
           return $item;
          });
@@ -633,7 +640,8 @@ class CourseController extends Controller
             'countries'=>$countries,
             'provinces'=>$provinces,
             'levels'=>$levels,
-          'design'=>$design
+            'design'=>$design,
+            'coursevideos'=> $coursevideos
 
         ]);
 
