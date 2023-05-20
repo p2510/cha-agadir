@@ -11,6 +11,7 @@ class Downloadpage extends Model
     protected $fillable=[
         'file',
         'filename',
-        'pagename'
+        'pagename',
+        'filename_en'
     ];
 }

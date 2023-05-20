@@ -12,6 +12,7 @@ class Evenementpage extends Model
     protected $fillable=[
         'file',
         'filename',
+        'filename_en',
         'evenement_id'
     ];
     public function evenement() {

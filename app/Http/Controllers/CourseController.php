@@ -122,7 +122,12 @@ class CourseController extends Controller
           }
           return $item;
         });
-        $downloads=Download::where('course_id',$course->id)->get();
+        $downloads=Download::where('course_id',$course->id)->get()->map(function ($item){         
+          if (App::isLocale('en')) {
+              $item->name=$item->name_en;
+          }
+          return $item;
+         });
         $degrees=Degree::all();
         $design=Design::first();
         
@@ -668,7 +673,12 @@ class CourseController extends Controller
           Carbon::parse($item->datelimite)->locale('FR_fr')->diffForHumans();
       }
       $programs=Program::where('course_id',$val[0]->id)->get();
-      $downloads=Download::where('course_id',$val[0]->id)->get();
+      $downloads=Download::where('course_id',$val[0]->id)->get()->map(function ($item){         
+        if (App::isLocale('en')) {
+            $item->name=$item->name_en;
+        }
+        return $item;
+       });
       $degrees=Degree::all();
       
       $last_courses= DB::table('courses')->join('modalities','modalities.id','=','courses.modality_id')

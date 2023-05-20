@@ -97,6 +97,7 @@ class NovaServiceProvider extends NovaApplicationServiceProvider
                     MenuItem::resource(Barre::class),
                     MenuItem::resource(Popup::class),
 
+
                     MenuSection::make('Visiteurs', [
                         MenuItem::resource(Interested::class),
                         MenuItem::resource(Contact::class),

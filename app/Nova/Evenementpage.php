@@ -44,7 +44,8 @@ class Evenementpage extends Resource
     {
         return [
             ID::make()->sortable(),
-            Text::make('Nom du document','filename'),          
+            Text::make('Nom du document (Fr)','filename'),          
+            Text::make('Nom du document (En)','filename_en'),           
             File::make('Un fichier','file')->disk('public')
             ->storeAs(function (Request $request) {
                     return $request->file->getClientOriginalName();

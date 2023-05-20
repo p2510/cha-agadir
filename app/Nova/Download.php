@@ -47,7 +47,8 @@ class Download extends Resource
     {
         return [
             ID::make()->sortable(),
-            Text::make('Nom du document','name'),
+            Text::make('Nom du document (Fr)','name'),
+            Text::make('Nom du document (En)','name_en'),           
             File::make('File')->disk('public')
                     ->storeAs(function (Request $request) {
                             return $request->file->getClientOriginalName();

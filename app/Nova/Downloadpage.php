@@ -55,7 +55,8 @@ class Downloadpage extends Resource
                 'campus'=>'vie estudiantine',
               
             ]) ,  
-            Text::make('Nom du document','filename'),          
+            Text::make('Nom du document (Fr)','filename'),          
+            Text::make('Nom du document (En)','filename_en'),           
             File::make('Un fichier','file')->disk('public')
             ->storeAs(function (Request $request) {
                     return $request->file->getClientOriginalName();

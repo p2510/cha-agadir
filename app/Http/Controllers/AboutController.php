@@ -29,7 +29,12 @@ class AboutController extends Controller
         $shareWhatsapp=ShareFacade::currentPage()->whatsapp()->getRawLinks();
         $shareLinkedin=ShareFacade::currentPage()->linkedin()->getRawLinks();
        
-        $downloads=Downloadpage::where('pagename','about')->get();
+        $downloads=Downloadpage::where('pagename','about')->get()->map(function ($item){         
+            if (App::isLocale('en')) {
+                $item->filename=$item->filename_en;
+            }
+            return $item;
+           });
         return view('about')->with(['datas'=>$datas,'shareFacebook'=>$shareFacebook,'shareWhatsapp'=>$shareWhatsapp,'shareLinkedin'=>$shareLinkedin,'downloads'=>$downloads]);
     }
 }

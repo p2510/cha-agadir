@@ -214,6 +214,8 @@ class Course extends Resource
             
             HasMany::make('downloads'),
             HasMany::make('interesteds'),
+
+            
     
 
             //Date::make('Date limite','datelimite'),

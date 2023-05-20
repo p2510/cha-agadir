@@ -10,6 +10,7 @@ use App\Models\Download;
 use App\Models\Language;
 use App\Models\Location;
 use App\Models\Modality;
+use App\Models\Coursepage;
 use App\Models\Interested;
 use App\Models\Responsable;
 use App\Models\TrainingType;
@@ -95,6 +96,10 @@ class Course extends Model
     public function interesteds()
     {
         return $this->hasMany(Interested::class, 'course_id', 'local_key');
+    }
+
+    public function coursepages() {
+        return $this->hasMany(Coursepage::class);
     }
 
     protected $casts = [

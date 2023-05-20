@@ -11,6 +11,7 @@ class Download extends Model
     use HasFactory;
     protected $fillable=[
         'name',
+        'name_en',
         'file',
         'course_id'
     ];

@@ -30,9 +30,12 @@ class EvenementController extends Controller
     public function show(Evenement $evenement)
     {
          $data=Evenement::where('id',$evenement->id)->get()->map(function ($item){
+          
           if (App::isLocale('en')) {
               $item->title=$item->title_en;
               $item->description=$item->description_en;
+             
+
           }
           return $item;
          });
@@ -40,7 +43,13 @@ class EvenementController extends Controller
          $shareFacebook=ShareFacade::currentPage()->facebook()->getRawLinks();
          $shareWhatsapp=ShareFacade::currentPage()->whatsapp()->getRawLinks();
          $shareLinkedin=ShareFacade::currentPage()->linkedin()->getRawLinks();
-         $evenementPages=Evenementpage::where('evenement_id',$evenement->id)->get();
+         $evenementPages=Evenementpage::where('evenement_id',$evenement->id)->get()->map(function ($item){         
+          if (App::isLocale('en')) {
+              $item->filename=$item->filename_en;
+          }
+          return $item;
+         });
+         
          $countries= [
           "Maroc",
           "Afghanistan",

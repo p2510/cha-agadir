@@ -27,7 +27,12 @@ class CampusController extends Controller
         $shareFacebook=ShareFacade::currentPage()->facebook()->getRawLinks();
         $shareWhatsapp=ShareFacade::currentPage()->whatsapp()->getRawLinks();
         $shareLinkedin=ShareFacade::currentPage()->linkedin()->getRawLinks();
-        $downloads=Downloadpage::where('pagename','campus')->get();
+        $downloads=Downloadpage::where('pagename','campus')->get()->map(function ($item){         
+            if (App::isLocale('en')) {
+                $item->filename=$item->filename_en;
+            }
+            return $item;
+           });
         return view('static.campus')->with(['datas'=>$datas,'shareFacebook'=>$shareFacebook,'shareWhatsapp'=>$shareWhatsapp,'shareLinkedin'=>$shareLinkedin,'downloads'=>$downloads]);
     }
 }

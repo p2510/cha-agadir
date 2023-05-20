@@ -31,7 +31,12 @@ class ImpactController extends Controller
         $shareLinkedin=ShareFacade::currentPage()->linkedin()->getRawLinks();
 
 
-        $downloads=Downloadpage::where('pagename','impact-cluster')->get();
+        $downloads=Downloadpage::where('pagename','impact-cluster')->get()->map(function ($item){         
+            if (App::isLocale('en')) {
+                $item->filename=$item->filename_en;
+            }
+            return $item;
+           });
         
         return view('static.impact')->with(['datas'=>$datas,'shareFacebook'=>$shareFacebook,'shareWhatsapp'=>$shareWhatsapp,'shareLinkedin'=>$shareLinkedin,'downloads'=>$downloads]);
     }

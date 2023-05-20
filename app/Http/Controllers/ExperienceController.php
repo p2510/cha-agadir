@@ -25,7 +25,12 @@ class ExperienceController extends Controller
             return $item;
        });
         $shareFacebook=ShareFacade::currentPage()->facebook()->getRawLinks();
-        $downloads=Downloadpage::where('pagename','ferme-experiementale')->get();
+        $downloads=Downloadpage::where('pagename','ferme-experiementale')->get()->map(function ($item){         
+            if (App::isLocale('en')) {
+                $item->filename=$item->filename_en;
+            }
+            return $item;
+           });
 
        
 
