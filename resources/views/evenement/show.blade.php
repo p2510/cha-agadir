@@ -234,7 +234,7 @@
                                             {{ __('event.subtitle5') }}
                                             :</h5>
                                         @foreach ($evenementPages as $item)
-                                            <p><a class="filename"  style="text-decoration:underline;"
+                                            <p><a class="filename" style="text-decoration:underline;"
                                                     href="{{ url('storage') }}/{{ $item->file }}"
                                                     target='_blank'>{{ $item->filename }}</a></p>
                                         @endforeach
@@ -302,6 +302,23 @@
                 </div>
             </section>
 
+            <section>
+                <div class="container">
+                    <div class="gallery-isotope default-animation-effect grid-3 gutter-small clearfix"
+                        data-lightbox="gallery" style="margin-top:6px;">
+                        @foreach ($evenementvideos as $evenementvideo)
+                            <div class="gallery-item">
+                                <p style="text-align: center; background-color:#F88147;color:black;">
+                                    {{ $evenementvideo->title }}</p>
+                                <iframe width="220" height="145"
+                                    src="https://www.youtube.com/embed/{{ $evenementvideo->video }}?rel=0"
+                                    allowfullscreen>
+                                </iframe>
+                            </div>
+                        @endforeach
+                    </div>
+                </div>
+            </section>
             @if ($evenement->active)
                 <!-- Section: Registration Form -->
                 <section style="background-color:#1f3344;">
@@ -336,51 +353,58 @@
                                         <div class="col-sm-12">
                                             <div class="form-group">
                                                 @if (App::isLocale('en'))
-                                                <select name="activity" required class="form-control">
-                                                    <option value="Agricultural producion">Agricultural producion
-                                                    </option>
-                                                    <option value="Nursery">Nursery</option>
-                                                    <option value="Packaging house and export">Packaging house and
-                                                        export</option>
-                                                    <option value="Agricultural inputs">Agricultural inputs</option>
-                                                    <option value="Irrigation">Irrigation</option>
-                                                    <option value="Packaging">Packaging</option>
-                                                    <option value="Professional association">Professional association
-                                                    </option>
-                                                    <option value="Interprofessional Federation">Interprofessional
-                                                        Federation</option>
-                                                    <option value="Public administration">Public administration
-                                                    </option>
-                                                    <option value="University education">University education</option>
-                                                    <option value="Research - Developement">Research - Developement
-                                                    </option>
-                                                    <option value="Student">Student</option>
-                                                    <option value="Laboratory">Laboratory</option>
-                                                    <option value="Consulting">Consulting</option>
-                                                    <option value="Banks and insurance">Banks and insurance</option>
-                                                    <option value="Transit">Transit</option>
-                                                    <option value="Other">Other</option>
-                                                </select>
+                                                    <select name="activity" required class="form-control">
+                                                        <option value="Agricultural producion">Agricultural producion
+                                                        </option>
+                                                        <option value="Nursery">Nursery</option>
+                                                        <option value="Packaging house and export">Packaging house and
+                                                            export</option>
+                                                        <option value="Agricultural inputs">Agricultural inputs</option>
+                                                        <option value="Irrigation">Irrigation</option>
+                                                        <option value="Packaging">Packaging</option>
+                                                        <option value="Professional association">Professional association
+                                                        </option>
+                                                        <option value="Interprofessional Federation">Interprofessional
+                                                            Federation</option>
+                                                        <option value="Public administration">Public administration
+                                                        </option>
+                                                        <option value="University education">University education</option>
+                                                        <option value="Research - Developement">Research - Developement
+                                                        </option>
+                                                        <option value="Student">Student</option>
+                                                        <option value="Laboratory">Laboratory</option>
+                                                        <option value="Consulting">Consulting</option>
+                                                        <option value="Banks and insurance">Banks and insurance</option>
+                                                        <option value="Transit">Transit</option>
+                                                        <option value="Other">Other</option>
+                                                    </select>
                                                 @else
-                                                <select name="activity" required class="form-control">
-                                                  <option value="Production agricole">Production agricole</option>
-                                                  <option value="Pépinière">Pépinière</option>
-                                                  <option value="CondiAonnement et export">CondiAonnement et export</option>
-                                                  <option value="Intrants agricoles">Intrants agricoles</option>
-                                                  <option value="IrrigaAon">IrrigaAon</option>
-                                                  <option value="Emballage">Emballage</option>
-                                                  <option value="AssociaAon professionnelle">AssociaAon professionnelle</option>
-                                                  <option value="FédéraAon interprofessionnelle">FédéraAon interprofessionnelle</option>
-                                                  <option value="AdministraAon publique">AdministraAon publique</option>
-                                                  <option value="Enseignement universitaire">Enseignement universitaire</option>
-                                                  <option value="Recherche - Développement">Recherche - Développement</option>
-                                                  <option value="Étudiant">Étudiant</option>
-                                                  <option value="laboratoire">laboratoire</option>
-                                                  <option value="Consultang">Consultang</option>
-                                                  <option value="Banques et assurances">Banques et assurances</option>
-                                                  <option value="Transit">Transit</option>
-                                                  <option value="Autre">Autre</option>
-                                                </select>
+                                                    <select name="activity" required class="form-control">
+                                                        <option value="Production agricole">Production agricole</option>
+                                                        <option value="Pépinière">Pépinière</option>
+                                                        <option value="CondiAonnement et export">CondiAonnement et export
+                                                        </option>
+                                                        <option value="Intrants agricoles">Intrants agricoles</option>
+                                                        <option value="IrrigaAon">IrrigaAon</option>
+                                                        <option value="Emballage">Emballage</option>
+                                                        <option value="AssociaAon professionnelle">AssociaAon
+                                                            professionnelle</option>
+                                                        <option value="FédéraAon interprofessionnelle">FédéraAon
+                                                            interprofessionnelle</option>
+                                                        <option value="AdministraAon publique">AdministraAon publique
+                                                        </option>
+                                                        <option value="Enseignement universitaire">Enseignement
+                                                            universitaire</option>
+                                                        <option value="Recherche - Développement">Recherche - Développement
+                                                        </option>
+                                                        <option value="Étudiant">Étudiant</option>
+                                                        <option value="laboratoire">laboratoire</option>
+                                                        <option value="Consultang">Consultang</option>
+                                                        <option value="Banques et assurances">Banques et assurances
+                                                        </option>
+                                                        <option value="Transit">Transit</option>
+                                                        <option value="Autre">Autre</option>
+                                                    </select>
                                                 @endif
 
                                                 @if ($errors->has('activity'))
@@ -514,7 +538,7 @@
     @endforeach
 
     <style>
-         .filename {
+        .filename {
             color: #1f3344;
             margin-bottom: 2px;
         }
@@ -522,6 +546,7 @@
         .filename:hover {
             color: #F88147;
         }
+
         .iti {
             width: 100%;
             display: block;

@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\Media;
 use App\Models\Director;
+use App\Models\Pagevideo;
 use App\Models\Downloadpage;
 use Illuminate\Http\Request;
 use Jorenvh\Share\ShareFacade;
@@ -36,6 +37,12 @@ class DirectorController extends Controller
             }
             return $item;
            });
-        return view('director')->with(['datas'=>$datas,'shareFacebook'=>$shareFacebook,'shareWhatsapp'=>$shareWhatsapp,'shareLinkedin'=>$shareLinkedin,'downloads'=>$downloads]);
+           $pagevideos=Pagevideo::where('pagename','mot-du-directeur')->get()->map(function ($item){         
+            if (App::isLocale('en')) {
+                $item->title=$item->title_en;
+            }
+            return $item;
+           });
+        return view('director')->with(['datas'=>$datas,'shareFacebook'=>$shareFacebook,'shareWhatsapp'=>$shareWhatsapp,'shareLinkedin'=>$shareLinkedin,'downloads'=>$downloads,'pagevideos'=>$pagevideos]);
     }
 }

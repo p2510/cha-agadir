@@ -3,6 +3,7 @@
 namespace App\Models;
 
 use App\Models\Evenementpage;
+use App\Models\Evenementvideo;
 use App\Models\EvenementInterested;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
@@ -34,6 +35,9 @@ class Evenement extends Model
     }
     public function evenementpages() {
         return $this->hasMany(Evenementpage::class);
+    }
+    public function evenementvideos() {
+        return $this->hasMany(Evenementvideo::class);
     }
 
 

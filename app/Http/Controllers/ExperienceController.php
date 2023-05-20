@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Pagevideo;
 use App\Models\Experience;
 use App\Models\Downloadpage;
 use Illuminate\Http\Request;
@@ -31,13 +32,18 @@ class ExperienceController extends Controller
             }
             return $item;
            });
-
+           $pagevideos=Pagevideo::where('pagename','ferme-experiementale')->get()->map(function ($item){         
+            if (App::isLocale('en')) {
+                $item->title=$item->title_en;
+            }
+            return $item;
+           });
        
 
         $shareWhatsapp=ShareFacade::currentPage()->whatsapp()->getRawLinks();
         $shareLinkedin=ShareFacade::currentPage()->linkedin()->getRawLinks();
         
         
-        return view('static.experience')->with(['datas'=>$datas,'shareFacebook'=>$shareFacebook, 'shareWhatsapp'=>$shareWhatsapp,'shareLinkedin'=>$shareLinkedin,'downloads'=>$downloads]);
+        return view('static.experience')->with(['datas'=>$datas,'shareFacebook'=>$shareFacebook, 'shareWhatsapp'=>$shareWhatsapp,'shareLinkedin'=>$shareLinkedin,'downloads'=>$downloads,'pagevideos'=>$pagevideos]);
     }
 }

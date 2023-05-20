@@ -19,8 +19,8 @@
                     <div class="row">
                         <div class="col-md-6">
                             <ol class="breadcrumb text-left" style="color:rgb(45, 69, 88);font-weight:bold;">
-                                <li><a href="/">{{__('header.title1')}}</a></li>
-                                <li>{{__('header.subtitle1')}}</li>
+                                <li><a href="/">{{ __('header.title1') }}</a></li>
+                                <li>{{ __('header.subtitle1') }}</li>
                             </ol>
                         </div>
                     </div>
@@ -38,7 +38,8 @@
                         </div>
                         <div class="col-md-12">
                             <h2 class="text-uppercasetext-theme-colored mt-0 mb-0 mt-sm-30"><span
-                                    class="text-theme-colored2" style="text-transform:uppercase;">{{__('header.subtitle1')}}</span></h2>
+                                    class="text-theme-colored2"
+                                    style="text-transform:uppercase;">{{ __('header.subtitle1') }}</span></h2>
 
 
                             <div class="mt-30 mb-0">
@@ -81,11 +82,23 @@
                             <div style="text-align:justify;hyphens:auto;color:#1f3344;">{!! $data->content !!}</div>
                         </div>
                     @endforeach
-                    <button class="accordion" >{{__('home.text8')}}</button>
+                    <button class="accordion">{{ __('home.text8') }}</button>
                     <div class="panel">
                         @foreach ($downloads as $key => $download)
                             <div><a href="{{ url('storage') }}/{{ $download->file }}"
                                     target='_blank'>{{ $download->filename }}</a></div>
+                        @endforeach
+                    </div>
+                    <div class="gallery-isotope default-animation-effect grid-3 gutter-small clearfix"
+                        data-lightbox="gallery" style="margin-top:6px;">
+                        @foreach ($pagevideos as $pagevideo)
+                            <div class="gallery-item">
+                                <p style="text-align: center; background-color:#F88147;color:black;">
+                                    {{ $pagevideo->title }}</p>
+                                <iframe width="220" height="145"
+                                    src="https://www.youtube.com/embed/{{ $pagevideo->video }}?rel=0" allowfullscreen>
+                                </iframe>
+                            </div>
                         @endforeach
                     </div>
 

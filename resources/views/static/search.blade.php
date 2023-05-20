@@ -86,6 +86,21 @@
                         @endforeach
                     </div>
 
+                    <div class="gallery-isotope default-animation-effect grid-3 gutter-small clearfix"
+                        data-lightbox="gallery" style="margin-top:6px;">
+                        @foreach ($pagevideos as $pagevideo)
+                            <div class="gallery-item">
+                                <p style="text-align: center; background-color:#F88147;color:black;">
+                                    {{ $pagevideo->title }}</p>
+                                <iframe width="220" height="145"
+                                    src="https://www.youtube.com/embed/{{ $pagevideo->video }}?rel=0" allowfullscreen>
+                                </iframe>
+                            </div>
+                        @endforeach
+                    </div>
+
+
+
 
 
 
@@ -95,13 +110,15 @@
     </section>
 
     <style>
-        .filename{
-            color:#1f3344;
+        .filename {
+            color: #1f3344;
             margin-bottom: 2px;
         }
-        .filename:hover{
-            color:#F88147;
+
+        .filename:hover {
+            color: #F88147;
         }
+
         .accordion {
             cursor: pointer;
             padding: 18px;

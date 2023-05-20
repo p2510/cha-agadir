@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Models\Evenement;
 use Illuminate\Http\Request;
 use App\Models\Evenementpage;
+use App\Models\Evenementvideo;
 use Jorenvh\Share\ShareFacade;
 use App\Jobs\JobMessageEvenement;
 use App\Mail\SendMessageEvenement;
@@ -46,6 +47,13 @@ class EvenementController extends Controller
          $evenementPages=Evenementpage::where('evenement_id',$evenement->id)->get()->map(function ($item){         
           if (App::isLocale('en')) {
               $item->filename=$item->filename_en;
+          }
+          return $item;
+         });
+         
+         $evenementvideos=Evenementvideo::where('evenement_id',$evenement->id)->get()->map(function ($item){         
+          if (App::isLocale('en')) {
+              $item->title=$item->title_en;
           }
           return $item;
          });
@@ -535,7 +543,7 @@ class EvenementController extends Controller
    ];
          
 
-          return view('evenement.show')->with(['evenements'=>$data,'evenementPages'=>$evenementPages,'shareFacebook'=>$shareFacebook,'shareWhatsapp'=>$shareWhatsapp,'shareLinkedin'=>$shareLinkedin,'countries'=>$countries,'provinces'=>$provinces]);
+          return view('evenement.show')->with(['evenements'=>$data,'evenementPages'=>$evenementPages,'evenementvideos'=>$evenementvideos,'shareFacebook'=>$shareFacebook,'shareWhatsapp'=>$shareWhatsapp,'shareLinkedin'=>$shareLinkedin,'countries'=>$countries,'provinces'=>$provinces]);
     }
 
     public function signIn($id,Request $request)

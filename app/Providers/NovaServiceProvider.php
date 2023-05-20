@@ -31,6 +31,7 @@ use App\Nova\Location;
 use App\Nova\Modality;
 use Laravel\Nova\Nova;
 use App\Nova\Evenement;
+use App\Nova\Pagevideo;
 use App\Nova\Curriculum;
 use App\Nova\Experience;
 use App\Nova\Interested;
@@ -44,6 +45,7 @@ use App\Nova\TrainingType;
 use App\Nova\CategoryMedia;
 use App\Nova\CategoryVideo;
 use App\Nova\Evenementpage;
+use App\Nova\Evenementvideo;
 use App\Nova\MessageNewsletter;
 use Laravel\Nova\Menu\MenuItem;
 use App\Nova\EvenementInterested;
@@ -133,6 +135,8 @@ class NovaServiceProvider extends NovaApplicationServiceProvider
                     ])->collapsable(),
                     MenuItem::resource(Downloadpage::class),
                     MenuItem::resource(Coursevideo::class),
+                    MenuItem::resource(Evenementvideo::class),
+                    MenuItem::resource(Pagevideo::class),
 
                     MenuSection::make('newsletter', [
                         MenuItem::resource(Newsletter::class),

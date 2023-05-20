@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\Center;
+use App\Models\Pagevideo;
 use App\Models\Downloadpage;
 use Illuminate\Http\Request;
 use Jorenvh\Share\ShareFacade;
@@ -34,7 +35,12 @@ class CenterController extends Controller
             }
             return $item;
            });
-
-        return view('static.center')->with(['datas'=>$datas,'shareFacebook'=>$shareFacebook,'shareWhatsapp'=>$shareWhatsapp,'shareLinkedin'=>$shareLinkedin,'downloads'=>$downloads]);
+           $pagevideos=Pagevideo::where('pagename','centre-excellence')->get()->map(function ($item){         
+            if (App::isLocale('en')) {
+                $item->title=$item->title_en;
+            }
+            return $item;
+           });
+        return view('static.center')->with(['datas'=>$datas,'shareFacebook'=>$shareFacebook,'shareWhatsapp'=>$shareWhatsapp,'shareLinkedin'=>$shareLinkedin,'downloads'=>$downloads,'pagevideos'=>$pagevideos]);
     }
 }

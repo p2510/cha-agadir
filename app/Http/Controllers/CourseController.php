@@ -688,6 +688,12 @@ class CourseController extends Controller
         return $item;
        });
       $degrees=Degree::all();
+      $coursevideos=Coursevideo::where('course_id',$course->id)->get()->map(function ($item){         
+        if (App::isLocale('en')) {
+            $item->title=$item->title_en;
+        }
+        return $item;
+       });
       
       $last_courses= DB::table('courses')->join('modalities','modalities.id','=','courses.modality_id')
       ->select('courses.name','courses.id','modalities.name as modalitiy_name')
@@ -1203,7 +1209,8 @@ class CourseController extends Controller
           'countries'=>$countries,
           'provinces'=>$provinces,
           'levels'=>$levels,
-          'design'=>$design
+          'design'=>$design,
+          'coursevideos'=>$coursevideos
       ]);
     }
 
