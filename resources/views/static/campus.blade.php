@@ -38,7 +38,36 @@
                         <div class="col-md-12">
                             <img class="img-fullwidth" src="{{ url('storage') }}/{{ $data->photo }}" alt="">
                         </div>
-                        <div class="col-md-12">
+                    @endforeach
+                    @if (count($tabs) > 0)
+                        <div class="col-md-4">
+                            @foreach ($tabs as $key => $tab)
+                                <div class="accordion1 mr-10 ml-10 mb-10">
+                                    <div class="item">
+                                        <div class="text"
+                                            style="display: flex;justify-content:space-between; padding-left:4px;padding-right:4px;">
+                                            <p style="color:#F88147;"> {{ $tab->title }}</p>
+                                            <span> <svg xmlns="http://www.w3.org/2000/svg" class="icon" fill="none"
+                                                    viewBox="0 0 24 24" stroke="currentColor">
+                                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                                        d="M19 9l-7 7-7-7" />
+                                                </svg></span>
+                                        </div>
+
+
+                                        <div class="hidden-box"
+                                            style="margin-top:-30px;padding-left:10px;padding-right:10px;">
+                                            <div style="text-align:justify;hyphens:auto;color:white"> {{ $tab->content }}
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                </div>
+                            @endforeach
+                        </div>
+                    @endif
+                    @foreach ($datas as $data)
+                        <div class="@if (count($tabs) > 0) col-md-8 @else col-md-12 @endif">
                             <h2 class="text-uppercasetext-theme-colored mt-0 mb-0 mt-sm-30"><span
                                     class="text-theme-colored2">{{ __('header.subtitle4') }}</span></h2>
                             <div class="mt-30 mb-0">
@@ -270,6 +299,106 @@
             }
         }
     </style>
+    <style>
+        .accordion1 .item,
+            {
+            font-family: Raleway, "Helvetica Neue", Helvetica, Arial, sans-serif;
+            color: white;
+            font-size: 16px;
+        }
+    
+        .accordion1 {
+            max-width: 700px;
+            display: flex;
+            flex-direction: column;
+            gap: 24px;
+        }
+    
+        .accordion1 .item {
+            box-shadow: 0 0 32px #F8814710;
+            background-color: #1f3344;
+            cursor: pointer;
+            display: grid;
+    
+            column-gap: 24px;
+            row-gap: 32px;
+            border-top: 4px solid transparent;
+            align-items: center;
+            transition: border-top 0.3s;
+        }
+    
+        .accordion1 .item.open {
+            border-top: 4px solid white;
+        }
+    
+        .accordion1 .item.open .hidden-box {
+            display: block;
+        }
+    
+        .accordion1 .item.open .text {
+            color: white;
+        }
+    
+        .accordion1 .text {
+            font-size: 24px;
+            font-weight: 500;
+            color: #1f3344;
+        }
+    
+        .accordion1 .item.open .text {
+            transition: color 0.3s;
+        }
+    
+        .accordion1 .icon {
+            width: 24px;
+            height: 24px;
+            stroke: #F88147;
+            transition: transform 0.5s ease-in;
+        }
+    
+        .accordion1 .item.open .icon {
+            transform: rotate(180deg);
+        }
+    
+        .accordion1 .hidden-box {
+            grid-column: 1;
+            width: 100%;
+            display: none;
+            transition: display 0.5 ease-in;
+            padding-left: 5px;
+    
+        }
+    
+        .accordion1 .hidden-box p {
+            line-height: 1.6;
+            margin-bottom: 24px;
+        }
+    </style>
+    <script>
+        const items = document.querySelectorAll(".item");
+    
+        items.forEach((item) => {
+            item.addEventListener('click', (e) => {
+                items.forEach((otherItem) => {
+                    if (otherItem !== item && otherItem.classList.contains('open')) {
+                        otherItem.classList.remove('open');
+                    }
+                });
+                item.classList.toggle('open');
+                let top = e.target.offsetTop;
+    
+                /* if (item.classList.contains('open')) {
+                      window.scroll({
+                          top: top,
+                          behavior: 'auto'
+                      });
+                  }*/
+    
+    
+            });
+        });
+    </script>
+    
     <script>
         var acc = document.getElementsByClassName("accordion");
         var i;

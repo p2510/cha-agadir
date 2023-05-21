@@ -23,6 +23,7 @@ use App\Nova\Contact;
 use App\Nova\Mention;
 use App\Nova\Partner;
 use App\Nova\Program;
+use App\Nova\Tabpage;
 use App\Nova\Business;
 use App\Nova\Director;
 use App\Nova\Download;
@@ -134,6 +135,7 @@ class NovaServiceProvider extends NovaApplicationServiceProvider
                         
                     ])->collapsable(),
                     MenuItem::resource(Downloadpage::class),
+                    MenuItem::resource(Tabpage::class),
                     MenuItem::resource(Coursevideo::class),
                     MenuItem::resource(Evenementvideo::class),
                     MenuItem::resource(Pagevideo::class),

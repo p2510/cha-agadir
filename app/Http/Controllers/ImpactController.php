@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\Impact;
+use App\Models\Tabpage;
 use App\Models\Pagevideo;
 use App\Models\Downloadpage;
 use Illuminate\Http\Request;
@@ -44,7 +45,14 @@ class ImpactController extends Controller
             }
             return $item;
            });
+           $tabs=Tabpage::where('pagename','impact-cluster')->get()->map(function ($item){         
+            if (App::isLocale('en')) {
+                $item->title=$item->title_en;
+                $item->content=$item->content_en;
+            }
+            return $item;
+        });
         
-        return view('static.impact')->with(['datas'=>$datas,'shareFacebook'=>$shareFacebook,'shareWhatsapp'=>$shareWhatsapp,'shareLinkedin'=>$shareLinkedin,'downloads'=>$downloads,'pagevideos'=>$pagevideos]);
+        return view('static.impact')->with(['datas'=>$datas,'shareFacebook'=>$shareFacebook,'shareWhatsapp'=>$shareWhatsapp,'shareLinkedin'=>$shareLinkedin,'downloads'=>$downloads,'pagevideos'=>$pagevideos,'tabs'=>$tabs]);
     }
 }

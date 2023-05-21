@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\About;
+use App\Models\Tabpage;
 use App\Models\Pagevideo;
 use App\Models\Downloadpage;
 use Illuminate\Http\Request;
@@ -35,13 +36,20 @@ class AboutController extends Controller
                 $item->filename=$item->filename_en;
             }
             return $item;
-           });
-           $pagevideos=Pagevideo::where('pagename','about')->get()->map(function ($item){         
+        });
+        $pagevideos=Pagevideo::where('pagename','about')->get()->map(function ($item){         
             if (App::isLocale('en')) {
                 $item->title=$item->title_en;
             }
             return $item;
-           });
-        return view('about')->with(['datas'=>$datas,'shareFacebook'=>$shareFacebook,'shareWhatsapp'=>$shareWhatsapp,'shareLinkedin'=>$shareLinkedin,'downloads'=>$downloads,'pagevideos'=>$pagevideos]);
+        });
+        $tabs=Tabpage::where('pagename','about')->get()->map(function ($item){         
+            if (App::isLocale('en')) {
+                $item->title=$item->title_en;
+                $item->content=$item->content_en;
+            }
+            return $item;
+        });
+        return view('about')->with(['datas'=>$datas,'shareFacebook'=>$shareFacebook,'shareWhatsapp'=>$shareWhatsapp,'shareLinkedin'=>$shareLinkedin,'downloads'=>$downloads,'pagevideos'=>$pagevideos,'tabs'=>$tabs]);
     }
 }

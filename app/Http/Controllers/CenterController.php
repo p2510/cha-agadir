@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\Center;
+use App\Models\Tabpage;
 use App\Models\Pagevideo;
 use App\Models\Downloadpage;
 use Illuminate\Http\Request;
@@ -34,13 +35,22 @@ class CenterController extends Controller
                 $item->filename=$item->filename_en;
             }
             return $item;
-           });
-           $pagevideos=Pagevideo::where('pagename','centre-excellence')->get()->map(function ($item){         
+        });
+        $tabs=Tabpage::where('pagename','centre-excellence')->get()->map(function ($item){         
+            if (App::isLocale('en')) {
+                $item->title=$item->title_en;
+                $item->content=$item->content_en;
+            }
+            return $item;
+        });
+
+
+        $pagevideos=Pagevideo::where('pagename','centre-excellence')->get()->map(function ($item){         
             if (App::isLocale('en')) {
                 $item->title=$item->title_en;
             }
             return $item;
-           });
-        return view('static.center')->with(['datas'=>$datas,'shareFacebook'=>$shareFacebook,'shareWhatsapp'=>$shareWhatsapp,'shareLinkedin'=>$shareLinkedin,'downloads'=>$downloads,'pagevideos'=>$pagevideos]);
+        });
+        return view('static.center')->with(['datas'=>$datas,'shareFacebook'=>$shareFacebook,'shareWhatsapp'=>$shareWhatsapp,'shareLinkedin'=>$shareLinkedin,'downloads'=>$downloads,'pagevideos'=>$pagevideos,'tabs'=>$tabs]);
     }
 }
