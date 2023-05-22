@@ -35,82 +35,221 @@
             <div class="section-content">
                 <div class="row" style="font-size:16px;">
                     @foreach ($datas as $data)
-                        <div class="col-md-12">
-                            <img class="img-fullwidth" src="{{ url('storage') }}/{{ $data->photo }}" alt="">
+                    <div class="col-md-12">
+                        <img class="img-fullwidth" src="{{ url('storage') }}/{{ $data->photo }}" alt="">
+                    </div>
+                    <div class="col-md-12">
+                        <h2 class="text-uppercasetext-theme-colored mt-0 mb-0 mt-sm-30"><span
+                                class="text-theme-colored2">{{ __('header.subtitle4') }}</span></h2>
+                        <div class="mt-30 mb-0">
+                
+                            <ul class="styled-icons m-0">
+                
+                                <li>
+                
+                                    <a href="{{ $shareLinkedin['facebook'] }}" class="share fb">
+                                        <i><svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 16 16">
+                                                <path fill="currentColor"
+                                                    d="M9.5 3H12V0H9.5C7.57 0 6 1.57 6 3.5V5H4v3h2v8h3V8h2.5l.5-3H9V3.5c0-.271.229-.5.5-.5z" />
+                                            </svg></i>
+                                    </a>
+                                </li>
+                
+                                <li><a href="{{ $shareLinkedin['whatsapp'] }}" class="share wa">
+                                        <i><svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 16 16">
+                                                <path fill="currentColor"
+                                                    d="M11.42 9.49c-.19-.09-1.1-.54-1.27-.61s-.29-.09-.42.1s-.48.6-.59.73s-.21.14-.4 0a5.13 5.13 0 0 1-1.49-.92a5.25 5.25 0 0 1-1-1.29c-.11-.18 0-.28.08-.38s.18-.21.28-.32a1.39 1.39 0 0 0 .18-.31a.38.38 0 0 0 0-.33c0-.09-.42-1-.58-1.37s-.3-.32-.41-.32h-.4a.72.72 0 0 0-.5.23a2.1 2.1 0 0 0-.65 1.55A3.59 3.59 0 0 0 5 8.2A8.32 8.32 0 0 0 8.19 11c.44.19.78.3 1.05.39a2.53 2.53 0 0 0 1.17.07a1.93 1.93 0 0 0 1.26-.88a1.67 1.67 0 0 0 .11-.88c-.05-.07-.17-.12-.36-.21z" />
+                                                <path fill="currentColor"
+                                                    d="M13.29 2.68A7.36 7.36 0 0 0 8 .5a7.44 7.44 0 0 0-6.41 11.15l-1 3.85l3.94-1a7.4 7.4 0 0 0 3.55.9H8a7.44 7.44 0 0 0 5.29-12.72zM8 14.12a6.12 6.12 0 0 1-3.15-.87l-.22-.13l-2.34.61l.62-2.28l-.14-.23a6.18 6.18 0 0 1 9.6-7.65a6.12 6.12 0 0 1 1.81 4.37A6.19 6.19 0 0 1 8 14.12z" />
+                                            </svg></i>
+                                    </a></li>
+                                <li> <a href="{{ $shareLinkedin['linkedin'] }}" class="share lin">
+                                        <i><svg xmlns="http://www.w3.org/2000/svg" width="20" height="20"
+                                                viewBox="0 0 1046.16 1000">
+                                                <path fill="currentColor"
+                                                    d="M237.485 1000V325.301H13.229V1000h224.256zM125.386 233.127c78.202 0 126.879-51.809 126.879-116.553C250.808 50.37 203.591-.001 126.87-.001C50.161-.001-.002 50.371-.002 116.574c0 64.747 48.665 116.553 123.924 116.553h1.457zM361.61 1000h224.256V623.215c0-20.165 1.457-40.309 7.379-54.724c16.212-40.289 53.111-82.017 115.06-82.017c81.149 0 113.613 61.872 113.613 152.572v360.949h224.242V613.129c0-207.241-110.636-303.668-258.183-303.668c-120.977 0-174.094 67.622-203.603 113.679h1.497v-97.853H361.615c2.943 63.31 0 674.699 0 674.699z" />
+                                            </svg></i>
+                                    </a></li>
+                
+                
+                
+                            </ul>
                         </div>
-                    @endforeach
-                    @if (count($tabs) > 0)
-                        <div class="col-md-4">
+                        <h4 class="mt-5 mb-15"></h4>
+                    </div>
+                @endforeach
+                <div class="col-sm-12 mb-10">
+                    <div class="single-service" style="background-color:rgb(249, 249, 249); border-radius:5px;">
+                        <style>
+                            @media screen and (max-width: 768px) {
+                
+                                #myTab,
+                                #myTabContent {
+                                    display: none;
+                                }
+                            }
+                
+                            .nav-tabs>li.active a,
+                            .nav-tabs>li.active a:hover,
+                            .nav-tabs>li.active a:focus {
+                                color: white;
+                                background-color: #F88147;
+                            }
+                        </style>
+                
+                        <ul id="myTab" class=" nav nav-tabs mt-30">
                             @foreach ($tabs as $key => $tab)
-                                <div class="accordion1 mr-10 ml-10 mb-10">
-                                    <div class="item">
-                                        <div class="text"
-                                            style="display: flex;justify-content:space-between; padding-left:4px;padding-right:4px;">
-                                            <p style="color:#F88147;"> {{ $tab->title }}</p>
-                                            <span> <svg xmlns="http://www.w3.org/2000/svg" class="icon" fill="none"
-                                                    viewBox="0 0 24 24" stroke="currentColor">
-                                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                                                        d="M19 9l-7 7-7-7" />
-                                                </svg></span>
-                                        </div>
-
-
-                                        <div class="hidden-box"
-                                            style="margin-top:-30px;padding-left:10px;padding-right:10px;">
-                                            <div style="text-align:justify;hyphens:auto;color:white"> {{ $tab->content }}
-                                            </div>
+                                @if ($loop->first)
+                                    <li class="active"><a href="#tab{{ $tab->id }}" data-toggle="tab"
+                                            style="font-size:18px; font-weight:bold;">{{ $tab->title }}</a>
+                                    </li>
+                                @else
+                                    <li><a href="#tab{{ $tab->id }}" data-toggle="tab"
+                                            style="font-size:18px; font-weight:bold;">{{ $tab->title }}</a>
+                                    </li>
+                                @endif
+                            @endforeach
+                        </ul>
+                
+                        <style>
+                            @import url('https://fonts.googleapis.com/css2?family=Raleway:wght@500&display=swap');
+                
+                            .tab-content {
+                                font-family: Raleway, "Helvetica Neue", Helvetica, Arial, sans-serif;
+                                color: #1f3344;
+                                font-size: 16px;
+                            }
+                        </style>
+                
+                        <div id="myTabContent" class="tab-content">
+                            @foreach ($tabs as $key => $tab)
+                                @if ($loop->first)
+                                    <div class="tab-pane fade in active" id="tab{{ $tab->id }}">
+                                        <div style="text-align:justify;hyphens:auto;"> {{ $tab->content }}
                                         </div>
                                     </div>
-
-                                </div>
+                                @else
+                                    <div class="tab-pane fade" id="tab{{ $tab->id }}">
+                                        <div style="text-align:justify;hyphens:auto;"> {{ $tab->content }}
+                                        </div>
+                                    </div>
+                                @endif
                             @endforeach
                         </div>
-                    @endif
-                    @foreach ($datas as $data)
-                        <div class="@if (count($tabs) > 0) col-md-8 @else col-md-12 @endif">
-                            <h2 class="text-uppercasetext-theme-colored mt-0 mb-0 mt-sm-30"><span
-                                    class="text-theme-colored2">{{ __('header.subtitle4') }}</span></h2>
-                            <div class="mt-30 mb-0">
-
-                                <ul class="styled-icons m-0">
-
-                                    <li>
-
-                                        <a href="{{ $shareLinkedin['facebook'] }}" class="share fb">
-                                            <i><svg xmlns="http://www.w3.org/2000/svg" width="20" height="20"
-                                                    viewBox="0 0 16 16">
-                                                    <path fill="currentColor"
-                                                        d="M9.5 3H12V0H9.5C7.57 0 6 1.57 6 3.5V5H4v3h2v8h3V8h2.5l.5-3H9V3.5c0-.271.229-.5.5-.5z" />
-                                                </svg></i>
-                                        </a>
-                                    </li>
-
-                                    <li><a href="{{ $shareLinkedin['whatsapp'] }}" class="share wa">
-                                            <i><svg xmlns="http://www.w3.org/2000/svg" width="20" height="20"
-                                                    viewBox="0 0 16 16">
-                                                    <path fill="currentColor"
-                                                        d="M11.42 9.49c-.19-.09-1.1-.54-1.27-.61s-.29-.09-.42.1s-.48.6-.59.73s-.21.14-.4 0a5.13 5.13 0 0 1-1.49-.92a5.25 5.25 0 0 1-1-1.29c-.11-.18 0-.28.08-.38s.18-.21.28-.32a1.39 1.39 0 0 0 .18-.31a.38.38 0 0 0 0-.33c0-.09-.42-1-.58-1.37s-.3-.32-.41-.32h-.4a.72.72 0 0 0-.5.23a2.1 2.1 0 0 0-.65 1.55A3.59 3.59 0 0 0 5 8.2A8.32 8.32 0 0 0 8.19 11c.44.19.78.3 1.05.39a2.53 2.53 0 0 0 1.17.07a1.93 1.93 0 0 0 1.26-.88a1.67 1.67 0 0 0 .11-.88c-.05-.07-.17-.12-.36-.21z" />
-                                                    <path fill="currentColor"
-                                                        d="M13.29 2.68A7.36 7.36 0 0 0 8 .5a7.44 7.44 0 0 0-6.41 11.15l-1 3.85l3.94-1a7.4 7.4 0 0 0 3.55.9H8a7.44 7.44 0 0 0 5.29-12.72zM8 14.12a6.12 6.12 0 0 1-3.15-.87l-.22-.13l-2.34.61l.62-2.28l-.14-.23a6.18 6.18 0 0 1 9.6-7.65a6.12 6.12 0 0 1 1.81 4.37A6.19 6.19 0 0 1 8 14.12z" />
-                                                </svg></i>
-                                        </a></li>
-                                    <li> <a href="{{ $shareLinkedin['linkedin'] }}" class="share lin">
-                                            <i><svg xmlns="http://www.w3.org/2000/svg" width="20" height="20"
-                                                    viewBox="0 0 1046.16 1000">
-                                                    <path fill="currentColor"
-                                                        d="M237.485 1000V325.301H13.229V1000h224.256zM125.386 233.127c78.202 0 126.879-51.809 126.879-116.553C250.808 50.37 203.591-.001 126.87-.001C50.161-.001-.002 50.371-.002 116.574c0 64.747 48.665 116.553 123.924 116.553h1.457zM361.61 1000h224.256V623.215c0-20.165 1.457-40.309 7.379-54.724c16.212-40.289 53.111-82.017 115.06-82.017c81.149 0 113.613 61.872 113.613 152.572v360.949h224.242V613.129c0-207.241-110.636-303.668-258.183-303.668c-120.977 0-174.094 67.622-203.603 113.679h1.497v-97.853H361.615c2.943 63.31 0 674.699 0 674.699z" />
-                                                </svg></i>
-                                        </a></li>
-
-
-
-                                </ul>
+                
+                    </div>
+                </div>
+                <style>
+                    @import url('https://fonts.googleapis.com/css2?family=Raleway:wght@500&display=swap');
+                
+                    .accordion1 .item {
+                        font-family: Raleway, "Helvetica Neue", Helvetica, Arial, sans-serif;
+                        color: #1f3344;
+                        font-size: 16px;
+                
+                    }
+                
+                    @media screen and (min-width: 768px) {
+                
+                        #mobile_pade {
+                
+                            display: none;
+                        }
+                
+                    }
+                
+                    .accordion1 {
+                        max-width: 700px;
+                        display: flex;
+                        flex-direction: column;
+                        gap: 24px;
+                    }
+                
+                    .accordion1 .item {
+                        box-shadow: 0 0 32px #F8814710;
+                        background-color: white;
+                        cursor: pointer;
+                        display: grid;
+                
+                        column-gap: 24px;
+                        row-gap: 32px;
+                        border-top: 4px solid transparent;
+                        align-items: center;
+                        transition: border-top 0.3s;
+                    }
+                
+                    .accordion1 .item.open {
+                        border-top: 4px solid #F88147;
+                    }
+                
+                    .accordion1 .item.open .hidden-box {
+                        display: block;
+                    }
+                
+                    .accordion1 .item.open .text {
+                        color: #F88147;
+                
+                    }
+                
+                
+                
+                
+                    .accordion1 .text {
+                        font-size: 24px;
+                        font-weight: 500;
+                        color: #1f3344;
+                
+                    }
+                
+                
+                    .accordion1 .item.open .text {
+                        transition: color 0.3s;
+                    }
+                
+                    .accordion1 .icon {
+                        width: 24px;
+                        height: 24px;
+                        stroke: #F88147;
+                        transition: transform 0.5s ease-in;
+                    }
+                
+                    .accordion1 .item.open .icon {
+                        transform: rotate(180deg);
+                    }
+                
+                    .accordion1 .hidden-box {
+                        grid-column: 1;
+                        width: 100%;
+                        display: none;
+                        transition: display 0.5 ease-in;
+                        padding-left: 5px;
+                
+                    }
+                
+                    .accordion1 .hidden-box p {
+                        line-height: 1.6;
+                        margin-bottom: 24px;
+                    }
+                </style>
+                @foreach ($tabs as $tab)
+                    <div class="accordion1 mr-10 ml-10" id="mobile_pade">
+                        <div class="item">
+                            <div class="text"
+                                style="display: flex;justify-content:space-between; padding-left:4px;padding-right:4px;">
+                                <p> {{ $tab->title }}</p>
+                                <span> <svg xmlns="http://www.w3.org/2000/svg" class="icon" fill="none" viewBox="0 0 24 24"
+                                        stroke="currentColor">
+                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" />
+                                    </svg></span>
                             </div>
-                            <h4 class="mt-5 mb-15"></h4>
-                            <div style="text-align:justify;hyphens:auto;color:#1f3344;">{!! $data->content !!}</div>
+                
+                            <div class="hidden-box" style="margin-top:-30px;padding-left:10px;padding-right:10px;">
+                                <div style="text-align:justify;hyphens:auto;"> {!! $tab->content !!}</div>
+                            </div>
                         </div>
-                    @endforeach
-
+                    </div>
+                @endforeach
+                
                     <button class="accordion">{{ __('home.text8') }}</button>
                     <div class="panel">
                         @foreach ($downloads as $key => $download)
@@ -299,81 +438,7 @@
             }
         }
     </style>
-    <style>
-        .accordion1 .item,
-            {
-            font-family: Raleway, "Helvetica Neue", Helvetica, Arial, sans-serif;
-            color: white;
-            font-size: 16px;
-        }
-    
-        .accordion1 {
-            max-width: 700px;
-            display: flex;
-            flex-direction: column;
-            gap: 24px;
-        }
-    
-        .accordion1 .item {
-            box-shadow: 0 0 32px #F8814710;
-            background-color: #1f3344;
-            cursor: pointer;
-            display: grid;
-    
-            column-gap: 24px;
-            row-gap: 32px;
-            border-top: 4px solid transparent;
-            align-items: center;
-            transition: border-top 0.3s;
-        }
-    
-        .accordion1 .item.open {
-            border-top: 4px solid white;
-        }
-    
-        .accordion1 .item.open .hidden-box {
-            display: block;
-        }
-    
-        .accordion1 .item.open .text {
-            color: white;
-        }
-    
-        .accordion1 .text {
-            font-size: 24px;
-            font-weight: 500;
-            color: #1f3344;
-        }
-    
-        .accordion1 .item.open .text {
-            transition: color 0.3s;
-        }
-    
-        .accordion1 .icon {
-            width: 24px;
-            height: 24px;
-            stroke: #F88147;
-            transition: transform 0.5s ease-in;
-        }
-    
-        .accordion1 .item.open .icon {
-            transform: rotate(180deg);
-        }
-    
-        .accordion1 .hidden-box {
-            grid-column: 1;
-            width: 100%;
-            display: none;
-            transition: display 0.5 ease-in;
-            padding-left: 5px;
-    
-        }
-    
-        .accordion1 .hidden-box p {
-            line-height: 1.6;
-            margin-bottom: 24px;
-        }
-    </style>
+
     <script>
         const items = document.querySelectorAll(".item");
     
@@ -387,12 +452,12 @@
                 item.classList.toggle('open');
                 let top = e.target.offsetTop;
     
-                /* if (item.classList.contains('open')) {
+                if (item.classList.contains('open')) {
                       window.scroll({
                           top: top,
                           behavior: 'auto'
                       });
-                  }*/
+                  }
     
     
             });

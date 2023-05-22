@@ -10,7 +10,8 @@ class About extends Model
     use HasFactory;
     protected $fillbale=[
         'description',
+        'description_en',
         'photo',
-        'content'
+
     ];
 }

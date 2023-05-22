@@ -11,6 +11,6 @@ class Director extends Model
   
     protected $fillbale=[
         'photo',
-        'content'
+     
     ];
 }

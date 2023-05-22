@@ -10,6 +10,6 @@ class Impact extends Model
     use HasFactory;
     protected $fillbale=[
         'photo',
-        'content'
+
     ];
 }

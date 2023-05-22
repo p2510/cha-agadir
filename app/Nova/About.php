@@ -6,7 +6,6 @@ use Laravel\Nova\Fields\ID;
 use Illuminate\Http\Request;
 use Laravel\Nova\Fields\Image;
 use Laravel\Nova\Fields\Textarea;
-use Emilianotisato\NovaTinyMCE\NovaTinyMCE;
 use Laravel\Nova\Http\Requests\NovaRequest;
 
 class About extends Resource
@@ -50,20 +49,7 @@ class About extends Resource
             ->storeAs(function (Request $request) {
                     return $request->photo->getClientOriginalName();
             }),
-            NovaTinyMCE::make('contenu (Fr)','content')->options([
-                'plugins' => [
-                    'lists','preview','anchor','pagebreak','image','wordcount','fullscreen','directionality'
-                ],
-                'toolbar' => 'undo redo | styles | bold italic forecolor backcolor | alignleft aligncenter alignright alignjustify | image | bullist numlist outdent indent | link',
-                'use_lfm' => true
-            ]),
-            NovaTinyMCE::make('contenu (En)','content_en')->options([
-                'plugins' => [
-                    'lists','preview','anchor','pagebreak','image','wordcount','fullscreen','directionality'
-                ],
-                'toolbar' => 'undo redo | styles | bold italic forecolor backcolor | alignleft aligncenter alignright alignjustify | image | bullist numlist outdent indent | link',
-                'use_lfm' => true
-            ]),
+         
         ];
     }
 

@@ -10,6 +10,6 @@ class Campus extends Model
     use HasFactory;
     protected $fillbale=[
         'photo',
-        'content'
+      
     ];
 }

@@ -6,7 +6,7 @@ use Laravel\Nova\Fields\ID;
 use Illuminate\Http\Request;
 use Laravel\Nova\Fields\Text;
 use Laravel\Nova\Fields\Select;
-use Laravel\Nova\Fields\Textarea;
+use Emilianotisato\NovaTinyMCE\NovaTinyMCE;
 use Laravel\Nova\Http\Requests\NovaRequest;
 
 class Tabpage extends Resource
@@ -57,8 +57,20 @@ class Tabpage extends Resource
             ]) ,  
             Text::make('Titre (Fr)','title'),          
             Text::make('Titre (En)','title_en'),  
-            Textarea::make('Contenu (Fr)','content'),  
-            Textarea::make('Contenu (En)','content_en'),  
+            NovaTinyMCE::make('contenu (Fr)','content')->options([
+                'plugins' => [
+                    'lists','preview','anchor','pagebreak','image','wordcount','fullscreen','directionality'
+                ],
+                'toolbar' => 'undo redo | styles | bold italic forecolor backcolor | alignleft aligncenter alignright alignjustify | image | bullist numlist outdent indent | link',
+                'use_lfm' => true
+            ]),
+            NovaTinyMCE::make('contenu (En)','content_en')->options([
+                'plugins' => [
+                    'lists','preview','anchor','pagebreak','image','wordcount','fullscreen','directionality'
+                ],
+                'toolbar' => 'undo redo | styles | bold italic forecolor backcolor | alignleft aligncenter alignright alignjustify | image | bullist numlist outdent indent | link',
+                'use_lfm' => true
+            ]),
         ];
     }
 

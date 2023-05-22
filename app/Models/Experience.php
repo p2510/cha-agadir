@@ -10,6 +10,6 @@ class Experience extends Model
     use HasFactory;
     protected $fillbale=[
         'photo',
-        'content'
+    
     ];
 }

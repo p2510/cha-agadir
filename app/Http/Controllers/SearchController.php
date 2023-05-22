@@ -21,12 +21,7 @@ class SearchController extends Controller
      */
     public function __invoke(Request $request)
     {
-        $datas=Search::latest('id')->limit(1)->get()->map(function ($item){
-            if (App::isLocale('en')) {
-                $item->content=$item->content_en;
-            }
-            return $item;
-       });
+        $datas=Search::latest('id')->limit(1)->get();
         $shareFacebook=ShareFacade::currentPage()->facebook()->getRawLinks();
         $shareWhatsapp=ShareFacade::currentPage()->whatsapp()->getRawLinks();
         $shareLinkedin=ShareFacade::currentPage()->linkedin()->getRawLinks();
@@ -50,6 +45,7 @@ class SearchController extends Controller
             }
             return $item;
         });
+        
         return view('static.search')->with(['datas'=>$datas,'shareFacebook'=>$shareFacebook,'shareWhatsapp'=>$shareWhatsapp,'shareLinkedin'=>$shareLinkedin,'downloads'=>$downloads,'pagevideos'=>$pagevideos,'tabs'=>$tabs]);
     }
 }

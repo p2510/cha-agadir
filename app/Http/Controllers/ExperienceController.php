@@ -20,12 +20,7 @@ class ExperienceController extends Controller
      */
     public function __invoke(Request $request)
     {
-        $datas=Experience::latest('id')->limit(1)->get()->map(function ($item){
-            if (App::isLocale('en')) {
-                $item->content=$item->content_en;
-            }
-            return $item;
-       });
+        $datas=Experience::latest('id')->limit(1)->get();
         $shareFacebook=ShareFacade::currentPage()->facebook()->getRawLinks();
         $downloads=Downloadpage::where('pagename','ferme-experiementale')->get()->map(function ($item){         
             if (App::isLocale('en')) {

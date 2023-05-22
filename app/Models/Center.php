@@ -10,6 +10,6 @@ class Center extends Model
     use HasFactory;
     protected $fillbale=[
         'photo',
-        'content'
+      
     ];
 }

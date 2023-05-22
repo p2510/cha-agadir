@@ -21,12 +21,7 @@ class DirectorController extends Controller
      */
     public function __invoke(Request $request)
     {
-        $datas=Director::latest('id')->limit(1)->get()->map(function ($item){
-            if (App::isLocale('en')) {
-                $item->content=$item->content_en;
-            }
-            return $item;
-       });
+        $datas=Director::latest('id')->limit(1)->get();
         $shareFacebook=ShareFacade::currentPage()->facebook()->getRawLinks();
      
          $shareWhatsapp=ShareFacade::currentPage()->whatsapp()->getRawLinks();

@@ -23,7 +23,6 @@ class AboutController extends Controller
         $datas=About::latest('id')->limit(1)->get()->map(function ($item){
             if (App::isLocale('en')) {
                 $item->description=$item->description_en;
-                $item->content=$item->content_en;
             }
             return $item;
        });

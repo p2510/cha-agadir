@@ -20,12 +20,7 @@ class ImpactController extends Controller
      */
     public function __invoke(Request $request)
     {
-        $datas=Impact::latest('id')->limit(1)->get()->map(function ($item){
-            if (App::isLocale('en')) {
-                $item->content=$item->content_en;
-            }
-            return $item;
-       });
+        $datas=Impact::latest('id')->limit(1)->get();
         $shareFacebook=ShareFacade::currentPage()->facebook()->getRawLinks();
         
 
