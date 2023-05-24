@@ -119,7 +119,9 @@
 
                     </div>
                 </div>
-                {!! $evenements->withQueryString()->links() !!}
+                <div style="display: flex;justify-content:center;">
+                    {!! $evenements->withQueryString()->links() !!}
+                </div>
 
             </div>
         </section>

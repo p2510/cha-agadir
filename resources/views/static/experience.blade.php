@@ -81,7 +81,7 @@
                         </div>
                     @endforeach
                     <div class="col-sm-12 mb-10">
-                        <div class="single-service" style="background-color:rgb(249, 249, 249); border-radius:5px;">
+                        <div class="single-service" style=" border-radius:5px;">
                             <style>
                                 @media screen and (max-width: 768px) {
 
@@ -255,14 +255,14 @@
 
 
 
-                    <button class="accordion">{{ __('home.text8') }}</button>
-                    <div class="panel">
+                    <button class="accordion active">{{ __('home.text8') }}</button>
+                    <div class="panel" style="max-height: 54px;">
                         @foreach ($downloads as $key => $download)
                             <div><a class="filename" href="{{ url('storage') }}/{{ $download->file }}"
                                     target='_blank'>{{ $download->filename }}</a></div>
                         @endforeach
                     </div>
-                    <div class="gallery-isotope default-animation-effect grid-3 gutter-small clearfix"
+                    <div class="gallery-isotope default-animation-effect @if (count($pagevideos) == 1) grid-1 @elseif(count($pagevideos) == 2) grid-2 @else() grid-3 @endif gutter-small clearfix"
                         data-lightbox="gallery" style="margin-top:6px;">
                         @foreach ($pagevideos as $pagevideo)
                             <div class="gallery-item">

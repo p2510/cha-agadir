@@ -230,9 +230,9 @@
                                 </li>
                                 <li>
                                     @if (count($evenementPages) > 0)
-                                        <h5 style="font-weight:bold;color:#F88147;font-size:18px;">
+                                        <h5 class="p-5" style="font-weight:bold;color:white;background-color:#1f3344; display:inline; font-size:18px;">
                                             {{ __('event.subtitle5') }}
-                                            :</h5>
+                                            </h5>
                                         @foreach ($evenementPages as $item)
                                             <p><a class="filename" style="text-decoration:underline;"
                                                     href="{{ url('storage') }}/{{ $item->file }}"
@@ -354,6 +354,7 @@
                                             <div class="form-group">
                                                 @if (App::isLocale('en'))
                                                     <select name="activity" required class="form-control">
+                                                        <option value="">Activity</option>
                                                         <option value="Agricultural producion">Agricultural producion
                                                         </option>
                                                         <option value="Nursery">Nursery</option>
@@ -380,6 +381,7 @@
                                                     </select>
                                                 @else
                                                     <select name="activity" required class="form-control">
+                                                        <option value="">Activité</option>
                                                         <option value="Production agricole">Production agricole</option>
                                                         <option value="Pépinière">Pépinière</option>
                                                         <option value="CondiAonnement et export">CondiAonnement et export

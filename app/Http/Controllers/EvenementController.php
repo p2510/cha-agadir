@@ -23,10 +23,9 @@ class EvenementController extends Controller
      */
     public function index()
     {
-        $evenements=DB::table('evenements')->orderBy('start_at','Asc')->paginate(6);
+        $evenements=DB::table('evenements')->orderBy('id','desc')->paginate(6);
         return view('evenement.index')->with(['evenements'=>$evenements]);
     }
-
 
     public function show(Evenement $evenement)
     {
@@ -35,8 +34,6 @@ class EvenementController extends Controller
           if (App::isLocale('en')) {
               $item->title=$item->title_en;
               $item->description=$item->description_en;
-             
-
           }
           return $item;
          });
@@ -550,7 +547,7 @@ class EvenementController extends Controller
     {
       $data=$request->validate([
         'name'=>['required','string','max:150'],
-        'activity'=>['required','string'],
+        'activity'=>['required','string','min:3'],
         'email'=>['email','required'],
         'phone'=>['required','string','min:8'],
         'organism'=>['required','string'],

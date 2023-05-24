@@ -4,8 +4,10 @@ namespace App\Nova;
 
 use Laravel\Nova\Fields\ID;
 use Illuminate\Http\Request;
+use Laravel\Nova\Fields\Date;
 use Laravel\Nova\Fields\Text;
 use Laravel\Nova\Fields\Image;
+use Laravel\Nova\Fields\DateTime;
 use Laravel\Nova\Fields\Textarea;
 use Laravel\Nova\Fields\BelongsTo;
 use Emilianotisato\NovaTinyMCE\NovaTinyMCE;
@@ -70,6 +72,8 @@ class Blog extends Resource
                 'toolbar' => 'undo redo | styles | bold italic forecolor backcolor | alignleft aligncenter alignright alignjustify | image | bullist numlist outdent indent | link',
                 'use_lfm' => true
             ]),
+            DateTime::make('Date','created_at'),
+
                  
         ];
     }

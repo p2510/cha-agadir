@@ -80,7 +80,7 @@
                     @endforeach
 
                     <div class="col-sm-12 mb-10">
-                        <div class="single-service" style="background-color:rgb(249, 249, 249); border-radius:5px;">
+                        <div class="single-service" style=" border-radius:5px;">
                             <style>
                                 @media screen and (max-width: 768px) {
 
@@ -143,8 +143,7 @@
                     <style>
                         @import url('https://fonts.googleapis.com/css2?family=Raleway:wght@500&display=swap');
 
-                        .accordion1 .item
-                         {
+                        .accordion1 .item {
                             font-family: Raleway, "Helvetica Neue", Helvetica, Arial, sans-serif;
                             color: #1f3344;
                             font-size: 16px;
@@ -152,7 +151,7 @@
                         }
 
                         @media screen and (min-width: 768px) {
-                        
+
                             #mobile_pade {
 
                                 display: none;
@@ -194,8 +193,8 @@
                         }
 
 
-                  
-                    
+
+
                         .accordion1 .text {
                             font-size: 24px;
                             font-weight: 500;
@@ -232,7 +231,6 @@
                             line-height: 1.6;
                             margin-bottom: 24px;
                         }
-
                     </style>
                     @foreach ($tabs as $tab)
                         <div class="accordion1 mr-10 ml-10" id="mobile_pade">
@@ -255,15 +253,15 @@
                     @endforeach
 
 
-                    <button class="accordion">{{ __('home.text8') }}</button>
-                    <div class="panel">
+                    <button class="accordion active">{{ __('home.text8') }}</button>
+                    <div class="panel" style="max-height: 54px;">
                         @foreach ($downloads as $key => $download)
                             <div><a class="filename" href="{{ url('storage') }}/{{ $download->file }}"
                                     target='_blank'>{{ $download->filename }} </a></div>
                         @endforeach
                     </div>
 
-                    <div class="gallery-isotope default-animation-effect grid-3 gutter-small clearfix"
+                    <div class="gallery-isotope default-animation-effect @if (count($pagevideos) == 1) grid-1 @elseif(count($pagevideos) == 2) grid-2 @else() grid-3 @endif  gutter-small clearfix"
                         data-lightbox="gallery" style="margin-top:6px;">
                         @foreach ($pagevideos as $pagevideo)
                             <div class="gallery-item">
@@ -275,12 +273,6 @@
                             </div>
                         @endforeach
                     </div>
-
-
-
-
-
-
                 </div>
             </div>
         </div>

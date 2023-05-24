@@ -17,7 +17,6 @@
         }
     </style>
     <div style="background-color:white;border-top:solid 2px rgb(45, 69, 88) ; padding-bottom:14px;"></div>
-
     <div class="main-content">
         <!-- Section: inner-header -->
         <section class="container">
@@ -30,7 +29,6 @@
                             <div class="col-md-6">
                                 <ol class="breadcrumb text-left mt-10" style="color:rgb(45, 69, 88);font-weight:bold;">
                                     <li><a href="/">{{ __('header.title1') }}</a></li>
-
                                     <li>
                                         Blog
                                     </li>
@@ -98,10 +96,9 @@
                                 </article>
                             </div>
                         @endforeach
-
-
-
                     </div>
+                </div>
+                <div style="display: flex;justify-content:center;">
                     {!! $blogs->withQueryString()->links() !!}
                 </div>
             </div>

@@ -20,6 +20,6 @@ return [
     'text5'=>'Details',
     'text6'=>'Do not display anymore',
     'text7'=>'Download', 
-    'text8'=>'MEDIAS', 
+    'text8'=>'MEDIA', 
     
 ];
