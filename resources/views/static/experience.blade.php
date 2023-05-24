@@ -127,12 +127,12 @@
                                 @foreach ($tabs as $key => $tab)
                                     @if ($loop->first)
                                         <div class="tab-pane fade in active" id="tab{{ $tab->id }}">
-                                            <div style="text-align:justify;hyphens:auto;"> {{ $tab->content }}
+                                            <div style="text-align:justify;hyphens:auto;"> {!! $tab->content !!}
                                             </div>
                                         </div>
                                     @else
                                         <div class="tab-pane fade" id="tab{{ $tab->id }}">
-                                            <div style="text-align:justify;hyphens:auto;"> {{ $tab->content }}
+                                            <div style="text-align:justify;hyphens:auto;"> {!! $tab->content !!}
                                             </div>
                                         </div>
                                     @endif
