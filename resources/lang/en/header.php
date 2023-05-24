@@ -44,6 +44,7 @@ return [
     'subtitle31'=>'Continuing Training',
     'subtitle32'=>'Farm Manager',
     'subtitle33'=>'Professors',
+    'subtitle34'=>'In alphabetical order',
     'info1'=>'Contact',
     'info2'=>'About us',
     'info3'=>'PROGRAMS',

@@ -11,29 +11,13 @@ class TeamController extends Controller
 {
     public function index_team()
     {
-        $responsables=Responsable::all()->map(function ($item){
-            if (App::isLocale('en')) {
-                $item->statut=$item->statut_en;
-                $item->poste=$item->poste_en;
-                $item->departement=$item->departement_en;
-                $item->competence=$item->competence_en;
-                
-            }
-            return $item;
-       });
+        $responsables=DB::table('responsables')->orderBy('name','asc')->get();
+       
         return view('team.index_team')->with(['responsables'=>$responsables]);
     }
     public function index_professor()
     {
-        $responsables=DB::table('responsables')->paginate(8)/*->map(function ($item){
-            if (App::isLocale('en')) {
-                $item->statut=$item->statut_en;
-                $item->poste=$item->poste_en;
-                $item->departement=$item->departement_en;
-                $item->competence=$item->competence_en;
-            }
-            return $item;
-       })*/;
+        $responsables=DB::table('responsables')->orderBy('name','asc')->paginate(8);
         return view('team.index_professor')->with(['responsables'=>$responsables]);
     }
 

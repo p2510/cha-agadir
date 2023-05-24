@@ -22,6 +22,8 @@
                                 <ol class="breadcrumb text-left mt-10" style="color:rgb(45, 69, 88);font-weight:bold;">
                                     <li><a href="/">{{ __('header.title1') }}</a></li>
                                     <li>{{ __('header.subtitle33') }} </li>
+                                    <br>
+                                    <li class="mt-5"><a href="/">{{__('header.subtitle34')}}</a></li>
                                 </ol>
                             </div>
                         </div>
@@ -52,9 +54,19 @@
                                                     <h4 class="text-uppercase font-weight-600 m-0 pb-5 font-16">
                                                        {{ $responsable->name }}
                                                       {{ $responsable->surname }} </h4>
-                                                    <h6 class="font-13 text-gray mt-0 font-10"> {{ $responsable->statut }} 
+                                                    <h6 class="font-13 text-gray mt-0 font-10"> 
+                                                        @if (App::isLocale('en'))
+                                                        {{ $responsable->statut_en }}
+                                                        @else
+                                                        {{ $responsable->statut }}
+                                                        @endif
                                                     </h6>
-                                                    <h6 class="font-13 text-gray mt-0 font-10">{{ $responsable->poste }}
+                                                    <h6 class="font-13 text-gray mt-0 font-10">
+                                                        @if (App::isLocale('en'))
+                                                        {{ $responsable->poste_en }}
+                                                        @else
+                                                        {{ $responsable->poste }}
+                                                        @endif
                                                     </h6>
                                                     <h6 class="font-13 text-gray mt-0 font-10">
                                                         {{ $responsable->etablissement }}

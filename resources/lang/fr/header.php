@@ -44,6 +44,7 @@ return [
     'subtitle31'=>'Formation Exécutive',
     'subtitle32'=>' Farm Manager',
     'subtitle33'=>' Professeurs',
+    'subtitle34'=>' Par ordre alphabétique',
     'info1'=>'Contact',
     'info2'=>'À propos',
     'info3'=>'NOS FORMATIONS',
