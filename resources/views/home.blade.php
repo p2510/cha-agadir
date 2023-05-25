@@ -27,26 +27,36 @@
                         <li class="slide" data-active>
                             <span class="slidepot slidepot_item"></span>
                             <img id="photo_pc0" src="{{ url('storage') }}/{{ $slide->photo }}" alt="{{ $slide->title }}">
-                            <img id="photo_mobile0"  src="{{ url('storage') }}/{{ $slide->photo_en }}"
+                            <img id="photo_mobile0" src="{{ url('storage') }}/{{ $slide->photo_en }}"
                                 alt="{{ $slide->title }}">
-                            <h3 style="color:{{ $slide->color }};">{{ $slide->subject }}</h2>
-                                <h1 style="color:{{ $slide->color }};">{{ $slide->title }}</h1>
+                            <h3 id="photo_pc0" style="color:{{ $slide->color }};">{{ $slide->subject }}
+                                <h1 id="photo_pc0" style="color:{{ $slide->color }};">{{ $slide->title }}</h1>
                             </h3>
-                            <div style="color:{{ $slide->color }};"> {!! $slide->description !!}</div>
+                            <h3 id="photo_mobile0" style="color:{{ $slide->color_mobile }};">{{ $slide->subject }}
+                                <h1 id="photo_mobile0" style="color:{{ $slide->color_mobile }};">{{ $slide->title }}</h1>
+                            </h3>
+                            </h3>
+                            <div id="photo_pc0" style="color:{{ $slide->color }};"> {!! $slide->description !!}</div>
+                            <div id="photo_mobile0" style="color:{{ $slide->color_mobile }};"> {!! $slide->description !!}
+                            </div>
                             <a href="{{ $slide->url }}"
                                 class="btn btn-dark btn-circled btn-theme-colored2 btn-xl mr-10 pr-30 pl-30">{{ __('home.btn1') }}</a>
                         </li>
                     @else
                         <li class="slide">
                             <span class="slidepot slidepot_item"></span>
-                            <img id="photo_pc1" src="{{ url('storage') }}/{{ $slide->photo }}"
+                            <img id="photo_pc1" src="{{ url('storage') }}/{{ $slide->photo }}" alt="{{ $slide->title }}">
+                            <img id="photo_mobile1"src="{{ url('storage') }}/{{ $slide->photo_en }}"
                                 alt="{{ $slide->title }}">
-                            <img id="photo_mobile1"src="{{ url('storage') }}/{{ $slide->photo_en }}" alt="{{ $slide->title }}">
-                            <h3 style="color:{{ $slide->color }};">{{ $slide->subject }}</h2>
-                                <h1 style="color:{{ $slide->color }};">{{ $slide->title }}</h1>
-                            </h3>
-                            <div style="color:{{ $slide->color }};"> {{ $slide->description }}</div>
-
+                                <h3 id="photo_pc1" style="color:{{ $slide->color }};">{{ $slide->subject }}
+                                    <h1 id="photo_pc1" style="color:{{ $slide->color }};">{{ $slide->title }}</h1>
+                                </h3>
+                                <h3 id="photo_mobile1" style="color:{{ $slide->color_mobile }};">{{ $slide->subject }}
+                                    <h1 id="photo_mobile1" style="color:{{ $slide->color_mobile }};">{{ $slide->title }}</h1>
+                                </h3>
+                                </h3>
+                                <div id="photo_pc1" style="color:{{ $slide->color }};"> {!! $slide->description !!}</div>
+                                <div id="photo_mobile1" style="color:{{ $slide->color_mobile }};"> {!! $slide->description !!}
 
                             <a href="{{ $slide->url }}"
                                 class=" btn btn-dark btn-circled btn-theme-colored2 btn-xl mr-10 pr-30 pl-30">{{ __('home.btn1') }}</a>
@@ -184,7 +194,7 @@
             #photo_mobile0 {
                 display: none;
             }
-            
+
             #photo_pc1 {
                 display: block;
             }
@@ -226,18 +236,19 @@
             }
 
             #photo_mobile0 {
-                display:block;
-              
-                
+                display: block;
+
+
             }
+
             #photo_pc1 {
                 display: none;
             }
 
             #photo_mobile1 {
-                display:block;
+                display: block;
             }
-            
+
 
 
 
@@ -352,7 +363,8 @@
                             <!-- popup modal -->
                             @foreach ($popup as $item)
                                 <div id="promoModal1" class="modal-promo-box mfp-hide bg-img-cover"
-                                    data-bg-img="{{ url('storage') }}/{{ $item->image }}" style="background-position:center;">
+                                    data-bg-img="{{ url('storage') }}/{{ $item->image }}"
+                                    style="background-position:center;">
 
                                     <button id="hide_popup" class="btn btn-colored btn-theme-colored btn-md m-0"
                                         data-height="40px" style="position:relative;top:-50px;">

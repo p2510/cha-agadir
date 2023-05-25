@@ -233,7 +233,7 @@
                 </style>
                 @foreach ($tabs as $tab)
                     <div class="accordion1 mr-10 ml-10" id="mobile_pade">
-                        <div class="item">
+                        <div class="item @if ($loop->first) open @endif"">
                             <div class="text"
                                 style="display: flex;justify-content:space-between; padding-left:4px;padding-right:4px;">
                                 <p> {{ $tab->title }}</p>
@@ -257,18 +257,18 @@
                                     target='_blank'>{{ $download->filename }}</a></div>
                         @endforeach
                     </div>
-                    <div class="gallery-isotope default-animation-effect @if (count($pagevideos) == 1) grid-1 @elseif(count($pagevideos) == 2) grid-2 @else() grid-3 @endif gutter-small clearfix"
-                        data-lightbox="gallery" style="margin-top:6px;">
-                        @foreach ($pagevideos as $pagevideo)
-                            <div class="gallery-item">
-                                <p style="text-align: center; background-color:#F88147;color:black;">
-                                    {{ $pagevideo->title }}</p>
-                                <iframe width="220" height="145"
-                                    src="https://www.youtube.com/embed/{{ $pagevideo->video }}?rel=0" allowfullscreen>
-                                </iframe>
-                            </div>
-                        @endforeach
-                    </div>
+                    <div class="gallery-isotope default-animation-effect @if (count($pagevideos) == 1) grid-1   @elseif(count($pagevideos) == 2) grid-2 @else grid-3 @endif  gutter-small clearfix"
+                    data-lightbox="gallery" style="margin-top:6px;">
+                    @foreach ($pagevideos as $pagevideo)
+                        <div class="gallery-item mt-10 pr-10">
+                            <p style="text-align: center; background-color:#F88147;color:black;">
+                                {{ $pagevideo->title }}</p>
+                            <iframe width="220" height="145"
+                                src="https://www.youtube.com/embed/{{ $pagevideo->video }}?rel=0" allowfullscreen>
+                            </iframe>
+                        </div>
+                    @endforeach
+                </div>
 
                 </div>
             </div>

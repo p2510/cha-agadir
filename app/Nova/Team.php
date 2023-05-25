@@ -4,23 +4,20 @@ namespace App\Nova;
 
 use Laravel\Nova\Fields\ID;
 use Illuminate\Http\Request;
-use Laravel\Nova\Fields\File;
 use Laravel\Nova\Fields\Text;
 use Laravel\Nova\Fields\Image;
-use Laravel\Nova\Fields\Number;
+use Laravel\Nova\Fields\Country;
 use Laravel\Nova\Fields\Textarea;
-use Outl1ne\NovaColorField\Color;
-use Emilianotisato\NovaTinyMCE\NovaTinyMCE;
 use Laravel\Nova\Http\Requests\NovaRequest;
 
-class Slide extends Resource
+class Team extends Resource
 {
     /**
      * The model the resource corresponds to.
      *
-     * @var class-string<\App\Models\Slide>
+     * @var class-string<\App\Models\Team>
      */
-    public static $model = \App\Models\Slide::class;
+    public static $model = \App\Models\Team::class;
 
     /**
      * The single value that should be used to represent the resource when being displayed.
@@ -37,8 +34,6 @@ class Slide extends Resource
     public static $search = [
         'id',
     ];
-    
-
 
     /**
      * Get the fields displayed by the resource.
@@ -48,27 +43,31 @@ class Slide extends Resource
      */
     public function fields(NovaRequest $request)
     {
-        
         return [
             ID::make()->sortable(),
-            Text::make('Lien','url'),
-            Text::make('Sujet (Fr)','subject'),
-            Text::make('Sujet (En)','subject_en'),
-            Text::make('Titre (Fr)','title'),
-            Text::make('Titre (En)','title_en'),
-            Textarea::make('Decription (Fr)','description'),
-            Textarea::make('Decription (En)','description_en'),
-            Color::make('Couleur Pc','color'),
-            Color::make('Couleur Mobile','color_mobile'),
-            Image::make('Une image PC','photo')->disk('public')
-            ->storeAs(function (Request $request) {
-                    return $request->photo->getClientOriginalName();
-                 }),
-            Image::make('Une image  Mobile' ,'photo_en')->disk('public')
-             ->storeAs(function (Request $request) {
-                         return $request->photo_en->getClientOriginalName() ;
-                  }),
+            Text::make('Nom','name'),
+            Text::make('Prénom','surname'),
+            Text::make('Statut (Fr)','statut'),
+            Text::make('Statut (En)','statut_en'),
+            Text::make('Établissement','etablissement'),
+            Country::make('Pays','country'),
+            Text::make('Spécialité (Fr)','poste'),
+            Text::make('Spécialité (En)','poste_en'),
+            Text::make('Département (Fr)','departement'),
+            Text::make('Département (En)','departement_en'),
+            Text::make('E-mail','email'),
+            Text::make('Téléphone','phone'),
+            Text::make('Gsm','gsm'),
+            Textarea::make('Compétences (Fr)','competence'),
+            Textarea::make('Compétences (En)','competence_en'),
+            Image::make('photo','photo')->disk('public')->storeAs(function(Request $request){
+                return $request->photo->getClientOriginalName();
+            }),
         ];
+    }
+    public static function label()
+    {
+        return 'Équipe';
     }
 
     /**

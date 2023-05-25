@@ -51,9 +51,9 @@
                                                         alt="" class="img-fullwidth">
                                                 </a>
                                                 <div class="team-bottom-part border-1px p-15">
-                                                    <h4 class="text-uppercase font-weight-600 m-0 pb-5 font-16">
+                                                    <a href="{{route('show.professor',$responsable->name)}}"><h4 class="text-uppercase font-weight-600 m-0 pb-5 font-16">
                                                        {{ $responsable->name }}
-                                                      {{ $responsable->surname }} </h4>
+                                                      {{ $responsable->surname }} </h4></a>
                                                     <h6 class="font-13 text-gray mt-0 font-10"> 
                                                         @if (App::isLocale('en'))
                                                         {{ $responsable->statut_en }}
@@ -354,13 +354,12 @@
                                                         @endif
                                                     </ul>
                                                     <ul class="styled-icons icon-sm icon-dark icon-theme-colored2 mt-15">
-                                                        <li><a href="#"><i class="fa fa-facebook"></i></a></li>
-                                                        <li><a href="#"><i class="fa fa-twitter"></i></a></li>
-                                                        <li><a href="#"><i class="fa fa-vk"></i></a></li>
-                                                        <li><a href="#"><i class="fa fa-instagram"></i></a></li>
-                                                        <li><a href="#"><i class="fa fa-google-plus"></i></a></li>
+                                                        <li><a href="#" style="pointer-events:none;"><i class="fa fa-facebook"></i></a></li>
+                                                        <li><a href="#" style="pointer-events:none;"><i class="fa fa-twitter"></i></a></li>
+                                                        <li><a href="#" style="pointer-events:none;"><i class="fa fa-vk"></i></a></li>
+                                                        <li><a href="#" style="pointer-events:none;"><i class="fa fa-instagram"></i></a></li>
+                                                        <li><a href="#" style="pointer-events:none;"><i class="fa fa-google-plus"></i></a></li>
                                                     </ul>
-
                                                 </div>
                                             </div>
                                         </div>
@@ -368,7 +367,10 @@
                                 </div>
                             </div>
                         </div>
-                        {!! $responsables->withQueryString()->links() !!}
+                        <div style="display: flex;justify-content:center;">
+                            
+                            {!! $responsables->withQueryString()->links() !!}
+                        </div>
 
                     </div>
                 </div>

@@ -5,6 +5,7 @@ namespace App\Providers;
 use App\Nova\Blog;
 use App\Nova\Logo;
 use App\Nova\Mode;
+use App\Nova\Team;
 use App\Nova\User;
 use App\Nova\About;
 use App\Nova\Barre;
@@ -100,6 +101,7 @@ class NovaServiceProvider extends NovaApplicationServiceProvider
                     MenuItem::resource(Whyus::class),
                     MenuItem::resource(Barre::class),
                     MenuItem::resource(Popup::class),
+                    MenuItem::resource(Team::class),
 
 
                     MenuSection::make('Visiteurs', [

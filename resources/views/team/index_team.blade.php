@@ -356,11 +356,11 @@
                                                         @endif
                                                     </ul>
                                                     <ul class="styled-icons icon-sm icon-dark icon-theme-colored2 mt-15">
-                                                        <li><a href="#"><i class="fa fa-facebook"></i></a></li>
-                                                        <li><a href="#"><i class="fa fa-twitter"></i></a></li>
-                                                        <li><a href="#"><i class="fa fa-vk"></i></a></li>
-                                                        <li><a href="#"><i class="fa fa-instagram"></i></a></li>
-                                                        <li><a href="#"><i class="fa fa-google-plus"></i></a></li>
+                                                        <li><a href="#" style="pointer-events:none;"><i class="fa fa-facebook"></i></a></li>
+                                                        <li><a href="#" style="pointer-events:none;"><i class="fa fa-twitter"></i></a></li>
+                                                        <li><a href="#" style="pointer-events:none;"><i class="fa fa-vk"></i></a></li>
+                                                        <li><a href="#" style="pointer-events:none;"><i class="fa fa-instagram"></i></a></li>
+                                                        <li><a href="#" style="pointer-events:none;"><i class="fa fa-google-plus"></i></a></li>
                                                     </ul>
 
                                                 </div>
@@ -371,11 +371,15 @@
                             </div>
                         </div>
 
+                        <div style="display: flex;justify-content:center;">
+                            
+                            {!! $responsables->withQueryString()->links() !!}
+                        </div>
                     </div>
                 </div>
             </section>
         @else
-            <h2 class="text-theme-colored2 font-36">Il n'y a pas de professeur</h2>
+            <h2 class="text-theme-colored2 font-36">Il n'y a pas de membres</h2>
         @endif
 
 

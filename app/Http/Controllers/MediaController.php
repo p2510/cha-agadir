@@ -18,7 +18,7 @@ class MediaController extends Controller
      */
     public function __invoke(Request $request)
     {
-        $medias=Media::all();
+        $medias=Media::orderBy('created_at','desc')->get();
         $categories=CategoryMedia::all()->map(function ($item){
             if (App::isLocale('en')) {
                 $item->name=$item->name_en;

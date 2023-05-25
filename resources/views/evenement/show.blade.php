@@ -225,13 +225,17 @@
                                     @if ($evenement->end_at)
                                         <h5>{{ __('event.subtitle4') }}:</h5>
                                         <p>{{ $evenement->end_at }}</p>
+                                        
                                     @endif
 
                                 </li>
                                 <li>
                                     @if (count($evenementPages) > 0)
-                                        <h5 class="p-5" style="font-weight:bold;color:white;background-color:#1f3344; display:inline; font-size:18px;">
+                                        <h5 class="p-5" style="font-weight:bold;color:white;background-color:#1f3344; text-align:center; display:block; font-size:18px;">
                                             {{ __('event.subtitle5') }}
+
+                                      
+                                            
                                             </h5>
                                         @foreach ($evenementPages as $item)
                                             <p><a class="filename" style="text-decoration:underline;"
@@ -304,7 +308,7 @@
 
             <section>
                 <div class="container">
-                    <div class="gallery-isotope default-animation-effect grid-3 gutter-small clearfix"
+                    <div class="gallery-isotope default-animation-effect  @if (count($evenementvideos) == 1) grid-1   @elseif(count($evenementvideos) == 2) grid-2 @else grid-3 @endif gutter-small clearfix"
                         data-lightbox="gallery" style="margin-top:6px;">
                         @foreach ($evenementvideos as $evenementvideo)
                             <div class="gallery-item">
@@ -355,18 +359,16 @@
                                                 @if (App::isLocale('en'))
                                                     <select name="activity" required class="form-control">
                                                         <option value="">Activity</option>
-                                                        <option value="Agricultural producion">Agricultural producion
+                                                        <option value="Agricultural production">Agricultural production
                                                         </option>
                                                         <option value="Nursery">Nursery</option>
-                                                        <option value="Packaging house and export">Packaging house and
-                                                            export</option>
+                                                        <option value="Packaging house and export">Packaging house and export</option>
                                                         <option value="Agricultural inputs">Agricultural inputs</option>
                                                         <option value="Irrigation">Irrigation</option>
                                                         <option value="Packaging">Packaging</option>
                                                         <option value="Professional association">Professional association
                                                         </option>
-                                                        <option value="Interprofessional Federation">Interprofessional
-                                                            Federation</option>
+                                                        <option value="Interprofessional Federation">Interprofessional Federation</option>
                                                         <option value="Public administration">Public administration
                                                         </option>
                                                         <option value="University education">University education</option>
@@ -384,16 +386,15 @@
                                                         <option value="">Activité</option>
                                                         <option value="Production agricole">Production agricole</option>
                                                         <option value="Pépinière">Pépinière</option>
-                                                        <option value="CondiAonnement et export">CondiAonnement et export
+                                                        <option value="Conditionnement et export">Conditionnement et export
                                                         </option>
                                                         <option value="Intrants agricoles">Intrants agricoles</option>
-                                                        <option value="IrrigaAon">IrrigaAon</option>
+                                                        <option value="Irrigation">Irrigation</option>
                                                         <option value="Emballage">Emballage</option>
-                                                        <option value="AssociaAon professionnelle">AssociaAon
-                                                            professionnelle</option>
-                                                        <option value="FédéraAon interprofessionnelle">FédéraAon
+                                                        <option value="Association professionnelle">Association professionnelle</option>
+                                                        <option value="Fédération interprofessionnelle">Fédération
                                                             interprofessionnelle</option>
-                                                        <option value="AdministraAon publique">AdministraAon publique
+                                                        <option value="Administration publique">Administration publique
                                                         </option>
                                                         <option value="Enseignement universitaire">Enseignement
                                                             universitaire</option>
@@ -401,7 +402,7 @@
                                                         </option>
                                                         <option value="Étudiant">Étudiant</option>
                                                         <option value="laboratoire">laboratoire</option>
-                                                        <option value="Consultang">Consultang</option>
+                                                        <option value="Consulting">Consulting</option>
                                                         <option value="Banques et assurances">Banques et assurances
                                                         </option>
                                                         <option value="Transit">Transit</option>

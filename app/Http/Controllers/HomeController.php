@@ -44,7 +44,7 @@ class HomeController extends Controller
             }
             return $item;
        });
-        $slides=Slide::all()->map(function ($item){
+        $slides=Slide::orderBy('created_at','desc')->get()->map(function ($item){
             if (App::isLocale('en')) {
                 $item->subject=$item->subject_en;
                 $item->title=$item->title_en;
@@ -90,7 +90,7 @@ class HomeController extends Controller
             return $item;
         });
        $barres=Barre::all();
-       $partners=Partner::all();
+       $partners=Partner::orderBy('created_at','desc')->get();
         return  view('home')->with(['courses'=>$courses,'slides'=>$slides,'degrees'=>$degrees,'responsables'=>$responsables,'evenements'=>$evenements,'blogs'=>$blogs,'about'=>$about,'whyus'=> $whyus,'barres'=>$barres,'partners'=> $partners,'popup'=>$popup]);
     } 
 }

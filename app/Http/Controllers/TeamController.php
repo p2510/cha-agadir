@@ -11,8 +11,7 @@ class TeamController extends Controller
 {
     public function index_team()
     {
-        $responsables=DB::table('responsables')->orderBy('name','asc')->get();
-       
+        $responsables=DB::table('teams')->orderBy('name','asc')->paginate(8);
         return view('team.index_team')->with(['responsables'=>$responsables]);
     }
     public function index_professor()

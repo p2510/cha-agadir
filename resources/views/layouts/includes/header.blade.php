@@ -156,8 +156,8 @@
                                         <a class="text-white"
                                             href="{{ route('about.index') }}">{{ __('header.info2') }}</a>
                                     </li>
-                                    <li class="text-white">|</li>
-                                    <li class="text-white" style="position:relative; top:3px;">
+                                    <li class="text-white elem">|</li>
+                                    <li class="text-white elem" style="position:relative; top:3px;">
                                         <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18"
                                             viewBox="0 0 24 24">
                                             <path fill="currentColor"
@@ -165,7 +165,7 @@
                                         </svg>
                                     </li>
 
-                                    <li class="text-white" style="font-weight:bold;">
+                                    <li class="elem text-white" style="font-weight:bold;">
                                         (+212) 0528-241-006 / 240-155
                                     </li>
                                     <li>
@@ -213,8 +213,7 @@
                                         </li>
                                         <li><a href="{{ route('about.index') }}">{{ __('header.subtitle2') }}</a>
                                         </li>
-                                        <li><a
-                                                href="{{ route('index.team') }}">{{ __('header.subtitle3') }}</a>
+                                        <li><a href="{{ route('index.team') }}">{{ __('header.subtitle3') }}</a>
                                         </li>
                                         <li><a
                                                 href="{{ route('index.professor') }}">{{ __('header.subtitle33') }}</a>
@@ -351,6 +350,13 @@
 
 
             }
+
+            @media screen and (max-width: 768px) {
+                .elem {
+                    display: none;
+                }
+            }
+
 
             .language-selector {
                 background-color: transparent !important;

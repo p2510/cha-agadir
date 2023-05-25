@@ -18,7 +18,7 @@ class VideoController extends Controller
      */
     public function __invoke(Request $request)
     {
-        $videos=Mediavideo::all();
+        $videos=Mediavideo::orderBy('created_at','desc')->get();
         $categories=CategoryVideo::all()->map(function ($item){
             if (App::isLocale('en')) {
                 $item->name=$item->name_en;
