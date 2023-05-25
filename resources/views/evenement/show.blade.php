@@ -231,7 +231,7 @@
                                 </li>
                                 <li>
                                     @if (count($evenementPages) > 0)
-                                        <h5 class="p-5" style="font-weight:bold;color:white;background-color:#1f3344; text-align:center; display:block; font-size:18px;">
+                                        <h5 class="p-5" style="font-weight:bold;color:white;background-color:#1f3344; text-align:center; display:inline; font-size:18px;">
                                             {{ __('event.subtitle5') }}
 
                                       
