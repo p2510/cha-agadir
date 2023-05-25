@@ -23,7 +23,7 @@ class EvenementController extends Controller
      */
     public function index()
     {
-        $evenements=DB::table('evenements')->orderBy('id','desc')->paginate(6);
+        $evenements=DB::table('evenements')->orderBy('start_at','desc')->paginate(6);
         return view('evenement.index')->with(['evenements'=>$evenements]);
     }
 
