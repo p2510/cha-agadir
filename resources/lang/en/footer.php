@@ -9,7 +9,7 @@ return [
 'subtitle2'=>'Gallery',
 'subtitle3'=>'Videos',
 'subtitle4'=>' Agadir Horticultural Complex ',
-'subtitle5'=>" km 2 route , B.P. 121 Ait Melloul 80150 - Agadir ",
+'subtitle5'=>" km 2 route d'Azou, B.P. 121 Ait Melloul 80150 Agadir ",
 'day1'=>'Mon',
 'day2'=>'Fri',
 'day3'=>'Sat',

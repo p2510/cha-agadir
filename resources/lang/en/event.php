@@ -7,7 +7,7 @@ return [
     'subtitle5'=>'Media',
     'subtitle6'=>"I'am interested",
     'formtext1'=>'Your first and last name',
-    'formtext2'=>'E-mail',
+    'formtext2'=>'Email',
     'formtext3'=>'Phone',
     'formtext4'=>'Compagny',
     'formtext5'=>'Job',
