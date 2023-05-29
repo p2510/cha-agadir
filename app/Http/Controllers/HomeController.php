@@ -62,7 +62,15 @@ class HomeController extends Controller
             $course->description=substr($course->description,0,200);
         }
         //$evenements=DB::table('evenements')->whereDate('start_at','>=',Carbon::tomorrow())->orderBy('start_at','Asc')->limit(3)->get();
-        $evenements=DB::table('evenements')->where('start_at','>=',Carbon::tomorrow())->orderBy('start_at','asc')->limit(3)->get();
+        $evenement1=DB::table('evenements')->where('start_at','>=',Carbon::tomorrow())->orderBy('start_at','asc')->limit(3)->get();
+        $evenement2=[];
+        if (count($evenement1)>=1) {
+            $evenement2=DB::table('evenements')->where('start_at','<',Carbon::tomorrow())->orderBy('start_at','desc')->limit(3-count($evenement1))->get();
+        }else{
+            $evenement2=DB::table('evenements')->where('start_at','<',Carbon::tomorrow())->orderBy('start_at','desc')->limit(3)->get();
+        }
+        $evenements=$evenement2->merge($evenement1);
+        
         $blogs=DB::table('blogs')->orderBy('created_at','desc')->limit(3)->get()->map(function($item,$key){
             $item->description=substr($item->description,0,60);
             return $item;

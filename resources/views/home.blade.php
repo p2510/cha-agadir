@@ -546,6 +546,9 @@
                                                         {{ $evenement->title }}
                                                     @endif
                                                 </a>
+                                                @if (\Carbon\Carbon::tomorrow()>$evenement->start_at)
+                                                  <span style="background-color:red;color:white; padding:2px 2px 2px 2px;">  expiré</span>
+                                                @endif
                                             </h5>
                                             <span class="mr-10"><i class="fa fa-clock-o text-theme-colored2"></i>
                                                 @php
