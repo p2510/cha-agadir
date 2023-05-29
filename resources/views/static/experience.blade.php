@@ -234,8 +234,8 @@
                         }
                     </style>
                     @foreach ($tabs as $tab)
-                        <div class="accordion1 mr-10 ml-10" id="mobile_pade">
-                            <div class="item @if ($loop->first) open @endif"">
+                        <div class="accordion1 mr-10 ml-10 mb-5" id="mobile_pade">
+                            <div class="item ">
                                 <div class="text"
                                     style="display: flex;justify-content:space-between; padding-left:4px;padding-right:4px;">
                                     <p> {{ $tab->title }}</p>

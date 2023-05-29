@@ -153,8 +153,8 @@
                         @media screen and (min-width: 768px) {
 
                             #mobile_pade {
-
                                 display: none;
+
                             }
 
                         }
@@ -168,7 +168,7 @@
 
                         .accordion1 .item {
                             box-shadow: 0 0 32px #F8814710;
-                            background-color: white;
+                            background-color:#1F3345;
                             cursor: pointer;
                             display: grid;
 
@@ -188,17 +188,16 @@
                         }
 
                         .accordion1 .item.open .text {
-                            color: #F88147;
+                            color: white;
 
                         }
-
 
 
 
                         .accordion1 .text {
                             font-size: 24px;
                             font-weight: 500;
-                            color: #1f3344;
+                            color: white;
 
                         }
 
@@ -233,8 +232,8 @@
                         }
                     </style>
                     @foreach ($tabs as $tab)
-                        <div class="accordion1 mr-10 ml-10" id="mobile_pade">
-                            <div class="item @if ($loop->first) open @endif">
+                        <div class="accordion1 mr-10 ml-10 mb-5" id="mobile_pade">
+                            <div class="item ">
                                 <div class="text"
                                     style="display: flex;justify-content:space-between; padding-left:4px;padding-right:4px;">
                                     <p> {{ $tab->title }}</p>
@@ -262,8 +261,8 @@
                     </div>
 
 
-                    
-                    <div  class="gallery-isotope default-animation-effect @if (count($pagevideos) == 1) grid-1   @elseif(count($pagevideos) == 2) grid-2 @else grid-3 @endif  gutter-small clearfix"
+
+                    <div class="gallery-isotope default-animation-effect @if (count($pagevideos) == 1) grid-1   @elseif(count($pagevideos) == 2) grid-2 @else grid-3 @endif  gutter-small clearfix"
                         data-lightbox="gallery">
                         @foreach ($pagevideos as $pagevideo)
                             <div class="gallery-item mt-10 pr-10">
@@ -275,14 +274,15 @@
                             </div>
                         @endforeach
                     </div>
-                
-                   
+
+
                 </div>
             </div>
         </div>
     </section>
 
     <style>
+
         .filename {
             color: #1f3344;
             margin-bottom: 2px;

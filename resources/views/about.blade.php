@@ -142,99 +142,98 @@
                 </div>
                 <style>
                     @import url('https://fonts.googleapis.com/css2?family=Raleway:wght@500&display=swap');
-                
+
                     .accordion1 .item {
                         font-family: Raleway, "Helvetica Neue", Helvetica, Arial, sans-serif;
                         color: #1f3344;
                         font-size: 16px;
-                
+
                     }
-                
+
                     @media screen and (min-width: 768px) {
-                
+
                         #mobile_pade {
-                
                             display: none;
+
                         }
-                
+
                     }
-                
+
                     .accordion1 {
                         max-width: 700px;
                         display: flex;
                         flex-direction: column;
                         gap: 24px;
                     }
-                
+
                     .accordion1 .item {
                         box-shadow: 0 0 32px #F8814710;
-                        background-color: white;
+                        background-color:#1F3345;
                         cursor: pointer;
                         display: grid;
-                
+
                         column-gap: 24px;
                         row-gap: 32px;
                         border-top: 4px solid transparent;
                         align-items: center;
                         transition: border-top 0.3s;
                     }
-                
+
                     .accordion1 .item.open {
                         border-top: 4px solid #F88147;
                     }
-                
+
                     .accordion1 .item.open .hidden-box {
                         display: block;
                     }
-                
+
                     .accordion1 .item.open .text {
-                        color: #F88147;
-                
+                        color: white;
+
                     }
-                
-                
-                
-                
+
+
+
                     .accordion1 .text {
                         font-size: 24px;
                         font-weight: 500;
-                        color: #1f3344;
-                
+                        color: white;
+
                     }
-                
-                
+
+
                     .accordion1 .item.open .text {
                         transition: color 0.3s;
                     }
-                
+
                     .accordion1 .icon {
                         width: 24px;
                         height: 24px;
                         stroke: #F88147;
                         transition: transform 0.5s ease-in;
                     }
-                
+
                     .accordion1 .item.open .icon {
                         transform: rotate(180deg);
                     }
-                
+
                     .accordion1 .hidden-box {
                         grid-column: 1;
                         width: 100%;
                         display: none;
                         transition: display 0.5 ease-in;
                         padding-left: 5px;
-                
+
                     }
-                
+
                     .accordion1 .hidden-box p {
                         line-height: 1.6;
                         margin-bottom: 24px;
                     }
                 </style>
                 @foreach ($tabs as $tab)
-                    <div class="accordion1 mr-10 ml-10" id="mobile_pade">
-                        <div class="item @if ($loop->first) open @endif"">
+                    <div class="accordion1 mr-10 ml-10 mb-5" id="mobile_pade">
+                        <div class="item ">
                             <div class="text"
                                 style="display: flex;justify-content:space-between; padding-left:4px;padding-right:4px;">
                                 <p> {{ $tab->title }}</p>
