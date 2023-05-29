@@ -382,5 +382,11 @@
 
     </div>
 
+    <style>
+        .gallery-isotope.gutter-20 .gallery-item {
+            padding-right: 0px;
+            padding-bottom: 20px
+        }
+    </style>
 
     @endsection

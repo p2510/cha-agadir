@@ -57,17 +57,17 @@
                                                         {{ $responsable->surname }}</h4>
                                                     <h6 class="font-13 text-gray mt-0 font-10">
                                                         @if (App::isLocale('en'))
-                                                        {{ $responsable->statut_en }}
+                                                            {{ $responsable->statut_en }}
                                                         @else
-                                                        {{ $responsable->statut }}
+                                                            {{ $responsable->statut }}
                                                         @endif
                                                     </h6>
                                                     <h6 class="font-13 text-gray mt-0 font-10">
-                                                    
+
                                                         @if (App::isLocale('en'))
-                                                        {{ $responsable->poste_en }}
+                                                            {{ $responsable->poste_en }}
                                                         @else
-                                                        {{ $responsable->poste }}
+                                                            {{ $responsable->poste }}
                                                         @endif
                                                     </h6>
                                                     <h6 class="font-13 text-gray mt-0 font-10">
@@ -356,11 +356,16 @@
                                                         @endif
                                                     </ul>
                                                     <ul class="styled-icons icon-sm icon-dark icon-theme-colored2 mt-15">
-                                                        <li><a href="#" style="pointer-events:none;"><i class="fa fa-facebook"></i></a></li>
-                                                        <li><a href="#" style="pointer-events:none;"><i class="fa fa-twitter"></i></a></li>
-                                                        <li><a href="#" style="pointer-events:none;"><i class="fa fa-vk"></i></a></li>
-                                                        <li><a href="#" style="pointer-events:none;"><i class="fa fa-instagram"></i></a></li>
-                                                        <li><a href="#" style="pointer-events:none;"><i class="fa fa-google-plus"></i></a></li>
+                                                        <li><a href="#" style="pointer-events:none;"><i
+                                                                    class="fa fa-facebook"></i></a></li>
+                                                        <li><a href="#" style="pointer-events:none;"><i
+                                                                    class="fa fa-twitter"></i></a></li>
+                                                        <li><a href="#" style="pointer-events:none;"><i
+                                                                    class="fa fa-vk"></i></a></li>
+                                                        <li><a href="#" style="pointer-events:none;"><i
+                                                                    class="fa fa-instagram"></i></a></li>
+                                                        <li><a href="#" style="pointer-events:none;"><i
+                                                                    class="fa fa-google-plus"></i></a></li>
                                                     </ul>
 
                                                 </div>
@@ -372,7 +377,7 @@
                         </div>
 
                         <div style="display: flex;justify-content:center;">
-                            
+
                             {!! $responsables->withQueryString()->links() !!}
                         </div>
                     </div>
@@ -384,4 +389,11 @@
 
 
     </div>
+
+    <style>
+        .gallery-isotope.gutter-20 .gallery-item {
+            padding-right: 0px;
+            padding-bottom: 20px
+        }
+    </style>
 @endsection
