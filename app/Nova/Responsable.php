@@ -72,7 +72,7 @@ class Responsable extends Resource
     }
     public static function label()
     {
-        return 'Responsables';
+        return 'Professeur';
     }
 
     /**

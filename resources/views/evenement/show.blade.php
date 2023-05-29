@@ -234,8 +234,6 @@
                                         <h5 class="p-5" style="font-weight:bold;color:white;background-color:#1f3344; text-align:center; display:inline; font-size:18px;">
                                             {{ __('event.subtitle5') }}
 
-                                      
-                                            
                                             </h5>
                                         @foreach ($evenementPages as $item)
                                             <p><a class="filename" style="text-decoration:underline;"
