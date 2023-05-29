@@ -156,8 +156,9 @@
                                         <a class="text-white"
                                             href="{{ route('about.index') }}">{{ __('header.info2') }}</a>
                                     </li>
-                                    <li class="text-white elem">|</li>
-                                    <li class="text-white elem" style="position:relative; top:3px;">
+                                   
+                                    <li class="text-white " id='elem'>|</li>
+                                    <li class="text-white " id='elem' style="position:relative; top:3px;">
                                         <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18"
                                             viewBox="0 0 24 24">
                                             <path fill="currentColor"
@@ -165,9 +166,10 @@
                                         </svg>
                                     </li>
 
-                                    <li class="elem text-white" style="font-weight:bold;">
+                                    <li class=" text-white" style="font-weight:bold;" id='elem'>
                                         (+212) 0528-241-006 / 240-155
                                     </li>
+                                    <br id='separate'>
                                     <li>
                                         <a href="{{ route('course.index') }}"
                                             class="btn btn-dark btn-circled btn-theme-colored2 btn-sm  pr-30 pl-30 "
@@ -352,10 +354,17 @@
             }
 
             @media screen and (max-width: 768px) {
-                .elem {
+                #elem {
+                    display: none;
+                    
+                }
+            }
+            @media screen and (min-width: 768px) {
+                #separate{
                     display: none;
                 }
             }
+            
 
 
             .language-selector {

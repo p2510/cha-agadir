@@ -160,8 +160,8 @@
                             <li>
                                 <a href="{{ route('contact.create') }}">{{ __('footer.text3') }}</a>
                             </li>
-                            <li class="elem">|</li>
-                            <li class="text-white elem" style="position:relative; top:3px;">
+                            <li id='elem'>|</li>
+                            <li class="text-white " id='elem' style="position:relative; top:3px;">
                                 <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18"
                                     viewBox="0 0 24 24">
                                     <path fill="currentColor"
@@ -169,7 +169,7 @@
                                 </svg>
                             </li>
 
-                            <li class="elem" style="font-weight:bold;">
+                            <li id='elem' style="font-weight:bold;">
                                 (+212) 0528-241-006 / 240-155
                             </li>
                         </ul>
@@ -184,8 +184,8 @@
 
 <style>
     @media screen and (max-width: 768px) {
-        .elem {
-            visibility: hidden;
+        #elem{
+            
             display: none;
         }
     }

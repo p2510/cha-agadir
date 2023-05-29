@@ -356,7 +356,7 @@
                                             <div class="form-group">
                                                 @if (App::isLocale('en'))
                                                     <select name="activity" required class="form-control">
-                                                        <option value="">Activity</option>
+                                                        <option value="" hidden disabled selected>choose an activity</option>
                                                         <option value="Agricultural production">Agricultural production
                                                         </option>
                                                         <option value="Nursery">Nursery</option>
@@ -381,7 +381,7 @@
                                                     </select>
                                                 @else
                                                     <select name="activity" required class="form-control">
-                                                        <option value="">Activité</option>
+                                                        <option value="" hidden disabled selected>Choisir une activité</option>
                                                         <option value="Production agricole">Production agricole</option>
                                                         <option value="Pépinière">Pépinière</option>
                                                         <option value="Conditionnement et export">Conditionnement et export

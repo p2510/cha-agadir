@@ -250,14 +250,14 @@
                 
 
                     <button class="accordion active">{{ __('home.text8') }}</button>
-                    <div class="panel" style="max-height: 54px;">
+                    <div class="panel" style="max-height: 54px;margin-bottom:30px;">
                         @foreach ($downloads as $key => $download)
                             <div><a href="{{ url('storage') }}/{{ $download->file }}"
                                     target='_blank'>{{ $download->filename }}</a></div>
                         @endforeach
                     </div>
                     <div class="gallery-isotope default-animation-effect @if (count($pagevideos) == 1) grid-1   @elseif(count($pagevideos) == 2) grid-2 @else grid-3 @endif  gutter-small clearfix"
-                    data-lightbox="gallery" style="margin-top:6px;">
+                    data-lightbox="gallery" >
                     @foreach ($pagevideos as $pagevideo)
                         <div class="gallery-item mt-10 pr-10">
                             <p style="text-align: center; background-color:#F88147;color:black;">
