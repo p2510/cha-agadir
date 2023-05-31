@@ -191,7 +191,6 @@
                                 font-weight: 500;
                                 color: white;
                                 background-color: #1f3344;
-
                             }
 
                            
