@@ -220,9 +220,6 @@
                                 color: #1f3344;
 
                             }
-
-                         
-
                     </style>
                     @foreach ($tabs as $tab)
                         <div class="accordion1 mr-10 ml-10 mb-5" id="mobile_pade">
