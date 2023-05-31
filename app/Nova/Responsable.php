@@ -10,6 +10,7 @@ use Laravel\Nova\Fields\Select;
 use Laravel\Nova\Fields\Country;
 use Laravel\Nova\Fields\HasMany;
 use Laravel\Nova\Fields\Textarea;
+use Emilianotisato\NovaTinyMCE\NovaTinyMCE;
 use Laravel\Nova\Http\Requests\NovaRequest;
 
 class Responsable extends Resource
@@ -62,8 +63,22 @@ class Responsable extends Resource
             Text::make('E-mail','email'),
             Text::make('Téléphone','phone'),
             Text::make('Gsm','gsm'),
-            Textarea::make('Compétences (Fr)','competence'),
-            Textarea::make('Compétences (En)','competence_en'),
+            NovaTinyMCE::make('Compétences (Fr)','competence')
+            ->options([
+                'plugins' => [
+                    'lists','preview','anchor','pagebreak','image','wordcount','fullscreen','directionality'
+                ],
+                'toolbar' => 'undo redo | styles | bold italic forecolor backcolor | alignleft aligncenter alignright alignjustify | image | bullist numlist outdent indent | link',
+                'use_lfm' => true
+            ]),
+            NovaTinyMCE::make('Compétences (En)','competence_en')
+            ->options([
+                'plugins' => [
+                    'lists','preview','anchor','pagebreak','image','wordcount','fullscreen','directionality'
+                ],
+                'toolbar' => 'undo redo | styles | bold italic forecolor backcolor | alignleft aligncenter alignright alignjustify | image | bullist numlist outdent indent | link',
+                'use_lfm' => true
+            ]),
             Image::make('photo','photo')->disk('public')->storeAs(function(Request $request){
                 return $request->photo->getClientOriginalName();
             }),

@@ -433,7 +433,6 @@
                             <div class="col-sm-12 col-md-9">
                                 <div class="single-service"
                                     style="background-color:rgb(249, 249, 249); border-radius:5px;">
-
                                     <!--<img src="{{ url('storage') }}/{{ $course->photo }}" style="width:100%;" alt="">-->
                                     <ul class="list-inline mt-20 mb-15">
                                         @if ($course->responsables_name)

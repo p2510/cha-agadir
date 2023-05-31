@@ -377,7 +377,7 @@
                                     {{ $responsable->poste }}
                                 @endif
                             </h5>
-                            <p>
+                            <p style="text-align:justify;hyphens:auto;">
                                 @if (App::isLocale('en'))
                                     {{ $responsable->competence_en }}
                                 @else
