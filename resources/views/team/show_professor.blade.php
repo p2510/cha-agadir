@@ -379,9 +379,9 @@
                             </h5>
                             <p style="text-align:justify;hyphens:auto;">
                                 @if (App::isLocale('en'))
-                                    {{ $responsable->competence_en }}
+                                    {!! $responsable->competence_en !!}
                                 @else
-                                    {{ $responsable->competence }}
+                                    {!! $responsable->competence !!}
                                 @endif
                             </p>
 
