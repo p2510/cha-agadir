@@ -42,7 +42,7 @@
                                     class="gallery-isotope default-animation-effect grid-4 gutter-20 clearfix">
                                     @foreach ($responsables as $responsable)
                                         <!-- Portfolio Item Start -->
-                                        <div class="gallery-item pr-10">
+                                        <div class="gallery-item ">
                                             <div class="team-members mb-40 ">
                                                 <a href="{{route('show.professor',$responsable->name)}}" class="team-thumb mr-0">
                                                     <img src="{{ asset('storage') }}/{{ $responsable->photo }}"
@@ -384,6 +384,12 @@
         .gallery-isotope.gutter-20 .gallery-item {
             padding-right: 0px;
             padding-bottom: 20px
+        }
+
+        @media screen and (min-width: 768px) {
+            .gallery-item {
+                padding-right: 10px ! important;
+            }
         }
     </style>
 

@@ -243,9 +243,7 @@
                         </div>
                     @endforeach
 
-                    <div class="col-md-12">
-                        <img class="img-fullwidth" src="{{ asset('images/test.png') }}" alt="">
-                    </div>
+
 
                     <button class="accordion active">{{ __('home.text8') }}</button>
                     <div class="panel" style="max-height: 54px;margin-bottom:30px;">
