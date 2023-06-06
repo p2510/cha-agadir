@@ -5,8 +5,6 @@
         section>.container-fluid {
             padding-top: 0px;
             padding-bottom: 0px;
-
-
         }
     </style>
     <div style="background-color:white;border-top:solid 2px rgb(45, 69, 88) ; padding-bottom:14px;"></div>
@@ -44,8 +42,8 @@
                                     class="gallery-isotope default-animation-effect grid-4 gutter-20 clearfix">
                                     @foreach ($responsables as $responsable)
                                         <!-- Portfolio Item Start -->
-                                        <div class="gallery-item ">
-                                            <div class="team-members mb-40">
+                                        <div class="gallery-item mr-10">
+                                            <div class="team-members mb-40 ">
                                                 <a href="{{route('show.professor',$responsable->name)}}" class="team-thumb mr-0">
                                                     <img src="{{ asset('storage') }}/{{ $responsable->photo }}"
                                                         alt="" class="img-fullwidth">
