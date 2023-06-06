@@ -377,13 +377,13 @@
                                     {{ $responsable->poste }}
                                 @endif
                             </h5>
-                            <p style="text-align:justify;hyphens:auto;color:rgb(45, 69, 88);font-size:16px;">
+                            <div style="text-align:justify;hyphens:auto;color:rgb(45, 69, 88);font-size:16px;">
                                 @if (App::isLocale('en'))
                                     {!! $responsable->competence_en !!}
                                 @else
                                     {!! $responsable->competence !!}
                                 @endif
-                            </p>
+                            </div>
 
                         </div>
                     </div>
