@@ -45,7 +45,7 @@
                                     class="gallery-isotope default-animation-effect grid-4 gutter-20 clearfix">
                                     @foreach ($responsables as $responsable)
                                         <!-- Portfolio Item Start -->
-                                        <div class="gallery-item mr-10">
+                                        <div class="gallery-item pr-10">
                                             <div class="team-members mb-40">
                                                 <div class="team-thumb mr-0">
                                                     <img src="{{ asset('storage') }}/{{ $responsable->photo }}"
