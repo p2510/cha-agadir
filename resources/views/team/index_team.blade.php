@@ -386,10 +386,7 @@
         @else
             <h2 class="text-theme-colored2 font-36">Il n'y a pas de membres</h2>
         @endif
-
-
     </div>
-
     <style>
         .gallery-isotope.gutter-20 .gallery-item {
             padding-right: 0px;
