@@ -103,7 +103,8 @@
                             }
                         </style>
 
-                        <ul id="myTab" class=" nav nav-tabs mt-30">
+
+                        <ul id="myTab" class="nav nav-tabs mt-30">
                             @foreach ($tabs as $key => $tab)
                                 @if ($loop->first)
                                     <li class="active"><a href="#tab{{ $tab->id }}" data-toggle="tab"
@@ -125,6 +126,35 @@
                                 color: #1f3344;
                                 font-size: 16px;
                             }
+
+                            .gallery-container-x {
+                                display: grid;
+                                justify-content: center;
+                                grid-template-columns: repeat(auto-fill, minmax(280px, 280px));
+                                column-gap: 15px;
+                                row-gap: 15px;
+                                width: 100%;
+                            }
+
+                            .gallery-item-x {
+                                overflow: hidden;
+                                height: 100%;
+                                width: 100%;
+                            }
+
+                            .gallery-item-x img {
+                                cursor: pointer;
+                                object-fit: cover;
+                                width: 100%;
+                                height: 100%;
+                                opacity: 1;
+                                transition: all 500ms;
+                            }
+
+                            .gallery-item-x:hover img {
+                                opacity: 0.7;
+                                transform: scale(1.5);
+                            }
                         </style>
 
                         <div id="myTabContent" class="tab-content">
@@ -133,10 +163,27 @@
                                     <div class="tab-pane fade in active" id="tab{{ $tab->id }}">
                                         <div style="text-align:justify;hyphens:auto;"> {!! $tab->content !!}
                                         </div>
+                                        <div class="gallery-container-x">
+                                            @foreach ($tab->tabimages as $media)
+                                                <div class="gallery-item-x">
+                                                    <img src="{{ url('storage') }}/{{ $media->photo }}">
+                                                </div>
+                                            @endforeach
+
+                                        </div>
+
                                     </div>
                                 @else
                                     <div class="tab-pane fade" id="tab{{ $tab->id }}">
                                         <div style="text-align:justify;hyphens:auto;"> {!! $tab->content !!}
+                                        </div>
+                                        <div class="gallery-container-x">
+                                            @foreach ($tab->tabimages as $media)
+                                                <div class="gallery-item-x">
+                                                    <img src="{{ url('storage') }}/{{ $media->photo }}">
+                                                </div>
+                                            @endforeach
+
                                         </div>
                                     </div>
                                 @endif
@@ -189,7 +236,7 @@
 
                     .accordion1 .item.open .text {
                         color: #F88147;
-                        
+
 
                     }
 
@@ -242,6 +289,14 @@
 
                             <div class="hidden-box" style="margin-top:-30px;padding-left:10px;padding-right:10px;">
                                 <div style="text-align:justify;hyphens:auto;"> {!! $tab->content !!}</div>
+                                <div class="gallery-container-x">
+                                    @foreach ($tab->tabimages as $media)
+                                        <div class="gallery-item-x">
+                                            <img src="{{ url('storage') }}/{{ $media->photo }}">
+                                        </div>
+                                    @endforeach
+
+                                </div>
                             </div>
                         </div>
                     </div>
@@ -250,7 +305,8 @@
 
 
                 <div class="mr-10 ml-10  ">
-                <button class="accordion active" id="btn_download" style="display: flex;justify-content:space-between; padding-left:4px;padding-right:4px;">{{ __('home.text8') }}</button>
+                    <button class="accordion active" id="btn_download"
+                        style="display: flex;justify-content:space-between; padding-left:4px;padding-right:4px;">{{ __('home.text8') }}</button>
                     <div class="panel" style="max-height: 54px;margin-bottom:30px;">
                         @foreach ($downloads as $key => $download)
                             <div><a href="{{ url('storage') }}/{{ $download->file }}"
@@ -263,7 +319,7 @@
                 <div class="gallery-isotope default-animation-effect @if (count($pagevideos) == 1) grid-1   @elseif(count($pagevideos) == 2) grid-2 @else grid-3 @endif  gutter-small clearfix"
                     data-lightbox="gallery">
                     @foreach ($pagevideos as $pagevideo)
-                        <div class="gallery-item mt-10 pr-10">
+                        <div class="gallery-item  mt-10 pr-10">
                             <p style="text-align: center; background-color:#F88147;color:black;">
                                 {{ $pagevideo->title }}</p>
                             <iframe width="220" height="145"
@@ -282,7 +338,7 @@
         color: #fff;
         background-color: #1F3345;
         cursor: pointer;
-        padding-bottom:4px;
+        padding-bottom: 4px;
         width: 100%;
         border: none;
         text-align: left;
@@ -300,7 +356,6 @@
         overflow: hidden;
         transition: max-height 0.2s ease-out;
     }
-
 </style>
 <style>
     .share {

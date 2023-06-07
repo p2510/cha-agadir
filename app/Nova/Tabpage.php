@@ -6,6 +6,7 @@ use Laravel\Nova\Fields\ID;
 use Illuminate\Http\Request;
 use Laravel\Nova\Fields\Text;
 use Laravel\Nova\Fields\Select;
+use Laravel\Nova\Fields\HasMany;
 use Emilianotisato\NovaTinyMCE\NovaTinyMCE;
 use Laravel\Nova\Http\Requests\NovaRequest;
 
@@ -23,7 +24,7 @@ class Tabpage extends Resource
      *
      * @var string
      */
-    public static $title = 'id';
+    public static $title = 'title';
 
     /**
      * The columns that should be searched.
@@ -71,6 +72,8 @@ class Tabpage extends Resource
                 'toolbar' => 'undo redo | styles | bold italic forecolor backcolor | alignleft aligncenter alignright alignjustify | image | bullist numlist outdent indent | link',
                 'use_lfm' => true
             ]),
+            HasMany::make('Image de tab','tabimages','App\Nova\Tabimage'),
+            
         ];
     }
 

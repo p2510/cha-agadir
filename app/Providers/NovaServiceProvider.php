@@ -31,6 +31,7 @@ use App\Nova\Download;
 use App\Nova\Language;
 use App\Nova\Location;
 use App\Nova\Modality;
+use App\Nova\Tabimage;
 use Laravel\Nova\Nova;
 use App\Nova\Evenement;
 use App\Nova\Pagevideo;
@@ -138,6 +139,7 @@ class NovaServiceProvider extends NovaApplicationServiceProvider
                     ])->collapsable(),
                     MenuItem::resource(Downloadpage::class),
                     MenuItem::resource(Tabpage::class),
+                    MenuItem::resource(Tabimage::class),
                     MenuItem::resource(Coursevideo::class),
                     MenuItem::resource(Evenementvideo::class),
                     MenuItem::resource(Pagevideo::class),

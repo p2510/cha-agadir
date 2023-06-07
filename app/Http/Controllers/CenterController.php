@@ -31,13 +31,18 @@ class CenterController extends Controller
             }
             return $item;
         });
-        $tabs=Tabpage::where('pagename','centre-excellence')->get()->map(function ($item){         
-            if (App::isLocale('en')) {
-                $item->title=$item->title_en;
-                $item->content=$item->content_en;
-            }
-            return $item;
-        });
+   
+        $tabs=Tabpage::where('pagename','centre-excellence')
+                                    ->with('tabimages')
+                                    ->get()
+                                    ->map(function ($item){         
+                                    if (App::isLocale('en')) {
+                                        $item->title=$item->title_en;
+                                        $item->content=$item->content_en;
+                                    }
+                                    return $item;
+                                    });
+        
 
 
         $pagevideos=Pagevideo::where('pagename','centre-excellence')->get()->map(function ($item){         
