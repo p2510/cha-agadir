@@ -53,7 +53,7 @@ class Tabimage extends Resource
     }
     public static function label()
     {
-        return 'Image des tabs';
+        return 'Images des tabs';
     }
 
     /**

@@ -85,9 +85,9 @@ class NovaServiceProvider extends NovaApplicationServiceProvider
         Nova::mainMenu(function () {
             return [
               
+                MenuSection::make('Formations', [
                     MenuItem::resource(Course::class),
                     MenuItem::resource(Program::class),
-                    MenuItem::resource(Responsable::class),
                     MenuItem::resource(Download::class),
                     MenuItem::resource(Curriculum::class),
                     MenuItem::resource(TrainingType::class),
@@ -96,62 +96,71 @@ class NovaServiceProvider extends NovaApplicationServiceProvider
                     MenuItem::resource(Location::class),
                     MenuItem::resource(Modality::class),
                     MenuItem::resource(Mode::class),
+                    MenuItem::resource(Design::class), 
+                    MenuItem::resource(Coursevideo::class),
+                ])->icon('academic-cap')->collapsable(),
+                    
+                MenuSection::make('Contenu des pages', [
+                    MenuItem::resource(Tabpage::class),
+                    MenuItem::resource(Downloadpage::class),
+                    MenuItem::resource(Tabimage::class),
+                    MenuItem::resource(Pagevideo::class),
                     MenuItem::resource(Slide::class),
-                    MenuItem::resource(Design::class),
-                    MenuItem::resource(Partner::class),
                     MenuItem::resource(Whyus::class),
                     MenuItem::resource(Barre::class),
                     MenuItem::resource(Popup::class),
-                    MenuItem::resource(Team::class),
-
-
-                    MenuSection::make('Visiteurs', [
-                        MenuItem::resource(Interested::class),
-                        MenuItem::resource(Contact::class),
-
-                    ])->icon('user')->collapsable(),
-                    MenuSection::make('Interation', [
-                        MenuItem::resource(Evenement::class),
-                        MenuItem::resource(Evenementpage::class),
-                        MenuItem::resource(EvenementInterested::class),
-                    ])->collapsable(),
-                    MenuSection::make('Blog', [
-                        MenuItem::resource(CategoryBlog::class),
-                        MenuItem::resource(Blog::class),
-                    ])->collapsable(),
-                    MenuSection::make('Media', [
-                        MenuItem::resource(CategoryMedia::class),
-                        MenuItem::resource(CategoryVideo::class),
-                        MenuItem::resource(Media::class),
-                        MenuItem::resource(Mediavideo::class),
-                    ])->collapsable(),
-                        MenuSection::make('Les pages statiques', [
-                        MenuItem::resource(About::class),
-                        MenuItem::resource(Director::class),
-                        MenuItem::resource(Campus::class),
-                        MenuItem::resource(Search::class),
-                        MenuItem::resource(Center::class),
-                        MenuItem::resource(Experience::class),
-                        MenuItem::resource(Impact::class),
-                        MenuItem::resource(Business::class),
-                        MenuItem::resource(Mention::class),
-                        
-                    ])->collapsable(),
-                    MenuItem::resource(Downloadpage::class),
-                    MenuItem::resource(Tabpage::class),
-                    MenuItem::resource(Tabimage::class),
-                    MenuItem::resource(Coursevideo::class),
+                    MenuItem::resource(Partner::class),
+                ])->icon('document-text')->collapsable(),
+                
+                MenuSection::make('Photos des pages', [
+                    MenuItem::resource(About::class),
+                    MenuItem::resource(Director::class),
+                    MenuItem::resource(Campus::class),
+                    MenuItem::resource(Search::class),
+                    MenuItem::resource(Center::class),
+                    MenuItem::resource(Experience::class),
+                    MenuItem::resource(Impact::class),
+                    MenuItem::resource(Business::class),
+                ])->icon('photograph')->collapsable(),
+                
+                MenuSection::make('Évènements', [
+                    MenuItem::resource(Evenement::class),
+                    MenuItem::resource(Evenementpage::class),
+                    MenuItem::resource(EvenementInterested::class),
                     MenuItem::resource(Evenementvideo::class),
-                    MenuItem::resource(Pagevideo::class),
+                ])->icon('calendar')->collapsable(),
 
-                    MenuSection::make('newsletter', [
-                        MenuItem::resource(Newsletter::class),
-                        MenuItem::resource(MessageNewsletter::class),
-                    ])->icon('mail')->collapsable(),
+                MenuSection::make('Blog', [
+                    MenuItem::resource(CategoryBlog::class),
+                    MenuItem::resource(Blog::class),
+                ])->icon('rss')->collapsable(),
+
+                MenuSection::make('Staff', [
+                    MenuItem::resource(Responsable::class),
+                    MenuItem::resource(Team::class)
+                ])->icon('user-group')->collapsable(),
+
+                MenuSection::make('Media', [
+                    MenuItem::resource(CategoryMedia::class),
+                    MenuItem::resource(CategoryVideo::class),
+                    MenuItem::resource(Media::class),
+                    MenuItem::resource(Mediavideo::class),
                     MenuItem::resource(Logo::class),
-                    MenuItem::resource(User::class),
 
-                  
+                ])->icon('document-download')->collapsable(),
+
+                MenuSection::make('Visiteurs', [
+                    MenuItem::resource(Interested::class),
+                    MenuItem::resource(Contact::class),
+                ])->icon('users')->collapsable(),
+
+                MenuSection::make('Newsletter', [
+                    MenuItem::resource(Newsletter::class),
+                    MenuItem::resource(MessageNewsletter::class),
+                ])->icon('mail')->collapsable(),
+                
+                MenuItem::resource(Mention::class),
+                MenuItem::resource(User::class),
                 
             ];
         });

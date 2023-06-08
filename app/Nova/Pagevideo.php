@@ -106,6 +106,6 @@ class Pagevideo extends Resource
     }
     public static function label()
     {
-        return 'Vidéos autres pages';
+        return 'Vidéos des pages';
     }
 }

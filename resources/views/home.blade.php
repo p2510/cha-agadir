@@ -565,7 +565,6 @@
                                             <span> <i class="fa fa-map-marker text-theme-colored2"></i>
                                                 {{ $evenement->location }}</span>
                                         </div>
-
                                         @if (\Carbon\Carbon::tomorrow() > $evenement->start_at)
                                             <span style="background-color:#192c3b;color:white; padding:4px 4px 4px 4px;">
                                                 Expiré</span>

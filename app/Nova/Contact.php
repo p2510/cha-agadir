@@ -105,6 +105,6 @@ class Contact extends Resource
     }
     public static function label()
     {
-       return 'Message';
+       return 'Message de Contact';
     }
 }

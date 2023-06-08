@@ -61,7 +61,7 @@ class Download extends Resource
         ];
     }
     public static function label() {
-        return 'Téléchargement';
+        return 'Documents Formations';
     }
 
     /**

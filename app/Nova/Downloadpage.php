@@ -109,6 +109,6 @@ class Downloadpage extends Resource
     }
     public static function label()
     {
-        return 'Fichier de pages ';
+        return 'Fichiers des pages ';
     }
 }

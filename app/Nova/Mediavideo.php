@@ -47,13 +47,7 @@ class Mediavideo extends Resource
             BelongsTo::make('Catégories','vidéos','App\Nova\CategoryVideo'),
             Text::make('Titre','title'),
             Text::make('Url youtube','video'),
-            /*Video::make('Une Vidéo','video')->disk('public')
-            ->storeAs(function (Request $request) {
-                return $request->video->getClientOriginalName();
-             })->rules('file', 'max:600000', 'mimes:mp4,avi,mpeg,quicktime', 'mimetypes:video/mp4,video/avi,video/mpeg,video/quicktime')
-                ->creationRules('required')
-                ->updateRules('nullable'),
-                */
+ 
         ];
     }
 

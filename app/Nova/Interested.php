@@ -117,6 +117,6 @@ class Interested extends Resource
     }
     public static function label()
     {
-        return 'Intéressé';
+        return 'Intéressé par formation';
     }
 }
