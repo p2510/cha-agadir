@@ -40,10 +40,7 @@ class SearchController extends Controller
         });
 
 
-        $tabs=DB::table('tabpages')->where('pagename','recherche')
-                                   ->with('tabimages')
-                                   ->get()
-                                   ->map(function ($item){         
+        $tabs=Tabpage::where('pagename','recherche')->with('tabimages')->get()->map(function ($item){         
                                     if (App::isLocale('en')) {
                                         $item->title=$item->title_en;
                                         $item->content=$item->content_en;
