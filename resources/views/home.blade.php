@@ -48,18 +48,18 @@
                             <img id="photo_pc1" src="{{ url('storage') }}/{{ $slide->photo }}" alt="{{ $slide->title }}">
                             <img id="photo_mobile1"src="{{ url('storage') }}/{{ $slide->photo_en }}"
                                 alt="{{ $slide->title }}">
-                                <h3 id="photo_pc1" style="color:{{ $slide->color }};">{{ $slide->subject }}
-                                    <h1 id="photo_pc1" style="color:{{ $slide->color }};">{{ $slide->title }}</h1>
-                                </h3>
-                                <h3 id="photo_mobile1" style="color:{{ $slide->color_mobile }};">{{ $slide->subject }}
-                                    <h1 id="photo_mobile1" style="color:{{ $slide->color_mobile }};">{{ $slide->title }}</h1>
-                                </h3>
-                                </h3>
-                                <div id="photo_pc1" style="color:{{ $slide->color }};"> {!! $slide->description !!}</div>
-                                <div id="photo_mobile1" style="color:{{ $slide->color_mobile }};"> {!! $slide->description !!}
+                            <h3 id="photo_pc1" style="color:{{ $slide->color }};">{{ $slide->subject }}
+                                <h1 id="photo_pc1" style="color:{{ $slide->color }};">{{ $slide->title }}</h1>
+                            </h3>
+                            <h3 id="photo_mobile1" style="color:{{ $slide->color_mobile }};">{{ $slide->subject }}
+                                <h1 id="photo_mobile1" style="color:{{ $slide->color_mobile }};">{{ $slide->title }}</h1>
+                            </h3>
+                            </h3>
+                            <div id="photo_pc1" style="color:{{ $slide->color }};"> {!! $slide->description !!}</div>
+                            <div id="photo_mobile1" style="color:{{ $slide->color_mobile }};"> {!! $slide->description !!}
 
-                            <a href="{{ $slide->url }}"
-                                class=" btn btn-dark btn-circled btn-theme-colored2 btn-xl mr-10 pr-30 pl-30">{{ __('home.btn1') }}</a>
+                                <a href="{{ $slide->url }}"
+                                    class=" btn btn-dark btn-circled btn-theme-colored2 btn-xl mr-10 pr-30 pl-30">{{ __('home.btn1') }}</a>
                         </li>
                     @endif
                 @endforeach
@@ -530,13 +530,14 @@
                                                 </li>
                                                 <li class="font-14 text-center text-uppercase mt-5">
                                                     @php
-                                                        
                                                         $getDays = date('F', strtotime($evenement->start_at));
                                                         echo substr($getDays, 0, 3);
                                                     @endphp
                                                 </li>
                                             </ul>
+
                                         </div>
+
                                         <div class="event-content pt-5">
                                             <h5 class="media-heading font-16 mb-5"><a class="font-weight-600"
                                                     href="{{ route('evenement.show', $evenement->title) }}">
@@ -546,9 +547,7 @@
                                                         {{ $evenement->title }}
                                                     @endif
                                                 </a>
-                                                @if (\Carbon\Carbon::tomorrow()>$evenement->start_at)
-                                                  <span style="background-color:red;color:white; padding:2px 2px 2px 2px;">  expiré</span>
-                                                @endif
+
                                             </h5>
                                             <span class="mr-10"><i class="fa fa-clock-o text-theme-colored2"></i>
                                                 @php
@@ -566,7 +565,14 @@
                                             <span> <i class="fa fa-map-marker text-theme-colored2"></i>
                                                 {{ $evenement->location }}</span>
                                         </div>
+
+                                        @if (\Carbon\Carbon::tomorrow() > $evenement->start_at)
+                                            <span style="background-color:#192c3b;color:white; padding:4px 4px 4px 4px;">
+                                                Expiré</span>
+                                        @endif
+
                                     </div>
+
                                 </article>
                             @endforeach
 
