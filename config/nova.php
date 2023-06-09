@@ -173,9 +173,9 @@ return [
     // ],
 
      'brand' => [
-         'logo' => ('http://prestavert.com/images/logo_admin.png'),
-         'logo_url' =>('http://prestavert.com/images/logo_admin.png'),
-         'logo_link' => 'http://prestavert.com/',
+         'logo' => ('http://cha-agadir.ma/images/logo_admin.png'),
+         'logo_url' =>('http://cha-agadir.ma/images/logo_admin.png'),
+         'logo_link' => 'http://cha-agadir.ma/',
          'logo_class' => 'h-10',
 
          'colors' => [
