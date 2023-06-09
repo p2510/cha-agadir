@@ -128,18 +128,20 @@
                             }
 
                             .gallery-container-x {
-                                display: grid;
-                                justify-content: center;
-                                grid-template-columns: repeat(auto-fill, minmax(280px, 280px));
-                                column-gap: 15px;
-                                row-gap: 15px;
+
+                                display: flex;
+                                flex-wrap: wrap;
+                                justify-content:space-around;
+                                gap: 6px 6px;
                                 width: 100%;
+                                
                             }
 
                             .gallery-item-x {
                                 overflow: hidden;
                                 height: 100%;
-                                width: 100%;
+                                width: 49%;
+                                
                             }
 
                             .gallery-item-x img {
