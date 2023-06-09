@@ -24,7 +24,11 @@ class Tabpage extends Resource
      *
      * @var string
      */
-    public static $title = 'title';
+   
+    public function title()
+    {
+        return $this->pagename.'-'. $this->title  ;
+    }
 
     /**
      * The columns that should be searched.

@@ -47,7 +47,7 @@ class Tabimage extends Resource
             ->storeAs(function (Request $request) {
                     return $request->photo->getClientOriginalName();
             }),
-            BelongsTo::make('Tab ','tabpage','App\Nova\Tabpage'),
+            BelongsTo::make('Tab','tabpage','App\Nova\Tabpage'),
 
         ];
     }
