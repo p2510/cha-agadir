@@ -2204,7 +2204,7 @@
                     <div class="row">
 
                         <div class="col-md-6">
-                            <p class="font-14 sm-text-center m-0"> <span class="elem"> Copyright </span>
+                            <p class="font-14 sm-text-center m-0"> <span id='elem'> Copyright </span>
                                 &copy;2023 <span class="text-theme-colored2">CHA
                                     Agadir</span>. {{ __('footer.text1') }} </p>
                         </div>

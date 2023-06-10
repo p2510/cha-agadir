@@ -549,7 +549,8 @@
                                                 </a>
 
                                             </h5>
-                                            <span class="mr-10"><i class="fa fa-clock-o text-theme-colored2"></i>
+                                             
+                                            <span class="mr-10"  @if (\Carbon\Carbon::tomorrow() > $evenement->start_at) style="text-decoration:line-through;" @endif><i class="fa fa-clock-o text-theme-colored2"></i>
                                                 @php
                                                     
                                                     $start_at = date('H:i', strtotime($evenement->start_at));
@@ -565,10 +566,7 @@
                                             <span> <i class="fa fa-map-marker text-theme-colored2"></i>
                                                 {{ $evenement->location }}</span>
                                         </div>
-                                        @if (\Carbon\Carbon::tomorrow() > $evenement->start_at)
-                                            <span style="background-color:#192c3b;color:white; padding:4px 4px 4px 4px;">
-                                                Expiré</span>
-                                        @endif
+
 
                                     </div>
 

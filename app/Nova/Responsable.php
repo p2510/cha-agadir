@@ -82,7 +82,7 @@ class Responsable extends Resource
             Image::make('photo','photo')->disk('public')->storeAs(function(Request $request){
                 return $request->photo->getClientOriginalName();
             }),
-            HasMany::make('Course'),          
+            HasMany::make('Course'),
         ];
     }
     public static function label()
