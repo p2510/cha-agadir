@@ -52,7 +52,7 @@
                         <div class="col-md-12">
                             <!-- Portfolio Filter -->
                             <div class="portfolio-filter">
-                                <a href="#" class="active" data-filter="*">
+                                <a href="#" class="active mt-10"  data-filter="*">
                                     @if (App::isLocale('en'))
                                         All
                                     @else
@@ -60,7 +60,7 @@
                                     @endif
                                 </a>
                                 @foreach ($degrees as $degree)
-                                    <a href="#a{{ $degree->id }}" class="" data-filter=".a{{ $degree->id }}">
+                                    <a href="#a{{ $degree->id }}" class=" mt-10"  data-filter=".a{{ $degree->id }}">
                                         @if (App::isLocale('en'))
                                             {{ $degree->name_en }}
                                         @else

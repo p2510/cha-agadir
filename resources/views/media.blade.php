@@ -42,7 +42,7 @@
                         <div class="col-md-12">
                             <!-- Portfolio Filter -->
                             <div class="portfolio-filter">
-                                <a href="#" class="active reset" data-filter="*">
+                                <a href="#" class="active reset mt-10" data-filter="*">
                                     @if (App::isLocale('en'))
                                         All
                                     @else
@@ -50,7 +50,7 @@
                                     @endif
                                 </a>
                                 @foreach ($categories as $category)
-                                    <a href="#a{{ $category->id }}" class="category" id="id{{ $category->id }}"
+                                    <a href="#a{{ $category->id }}" class="category mt-10" id="id{{ $category->id }}"
                                         data-filter=".a{{ $category->id }}">{{ $category->name }}</a>
                                 @endforeach
                                 @foreach ($categories as $category)
@@ -58,7 +58,7 @@
                                         class="id{{ $category->id }}">
                                 @endforeach
                             </div>
-                            <p id="descriptionCategory"></p>
+                            <p id="descriptionCategory"  style="text-align:justify;hyphens:auto;color:#1f3344;"></p>
                             <script>
                                 let category = document.querySelectorAll(".category");
                                 let reset = document.querySelector(".reset");

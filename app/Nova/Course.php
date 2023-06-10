@@ -56,6 +56,7 @@ class Course extends Resource
             //ID::make()->sortable(),
             BelongsTo::make('Cycle','degree','App\Nova\Degree'),
             BelongsTo::make('Responsable','responsable','App\Nova\Responsable')->nullable(),
+            BelongsTo::make('Équipe','team','App\Nova\Team')->nullable(),
             Number::make("Rang",'position'),
             Text::make('Intitulé de la formation (Fr)','name'),
             Text::make('Intitulé de la formation (En)','name_en'),
@@ -193,21 +194,6 @@ class Course extends Resource
                 'use_lfm' => true
             ]), 
            
-
-            NovaTinyMCE::make('Témoignages (Fr)','review')->options([
-                'plugins' => [
-                    'lists','preview','anchor','pagebreak','image','wordcount','fullscreen','directionality'
-                ],
-                'toolbar' => 'undo redo | styles | bold italic forecolor backcolor | alignleft aligncenter alignright alignjustify | image | bullist numlist outdent indent | link',
-                'use_lfm' => true
-            ]),
-            NovaTinyMCE::make('Témoignages (En)','review_en')->options([
-                'plugins' => [
-                    'lists','preview','anchor','pagebreak','image','wordcount','fullscreen','directionality'
-                ],
-                'toolbar' => 'undo redo | styles | bold italic forecolor backcolor | alignleft aligncenter alignright alignjustify | image | bullist numlist outdent indent | link',
-                'use_lfm' => true
-            ]),
 
 
             HasMany::make('programs'),

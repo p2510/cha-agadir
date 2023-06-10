@@ -505,7 +505,7 @@
                         <div class="line-bottom-theme-colored2"></div>
                         @foreach ($about as $item)
                             <img src="{{ url('storage') }}/{{ $item->photo }}" class="img-fullwidth" alt="">
-                            <p class="mt-15" style="text-align:justify;hyphens:auto;">{{ $item->description }}</p>
+                            <p class="mt-15" style="text-align:justify;hyphens:auto;">{{ $item->description }} [...]</p>
                             <a href="{{ route('about.index') }}" class="mt-15 btn btn-colored btn-sm btn-theme-colored2">
                                 {{ __('home.text2') }}</a>
                         @endforeach

@@ -98,6 +98,6 @@ class About extends Resource
     }
     public static function label()
     {
-        return 'À propos';
+        return 'Qui sommes nous';
     }
 }

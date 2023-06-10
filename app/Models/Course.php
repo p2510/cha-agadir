@@ -4,6 +4,7 @@ namespace App\Models;
 
 
 use App\Models\Mode;
+use App\Models\Team;
 use App\Models\Degree;
 use App\Models\Program;
 use App\Models\Download;
@@ -38,7 +39,6 @@ class Course extends Model
         'grade',
         'profile',
         'opportunity',
-        'reviews',
         'accroche',
     ];
     public function getRouteKeyName()
@@ -77,6 +77,16 @@ class Course extends Model
     {
         return $this->belongsTo(Responsable::class);
     }
+    /**
+     * Get the team that owns the Course
+     *
+     * @return \Illuminate\Database\Eloquent\Relations\BelongsTo
+     */
+    public function team(): BelongsTo
+    {
+        return $this->belongsTo(Team::class, 'team_id', 'id');
+    }
+    
     public function trainingType()
     {
         return $this->belongsTo(TrainingType::class);

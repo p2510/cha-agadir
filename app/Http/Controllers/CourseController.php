@@ -86,8 +86,10 @@ class CourseController extends Controller
             ->join('languages', 'languages.id', '=', 'courses.language_id')
             ->join('modes', 'modes.id', '=', 'courses.mode_id')
             ->leftjoin('responsables', 'responsables.id', '=', 'courses.responsable_id')
-            ->select('courses.*', 'modalities.name as modalitiy_name', 'modalities.name_en as modalitiy_name_en', 'degrees.name as degrees_name', 'degrees.name_en as degrees_name_en', 'responsables.surname as responsables_surname', 'languages.name as languages_name', 'modes.name as modes_name', 'responsables.name as responsables_name')
+            ->leftjoin('teams', 'teams.id', '=', 'courses.team_id')
+            ->select('courses.*', 'modalities.name as modalitiy_name', 'modalities.name_en as modalitiy_name_en', 'degrees.name as degrees_name', 'degrees.name_en as degrees_name_en', 'responsables.surname as responsables_surname', 'teams.surname as teams_surname','responsables.photo as responsables_photo', 'teams.photo as teams_photo', 'languages.name as languages_name', 'modes.name as modes_name', 'responsables.name as responsables_name', 'teams.name as teams_name')
             ->get();
+            
         foreach ($val as $key => $item) {
             Carbon::parse($item->datelimite)->locale('FR_fr')->diffForHumans();
             if (App::isLocale('en')) {
@@ -400,7 +402,8 @@ class CourseController extends Controller
             ->join('modes', 'modes.id', '=', 'courses.mode_id')
             ->join('locations', 'locations.id', '=', 'courses.location_id')
             ->leftjoin('responsables', 'responsables.id', '=', 'courses.responsable_id')
-            ->select('courses.*', 'modalities.name as modalitiy_name', 'locations.name as locations_name', 'degrees.name as degrees_name', 'responsables.surname as responsables_surname', 'languages.name as languages_name', 'modes.name as modes_name', 'responsables.name as responsables_name')
+            ->leftjoin('teams', 'teams.id', '=', 'courses.team_id')
+            ->select('courses.*', 'modalities.name as modalitiy_name', 'locations.name as locations_name', 'degrees.name as degrees_name', 'responsables.surname as responsables_surname', 'teams.surname as teams_surname','responsables.photo as responsables_photo', 'teams.photo as teams_photo','languages.name as languages_name', 'modes.name as modes_name', 'responsables.name as responsables_name','teams.name as teams_name')
             ->get();
 
         if (count($val) > 0) {

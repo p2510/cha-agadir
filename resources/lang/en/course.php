@@ -10,7 +10,7 @@ return [
     'title7'=>'PROGRAM',
     'title8'=>'CAREER',
     'title9'=>'DOCUMENTS',
-    'title10'=>'TESTIMONIALS',
+    'title10'=>'RESPONSABLE',
     'subtitle1'=>'Description',
     'subtitle2'=>'Location',
     
@@ -24,7 +24,7 @@ return [
     'subtitle10'=>'hours',
     'subtitle11'=>'Profile / Skills to acquire',
     'subtitle12'=>'Career opportunities',
-    'subtitle13'=>'Testimonials',
+    'subtitle13'=>'Responsable',
     'subtitle14'=>'Fill in the form',
     'subtitle15'=>'Career',
     'text1'=>'Miss',

@@ -55,9 +55,9 @@ class Tabpage extends Resource
                 'ferme-experiementale' => 'ferme-experiementale',
                 'impact-cluster' => 'impact-cluster',
                 'agri-business' => 'agri-business',
-                'about' => 'À propos',
+                'about' => 'Qui sommes nous',
                 'mot-du-directeur'=>'Mot du directeur',
-                'campus'=>'vie estudiantine',
+                'vie estudiantine'=>'vie estudiantine',
               
             ]) ,  
             Text::make('Titre (Fr)','title'),          

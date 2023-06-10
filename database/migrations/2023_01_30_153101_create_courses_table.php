@@ -25,7 +25,6 @@ return new class extends Migration
             $table->text('accroche');
             $table->integer('duration')->nullable();
             $table->foreignId('location_id')->onDelete('cascade');
-            //$table->foreignId('language_id')->onDelete('cascade');
             $table->foreignId('mode_id')->onDelete('cascade');
             $table->foreignId('language_id')->onDelete('cascade');
             $table->text('admission')->nullable();

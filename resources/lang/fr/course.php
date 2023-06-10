@@ -10,7 +10,7 @@ return [
     'title7'=>'PROGRAMME',
     'title8'=>'CARRIÈRE',
     'title9'=>'DOCUMENTS',
-    'title10'=>'TÉMOIGNAGES',
+    'title10'=>'RESPONSABLE',
     'subtitle1'=>'Description de la formation',
     'subtitle2'=>'Lieu',
     
@@ -24,7 +24,7 @@ return [
     'subtitle10'=>'heures',
     'subtitle11'=>'Profil / Compétences à acquérir',
     'subtitle12'=>'Débouchés',
-    'subtitle13'=>'Témoignages',
+    'subtitle13'=>'Responsable',
     'subtitle14'=>'Remplir le formulaire',
     'subtitle15'=>'Carrière',
     'text1'=>'Mlle',

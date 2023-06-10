@@ -445,7 +445,19 @@
                                                     </h5>
                                                 </div>
                                             </li>
+                                        @elseif($course->teams_name)
+                                            <li>
+                                                <i class="pe-7s-user text-theme-colored2 font-48"></i>
+                                                <div class="pull-right ml-5">
+                                                    <span>Responsable</span>
+                                                    <h5 class="mt-0">
+                                                        {{ $course->teams_name . ' ' . $course->teams_surname }}
+                                                    </h5>
+                                                </div>
+                                            </li>
                                         @endif
+
+
 
                                         @if ($course->grade)
                                             <li>
@@ -500,7 +512,9 @@
                                             #myTabContent {
                                                 display: none;
                                             }
-                                            #elem1, {
+
+                                            #elem1,
+                                                {
                                                 display: block;
                                             }
 
@@ -776,8 +790,18 @@
                                         <div class="tab-pane fade" id="tab4">
                                             <h4 class="line-bottom-theme-colored2 mb-20">
                                                 {{ __('course.subtitle13') }}</h4>
-                                            <div style="font-size:16px;">
-                                                {!! $courses[0]->review !!} </div>
+                                            <div style="display:flex;justify-content:center;">
+                                                @if ($courses[0]->responsables_photo)
+                                                    <img src="{{ url('storage/' . $courses[0]->responsables_photo) }}"
+                                                        style=" object-fit:cover;width:70%; height:70%;"
+                                                        alt="photo du responsable">
+                                                
+                                                @elseif ($courses[0]->teams_photo)
+                                                    <img src="{{ url('storage/' . $courses[0]->teams_photo) }}"
+                                                        style=" object-fit:cover;width:70%; height:70%;"
+                                                        alt="photo du responsable">
+                                                @endif
+                                            </div>
                                         </div>
 
                                         <div class="tab-pane fade" id="tab5">
@@ -1722,7 +1746,18 @@
                                 </div>
                                 <div class="hidden-box font-size"
                                     style="margin-top:-30px;text-align:justify;hyphens:auto;">
-                                    {!! $courses[0]->review !!}
+                                    <div style="display:flex;justify-content:center;">
+                                        @if ($courses[0]->responsables_photo)
+                                            <img src="{{ url('storage/' . $courses[0]->responsables_photo) }}"
+                                                style=" object-fit:cover;width:80%; height:80%;"
+                                                alt="photo du responsable">
+                                        
+                                        @elseif ($courses[0]->teams_photo)
+                                            <img src="{{ url('storage/' . $courses[0]->teams_photo) }}"
+                                                style=" object-fit:cover;width:80%; height:80%;"
+                                                alt="photo du responsable">
+                                        @endif
+                                    </div>
                                 </div>
                             </div>
                         </div>

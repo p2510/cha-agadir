@@ -7,6 +7,7 @@ use Illuminate\Http\Request;
 use Laravel\Nova\Fields\Text;
 use Laravel\Nova\Fields\Image;
 use Laravel\Nova\Fields\Country;
+use Laravel\Nova\Fields\HasMany;
 use Laravel\Nova\Fields\Textarea;
 use Laravel\Nova\Http\Requests\NovaRequest;
 
@@ -24,7 +25,8 @@ class Team extends Resource
      *
      * @var string
      */
-    public static $title = 'id';
+    public static $title = 'name';
+
 
     /**
      * The columns that should be searched.
@@ -63,6 +65,8 @@ class Team extends Resource
             Image::make('photo','photo')->disk('public')->storeAs(function(Request $request){
                 return $request->photo->getClientOriginalName();
             }),
+            HasMany::make('Course'),
+            
         ];
     }
     public static function label()

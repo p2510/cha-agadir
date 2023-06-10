@@ -50,7 +50,7 @@ class Pagevideo extends Resource
                 'ferme-experiementale' => 'ferme-experiementale',
                 'impact-cluster' => 'impact-cluster',
                 'agri-business' => 'agri-business',
-                'about' => 'À propos',
+                'about' => 'Qui sommes nous',
                 'mot-du-directeur'=>'Mot du directeur',
                 'campus'=>'vie estudiantine',
               
