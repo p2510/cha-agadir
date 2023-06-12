@@ -374,11 +374,11 @@
 
             @media (max-width: 992px) {
                 .menuzord-menu>li {
-                    padding: 0px 0;
+                    padding: 0px 0 !important;
                 }
 
                 .menuzord-menu>li {
-                     padding: 0px 0; 
+                     padding: 0px 0 !important; 
                 }
 
             }
