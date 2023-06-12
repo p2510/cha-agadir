@@ -364,9 +364,6 @@
                     display: none;
                 }
             }
-            
-
-
             .language-selector {
                 background-color: transparent !important;
                 color: white;

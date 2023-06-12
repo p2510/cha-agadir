@@ -128,34 +128,17 @@
                             }
 
                             .gallery-container-x {
-
-                                display: flex;
-                                flex-wrap: wrap;
-                                justify-content:space-around;
-                                gap: 6px 6px;
-                                width: 100%;
-                                
+                                display: grid;
+                                grid-template-columns: repeat(2, minmax(0, 1fr));
+                                gap: 8px;
                             }
 
-                            .gallery-item-x {
-                                overflow: hidden;
-                                height: 100%;
-                                width: 49%;
-                                
+                            .gallery-item-x-1 {
+                                grid-column: span 2 / span 2;
                             }
 
-                            .gallery-item-x img {
-                                cursor: pointer;
-                                object-fit: cover;
-                                width: 100%;
-                                height: 100%;
-                                opacity: 1;
-                                transition: all 500ms;
-                            }
-
-                            .gallery-item-x:hover img {
-                                opacity: 0.7;
-                                transform: scale(1.5);
+                            .gallery-item-x-2 {
+                                grid-column: span 1 / span 1;
                             }
                         </style>
 
@@ -166,11 +149,20 @@
                                         <div style="text-align:justify;hyphens:auto;"> {!! $tab->content !!}
                                         </div>
                                         <div class="gallery-container-x">
-                                            @foreach ($tab->tabimages as $media)
-                                                <div class="gallery-item-x">
-                                                    <img src="{{ url('storage') }}/{{ $media->photo }}">
-                                                </div>
-                                            @endforeach
+                                            @if (count($tab->tabimages) > 1)
+                                                @foreach ($tab->tabimages as $media)
+                                                    <div class="gallery-item-x-2">
+                                                        <img src="{{ url('storage') }}/{{ $media->photo }}">
+                                                    </div>
+                                                @endforeach
+                                            @else
+                                                @foreach ($tab->tabimages as $media)
+                                                    <div class="gallery-item-x-1">
+                                                        <img src="{{ url('storage') }}/{{ $media->photo }}">
+                                                    </div>
+                                                @endforeach
+                                            @endif
+
 
                                         </div>
 
@@ -180,11 +172,19 @@
                                         <div style="text-align:justify;hyphens:auto;"> {!! $tab->content !!}
                                         </div>
                                         <div class="gallery-container-x">
-                                            @foreach ($tab->tabimages as $media)
-                                                <div class="gallery-item-x">
-                                                    <img src="{{ url('storage') }}/{{ $media->photo }}">
-                                                </div>
-                                            @endforeach
+                                            @if (count($tab->tabimages) > 1)
+                                                @foreach ($tab->tabimages as $media)
+                                                    <div class="gallery-item-x-2">
+                                                        <img src="{{ url('storage') }}/{{ $media->photo }}">
+                                                    </div>
+                                                @endforeach
+                                            @else
+                                                @foreach ($tab->tabimages as $media)
+                                                    <div class="gallery-item-x-1">
+                                                        <img src="{{ url('storage') }}/{{ $media->photo }}">
+                                                    </div>
+                                                @endforeach
+                                            @endif
 
                                         </div>
                                     </div>
