@@ -156,7 +156,7 @@
                                         <a class="text-white"
                                             href="{{ route('about.index') }}">{{ __('header.info2') }}</a>
                                     </li>
-                                   
+
                                     <li class="text-white " id='elem'>|</li>
                                     <li class="text-white " id='elem' style="position:relative; top:3px;">
                                         <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18"
@@ -356,14 +356,46 @@
             @media screen and (max-width: 768px) {
                 #elem {
                     display: none;
-                    
+
                 }
             }
+
             @media screen and (min-width: 768px) {
-                #separate{
+                #separate {
                     display: none;
                 }
             }
+
+            @media screen and (min-width: 992px) and (max-width: 1199px) {
+                .menuzord-menu li a {
+                    font-size: 11px !important;
+                }
+            }
+
+            @media (max-width: 992px) {
+                .menuzord-menu>li {
+                    padding: 0px 0;
+                }
+
+                .menuzord-menu>li {
+                     padding: 0px 0; 
+                }
+
+            }
+
+
+            /* @media screen and (min-width: 901px) and (max-width: 999px) {
+                .menuzord-menu li a {
+                    font-size:9px !important;
+                }
+            }*/
+            /*
+            #menuzord-right a.showhide{
+               display: none !important;
+            }
+            */
+
+
             .language-selector {
                 background-color: transparent !important;
                 color: white;
