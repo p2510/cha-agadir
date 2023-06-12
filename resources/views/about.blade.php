@@ -1,4 +1,7 @@
 @extends('layouts.static')
+@section ('title')
+{{ __('header.subtitle2') }}
+@endsection
 @section('content')
     <style>
         section>.container,

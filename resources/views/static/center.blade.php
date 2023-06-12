@@ -1,4 +1,7 @@
 @extends('layouts.static')
+@section('title')
+    {{ __('header.title5') }}
+@endsection
 @section('content')
     <style>
         section>.container,
@@ -29,5 +32,4 @@
             </div>
         </div>
     </section>
-
 @endsection

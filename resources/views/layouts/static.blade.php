@@ -44,7 +44,7 @@
                     </div>
                     <div class="col-md-12">
                         <h2 class="text-uppercasetext-theme-colored mt-0 mb-0 mt-sm-30"><span
-                                class="text-theme-colored2">{{ __('header.subtitle2') }}</span></h2>
+                                class="text-theme-colored2">@yield('title')</span></h2>
                         <div class="mt-30 mb-0">
 
                             <ul class="styled-icons m-0">
@@ -126,7 +126,6 @@
                                 color: #1f3344;
                                 font-size: 16px;
                             }
-
                             .gallery-container-x {
                                 display: grid;
                                 grid-template-columns: repeat(2, minmax(0, 1fr));
