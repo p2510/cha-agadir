@@ -106,7 +106,6 @@
                 </div>
             </div>
         </div>
-
         <div class="col-sm-6 col-md-3">
             <div class="widget dark">
                 <h4 class="widget-title line-bottom-theme-colored2" style="color:#1f3344;">{{ __('footer.title4') }}
