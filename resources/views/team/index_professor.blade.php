@@ -385,7 +385,7 @@
             padding-bottom: 20px
         }
 
-        @media screen and (min-width: 768px) {
+        @media screen and (min-width: 480px) {
             .gallery-item {
                 padding-right: 10px ! important;
             }

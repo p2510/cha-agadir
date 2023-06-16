@@ -287,7 +287,6 @@
                                             d="M19 9l-7 7-7-7" />
                                     </svg></span>
                             </div>
-
                             <div class="hidden-box" style="margin-top:-30px;padding-left:10px;padding-right:10px;">
                                 <div style="text-align:justify;hyphens:auto;"> {!! $tab->content !!}</div>
                                 <div class="gallery-container-x">
@@ -297,15 +296,11 @@
                                                 <img src="{{ url('storage') }}/{{ $media->photo }}">
                                             </div>
                                         @endforeach
-                                  
                                 </div>
                             </div>
                         </div>
                     </div>
                 @endforeach
-
-
-
                 <div class="mr-10 ml-10  ">
                     <button class="accordion active" id="btn_download"
                         style="display: flex;justify-content:space-between; padding-left:4px;padding-right:4px;">{{ __('home.text8') }}</button>
