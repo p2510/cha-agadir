@@ -39,8 +39,11 @@
                             <div id="photo_pc0" style="color:{{ $slide->color }};"> {!! $slide->description !!}</div>
                             <div id="photo_mobile0" style="color:{{ $slide->color_mobile }};"> {!! $slide->description !!}
                             </div>
+
                             <a href="{{ $slide->url }}"
-                                class="btn btn-dark btn-circled btn-theme-colored2 btn-xl mr-10 pr-30 pl-30">{{ __('home.btn1') }}</a>
+                                class="btn_slide btn btn-dark btn-circled btn-theme-colored2 btn-xl mr-10 pr-30 pl-30">{{ __('home.btn1') }}</a>
+
+
                         </li>
                     @else
                         <li class="slide">
@@ -57,9 +60,9 @@
                             </h3>
                             <div id="photo_pc1" style="color:{{ $slide->color }};"> {!! $slide->description !!}</div>
                             <div id="photo_mobile1" style="color:{{ $slide->color_mobile }};"> {!! $slide->description !!}
-
                                 <a href="{{ $slide->url }}"
-                                    class=" btn btn-dark btn-circled btn-theme-colored2 btn-xl mr-10 pr-30 pl-30">{{ __('home.btn1') }}</a>
+                                    class="btn_slide btn btn-dark btn-circled btn-theme-colored2 btn-xl mr-10 pr-30 pl-30">{{ __('home.btn1') }}</a>
+
                         </li>
                     @endif
                 @endforeach
@@ -142,7 +145,6 @@
 
         .slide div {
             position: absolute;
-
             left: 10%;
             color: white;
             font-size: 16px;
@@ -154,8 +156,6 @@
         .slide a {
             position: absolute;
             left: 10%;
-
-
 
         }
 
@@ -313,18 +313,33 @@
 
         let getBtn = document.querySelector('.next');
         let getSlide = document.querySelectorAll('.slidepot_item');
+        let btnSlide = document.querySelectorAll('.btn_slide');
         let isEnter = true;
         let timer;
 
         function autoClick_btn() {
             getBtn.click()
         }
+
+
         getSlide.forEach(slide => {
+
             slide.addEventListener('mouseenter', () => {
                 isEnter = true;
                 clearInterval(timer)
             })
-            slide.addEventListener('mouseout', () => {
+
+
+            slide.addEventListener('mouseout', (e) => {
+             
+                btnSlide.forEach(btn => {
+                    btn.addEventListener('mouseenter', () => {
+                        x = true;
+                        
+                    })
+                });
+                console.log(x)
+
                 isEnter = false;
                 autoClick_btn();
                 timer = setInterval(() => {
@@ -333,7 +348,13 @@
                 }, 3000);
 
             })
+
         })
+
+
+
+
+
 
 
         let iniTimer = setInterval(() => {
@@ -345,6 +366,7 @@
             once: true
         })
     </script>
+
 
     <!-- pop up -->
     @if (count($popup) > 0)
@@ -549,8 +571,10 @@
                                                 </a>
 
                                             </h5>
-                                             
-                                            <span class="mr-10"  @if (\Carbon\Carbon::tomorrow() > $evenement->start_at) style="text-decoration:line-through;" @endif><i class="fa fa-clock-o text-theme-colored2"></i>
+
+                                            <span class="mr-10"
+                                                @if (\Carbon\Carbon::tomorrow() > $evenement->start_at) style="text-decoration:line-through;" @endif><i
+                                                    class="fa fa-clock-o text-theme-colored2"></i>
                                                 @php
                                                     
                                                     $start_at = date('H:i', strtotime($evenement->start_at));

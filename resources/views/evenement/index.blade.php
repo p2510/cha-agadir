@@ -54,7 +54,7 @@
                                     <div class="event-grid bg-silver-light maxwidth500 mb-30">
                                         <div class="thumb">
                                             <img src="{{ url('storage') . '/' . $evenement->photo }}" alt=""
-                                                class="img-fullwidth">
+                                                class="img-fullwidth" >
                                             <div class="entry-date media-left text-center flip">
                                                 <ul>
                                                     <li class="font-16 text-white font-weight-600 line-height-1">

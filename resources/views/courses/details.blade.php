@@ -983,12 +983,21 @@
                                         <div class="tab-pane fade" id="tab4">
                                             <h4 class="line-bottom-theme-colored2 mb-20">
                                                 {{ __('course.subtitle13') }}</h4>
+                                            @if ($courses[0]->responsables_name)
+                                                <h5 class="mt-0">
+                                                    {{ $courses[0]->responsables_name . ' ' . $courses[0]->responsables_surname }}
+                                                </h5>
+                                            @elseif($courses[0]->teams_name)
+                                                <h5 class="mt-0">
+                                                    {{ $courses[0]->teams_name . ' ' . $courses[0]->teams_surname }}
+                                                </h5>
+                                            @endif
                                             <div style="display:flex;justify-content:center;">
+
                                                 @if ($courses[0]->responsables_photo)
                                                     <img src="{{ url('storage/' . $courses[0]->responsables_photo) }}"
                                                         style=" object-fit:cover;width:70%; height:70%;"
                                                         alt="photo du responsable">
-                                                
                                                 @elseif ($courses[0]->teams_photo)
                                                     <img src="{{ url('storage/' . $courses[0]->teams_photo) }}"
                                                         style=" object-fit:cover;width:70%; height:70%;"
@@ -1939,12 +1948,21 @@
                                 </div>
                                 <div class="hidden-box font-size"
                                     style="margin-top:-30px;text-align:justify;hyphens:auto;">
+                                    @if ($courses[0]->responsables_name)
+                                        <h5 class="mt-0">
+                                            {{ $courses[0]->responsables_name . ' ' . $courses[0]->responsables_surname }}
+                                        </h5>
+                                    @elseif($courses[0]->teams_name)
+                                        <h5 class="mt-0">
+                                            {{ $courses[0]->teams_name . ' ' . $courses[0]->teams_surname }}
+                                        </h5>
+                                    @endif
                                     <div style="display:flex;justify-content:center;">
+
                                         @if ($courses[0]->responsables_photo)
                                             <img src="{{ url('storage/' . $courses[0]->responsables_photo) }}"
                                                 style=" object-fit:cover;width:80%; height:80%;"
                                                 alt="photo du responsable">
-                                        
                                         @elseif ($courses[0]->teams_photo)
                                             <img src="{{ url('storage/' . $courses[0]->teams_photo) }}"
                                                 style=" object-fit:cover;width:80%; height:80%;"
