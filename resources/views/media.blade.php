@@ -86,7 +86,7 @@
                                         <div class="thumb">
                                             <img class="img-fullwidth" src="{{ url('storage') }}/{{ $media->photo }}"
                                                 alt="{{ $media->title }}">
-                                            <div class="overlay-shade"></div>
+                                            <div class=""></div>
 
                                             <div class="icons-holder">
                                                 <div class="icons-holder-inner">
