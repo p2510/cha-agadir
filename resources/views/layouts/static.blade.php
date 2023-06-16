@@ -307,7 +307,7 @@
                     <div class="panel" style="max-height: 54px;margin-bottom:30px;">
                         @foreach ($downloads as $key => $download)
                             <div><a href="{{ url('storage') }}/{{ $download->file }}"
-                                    target='_blank'>{{ $download->filename }}</a></div>
+                                    target='_blank' style="color:#1f3344;">{{ $download->filename }}</a></div>
                         @endforeach
                     </div>
                 </div>
