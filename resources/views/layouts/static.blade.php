@@ -126,18 +126,23 @@
                                 color: #1f3344;
                                 font-size: 16px;
                             }
+
                             .gallery-container-x {
                                 display: grid;
-                                grid-template-columns: repeat(2, minmax(0, 1fr));
+                                grid-template-columns: repeat(6, minmax(0, 1fr));
                                 gap: 8px;
                             }
 
                             .gallery-item-x-1 {
-                                grid-column: span 2 / span 2;
+                                grid-column: span 6 / span 6;
                             }
 
                             .gallery-item-x-2 {
-                                grid-column: span 1 / span 1;
+                                grid-column: span 3 / span 3;
+                            }
+
+                            .gallery-item-x-3 {
+                                grid-column: span 2 / span 2;
                             }
                         </style>
 
@@ -148,9 +153,15 @@
                                         <div style="text-align:justify;hyphens:auto;"> {!! $tab->content !!}
                                         </div>
                                         <div class="gallery-container-x">
-                                            @if (count($tab->tabimages) > 1)
+                                            @if (count($tab->tabimages) == 2)
                                                 @foreach ($tab->tabimages as $media)
                                                     <div class="gallery-item-x-2">
+                                                        <img src="{{ url('storage') }}/{{ $media->photo }}">
+                                                    </div>
+                                                @endforeach
+                                            @elseif(count($tab->tabimages) > 2)
+                                                @foreach ($tab->tabimages as $media)
+                                                    <div class="gallery-item-x-3">
                                                         <img src="{{ url('storage') }}/{{ $media->photo }}">
                                                     </div>
                                                 @endforeach
@@ -290,12 +301,12 @@
                             <div class="hidden-box" style="margin-top:-30px;padding-left:10px;padding-right:10px;">
                                 <div style="text-align:justify;hyphens:auto;"> {!! $tab->content !!}</div>
                                 <div class="gallery-container-x">
-                                
-                                        @foreach ($tab->tabimages as $media)
-                                            <div class="gallery-item-x-1">
-                                                <img src="{{ url('storage') }}/{{ $media->photo }}">
-                                            </div>
-                                        @endforeach
+
+                                    @foreach ($tab->tabimages as $media)
+                                        <div class="gallery-item-x-1">
+                                            <img src="{{ url('storage') }}/{{ $media->photo }}">
+                                        </div>
+                                    @endforeach
                                 </div>
                             </div>
                         </div>
@@ -306,8 +317,8 @@
                         style="display: flex;justify-content:space-between; padding-left:4px;padding-right:4px;">{{ __('home.text8') }}</button>
                     <div class="panel" style="max-height: 54px;margin-bottom:30px;">
                         @foreach ($downloads as $key => $download)
-                            <div><a href="{{ url('storage') }}/{{ $download->file }}"
-                                    target='_blank' style="color:#1f3344;">{{ $download->filename }}</a></div>
+                            <div><a href="{{ url('storage') }}/{{ $download->file }}" target='_blank'
+                                    style="color:#1f3344;">{{ $download->filename }}</a></div>
                         @endforeach
                     </div>
                 </div>
