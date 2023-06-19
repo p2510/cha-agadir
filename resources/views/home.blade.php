@@ -1,373 +1,405 @@
 @extends('layouts.app')
 @section('content')
-    <section aria-label="Newest Photos">
-        <div class="carousel" data-carousel>
 
-            <div class="list_btn">
 
-                <button class="carousel-button prev" data-carousel-button="prev"><svg xmlns="http://www.w3.org/2000/svg"
-                        width="32" height="32" viewBox="0 0 24 24">
-                        <path fill="currentColor"
-                            d="M14.71 15.88L10.83 12l3.88-3.88a.996.996 0 1 0-1.41-1.41L8.71 11.3a.996.996 0 0 0 0 1.41l4.59 4.59c.39.39 1.02.39 1.41 0c.38-.39.39-1.03 0-1.42z" />
-                    </svg>
-                </button>
-                <button class="carousel-button next" data-carousel-button="next">
-                    <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24">
-                        <path fill="currentColor"
-                            d="M8.7 17.3q-.275-.275-.275-.7q0-.425.275-.7l3.9-3.9l-3.9-3.9q-.275-.275-.275-.7q0-.425.275-.7q.275-.275.7-.275q.425 0 .7.275l4.6 4.6q.15.15.213.325q.062.175.062.375t-.062.375q-.063.175-.213.325l-4.6 4.6q-.275.275-.7.275q-.425 0-.7-.275Z" />
-                    </svg>
-                </button>
+    <!-- Section: home -->
+    <section id="home" class="divider">
+        <div class="container-fluid p-0 photo_pc ">
+
+            <!-- START REVOLUTION SLIDER 5.0.7 -->
+            <div id="rev_slider_home_wrapper" class="rev_slider_wrapper fullwidthbanner-container" data-alias="news-gallery34"
+                style="margin:0px auto;background-color:#ffffff;padding:0px;margin-top:0px;margin-bottom:0px;">
+                <!-- START REVOLUTION SLIDER 5.0.7 fullwidth mode -->
+                <div id="rev_slider_home" class="rev_slider fullwidthabanner" style="display:none;" data-version="5.0.7">
+                    <ul>
+                        <!-- SLIDE 1 -->
+                        @foreach ($slides as $slide)
+                            <li data-index="rs-{{$slide->id}}" data-slotamount="default"
+                                data-thumb="{{ url('storage') }}/{{ $slide->photo }}" data-rotate="0"
+                                data-fstransition="fade" data-fsmasterspeed="1500" data-fsslotamount="7"
+                                data-saveperformance="off" data-title="Slide One">
+                                <!-- MAIN IMAGE -->
+                                <img src="{{ url('storage') }}/{{ $slide->photo }}" alt=""
+                                    data-bgposition="center 20%" data-bgfit="cover" data-bgrepeat="no-repeat"
+                                    data-bgparallax="10" class="rev-slidebg" data-no-retina>
+                                <!-- LAYERS -->
+                                <!-- LAYER NR. 1 -->
+                                <div class="tp-caption tp-resizeme text-white rs-parallaxlevel-0" id="slide-1-layer-1"
+                                    data-x="['left','left','left','left']" data-hoffset="['50','50','50','30']"
+                                    data-y="['top','top','top','top']" data-voffset="['215','130','110','120']"
+                                    data-fontsize="['20','18','16','13']" data-lineheight="['30','30','28','25']"
+                                    data-fontweight="['700','700','700','700']" data-width="['700','650','600','420']"
+                                    data-height="none" data-whitespace="nowrap" data-transform_idle="o:1;"
+                                    data-transform_in="y:[-100%];z:0;rX:0deg;rY:0;rZ:0;sX:1;sY:1;skX:0;skY:0;s:1500;e:Power3.easeInOut;"
+                                    data-transform_out="auto:auto;s:1000;e:Power3.easeInOut;"
+                                    data-mask_in="x:0px;y:0px;s:inherit;e:inherit;"
+                                    data-mask_out="x:0;y:0;s:inherit;e:inherit;" data-start="1000" data-splitin="none"
+                                    data-splitout="none" data-responsive_offset="on"
+                                    style="z-index: 7; white-space: nowrap; color:{{ $slide->color }}!important;" >{{ $slide->subject }}
+                                </div>
+                                <!-- LAYER NR. 2 -->
+                                <div class="tp-caption tp-resizeme text-white text-uppercase font-montserrat rs-parallaxlevel-0"
+                                    id="slide-1-layer-2" data-x="['left','left','left','left']"
+                                    data-hoffset="['50','50','50','30']" data-y="['top','top','top','top']"
+                                    data-voffset="['250','160','140','150']" data-fontsize="['52','46','40','28']"
+                                    data-lineheight="['68','60','54','42']" data-fontweight="['800','800','800','800']"
+                                    data-width="['700','650','600','420']" data-height="none" data-whitespace="normal"
+                                    data-transform_idle="o:1;"
+                                    data-transform_in="y:[-100%];z:0;rX:0deg;rY:0;rZ:0;sX:1;sY:1;skX:0;skY:0;s:1500;e:Power3.easeInOut;"
+                                    data-transform_out="auto:auto;s:1000;e:Power3.easeInOut;"
+                                    data-mask_in="x:0px;y:0px;s:inherit;e:inherit;"
+                                    data-mask_out="x:0;y:0;s:inherit;e:inherit;" data-start="1000" data-splitin="none"
+                                    data-splitout="none" data-responsive_offset="on"
+                                    style="z-index: 6; min-width: 600px; max-width: 600px; white-space: normal; color:{{ $slide->color }}!important;">
+                                    {{ $slide->title }}
+                                </div>
+                                <!-- LAYER NR. 3 -->
+                                <div class="tp-caption tp-resizeme text-white rs-parallaxlevel-0" id="slide-1-layer-3"
+                                    data-x="['left','left','left','left']" data-hoffset="['50','50','50','30']"
+                                    data-y="['top','top','top','top']" data-voffset="['325','220','195','195']"
+                                    data-fontsize="['16','16','14','13']" data-lineheight="['30','26','24','20']"
+                                    data-fontweight="['400','400','400','400']" data-width="['700','650','600','420']"
+                                    data-height="none" data-whitespace="nowrap" data-transform_idle="o:1;"
+                                    data-transform_in="y:[-100%];z:0;rX:0deg;rY:0;rZ:0;sX:1;sY:1;skX:0;skY:0;s:1500;e:Power3.easeInOut;"
+                                    data-transform_out="auto:auto;s:1000;e:Power3.easeInOut;"
+                                    data-mask_in="x:0px;y:0px;s:inherit;e:inherit;"
+                                    data-mask_out="x:0;y:0;s:inherit;e:inherit;" data-start="1000" data-splitin="none"
+                                    data-splitout="none" data-responsive_offset="on"
+                                    style="z-index: 7; white-space: nowrap;color:{{ $slide->color }}!important;">{!! $slide->description !!}
+                                </div>
+                                <!-- LAYER NR. 4 -->
+                                <div class="tp-caption tp-resizeme text-white rs-parallaxlevel-0" id="slide-1-layer-4"
+                                    data-x="['left','left','left','left']" data-hoffset="['53','53','53','30']"
+                                    data-y="['top','top','top','top']" data-voffset="['410','290','260','250']"
+                                    data-fontsize="['18','18','16','16']" data-lineheight="['30','30','30','30']"
+                                    data-fontweight="['600','600','600','600']" data-width="['700','650','600','420']"
+                                    data-height="none" data-whitespace="nowrap" data-transform_idle="o:1;"
+                                    data-transform_in="y:[-100%];z:0;rX:0deg;rY:0;rZ:0;sX:1;sY:1;skX:0;skY:0;s:1500;e:Power3.easeInOut;"
+                                    data-transform_out="auto:auto;s:1000;e:Power3.easeInOut;"
+                                    data-mask_in="x:0px;y:0px;s:inherit;e:inherit;"
+                                    data-mask_out="x:0;y:0;s:inherit;e:inherit;" data-start="1000" data-splitin="none"
+                                    data-splitout="none" data-responsive_offset="on"
+                                    style="z-index: 7; white-space: nowrap;"><a href="{{ $slide->url }}"
+                                        class="btn btn-dark btn-circled btn-theme-colored2 btn-xl mr-10 pr-30 pl-30">{{ __('home.btn1') }}</a>
+                                </div>
+                            </li>
+                        @endforeach
+                        <!-- SLIDE 2 -->
+
+                    </ul>
+
+                    <div class="tp-bannertimer tp-bottom"
+                        style="height: 5px; background-color: rgba(255, 255, 255, 0.4);"></div>
+                </div>
             </div>
+            <!-- END REVOLUTION SLIDER -->
+            <script>
+                var tpj = jQuery;
+                var revapi34;
+                tpj(document).ready(function() {
+                    if (tpj("#rev_slider_home").revolution == undefined) {
+                        revslider_showDoubleJqueryError("#rev_slider_home");
+                    } else {
+                        revapi34 = tpj("#rev_slider_home").show().revolution({
+                            sliderType: "standard",
+                            jsFileLocation: "js/revolution-slider/js/",
+                            sliderLayout: "fullwidth",
+                            dottedOverlay: "none",
+                            delay: 3000,
+                            navigation: {
+                                keyboardNavigation: "on",
+                                keyboard_direction: "horizontal",
+                                mouseScrollNavigation: "off",
+                                onHoverStop: "on",
+                                touch: {
+                                    touchenabled: "on",
+                                    swipe_threshold: 75,
+                                    swipe_min_touches: 1,
+                                    swipe_direction: "horizontal",
+                                    drag_block_vertical: false
+                                },
+                                arrows: {
+                                    enable: true,
+                                    style: 'gyges',
+                                    left: {
+                                        h_align: "left",
+                                        v_align: "center",
+                                        h_offset: 0,
+                                        v_offset: 0
+                                    },
+                                    right: {
+                                        h_align: "right",
+                                        v_align: "center",
+                                        h_offset: 0,
+                                        v_offset: 0
+                                    }
+                                },
+                                bullets: {
+                                    enable: true,
+                                    style: 'hebe',
+                                    tmp: '<span class="tp-bullet-image"></span>',
+                                    hide_onmobile: true,
+                                    hide_under: 600,
+                                    hide_onleave: true,
+                                    hide_delay: 200,
+                                    hide_delay_mobile: 1200,
+                                    direction: "horizontal",
+                                    h_align: "center",
+                                    v_align: "bottom",
+                                    h_offset: 0,
+                                    v_offset: 30,
+                                    space: 5
+                                }
+                            },
+                            viewPort: {
+                                enable: true,
+                                outof: "pause",
+                                visible_area: "80%"
+                            },
+                            responsiveLevels: [1240, 1024, 778, 480],
+                            gridwidth: [1240, 1024, 778, 480],
+                            gridheight: [660, 550, 500, 450],
+                            lazyType: "none",
+                            parallax: {
+                                type: "scroll",
+                                origo: "enterpoint",
+                                speed: 400,
+                                levels: [5, 10, 15, 20, 25, 30, 35, 40, 45, 50],
+                            },
+                            shadow: 0,
+                            spinner: "off",
+                            stopLoop: "off",
+                            stopAfterLoops: -1,
+                            stopAtSlide: 1,
+                            shuffle: "off",
+                            autoHeight: "off",
+                            hideThumbsOnMobile: "off",
+                            hideSliderAtLimit: 0,
+                            hideCaptionAtLimit: 0,
+                            hideAllCaptionAtLilmit: 0,
+                            debugMode: false,
+                            fallbacks: {
+                                simplifyAll: "off",
+                                nextSlideOnWindowFocus: "off",
+                                disableFocusListener: false,
+                            }
+                        });
+                    }
+                }); /*ready*/
+            </script>
+            <!-- END REVOLUTION SLIDER -->
+        </div>
+        <div class="container-fluid p-0 photo_mobile">
 
+            <!-- START REVOLUTION SLIDER 5.0.7 -->
+            <div id="rev_slider_home_wrapper" class="rev_slider_wrapper fullwidthbanner-container"
+                data-alias="news-gallery34"
+                style="margin:0px auto;background-color:#ffffff;padding:0px;margin-top:0px;margin-bottom:0px;">
+                <!-- START REVOLUTION SLIDER 5.0.7 fullwidth mode -->
+                <div id="rev_slider_home1" class="rev_slider fullwidthabanner" style="display:none;"
+                    data-version="5.0.7">
+                    <ul>
+                        <!-- SLIDE 1 -->
+                        @foreach ($slides as $slide)
+                            <li data-index="rs-{{$slide->id}}" data-slotamount="default"
+                                data-thumb="{{ url('storage') }}/{{ $slide->photo_en }}" data-rotate="0"
+                                data-fstransition="fade" data-fsmasterspeed="1500" data-fsslotamount="7"
+                                data-saveperformance="off" data-title="Slide One">
+                                <!-- MAIN IMAGE -->
+                                <img src="{{ url('storage') }}/{{ $slide->photo_en }}" alt=""
+                                    data-bgposition="center 20%" data-bgfit="cover" data-bgrepeat="no-repeat"
+                                    data-bgparallax="10" class="rev-slidebg" data-no-retina>
+                                <!-- LAYERS -->
+                                <!-- LAYER NR. 1 -->
+                                <div class="tp-caption tp-resizeme text-white rs-parallaxlevel-0" id="slide-1-layer-1"
+                                    data-x="['left','left','left','left']" data-hoffset="['50','50','50','30']"
+                                    data-y="['top','top','top','top']" data-voffset="['215','130','110','120']"
+                                    data-fontsize="['20','18','16','13']" data-lineheight="['30','30','28','25']"
+                                    data-fontweight="['700','700','700','700']" data-width="['700','650','600','420']"
+                                    data-height="none" data-whitespace="nowrap" data-transform_idle="o:1;"
+                                    data-transform_in="y:[-100%];z:0;rX:0deg;rY:0;rZ:0;sX:1;sY:1;skX:0;skY:0;s:1500;e:Power3.easeInOut;"
+                                    data-transform_out="auto:auto;s:1000;e:Power3.easeInOut;"
+                                    data-mask_in="x:0px;y:0px;s:inherit;e:inherit;"
+                                    data-mask_out="x:0;y:0;s:inherit;e:inherit;" data-start="1000" data-splitin="none"
+                                    data-splitout="none" data-responsive_offset="on"
+                                    style="z-index: 7; white-space: nowrap;color:{{ $slide->color_mobile }}!important;">{{ $slide->subject }}
+                                </div>
+                                <!-- LAYER NR. 2 -->
+                                <div class="tp-caption tp-resizeme text-white text-uppercase font-montserrat rs-parallaxlevel-0"
+                                    id="slide-1-layer-2" data-x="['left','left','left','left']"
+                                    data-hoffset="['50','50','50','30']" data-y="['top','top','top','top']"
+                                    data-voffset="['250','160','140','150']" data-fontsize="['52','46','40','28']"
+                                    data-lineheight="['68','60','54','42']" data-fontweight="['800','800','800','800']"
+                                    data-width="['700','650','600','420']" data-height="none" data-whitespace="normal"
+                                    data-transform_idle="o:1;"
+                                    data-transform_in="y:[-100%];z:0;rX:0deg;rY:0;rZ:0;sX:1;sY:1;skX:0;skY:0;s:1500;e:Power3.easeInOut;"
+                                    data-transform_out="auto:auto;s:1000;e:Power3.easeInOut;"
+                                    data-mask_in="x:0px;y:0px;s:inherit;e:inherit;"
+                                    data-mask_out="x:0;y:0;s:inherit;e:inherit;" data-start="1000" data-splitin="none"
+                                    data-splitout="none" data-responsive_offset="on"
+                                    style="z-index: 6; min-width: 600px; max-width: 600px; white-space: normal;color:{{ $slide->color_mobile }}!important;">
+                                    {{ $slide->title }}
+                                </div>
+                                <!-- LAYER NR. 3 -->
+                                <div class="tp-caption tp-resizeme text-white rs-parallaxlevel-0" id="slide-1-layer-3"
+                                    data-x="['left','left','left','left']" data-hoffset="['50','50','50','30']"
+                                    data-y="['top','top','top','top']" data-voffset="['325','220','195','195']"
+                                    data-fontsize="['16','16','14','13']" data-lineheight="['30','26','24','20']"
+                                    data-fontweight="['400','400','400','400']" data-width="['700','650','600','420']"
+                                    data-height="none" data-whitespace="nowrap" data-transform_idle="o:1;"
+                                    data-transform_in="y:[-100%];z:0;rX:0deg;rY:0;rZ:0;sX:1;sY:1;skX:0;skY:0;s:1500;e:Power3.easeInOut;"
+                                    data-transform_out="auto:auto;s:1000;e:Power3.easeInOut;"
+                                    data-mask_in="x:0px;y:0px;s:inherit;e:inherit;"
+                                    data-mask_out="x:0;y:0;s:inherit;e:inherit;" data-start="1000" data-splitin="none"
+                                    data-splitout="none" data-responsive_offset="on"
+                                    style="z-index: 7; white-space: nowrap;color:{{ $slide->color_mobile }}!important;">{!! $slide->description !!}
+                                </div>
+                                <!-- LAYER NR. 4 -->
+                                <div class="tp-caption tp-resizeme text-white rs-parallaxlevel-0" id="slide-1-layer-4"
+                                    data-x="['left','left','left','left']" data-hoffset="['53','53','53','30']"
+                                    data-y="['top','top','top','top']" data-voffset="['410','290','260','250']"
+                                    data-fontsize="['18','18','16','16']" data-lineheight="['30','30','30','30']"
+                                    data-fontweight="['600','600','600','600']" data-width="['700','650','600','420']"
+                                    data-height="none" data-whitespace="nowrap" data-transform_idle="o:1;"
+                                    data-transform_in="y:[-100%];z:0;rX:0deg;rY:0;rZ:0;sX:1;sY:1;skX:0;skY:0;s:1500;e:Power3.easeInOut;"
+                                    data-transform_out="auto:auto;s:1000;e:Power3.easeInOut;"
+                                    data-mask_in="x:0px;y:0px;s:inherit;e:inherit;"
+                                    data-mask_out="x:0;y:0;s:inherit;e:inherit;" data-start="1000" data-splitin="none"
+                                    data-splitout="none" data-responsive_offset="on"
+                                    style="z-index: 7; white-space: nowrap;"><a href="{{ $slide->url }}"
+                                        class="btn btn-dark btn-circled btn-theme-colored2 btn-xl mr-10 pr-30 pl-30">{{ __('home.btn1') }}</a>
+                                </div>
+                            </li>
+                        @endforeach
+                        <!-- SLIDE 2 -->
 
-            <ul data-slides>
+                    </ul>
 
-                @foreach ($slides as $slide)
-                    @if ($loop->first)
-                        <li class="slide" data-active>
-                            <span class="slidepot slidepot_item"></span>
-                            <img id="photo_pc0" src="{{ url('storage') }}/{{ $slide->photo }}" alt="{{ $slide->title }}">
-                            <img id="photo_mobile0" src="{{ url('storage') }}/{{ $slide->photo_en }}"
-                                alt="{{ $slide->title }}">
-                            <h3 id="photo_pc0" style="color:{{ $slide->color }};">{{ $slide->subject }}
-                                <h1 id="photo_pc0" style="color:{{ $slide->color }};">{{ $slide->title }}</h1>
-                            </h3>
-                            <h3 id="photo_mobile0" style="color:{{ $slide->color_mobile }};">{{ $slide->subject }}
-                                <h1 id="photo_mobile0" style="color:{{ $slide->color_mobile }};">{{ $slide->title }}</h1>
-                            </h3>
-                            </h3>
-                            <div id="photo_pc0" style="color:{{ $slide->color }};"> {!! $slide->description !!}</div>
-                            <div id="photo_mobile0" style="color:{{ $slide->color_mobile }};"> {!! $slide->description !!}
-                            </div>
-
-                            <a href="{{ $slide->url }}"
-                                class="btn_slide btn btn-dark btn-circled btn-theme-colored2 btn-xl mr-10 pr-30 pl-30">{{ __('home.btn1') }}</a>
-
-
-                        </li>
-                    @else
-                        <li class="slide">
-                            <span class="slidepot slidepot_item"></span>
-                            <img id="photo_pc1" src="{{ url('storage') }}/{{ $slide->photo }}" alt="{{ $slide->title }}">
-                            <img id="photo_mobile1"src="{{ url('storage') }}/{{ $slide->photo_en }}"
-                                alt="{{ $slide->title }}">
-                            <h3 id="photo_pc1" style="color:{{ $slide->color }};">{{ $slide->subject }}
-                                <h1 id="photo_pc1" style="color:{{ $slide->color }};">{{ $slide->title }}</h1>
-                            </h3>
-                            <h3 id="photo_mobile1" style="color:{{ $slide->color_mobile }};">{{ $slide->subject }}
-                                <h1 id="photo_mobile1" style="color:{{ $slide->color_mobile }};">{{ $slide->title }}</h1>
-                            </h3>
-                            </h3>
-                            <div id="photo_pc1" style="color:{{ $slide->color }};"> {!! $slide->description !!}</div>
-                            <div id="photo_mobile1" style="color:{{ $slide->color_mobile }};"> {!! $slide->description !!}
-                                <a href="{{ $slide->url }}"
-                                    class="btn_slide btn btn-dark btn-circled btn-theme-colored2 btn-xl mr-10 pr-30 pl-30">{{ __('home.btn1') }}</a>
-
-                        </li>
-                    @endif
-                @endforeach
-
-            </ul>
+                    <div class="tp-bannertimer tp-bottom"
+                        style="height: 5px; background-color: rgba(255, 255, 255, 0.4);"></div>
+                </div>
+            </div>
+            <!-- END REVOLUTION SLIDER -->
+            <script>
+                var tpj = jQuery;
+                var revapi34;
+                tpj(document).ready(function() {
+                    if (tpj("#rev_slider_home1").revolution == undefined) {
+                        revslider_showDoubleJqueryError("#rev_slider_home1");
+                    } else {
+                        revapi34 = tpj("#rev_slider_home1").show().revolution({
+                            sliderType: "standard",
+                            jsFileLocation: "js/revolution-slider/js/",
+                            sliderLayout: "fullwidth",
+                            dottedOverlay: "none",
+                            delay: 3000,
+                            navigation: {
+                                keyboardNavigation: "on",
+                                keyboard_direction: "horizontal",
+                                mouseScrollNavigation: "off",
+                                onHoverStop: "on",
+                                touch: {
+                                    touchenabled: "on",
+                                    swipe_threshold: 75,
+                                    swipe_min_touches: 1,
+                                    swipe_direction: "horizontal",
+                                    drag_block_vertical: false
+                                },
+                                arrows: {
+                                    enable: true,
+                                    style: 'gyges',
+                                    left: {
+                                        h_align: "left",
+                                        v_align: "center",
+                                        h_offset: 0,
+                                        v_offset: 0
+                                    },
+                                    right: {
+                                        h_align: "right",
+                                        v_align: "center",
+                                        h_offset: 0,
+                                        v_offset: 0
+                                    }
+                                },
+                                bullets: {
+                                    enable: true,
+                                    style: 'hebe',
+                                    tmp: '<span class="tp-bullet-image"></span>',
+                                    hide_onmobile: true,
+                                    hide_under: 600,
+                                    hide_onleave: true,
+                                    hide_delay: 200,
+                                    hide_delay_mobile: 1200,
+                                    direction: "horizontal",
+                                    h_align: "center",
+                                    v_align: "bottom",
+                                    h_offset: 0,
+                                    v_offset: 30,
+                                    space: 5
+                                }
+                            },
+                            viewPort: {
+                                enable: true,
+                                outof: "pause",
+                                visible_area: "80%"
+                            },
+                            responsiveLevels: [1240, 1024, 778, 480],
+                            gridwidth: [1240, 1024, 778, 480],
+                            gridheight: [660, 550, 500, 450],
+                            lazyType: "none",
+                            parallax: {
+                                type: "scroll",
+                                origo: "enterpoint",
+                                speed: 400,
+                                levels: [5, 10, 15, 20, 25, 30, 35, 40, 45, 50],
+                            },
+                            shadow: 0,
+                            spinner: "off",
+                            stopLoop: "off",
+                            stopAfterLoops: -1,
+                            stopAtSlide: 1,
+                            shuffle: "off",
+                            autoHeight: "off",
+                            hideThumbsOnMobile: "off",
+                            hideSliderAtLimit: 0,
+                            hideCaptionAtLimit: 0,
+                            hideAllCaptionAtLilmit: 0,
+                            debugMode: false,
+                            fallbacks: {
+                                simplifyAll: "off",
+                                nextSlideOnWindowFocus: "off",
+                                disableFocusListener: false,
+                            }
+                        });
+                    }
+                }); /*ready*/
+            </script>
+            <!-- END REVOLUTION SLIDER -->
         </div>
     </section>
-
     <style>
-        *,
-        *::before,
-        *::after {
-            box-sizing: border-box;
-        }
-
-
-        .carousel {
-            width: 100vw;
-            height: 60vh;
-            position: relative;
-        }
-
-        .carousel>ul {
-            margin: 0;
-            padding: 0;
-            list-style: none;
-        }
-
-        .slide {
-            position: absolute;
-            inset: 0;
-            opacity: 0;
-            transition: 200ms opacity ease-in-out;
-            transition-delay: 200ms;
-        }
-
-        .slide>img {
-            display: block;
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
-            object-position: center;
-        }
-
-        .slidepot {
-            position: absolute;
-            top: 0%;
-            left: 0%;
-            color: white;
-            width: 100%;
-            height: 100%;
-            ;
-            background-color: transparent;
-            display: block;
-            z-index: 2;
-        }
-
-        .slide[data-active] {
-            opacity: 1;
-            z-index: 1;
-            transition-delay: 0ms;
-        }
-
-
-        .slide h1 {
-            position: absolute;
-            top: 26%;
-            left: 10%;
-            color: white;
-        }
-
-
-        .slide h3 {
-            position: absolute;
-            top: 20%;
-            left: 10%;
-            color: white;
-
-        }
-
-        .slide div {
-            position: absolute;
-            left: 10%;
-            color: white;
-            font-size: 16px;
-            font-family: Raleway, "Helvetica Neue", Helvetica, Arial, sans-serif;
-
-
-        }
-
-        .slide a {
-            position: absolute;
-            left: 10%;
-
-        }
-
-        @media only screen and (min-width: 900px) {
-            .slide div {
-                top: 45%;
-                width: 45%;
-                text-align: justify;
-            }
-
-
-
-        }
-
-        @media only screen and (max-width: 900px) {
-            .slide div {
-                top: 45%;
-                width: 60%;
-                text-align: justify;
-            }
-
-
-        }
-
         @media only screen and (min-width: 600px) {
-
-            .slide a {
-                top: 68%;
-                z-index: 2;
-            }
-
-            #photo_pc0 {
+            .photo_pc {
                 display: block;
             }
 
-            #photo_mobile0 {
+            .photo_mobile {
                 display: none;
             }
-
-            #photo_pc1 {
-                display: block;
-            }
-
-            #photo_mobile1 {
-                display: none;
-            }
-
         }
 
         @media only screen and (max-width: 600px) {
-            .slide div {
-                top: 50%;
-                font-size: 11px;
-                width: 85%;
 
-            }
-
-            .slide a {
-                top: 75%;
-                z-index: 3;
-                padding: 8px 8px 8px 8px;
-                font-size: 14px;
-            }
-
-            .slide h1 {
-                top: 30%;
-                font-size: 24px;
-            }
-
-            .slide h3 {
-                top: 40%;
-
-                font-size: 11px;
-            }
-
-            #photo_pc0 {
+            .photo_pc {
                 display: none;
             }
 
-            #photo_mobile0 {
-                display: block;
-
-
-            }
-
-            #photo_pc1 {
-                display: none;
-            }
-
-            #photo_mobile1 {
+            .photo_mobile {
                 display: block;
             }
-
-
-
-
-        }
-
-        .prev,
-        .next {
-            transform: translateY(-15px);
-            background-color: #1f3344;
-            padding: 0 .5rem;
-            z-index: 2;
-            border: none;
-            display: flex;
-            justify-content: center;
-            padding: 2px;
-            color: white;
-        }
-
-
-        .list_btn {
-            position: absolute;
-            top: 100%;
-            width: 100%;
-            display: flex;
-            justify-content: center;
-            gap: 4px;
-
-
-        }
-
-        .carousel-button:hover,
-        .carousel-button:focus {
-            color: white;
-            background-color: #1f334499;
-        }
-
-        .carousel-button:focus {
-            outline: 1px solid black;
         }
     </style>
-    <script>
-        const buttons = document.querySelectorAll("[data-carousel-button]")
-
-        buttons.forEach(button => {
-            button.addEventListener("click", () => {
-
-                clearInterval(timer)
-                const offset = button.dataset.carouselButton === "next" ? 1 : -1
-                const slides = button
-                    .closest("[data-carousel]")
-                    .querySelector("[data-slides]")
-
-                const activeSlide = slides.querySelector("[data-active]")
-                let newIndex = [...slides.children].indexOf(activeSlide) + offset
-                if (newIndex < 0) newIndex = slides.children.length - 1
-                if (newIndex >= slides.children.length) newIndex = 0
-
-                slides.children[newIndex].dataset.active = true
-                delete activeSlide.dataset.active
-            })
-        })
-
-        let getBtn = document.querySelector('.next');
-        let getSlide = document.querySelectorAll('.slidepot_item');
-        let btnSlide = document.querySelectorAll('.btn_slide');
-        let isEnter = true;
-        let timer;
-
-        function autoClick_btn() {
-            getBtn.click()
-        }
-
-
-        getSlide.forEach(slide => {
-
-            slide.addEventListener('mouseenter', () => {
-                isEnter = true;
-                clearInterval(timer)
-            })
-
-
-            slide.addEventListener('mouseout', (e) => {
-             
-                btnSlide.forEach(btn => {
-                    btn.addEventListener('mouseenter', () => {
-                        x = true;
-                        
-                    })
-                });
-                console.log(x)
-
-                isEnter = false;
-                autoClick_btn();
-                timer = setInterval(() => {
-                    autoClick_btn();
-                    isEnter = true
-                }, 3000);
-
-            })
-
-        })
-
-
-
-
-
-
-
-        let iniTimer = setInterval(() => {
-            autoClick_btn()
-        }, 3000);
-        document.addEventListener('mousemove', () => {
-            clearInterval(iniTimer);
-        }, {
-            once: true
-        })
-    </script>
-
-
+    <!--=========================================================================-->
     <!-- pop up -->
     @if (count($popup) > 0)
         <div class="main-content">
