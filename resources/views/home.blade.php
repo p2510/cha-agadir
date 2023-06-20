@@ -14,7 +14,7 @@
                     <ul>
                         <!-- SLIDE 1 -->
                         @foreach ($slides as $slide)
-                            <li data-index="rs-{{$slide->id}}" data-slotamount="default"
+                            <li data-index="rs-{{ $slide->id }}" data-slotamount="default"
                                 data-thumb="{{ url('storage') }}/{{ $slide->photo }}" data-rotate="0"
                                 data-fstransition="fade" data-fsmasterspeed="1500" data-fsslotamount="7"
                                 data-saveperformance="off" data-title="Slide One">
@@ -35,7 +35,8 @@
                                     data-mask_in="x:0px;y:0px;s:inherit;e:inherit;"
                                     data-mask_out="x:0;y:0;s:inherit;e:inherit;" data-start="1000" data-splitin="none"
                                     data-splitout="none" data-responsive_offset="on"
-                                    style="z-index: 7; white-space: nowrap; color:{{ $slide->color }}!important;" >{{ $slide->subject }}
+                                    style="z-index: 7; white-space: nowrap; color:{{ $slide->color }}!important;">
+                                    {{ $slide->subject }}
                                 </div>
                                 <!-- LAYER NR. 2 -->
                                 <div class="tp-caption tp-resizeme text-white text-uppercase font-montserrat rs-parallaxlevel-0"
@@ -58,14 +59,15 @@
                                     data-x="['left','left','left','left']" data-hoffset="['50','50','50','30']"
                                     data-y="['top','top','top','top']" data-voffset="['325','220','195','195']"
                                     data-fontsize="['16','16','14','13']" data-lineheight="['30','26','24','20']"
-                                    data-fontweight="['400','400','400','400']" data-width="['700','650','600','420']"
+                                    data-fontweight="['400','400','400','400']" data-width="['850','650','600','420']"
                                     data-height="none" data-whitespace="nowrap" data-transform_idle="o:1;"
                                     data-transform_in="y:[-100%];z:0;rX:0deg;rY:0;rZ:0;sX:1;sY:1;skX:0;skY:0;s:1500;e:Power3.easeInOut;"
                                     data-transform_out="auto:auto;s:1000;e:Power3.easeInOut;"
                                     data-mask_in="x:0px;y:0px;s:inherit;e:inherit;"
                                     data-mask_out="x:0;y:0;s:inherit;e:inherit;" data-start="1000" data-splitin="none"
                                     data-splitout="none" data-responsive_offset="on"
-                                    style="z-index: 7; white-space: nowrap;color:{{ $slide->color }}!important;">{!! $slide->description !!}
+                                    style="z-index: 7;color:{{ $slide->color }}!important;">
+                                   <div style="white-space:normal;"> {{$slide->description}}</div>
                                 </div>
                                 <!-- LAYER NR. 4 -->
                                 <div class="tp-caption tp-resizeme text-white rs-parallaxlevel-0" id="slide-1-layer-4"
@@ -79,7 +81,7 @@
                                     data-mask_in="x:0px;y:0px;s:inherit;e:inherit;"
                                     data-mask_out="x:0;y:0;s:inherit;e:inherit;" data-start="1000" data-splitin="none"
                                     data-splitout="none" data-responsive_offset="on"
-                                    style="z-index: 7; white-space: nowrap;"><a href="{{ $slide->url }}"
+                                    style="z-index: 7; white-space: nowrap;margin-top:50px;"><a href="{{ $slide->url }}"
                                         class="btn btn-dark btn-circled btn-theme-colored2 btn-xl mr-10 pr-30 pl-30">{{ __('home.btn1') }}</a>
                                 </div>
                             </li>
@@ -201,7 +203,7 @@
                     <ul>
                         <!-- SLIDE 1 -->
                         @foreach ($slides as $slide)
-                            <li data-index="rs-{{$slide->id}}" data-slotamount="default"
+                            <li data-index="rs-{{ $slide->id }}" data-slotamount="default"
                                 data-thumb="{{ url('storage') }}/{{ $slide->photo_en }}" data-rotate="0"
                                 data-fstransition="fade" data-fsmasterspeed="1500" data-fsslotamount="7"
                                 data-saveperformance="off" data-title="Slide One">
@@ -222,7 +224,8 @@
                                     data-mask_in="x:0px;y:0px;s:inherit;e:inherit;"
                                     data-mask_out="x:0;y:0;s:inherit;e:inherit;" data-start="1000" data-splitin="none"
                                     data-splitout="none" data-responsive_offset="on"
-                                    style="z-index: 7; white-space: nowrap;color:{{ $slide->color_mobile }}!important;">{{ $slide->subject }}
+                                    style="z-index: 7; white-space: nowrap;color:{{ $slide->color_mobile }}!important;">
+                                    {{ $slide->subject }}
                                 </div>
                                 <!-- LAYER NR. 2 -->
                                 <div class="tp-caption tp-resizeme text-white text-uppercase font-montserrat rs-parallaxlevel-0"
@@ -245,14 +248,15 @@
                                     data-x="['left','left','left','left']" data-hoffset="['50','50','50','30']"
                                     data-y="['top','top','top','top']" data-voffset="['325','220','195','195']"
                                     data-fontsize="['16','16','14','13']" data-lineheight="['30','26','24','20']"
-                                    data-fontweight="['400','400','400','400']" data-width="['700','650','600','420']"
+                                    data-fontweight="['400','400','400','400']" data-width="['850','650','600','420']"
                                     data-height="none" data-whitespace="nowrap" data-transform_idle="o:1;"
                                     data-transform_in="y:[-100%];z:0;rX:0deg;rY:0;rZ:0;sX:1;sY:1;skX:0;skY:0;s:1500;e:Power3.easeInOut;"
                                     data-transform_out="auto:auto;s:1000;e:Power3.easeInOut;"
                                     data-mask_in="x:0px;y:0px;s:inherit;e:inherit;"
                                     data-mask_out="x:0;y:0;s:inherit;e:inherit;" data-start="1000" data-splitin="none"
                                     data-splitout="none" data-responsive_offset="on"
-                                    style="z-index: 7; white-space: nowrap;color:{{ $slide->color_mobile }}!important;">{!! $slide->description !!}
+                                    style="z-index: 7;color:{{ $slide->color_mobile }}!important;">
+                                    <div style="white-space:normal;"> {{$slide->description}}</div>
                                 </div>
                                 <!-- LAYER NR. 4 -->
                                 <div class="tp-caption tp-resizeme text-white rs-parallaxlevel-0" id="slide-1-layer-4"
@@ -266,7 +270,7 @@
                                     data-mask_in="x:0px;y:0px;s:inherit;e:inherit;"
                                     data-mask_out="x:0;y:0;s:inherit;e:inherit;" data-start="1000" data-splitin="none"
                                     data-splitout="none" data-responsive_offset="on"
-                                    style="z-index: 7; white-space: nowrap;"><a href="{{ $slide->url }}"
+                                    style="z-index: 7; white-space: nowrap; margin-top:50px;"><a href="{{ $slide->url }}"
                                         class="btn btn-dark btn-circled btn-theme-colored2 btn-xl mr-10 pr-30 pl-30">{{ __('home.btn1') }}</a>
                                 </div>
                             </li>
@@ -576,13 +580,15 @@
                                         class="event-small media sm-maxwidth400 bg-silver-light border-1px mt-0 mb-20 p-15">
                                         <div class="event-date text-center">
                                             <ul class="text-white">
-                                                <li class="font-18 font-weight-700 border-bottom">
+                                                <li @if (\Carbon\Carbon::tomorrow() > $evenement->start_at) style="text-decoration:line-through;" @endif
+                                                    class="font-18 font-weight-700 border-bottom">
                                                     @php
                                                         $getDays = date('d', strtotime($evenement->start_at));
                                                         echo $getDays;
                                                     @endphp
                                                 </li>
-                                                <li class="font-14 text-center text-uppercase mt-5">
+                                                <li @if (\Carbon\Carbon::tomorrow() > $evenement->start_at) style="text-decoration:line-through;" @endif
+                                                    class="font-14 text-center text-uppercase mt-5">
                                                     @php
                                                         $getDays = date('F', strtotime($evenement->start_at));
                                                         echo substr($getDays, 0, 3);
