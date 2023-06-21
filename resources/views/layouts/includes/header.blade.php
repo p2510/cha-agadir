@@ -192,8 +192,8 @@
                             @if (count($logo_url) > 0)
                                 @foreach ($logo_url as $item)
                                     <a class="menuzord-brand  flip mt-20 mt-sm-10 mb-sm-20 pt-5"
-                                        href="{{ route('home') }}"><img
-                                            src="{{ url('storage') }}/{{ $item->logo }}" alt=""></a>
+                                        href="{{ route('home') }}" ><img 
+                                            src="{{ url('storage') }}/{{ $item->logo }}"  alt=""></a>
                                 @endforeach
                             @endif
                         </div>
@@ -576,9 +576,6 @@
                         em[1].style.transform = 'rotate(-45deg) translate(4.5px ,-4.3px)';
                         showHide.removeChild(em[2])
                     }
-
                 })
-
-
             });
         </script>
