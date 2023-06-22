@@ -44,7 +44,7 @@ class HomeController extends Controller
             }
             return $item;
        });
-        $slides=Slide::orderBy('created_at','desc')->get()->map(function ($item){
+        $slides=Slide::orderBy('rang','asc')->get()->map(function ($item){
             if (App::isLocale('en')) {
                 $item->subject=$item->subject_en;
                 $item->title=$item->title_en;

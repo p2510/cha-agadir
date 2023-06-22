@@ -16,7 +16,8 @@ class Slide extends Model
         'photo',
         'url',
         'color',
-        'color_mobile'
+        'color_mobile',
+        'rang'
     ];
 
 
