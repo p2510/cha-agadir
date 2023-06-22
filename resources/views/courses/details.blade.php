@@ -91,14 +91,12 @@
                             <div class="widget">
                                 <a href=""></a>
                                 <select class="language-selector" id="switchlang">
-                                    <option value="fr" @if (App::currentLocale() == 'fr') selected @endif>Fançais
+                                    <option value="fr" @if (App::currentLocale() == 'fr') selected @endif>Français
                                     </option>
                                     <option value="en" @if (App::currentLocale() == 'en') selected @endif>English
                                     </option>
                                 </select>
                             </div>
-
-
 
                         </div>
 
@@ -181,7 +179,6 @@
                         </div>
 
                         <nav id="menuzord-right" class="menuzord default theme-colored">
-
 
                             <ul class="menuzord-menu list-unstyled">
 
@@ -315,7 +312,6 @@
                 </div>
             </div>
         </header>
-
 
         @if (session()->has('successNewsletter'))
             <div class="container">
@@ -553,36 +549,42 @@
             }
 
 
-
-            /* @media screen and (min-width: 901px) and (max-width: 999px) {
-                .menuzord-menu li a {
-                    font-size:9px !important;
-                }
-            }*/
-            /*
-            #menuzord-right a.showhide{
-               display: none !important;
-            }
-            */
-
-
             .language-selector {
                 background-color: transparent !important;
                 color: white;
             }
 
             .language-selector option {
-
                 background-color: #1F334560;
             }
         </style>
         <script>
             const switchlang = document.getElementById('switchlang');
-
             switchlang.addEventListener('change', () => {
                 window.location.href = `/langue/${switchlang.value}`
             })
+            $(document).ready(function() {
+                let initShow = 0;
+                let showHide = document.querySelector('.showhide');
+                let em = document.getElementsByTagName('em');
+
+                showHide.addEventListener('click', () => {
+                    initShow++
+                    if (initShow % 2 === 0) {
+                        em[0].style.transform = 'rotate(0deg)';
+                        em[1].style.transform = 'rotate(0deg)';
+                        showHide.appendChild(document.createElement("em"))
+                    } else {
+                        em[0].style.transform = 'rotate(45deg)';
+                        em[1].style.transform = 'rotate(-45deg) translate(4.5px ,-4.3px)';
+                        showHide.removeChild(em[2])
+                    }
+                })
+            });
         </script>
+
+
+
 
 
 

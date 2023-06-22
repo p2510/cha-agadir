@@ -336,6 +336,16 @@
                         </div>
                     @endforeach
                 </div>
+                
+                @if (count($pagevideos) == 1)
+                <style>
+                    iframe{
+                        transform: scale(0.8);
+                        position: relative;
+                        top: 30%;
+                    }
+                </style>
+                @endif
 
             </div>
         </div>
