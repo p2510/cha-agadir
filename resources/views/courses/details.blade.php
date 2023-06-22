@@ -980,7 +980,7 @@
 
                                         </div>
 
-                                        <div class="tab-pane fade" id="tab4">
+                                        <div class="tab-pane fade" id="tab4" style="padding-bottom:8px;">
                                             <h4 class="line-bottom-theme-colored2 mb-20">
                                                 {{ __('course.subtitle13') }}</h4>
                                             @if ($courses[0]->responsables_name)
@@ -992,15 +992,15 @@
                                                     {{ $courses[0]->teams_name . ' ' . $courses[0]->teams_surname }}
                                                 </h5>
                                             @endif
-                                            <div style="display:flex;justify-content:center;">
+                                            <div style="display:flex;justify-content:center; ">
 
                                                 @if ($courses[0]->responsables_photo)
                                                     <img src="{{ url('storage/' . $courses[0]->responsables_photo) }}"
-                                                        style=" object-fit:cover;width:70%; height:70%;"
+                                                        style=" object-fit:cover;width:50%; height:50%;"
                                                         alt="photo du responsable">
                                                 @elseif ($courses[0]->teams_photo)
                                                     <img src="{{ url('storage/' . $courses[0]->teams_photo) }}"
-                                                        style=" object-fit:cover;width:70%; height:70%;"
+                                                        style=" object-fit:cover;width:50%; height:50%;"
                                                         alt="photo du responsable">
                                                 @endif
                                             </div>
@@ -1936,7 +1936,7 @@
                                     </div>
                                 </div>
                             </div>
-                            <div class="item">
+                            <div class="item" style="padding-bottom:8px;">
                                 <div class="text"
                                     style="display: flex;justify-content:space-between;padding-left:4px;padding-right:4px;">
                                     <p> {{ __('course.title10') }}</p>
@@ -1961,11 +1961,11 @@
 
                                         @if ($courses[0]->responsables_photo)
                                             <img src="{{ url('storage/' . $courses[0]->responsables_photo) }}"
-                                                style=" object-fit:cover;width:80%; height:80%;"
+                                                style=" object-fit:cover;width:60%; height:60%;"
                                                 alt="photo du responsable">
                                         @elseif ($courses[0]->teams_photo)
                                             <img src="{{ url('storage/' . $courses[0]->teams_photo) }}"
-                                                style=" object-fit:cover;width:80%; height:80%;"
+                                                style=" object-fit:cover;width:60%; height:60%;"
                                                 alt="photo du responsable">
                                         @endif
                                     </div>

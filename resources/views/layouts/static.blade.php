@@ -513,11 +513,9 @@
             if (item.classList.contains('open')) {
                 window.scroll({
                     top: top,
-                    behavior: 'auto'
+                    behavior: 'auto',
                 });
             }
-
-
         });
     });
 </script>

@@ -59,7 +59,7 @@
                                     data-x="['left','left','left','left']" data-hoffset="['50','50','50','30']"
                                     data-y="['top','top','top','top']" data-voffset="['325','220','195','195']"
                                     data-fontsize="['16','16','14','13']" data-lineheight="['30','26','24','20']"
-                                    data-fontweight="['400','400','400','400']" data-width="['850','650','600','420']"
+                                    data-fontweight="['400','400','400','400']" data-width="['550','650','600','420']"
                                     data-height="none" data-whitespace="nowrap" data-transform_idle="o:1;"
                                     data-transform_in="y:[-100%];z:0;rX:0deg;rY:0;rZ:0;sX:1;sY:1;skX:0;skY:0;s:1500;e:Power3.easeInOut;"
                                     data-transform_out="auto:auto;s:1000;e:Power3.easeInOut;"
@@ -67,7 +67,8 @@
                                     data-mask_out="x:0;y:0;s:inherit;e:inherit;" data-start="1000" data-splitin="none"
                                     data-splitout="none" data-responsive_offset="on"
                                     style="z-index: 7;color:{{ $slide->color }}!important;">
-                                   <div style="white-space:normal;"> {{$slide->description}}</div>
+                                    <div style="white-space:normal; text-align:justify;hyphens:auto;">
+                                        {{ $slide->description }}</div>
                                 </div>
                                 <!-- LAYER NR. 4 -->
                                 <div class="tp-caption tp-resizeme text-white rs-parallaxlevel-0" id="slide-1-layer-4"
@@ -81,7 +82,8 @@
                                     data-mask_in="x:0px;y:0px;s:inherit;e:inherit;"
                                     data-mask_out="x:0;y:0;s:inherit;e:inherit;" data-start="1000" data-splitin="none"
                                     data-splitout="none" data-responsive_offset="on"
-                                    style="z-index: 7; white-space: nowrap;margin-top:50px;"><a href="{{ $slide->url }}"
+                                    style="z-index: 7; white-space: nowrap;margin-top:70px;"><a
+                                        href="{{ $slide->url }}"
                                         class="btn btn-dark btn-circled btn-theme-colored2 btn-xl mr-10 pr-30 pl-30">{{ __('home.btn1') }}</a>
                                 </div>
                             </li>
@@ -248,7 +250,7 @@
                                     data-x="['left','left','left','left']" data-hoffset="['50','50','50','30']"
                                     data-y="['top','top','top','top']" data-voffset="['325','220','195','195']"
                                     data-fontsize="['16','16','14','13']" data-lineheight="['30','26','24','20']"
-                                    data-fontweight="['400','400','400','400']" data-width="['850','650','600','420']"
+                                    data-fontweight="['400','400','400','400']" data-width="['450','650','600','420']"
                                     data-height="none" data-whitespace="nowrap" data-transform_idle="o:1;"
                                     data-transform_in="y:[-100%];z:0;rX:0deg;rY:0;rZ:0;sX:1;sY:1;skX:0;skY:0;s:1500;e:Power3.easeInOut;"
                                     data-transform_out="auto:auto;s:1000;e:Power3.easeInOut;"
@@ -256,7 +258,14 @@
                                     data-mask_out="x:0;y:0;s:inherit;e:inherit;" data-start="1000" data-splitin="none"
                                     data-splitout="none" data-responsive_offset="on"
                                     style="z-index: 7;color:{{ $slide->color_mobile }}!important;">
-                                    <div style="white-space:normal;"> {{$slide->description}}</div>
+                                    <div id="descriptionMobile">{{ $slide->description }}</div>
+                                    <style>
+                                        #descriptionMobile {
+                                            white-space: normal;
+                                            text-align: justify!important;
+                                            hyphens: auto!important;
+                                        }
+                                    </style>
                                 </div>
                                 <!-- LAYER NR. 4 -->
                                 <div class="tp-caption tp-resizeme text-white rs-parallaxlevel-0" id="slide-1-layer-4"
@@ -270,7 +279,8 @@
                                     data-mask_in="x:0px;y:0px;s:inherit;e:inherit;"
                                     data-mask_out="x:0;y:0;s:inherit;e:inherit;" data-start="1000" data-splitin="none"
                                     data-splitout="none" data-responsive_offset="on"
-                                    style="z-index: 7; white-space: nowrap; margin-top:50px;"><a href="{{ $slide->url }}"
+                                    style="z-index: 7; white-space: nowrap; margin-top:75px;"><a
+                                        href="{{ $slide->url }}"
                                         class="btn btn-dark btn-circled btn-theme-colored2 btn-xl mr-10 pr-30 pl-30">{{ __('home.btn1') }}</a>
                                 </div>
                             </li>
