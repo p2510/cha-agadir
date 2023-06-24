@@ -998,11 +998,11 @@
 
                                                 @if ($courses[0]->responsables_photo)
                                                     <img src="{{ url('storage/' . $courses[0]->responsables_photo) }}"
-                                                        style=" object-fit:cover;width:50%; height:50%;"
+                                                        style=" object-fit:cover;width:40%; height:40%;"
                                                         alt="photo du responsable">
                                                 @elseif ($courses[0]->teams_photo)
                                                     <img src="{{ url('storage/' . $courses[0]->teams_photo) }}"
-                                                        style=" object-fit:cover;width:50%; height:50%;"
+                                                        style=" object-fit:cover;width:40%; height:40%;"
                                                         alt="photo du responsable">
                                                 @endif
                                             </div>
