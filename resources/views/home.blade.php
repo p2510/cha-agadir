@@ -262,8 +262,8 @@
                                     <style>
                                         #descriptionMobile {
                                             white-space: normal;
-                                            text-align: justify!important;
-                                            hyphens: auto!important;
+                                            text-align: justify !important;
+                                            hyphens: auto !important;
                                         }
                                     </style>
                                 </div>

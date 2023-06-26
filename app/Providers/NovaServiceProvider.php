@@ -8,6 +8,7 @@ use App\Nova\Mode;
 use App\Nova\Team;
 use App\Nova\User;
 use App\Nova\About;
+use App\Nova\Alert;
 use App\Nova\Barre;
 use App\Nova\Media;
 use App\Nova\Popup;
@@ -161,6 +162,7 @@ class NovaServiceProvider extends NovaApplicationServiceProvider
                 ])->icon('mail')->collapsable(),
                 
                 MenuItem::resource(Mention::class),
+                MenuItem::resource(Alert::class),
                 MenuItem::link('Activer  maintenance', '/activer-maintenance'),
                 MenuItem::link('Désactiver maintenance', '/desactiver-maintenance'),
                 MenuItem::resource(User::class),

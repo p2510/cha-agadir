@@ -74,6 +74,8 @@ Route::get('/ferme-experiementale', [ExperienceController::class, '__invoke'])->
 Route::get('/impact-cluster', [ImpactController::class, '__invoke'])->name('impact.index');
 Route::get('/agri-business', [BusinessController::class, '__invoke'])->name('business.index');
 });
+// alert 
+
 
 
 
@@ -88,7 +90,7 @@ Route::get('/langue/{lang}', function (string $lang,Request $request) {
     return redirect()->back();
 })->name('switch.langage');
 
-// mode app 
 
+// mode app 
 Route::get('/admin/activer-maintenance', [ModeApplicationController::class, 'down']);
 Route::get('/admin/desactiver-maintenance', [ModeApplicationController::class, 'up']);

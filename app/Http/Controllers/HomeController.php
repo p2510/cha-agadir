@@ -5,7 +5,6 @@ namespace App\Http\Controllers;
 use Carbon\Carbon;
 use App\Models\About;
 use App\Models\Barre;
-
 use App\Models\Popup;
 use App\Models\Slide;
 use App\Models\Whyus;
@@ -54,6 +53,9 @@ class HomeController extends Controller
             return $item;
        });    
         $degrees=Degree::all();
+        
+           
+        
         
         
         $responsables=DB::table('responsables')->limit(4)->get();

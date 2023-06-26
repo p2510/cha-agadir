@@ -184,6 +184,14 @@
             </div>
 
 
+            @if (!is_null($alert))
+                @foreach ($alert as $item)
+                    <marquee behavior="" direction="left"
+                        style="padding-top:4px; padding-bottom:4px; background-color:#F88147;color:white;">
+                        {{ $item->message }}
+                    </marquee>
+                @endforeach
+            @endif
             <div class="header-nav">
                 <div class="header-nav-wrapper navbar-scrolltofixed bg-white">
                     <div class="container">
@@ -192,8 +200,8 @@
                             @if (count($logo_url) > 0)
                                 @foreach ($logo_url as $item)
                                     <a class="menuzord-brand  flip mt-20 mt-sm-10 mb-sm-20 pt-5"
-                                        href="{{ route('home') }}" ><img 
-                                            src="{{ url('storage') }}/{{ $item->logo }}"  alt=""></a>
+                                        href="{{ route('home') }}"><img
+                                            src="{{ url('storage') }}/{{ $item->logo }}" alt=""></a>
                                 @endforeach
                             @endif
                         </div>
