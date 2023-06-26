@@ -659,28 +659,12 @@
                                                 <i class="pe-7s-ribbon text-theme-colored2 font-48"></i>
                                                 <div class="pull-right ml-5">
                                                     <span>{{ __('course.title1') }}</span>
-                                                    <h5 class="mt-0 break_span">{!! $course->grade !!}}</h5>
+                                                    <h5 class="mt-0 ">{!! $course->grade !!}</h5>
                                                 </div>
                                             </li>
                                         @endif
 
-                                        <style>
-                                          /*  @media screen and (max-width: 404px) {
-
-                                                .break_span p:first-child {
-                                                    display: block
-                                                }
-                                                .break_span span:first-child {
-                                                    display: block
-                                                }
-                                                .break_span p span:first-child {
-                                                    display: block
-                                                }
-                                            }
-                                            */
-                                            
-                                            
-                                        </style>
+                                     
 
 
                                         @if ($course->modalitiy_name)
