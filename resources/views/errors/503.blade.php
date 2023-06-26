@@ -60,22 +60,6 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/intl-tel-input/17.0.8/js/intlTelInput.min.js"></script>
 
     
-
-    <style>
-        @keyframes blink {
-            0% {
-                opacity: 1;
-            }
-
-            50% {
-                opacity: 0.5;
-            }
-
-            100% {
-                opacity: 1;
-            }
-        }
-    </style>
 </head>
 
 
@@ -107,33 +91,7 @@
 
 
 <!-- end main-content -->
-<style>
-  @media screen and (max-width: 768px) {
-      #elem{
-          
-          display: none;
-      }
-  }
 
-  footer a:hover {
-      text-decoration: underline;
-      text-underline-offset: 2px;
-
-  }
-
-  #separator {
-      padding-top: 1px;
-      background-color: #1f3344;
-  }
-
-  .widget {
-      margin-bottom: 0px;
-  }
-
-  .footer .widget .widget-title {
-      margin-top: 0px;
-  }
-</style>
 
 <!-- end wrapper -->
 
