@@ -24,6 +24,7 @@ use App\Http\Controllers\ExperienceController;
 use App\Http\Controllers\InterestedController;
 use App\Http\Controllers\NewsletterController;
 use App\Http\Controllers\CategoryBlogController;
+use App\Http\Controllers\ModeApplicationController;
   
 /*
 |--------------------------------------------------------------------------
@@ -86,3 +87,8 @@ Route::get('/langue/{lang}', function (string $lang,Request $request) {
     $request->session()->put('my_locale', $lang);
     return redirect()->back();
 })->name('switch.langage');
+
+// mode app 
+
+Route::get('/admin/activer-maintenance', [ModeApplicationController::class, 'down']);
+Route::get('/admin/desactiver-maintenance', [ModeApplicationController::class, 'up']);

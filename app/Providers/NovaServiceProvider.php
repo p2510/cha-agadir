@@ -49,6 +49,7 @@ use App\Nova\CategoryMedia;
 use App\Nova\CategoryVideo;
 use App\Nova\Evenementpage;
 use App\Nova\Evenementvideo;
+use App\Nova\ModeApplication;
 use App\Nova\MessageNewsletter;
 use Laravel\Nova\Menu\MenuItem;
 use App\Nova\EvenementInterested;
@@ -160,7 +161,10 @@ class NovaServiceProvider extends NovaApplicationServiceProvider
                 ])->icon('mail')->collapsable(),
                 
                 MenuItem::resource(Mention::class),
+                MenuItem::link('Activer  maintenance', '/activer-maintenance'),
+                MenuItem::link('Désactiver maintenance', '/desactiver-maintenance'),
                 MenuItem::resource(User::class),
+          
                 
             ];
         });
@@ -218,7 +222,9 @@ class NovaServiceProvider extends NovaApplicationServiceProvider
      */
     public function tools()
     {
-        return [];
+        return [
+          
+        ];
     }
 
     /**

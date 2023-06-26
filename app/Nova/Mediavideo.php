@@ -45,7 +45,8 @@ class Mediavideo extends Resource
         return [
             ID::make()->sortable(),
             BelongsTo::make('Catégories','vidéos','App\Nova\CategoryVideo'),
-            Text::make('Titre','title'),
+            Text::make('Titre (FR)','title'),
+            Text::make('Titre (EN)','title_en'),
             Text::make('Url youtube','video'),
  
         ];

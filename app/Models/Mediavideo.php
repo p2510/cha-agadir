@@ -11,6 +11,7 @@ class Mediavideo extends Model
     use HasFactory;
     protected $fillable=[
         'title',
+        'title_en',
         'video'
     ];
    public function vidéos()
