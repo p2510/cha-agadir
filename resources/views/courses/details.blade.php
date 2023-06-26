@@ -655,17 +655,17 @@
 
 
                                         @if ($course->grade)
-                                            <li>
+                                            <li style="display: inline-flex;">
                                                 <i class="pe-7s-ribbon text-theme-colored2 font-48"></i>
                                                 <div class="pull-right ml-5">
                                                     <span>{{ __('course.title1') }}</span>
-                                                    <h5 class="mt-0 break_span">{!! $course->grade !!}</h5>
+                                                    <h5 class="mt-0 break_span">{{ $course->grade }}</h5>
                                                 </div>
                                             </li>
                                         @endif
 
                                         <style>
-                                            @media screen and (max-width: 404px) {
+                                          /*  @media screen and (max-width: 404px) {
 
                                                 .break_span p:first-child {
                                                     display: block
@@ -677,6 +677,9 @@
                                                     display: block
                                                 }
                                             }
+                                            */
+                                            
+                                            
                                         </style>
 
 

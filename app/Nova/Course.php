@@ -150,6 +150,7 @@ class Course extends Resource
             ]),
             Date::make('Date rentrée','daterentre'),
 
+            
             NovaTinyMCE::make('Diplôme (Fr)','grade')->options([
                 'plugins' => [
                     'lists','preview','anchor','pagebreak','image','wordcount','fullscreen','directionality'
@@ -157,6 +158,7 @@ class Course extends Resource
                 'toolbar' => 'undo redo | styles | bold italic forecolor backcolor | alignleft aligncenter alignright alignjustify | image | bullist numlist outdent indent | link',
                 'use_lfm' => true
             ]),
+            
             NovaTinyMCE::make('Diplôme (En)','grade_en')->options([
                 'plugins' => [
                     'lists','preview','anchor','pagebreak','image','wordcount','fullscreen','directionality'
