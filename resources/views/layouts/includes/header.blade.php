@@ -184,7 +184,7 @@
             </div>
 
 
-            @if (!is_null($alert))
+            @if (count($alert)>0)
                 @foreach ($alert as $item)
                     <marquee behavior="" direction="left"
                         style="padding-top:4px; padding-bottom:4px; background-color:#F88147;color:white;">
