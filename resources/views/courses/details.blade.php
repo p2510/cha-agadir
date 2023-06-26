@@ -667,8 +667,14 @@
                                         <style>
                                             @media screen and (max-width: 404px) {
 
+                                                .break_span p:first-child {
+                                                    display: block
+                                                }
                                                 .break_span span:first-child {
-                                                    display: block;
+                                                    display: block
+                                                }
+                                                .break_span p span:first-child {
+                                                    display: block
                                                 }
                                             }
                                         </style>
