@@ -9,13 +9,10 @@
                 <span style="color:#1f3344;">
                     {{ __('footer.subtitle4') }} <br>
                     {{ __('footer.subtitle5') }}
-
-
                 </span>
-
                 <ul class="list-inline">
                     <li class="m-0 pl-10 pr-10"> <i class="fa fa-phone mr-5"></i> <a href="#"
-                            style="color:#1f3344; font-size:12px;">(+212) 0528-241-006/240-155</a>
+                            style="color:#1f3344; font-size:12px; cursor:default;">(+212) 0528-241-006/240-155</a>
                     </li>
                     <li class="m-0 pl-10 pr-10"> <i class="fa fa-envelope-o mr-5"></i> <a
                             href="mailto:contact@cha-agadir.ma" style="color:#1f3344;">contact@cha-agadir.ma</a> </li>
