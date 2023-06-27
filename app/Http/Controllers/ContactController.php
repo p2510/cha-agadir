@@ -18,7 +18,7 @@ class ContactController extends Controller
     public function create()
     {
         $countries= [
-             "Maroc",
+             "Morocco",
              "Afghanistan",
              "Afrique du Sud",
              "Albanie",
