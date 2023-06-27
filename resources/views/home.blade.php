@@ -59,7 +59,7 @@
                                     data-x="['left','left','left','left']" data-hoffset="['50','50','50','30']"
                                     data-y="['top','top','top','top']" data-voffset="['325','220','195','195']"
                                     data-fontsize="['16','16','14','13']" data-lineheight="['30','26','24','20']"
-                                    data-fontweight="['400','400','400','400']" data-width="['550','650','600','420']"
+                                    data-fontweight="['400','400','400','400']" data-width="['700','650','600','420']"
                                     data-height="none" data-whitespace="nowrap" data-transform_idle="o:1;"
                                     data-transform_in="y:[-100%];z:0;rX:0deg;rY:0;rZ:0;sX:1;sY:1;skX:0;skY:0;s:1500;e:Power3.easeInOut;"
                                     data-transform_out="auto:auto;s:1000;e:Power3.easeInOut;"
