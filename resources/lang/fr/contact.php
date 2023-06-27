@@ -8,7 +8,7 @@ return [
     'title5'=>"Complexe Horticole d'Agadir, km 2 route d’Azrou, B.P. 121 Ait Melloul 80150 - Agadir",
     'formtext1'=>'Nom et Prénom',
     'formtext2'=>'Sujet',
-    'formtext1'=>'Ville',
+    'formtext3'=>'Ville',
     'btn1'=>'Soumettre',
     'btn2'=>'Annuler',
 
