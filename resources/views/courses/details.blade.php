@@ -2920,7 +2920,6 @@
                                     </div>
                                  @elseif(!is_null($courses[0]->teams_photo))
                                  <div class="team-members mb-40 ml-40 mr-40">
-                                       
                                     <div class="team-bottom-part border-1px p-15">
 
                                         <h4

@@ -37,7 +37,7 @@ class SendContactMessage extends Mailable
     {
         return new Envelope(
             
-            subject: 'Nous avons récu votre',
+            subject: 'Accusé de réception - Votre message',
         );
     }
     /**
