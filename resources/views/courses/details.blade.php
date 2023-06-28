@@ -655,16 +655,18 @@
 
 
                                         @if ($course->grade)
-                                            <li style="display: inline-flex;">
-                                                <i class="pe-7s-ribbon text-theme-colored2 font-48"></i>
-                                                <div class="pull-right ml-5">
-                                                    <span>{{ __('course.title1') }}</span>
-                                                    <h5 class="mt-0 ">{!! $course->grade !!}</h5>
-                                                </div>
-                                            </li>
+                                            @if ($course->grade != '<p>.</p>')
+                                                <li style="display: inline-flex;">
+                                                    <i class="pe-7s-ribbon text-theme-colored2 font-48"></i>
+                                                    <div class="pull-right ml-5">
+                                                        <span>{{ __('course.title1') }}</span>
+                                                        <h5 class="mt-0 ">{!! $course->grade !!}</h5>
+                                                    </div>
+                                                </li>
+                                            @endif
                                         @endif
 
-                                     
+
 
 
                                         @if ($course->modalitiy_name)
@@ -755,16 +757,19 @@
                                         }
                                     </style>
 
+
                                     <div id="myTabContent" class="tab-content">
                                         <div class="tab-pane fade in active" id="tab1">
                                             <h4 class="line-bottom-theme-colored2 mb-15">{{ __('course.subtitle1') }}
                                             </h4>
 
-                                            <div style="text-align:justify;hyphens:auto;"> {!! $course->description !!}
-                                            </div>
+                                            @if ($course->description != '<p>.</p>')
+                                                <div style="text-align:justify;hyphens:auto; "> {!! $course->description !!}
+                                                </div>
+                                            @endif
                                             <ul>
                                                 @if ($course->duration)
-                                                    <li> <i
+                                                    <li><i
                                                             class="pe-7s-timer font-26 vertical-align-middle text-theme-colored2 mr-10 "></i>
                                                         <span class=" font-16 "
                                                             style="color:#1f3344;font-weight:bold;">
@@ -807,144 +812,160 @@
                                                 <div class="col-md-12">
                                                     <div class="blog-posts single-post">
                                                         @if (isset($course->admission))
-                                                            <div class="comments-area">
-                                                                <ul class="comment-list">
+                                                            @if ($course->admission != '<p>.</p>')
+                                                                <div class="comments-area">
+                                                                    <ul class="comment-list">
 
-                                                                    <li>
-                                                                        <div class="media comment-author"> <a
-                                                                                class="media-left pull-left flip"
-                                                                                href="#"><img
-                                                                                    class="img-thumbnail"
-                                                                                    src="images/blog/comment1.jpg"
-                                                                                    alt=""></a>
-                                                                            <div class="media-body">
-                                                                                <h5 class=" @if (!isset($design->size)) media-heading comment-heading  font-16 @else media-heading comment-heading @endif "
-                                                                                    style=" @if (isset($design->color)) color:{{ $design->color }}; @endif  @if (isset($design->size)) font-size:{{ $design->size }}; @endif">
-                                                                                    {{ __('course.subtitle3') }} </h5>
-                                                                                <div class="comment-date"
-                                                                                    style="font-size:16px;text-align:justify;hyphens:auto;">
-                                                                                    {!! $course->admission !!}</div>
+                                                                        <li>
+                                                                            <div class="media comment-author"> <a
+                                                                                    class="media-left pull-left flip"
+                                                                                    href="#"><img
+                                                                                        class="img-thumbnail"
+                                                                                        src="images/blog/comment1.jpg"
+                                                                                        alt=""></a>
+                                                                                <div class="media-body">
+                                                                                    <h5 class=" @if (!isset($design->size)) media-heading comment-heading  font-16 @else media-heading comment-heading @endif "
+                                                                                        style=" @if (isset($design->color)) color:{{ $design->color }}; @endif  @if (isset($design->size)) font-size:{{ $design->size }}; @endif">
+                                                                                        {{ __('course.subtitle3') }}
+                                                                                    </h5>
+                                                                                    <div class="comment-date"
+                                                                                        style="font-size:16px;text-align:justify;hyphens:auto;">
+                                                                                        {!! $course->admission !!}</div>
+                                                                                </div>
                                                                             </div>
-                                                                        </div>
-                                                                    </li>
+                                                                        </li>
 
 
 
-                                                                </ul>
-                                                            </div>
+                                                                    </ul>
+                                                                </div>
+                                                            @endif
                                                         @endif
                                                         @if (isset($course->dossier))
-                                                            <div class="comments-area">
-                                                                <ul class="comment-list">
+                                                            @if ($course->dossier != '<p>.</p>')
+                                                                <div class="comments-area ">
+                                                                    <ul class="comment-list">
 
-                                                                    <li>
-                                                                        <div class="media comment-author"> <a
-                                                                                class="media-left pull-left flip"
-                                                                                href="#"><img
-                                                                                    class="img-thumbnail"
-                                                                                    src="images/blog/comment1.jpg"
-                                                                                    alt=""></a>
-                                                                            <div class="media-body">
-                                                                                <h5 class=" @if (!isset($design->size)) media-heading comment-heading  font-16 @else media-heading comment-heading @endif "
-                                                                                    style=" @if (isset($design->color)) color:{{ $design->color }}; @endif  @if (isset($design->size)) font-size:{{ $design->size }}; @endif">
-                                                                                    {{ __('course.subtitle4') }} </h5>
-                                                                                <div class="comment-date"
-                                                                                    style="font-size:16px;text-align:justify;hyphens:auto;">
-                                                                                    {!! $course->dossier !!}</div>
+                                                                        <li>
+                                                                            <div class="media comment-author"> <a
+                                                                                    class="media-left pull-left flip"
+                                                                                    href="#"><img
+                                                                                        class="img-thumbnail"
+                                                                                        src="images/blog/comment1.jpg"
+                                                                                        alt=""></a>
+                                                                                <div class="media-body">
+                                                                                    <h5 class=" @if (!isset($design->size)) media-heading comment-heading  font-16 @else media-heading comment-heading @endif "
+                                                                                        style=" @if (isset($design->color)) color:{{ $design->color }}; @endif  @if (isset($design->size)) font-size:{{ $design->size }}; @endif">
+                                                                                        {{ __('course.subtitle4') }}
+                                                                                    </h5>
+                                                                                    <div class="comment-date"
+                                                                                        style="font-size:16px;text-align:justify;hyphens:auto;">
+                                                                                        {!! $course->dossier !!}</div>
 
 
+                                                                                </div>
                                                                             </div>
-                                                                        </div>
-                                                                    </li>
+                                                                        </li>
 
 
 
-                                                                </ul>
-                                                            </div>
+                                                                    </ul>
+                                                                </div>
+                                                            @endif
                                                         @endif
                                                         @if (isset($course->candidature))
-                                                            <div class="comments-area">
-                                                                <ul class="comment-list">
+                                                            @if ($course->candidature != '<p>.</p>')
+                                                                <div class="comments-area ">
+                                                                    <ul class="comment-list">
 
-                                                                    <li>
-                                                                        <div class="media comment-author"> <a
-                                                                                class="media-left pull-left flip"
-                                                                                href="#"><img
-                                                                                    class="img-thumbnail"
-                                                                                    src="images/blog/comment1.jpg"
-                                                                                    alt=""></a>
-                                                                            <div class="media-body">
-                                                                                <h5 class=" @if (!isset($design->size)) media-heading comment-heading  font-16 @else media-heading comment-heading @endif "
-                                                                                    style=" @if (isset($design->color)) color:{{ $design->color }}; @endif  @if (isset($design->size)) font-size:{{ $design->size }}; @endif">
-                                                                                    {{ __('course.subtitle5') }} </h5>
-                                                                                <div class="comment-date"
-                                                                                    style="font-size:16px;text-align:justify;hyphens:auto;">
-                                                                                    {!! $course->candidature !!}</div>
+                                                                        <li>
+                                                                            <div class="media comment-author"> <a
+                                                                                    class="media-left pull-left flip"
+                                                                                    href="#"><img
+                                                                                        class="img-thumbnail"
+                                                                                        src="images/blog/comment1.jpg"
+                                                                                        alt=""></a>
+                                                                                <div class="media-body">
+                                                                                    <h5 class=" @if (!isset($design->size)) media-heading comment-heading  font-16 @else media-heading comment-heading @endif "
+                                                                                        style=" @if (isset($design->color)) color:{{ $design->color }}; @endif  @if (isset($design->size)) font-size:{{ $design->size }}; @endif">
+                                                                                        {{ __('course.subtitle5') }}
+                                                                                    </h5>
+                                                                                    <div class="comment-date"
+                                                                                        style="font-size:16px;text-align:justify;hyphens:auto;">
+                                                                                        {!! $course->candidature !!}</div>
+                                                                                </div>
                                                                             </div>
-                                                                        </div>
-                                                                    </li>
+                                                                        </li>
 
 
 
-                                                                </ul>
-                                                            </div>
+                                                                    </ul>
+                                                                </div>
+                                                            @endif
                                                         @endif
                                                         @if (isset($course->datelimite))
-                                                            <div class="comments-area">
-                                                                <ul class="comment-list">
+                                                            @if ($course->datelimite != '<p>.</p>')
+                                                                <div class="comments-area ">
+                                                                    <ul class="comment-list">
 
-                                                                    <li>
-                                                                        <div class="media comment-author"> <a
-                                                                                class="media-left pull-left flip"
-                                                                                href="#"><img
-                                                                                    class="img-thumbnail"
-                                                                                    src="images/blog/comment1.jpg"
-                                                                                    alt=""></a>
-                                                                            <div class="media-body">
-                                                                                <h5 class=" @if (!isset($design->size)) media-heading comment-heading  font-16 @else media-heading comment-heading @endif "
-                                                                                    style=" @if (isset($design->color)) color:{{ $design->color }}; @endif  @if (isset($design->size)) font-size:{{ $design->size }}; @endif">
-                                                                                    {{ __('course.subtitle6') }} </h5>
-                                                                                <div class="comment-date"
-                                                                                    style="font-size:16px;">
-                                                                                    {{ $course->datelimite }}</div>
+                                                                        <li>
+                                                                            <div class="media comment-author"> <a
+                                                                                    class="media-left pull-left flip"
+                                                                                    href="#"><img
+                                                                                        class="img-thumbnail"
+                                                                                        src="images/blog/comment1.jpg"
+                                                                                        alt=""></a>
+                                                                                <div class="media-body">
+                                                                                    <h5 class=" @if (!isset($design->size)) media-heading comment-heading  font-16 @else media-heading comment-heading @endif "
+                                                                                        style=" @if (isset($design->color)) color:{{ $design->color }}; @endif  @if (isset($design->size)) font-size:{{ $design->size }}; @endif">
+                                                                                        {{ __('course.subtitle6') }}
+                                                                                    </h5>
+                                                                                    <div class="comment-date"
+                                                                                        style="font-size:16px;">
+                                                                                        {{ $course->datelimite }}
+                                                                                    </div>
+                                                                                </div>
                                                                             </div>
-                                                                        </div>
-                                                                    </li>
+                                                                        </li>
 
 
 
-                                                                </ul>
-                                                            </div>
+                                                                    </ul>
+                                                                </div>
+                                                            @endif
                                                         @endif
                                                         @if (isset($course->selection))
-                                                            <div class="comments-area">
-                                                                <ul class="comment-list">
+                                                            @if ($course->selection != '<p>.</p>')
+                                                                <div class="comments-area ">
+                                                                    <ul class="comment-list">
 
-                                                                    <li>
-                                                                        <div class="media comment-author"> <a
-                                                                                class="media-left pull-left flip"
-                                                                                href="#"><img
-                                                                                    class="img-thumbnail"
-                                                                                    src="images/blog/comment1.jpg"
-                                                                                    alt=""></a>
-                                                                            <div class="media-body">
-                                                                                <h5 class=" @if (!isset($design->size)) media-heading comment-heading  font-16 @else media-heading comment-heading @endif "
-                                                                                    style=" @if (isset($design->color)) color:{{ $design->color }}; @endif  @if (isset($design->size)) font-size:{{ $design->size }}; @endif">
-                                                                                    {{ __('course.subtitle7') }} </h5>
-                                                                                <div class="comment-date"
-                                                                                    style="font-size:16px;text-align:justify;hyphens:auto;">
-                                                                                    {!! $course->selection !!}</div>
+                                                                        <li>
+                                                                            <div class="media comment-author"> <a
+                                                                                    class="media-left pull-left flip"
+                                                                                    href="#"><img
+                                                                                        class="img-thumbnail"
+                                                                                        src="images/blog/comment1.jpg"
+                                                                                        alt=""></a>
+                                                                                <div class="media-body">
+                                                                                    <h5 class=" @if (!isset($design->size)) media-heading comment-heading  font-16 @else media-heading comment-heading @endif "
+                                                                                        style=" @if (isset($design->color)) color:{{ $design->color }}; @endif  @if (isset($design->size)) font-size:{{ $design->size }}; @endif">
+                                                                                        {{ __('course.subtitle7') }}
+                                                                                    </h5>
+                                                                                    <div class="comment-date"
+                                                                                        style="font-size:16px;text-align:justify;hyphens:auto;">
+                                                                                        {!! $course->selection !!}</div>
+                                                                                </div>
                                                                             </div>
-                                                                        </div>
-                                                                    </li>
+                                                                        </li>
 
 
 
-                                                                </ul>
-                                                            </div>
+                                                                    </ul>
+                                                                </div>
+                                                            @endif
                                                         @endif
                                                         @if (isset($course->daterentre))
-                                                            <div class="comments-area">
+                                                            <div class="comments-area ">
                                                                 <ul class="comment-list">
 
                                                                     <li>
@@ -986,14 +1007,14 @@
                                         <div class="tab-pane fade" id="tab4" style="padding-bottom:8px;">
                                             <h4 class="line-bottom-theme-colored2 mb-20">
                                                 {{ __('course.subtitle13') }}</h4>
-                                   
+
 
                                             <div>
 
                                                 @if (!is_null($courses[0]->responsables_photo))
                                                     <!-- Portfolio Item Start -->
                                                     <div class="team-members mb-40 ml-40 mr-40">
-                                                       
+
                                                         <div class="team-bottom-part border-1px p-15">
 
                                                             <h4
@@ -1323,338 +1344,338 @@
                                                             </ul>
                                                         </div>
                                                     </div>
-                                                 @elseif(!is_null($courses[0]->teams_photo))
-                                                 <div class="team-members mb-40 ml-40 mr-40">
-                                                       
-                                                    <div class="team-bottom-part border-1px p-15">
+                                                @elseif(!is_null($courses[0]->teams_photo))
+                                                    <div class="team-members mb-40 ml-40 mr-40">
 
-                                                        <h4
-                                                            class="text-uppercase font-weight-600 m-0 pb-5 font-16">
-                                                            {{ $courses[0]->teams_name }}
-                                                            {{ $courses[0]->teams_surname }}
+                                                        <div class="team-bottom-part border-1px p-15">
 
-                                                        </h4>
+                                                            <h4
+                                                                class="text-uppercase font-weight-600 m-0 pb-5 font-16">
+                                                                {{ $courses[0]->teams_name }}
+                                                                {{ $courses[0]->teams_surname }}
 
-                                                        <h6 class="font-13 text-gray mt-0 font-10">
-                                                            @if (App::isLocale('en'))
-                                                                {{ $courses[0]->teams_statut_en }}
-                                                            @else
-                                                                {{ $courses[0]->teams_statut }}
-                                                            @endif
-                                                        </h6>
-                                                        <h6 class="font-13 text-gray mt-0 font-10">
-                                                            @if (App::isLocale('en'))
-                                                                {{ $courses[0]->teams_poste_en }}
-                                                            @else
-                                                                {{ $courses[0]->teams_poste }}
-                                                            @endif
-                                                        </h6>
-                                                        <h6 class="font-13 text-gray mt-0 font-10">
-                                                            {{ $courses[0]->teams_etablissement }}
-                                                        </h6>
-                                                        <ul class="list-inline mt-15">
+                                                            </h4>
 
-                                                            @if (isset($courses[0]->teams_country))
-                                                                <li class="m-0 pr-10" style="width:100%;">
-                                                                    <i
-                                                                        class="pe-7s-global font-16  text-theme-colored2 mr-5"></i>
-                                                                    <a class="text-gray font-12" href="#">
-                                                                        @php
-                                                                            $countries = [
-                                                                                'AF' => 'Afghanistan',
-                                                                                'ZA' => 'Afrique du Sud',
-                                                                                'AL' => 'Albanie',
-                                                                                'DZ' => 'Algérie',
-                                                                                'DE' => 'Allemagne',
-                                                                                'AD' => 'Andorre',
-                                                                                'AO' => 'Angola',
-                                                                                'AI' => 'Anguilla',
-                                                                                'AQ' => 'Antarctique',
-                                                                                'AG' => 'Antigua-et-Barbuda',
-                                                                                'SA' => 'Arabie saoudite',
-                                                                                'AR' => 'Argentine',
-                                                                                'AM' => 'Arménie',
-                                                                                'AW' => 'Aruba',
-                                                                                'AU' => 'Australie',
-                                                                                'AT' => 'Autriche',
-                                                                                'AZ' => 'Azerbaïdjan',
-                                                                                'BS' => 'Bahamas',
-                                                                                'BH' => 'Bahreïn',
-                                                                                'BD' => 'Bangladesh',
-                                                                                'BB' => 'Barbade',
-                                                                                'BE' => 'Belgique',
-                                                                                'BZ' => 'Belize',
-                                                                                'BJ' => 'Bénin',
-                                                                                'BM' => 'Bermudes',
-                                                                                'BT' => 'Bhoutan',
-                                                                                'BY' => 'Biélorussie',
-                                                                                'BO' => 'Bolivie',
-                                                                                'BA' => 'Bosnie-Herzégovine',
-                                                                                'BW' => 'Botswana',
-                                                                                'BR' => 'Brésil',
-                                                                                'BN' => 'Brunéi Darussalam',
-                                                                                'BG' => 'Bulgarie',
-                                                                                'BF' => 'Burkina Faso',
-                                                                                'BI' => 'Burundi',
-                                                                                'KH' => 'Cambodge',
-                                                                                'CM' => 'Cameroun',
-                                                                                'CA' => 'Canada',
-                                                                                'CV' => 'Cap-Vert',
-                                                                                'CL' => 'Chili',
-                                                                                'CN' => 'Chine',
-                                                                                'CY' => 'Chypre',
-                                                                                'CO' => 'Colombie',
-                                                                                'KM' => 'Comores',
-                                                                                'CG' => 'Congo-Brazzaville',
-                                                                                'CD' => 'Congo-Kinshasa',
-                                                                                'KP' => 'Corée du Nord',
-                                                                                'KR' => 'Corée du Sud',
-                                                                                'CR' => 'Costa Rica',
-                                                                                'CI' => 'Côte d’Ivoire',
-                                                                                'HR' => 'Croatie',
-                                                                                'CU' => 'Cuba',
-                                                                                'CW' => 'Curaçao',
-                                                                                'DK' => 'Danemark',
-                                                                                'DJ' => 'Djibouti',
-                                                                                'DM' => 'Dominique',
-                                                                                'EG' => 'Égypte',
-                                                                                'AE' => 'Émirats arabes unis',
-                                                                                'EC' => 'Équateur',
-                                                                                'ER' => 'Érythrée',
-                                                                                'ES' => 'Espagne',
-                                                                                'EE' => 'Estonie',
-                                                                                'SZ' => 'Eswatini',
-                                                                                'VA' => 'État de la Cité du Vatican',
-                                                                                'FM' => 'États fédérés de Micronésie',
-                                                                                'US' => 'États-Unis',
-                                                                                'ET' => 'Éthiopie',
-                                                                                'FJ' => 'Fidji',
-                                                                                'FI' => 'Finlande',
-                                                                                'FR' => 'France',
-                                                                                'GA' => 'Gabon',
-                                                                                'GM' => 'Gambie',
-                                                                                'GE' => 'Géorgie',
-                                                                                'GS' => 'Géorgie du Sud et îles Sandwich du Sud',
-                                                                                'GH' => 'Ghana',
-                                                                                'GI' => 'Gibraltar',
-                                                                                'GR' => 'Grèce',
-                                                                                'GD' => 'Grenade',
-                                                                                'GL' => 'Groenland',
-                                                                                'GP' => 'Guadeloupe',
-                                                                                'GU' => 'Guam',
-                                                                                'GT' => 'Guatemala',
-                                                                                'GG' => 'Guernesey',
-                                                                                'GN' => 'Guinée',
-                                                                                'GQ' => 'Guinée équatoriale',
-                                                                                'GW' => 'Guinée-Bissau',
-                                                                                'GY' => 'Guyana',
-                                                                                'GF' => 'Guyane française',
-                                                                                'HT' => 'Haïti',
-                                                                                'HN' => 'Honduras',
-                                                                                'HU' => 'Hongrie',
-                                                                                'BV' => 'Île Bouvet',
-                                                                                'CX' => 'Île Christmas',
-                                                                                'IM' => 'Île de Man',
-                                                                                'NF' => 'Île Norfolk',
-                                                                                'AX' => 'Îles Åland',
-                                                                                'KY' => 'Îles Caïmans',
-                                                                                'CC' => 'Îles Cocos',
-                                                                                'CK' => 'Îles Cook',
-                                                                                'FO' => 'Îles Féroé',
-                                                                                'HM' => 'Îles Heard et McDonald',
-                                                                                'FK' => 'Îles Malouines',
-                                                                                'MP' => 'Îles Mariannes du Nord',
-                                                                                'MH' => 'Îles Marshall',
-                                                                                'UM' => 'Îles mineures éloignées des États-Unis',
-                                                                                'PN' => 'Îles Pitcairn',
-                                                                                'SB' => 'Îles Salomon',
-                                                                                'TC' => 'Îles Turques-et-Caïques',
-                                                                                'VG' => 'Îles Vierges britanniques',
-                                                                                'VI' => 'Îles Vierges des États-Unis',
-                                                                                'IN' => 'Inde',
-                                                                                'ID' => 'Indonésie',
-                                                                                'IQ' => 'Irak',
-                                                                                'IR' => 'Iran',
-                                                                                'IE' => 'Irlande',
-                                                                                'IS' => 'Islande',
-                                                                                'IL' => 'Israël',
-                                                                                'IT' => 'Italie',
-                                                                                'JM' => 'Jamaïque',
-                                                                                'JP' => 'Japon',
-                                                                                'JE' => 'Jersey',
-                                                                                'JO' => 'Jordanie',
-                                                                                'KZ' => 'Kazakhstan',
-                                                                                'KE' => 'Kenya',
-                                                                                'KG' => 'Kirghizistan',
-                                                                                'KI' => 'Kiribati',
-                                                                                'KW' => 'Koweït',
-                                                                                'RE' => 'La Réunion',
-                                                                                'LA' => 'Laos',
-                                                                                'LS' => 'Lesotho',
-                                                                                'LV' => 'Lettonie',
-                                                                                'LB' => 'Liban',
-                                                                                'LR' => 'Libéria',
-                                                                                'LY' => 'Libye',
-                                                                                'LI' => 'Liechtenstein',
-                                                                                'LT' => 'Lituanie',
-                                                                                'LU' => 'Luxembourg',
-                                                                                'MK' => 'Macédoine du Nord',
-                                                                                'MG' => 'Madagascar',
-                                                                                'MY' => 'Malaisie',
-                                                                                'MW' => 'Malawi',
-                                                                                'MV' => 'Maldives',
-                                                                                'ML' => 'Mali',
-                                                                                'MT' => 'Malte',
-                                                                                'MA' => 'Maroc',
-                                                                                'MQ' => 'Martinique',
-                                                                                'MU' => 'Maurice',
-                                                                                'MR' => 'Mauritanie',
-                                                                                'YT' => 'Mayotte',
-                                                                                'MX' => 'Mexique',
-                                                                                'MD' => 'Moldavie',
-                                                                                'MC' => 'Monaco',
-                                                                                'MN' => 'Mongolie',
-                                                                                'ME' => 'Monténégro',
-                                                                                'MS' => 'Montserrat',
-                                                                                'MZ' => 'Mozambique',
-                                                                                'MM' => 'Myanmar (Birmanie)',
-                                                                                'NA' => 'Namibie',
-                                                                                'NR' => 'Nauru',
-                                                                                'NP' => 'Népal',
-                                                                                'NI' => 'Nicaragua',
-                                                                                'NE' => 'Niger',
-                                                                                'NG' => 'Nigéria',
-                                                                                'NU' => 'Niue',
-                                                                                'NO' => 'Norvège',
-                                                                                'NC' => 'Nouvelle-Calédonie',
-                                                                                'NZ' => 'Nouvelle-Zélande',
-                                                                                'OM' => 'Oman',
-                                                                                'UG' => 'Ouganda',
-                                                                                'UZ' => 'Ouzbékistan',
-                                                                                'PK' => 'Pakistan',
-                                                                                'PW' => 'Palaos',
-                                                                                'PA' => 'Panama',
-                                                                                'PG' => 'Papouasie-Nouvelle-Guinée',
-                                                                                'PY' => 'Paraguay',
-                                                                                'NL' => 'Pays-Bas',
-                                                                                'BQ' => 'Pays-Bas caribéens',
-                                                                                'PE' => 'Pérou',
-                                                                                'PH' => 'Philippines',
-                                                                                'PL' => 'Pologne',
-                                                                                'PF' => 'Polynésie française',
-                                                                                'PR' => 'Porto Rico',
-                                                                                'PT' => 'Portugal',
-                                                                                'QA' => 'Qatar',
-                                                                                'HK' => 'R.A.S. chinoise de Hong Kong',
-                                                                                'MO' => 'R.A.S. chinoise de Macao',
-                                                                                'CF' => 'République centrafricaine',
-                                                                                'DO' => 'République dominicaine',
-                                                                                'RO' => 'Roumanie',
-                                                                                'GB' => 'Royaume-Uni',
-                                                                                'RU' => 'Russie',
-                                                                                'RW' => 'Rwanda',
-                                                                                'EH' => 'Sahara occidental',
-                                                                                'BL' => 'Saint-Barthélemy',
-                                                                                'KN' => 'Saint-Christophe-et-Niévès',
-                                                                                'SM' => 'Saint-Marin',
-                                                                                'MF' => 'Saint-Martin',
-                                                                                'SX' => 'Saint-Martin (partie néerlandaise)',
-                                                                                'PM' => 'Saint-Pierre-et-Miquelon',
-                                                                                'VC' => 'Saint-Vincent-et-les-Grenadines',
-                                                                                'SH' => 'Sainte-Hélène',
-                                                                                'LC' => 'Sainte-Lucie',
-                                                                                'SV' => 'Salvador',
-                                                                                'WS' => 'Samoa',
-                                                                                'AS' => 'Samoa américaines',
-                                                                                'ST' => 'Sao Tomé-et-Principe',
-                                                                                'SN' => 'Sénégal',
-                                                                                'RS' => 'Serbie',
-                                                                                'SC' => 'Seychelles',
-                                                                                'SL' => 'Sierra Leone',
-                                                                                'SG' => 'Singapour',
-                                                                                'SK' => 'Slovaquie',
-                                                                                'SI' => 'Slovénie',
-                                                                                'SO' => 'Somalie',
-                                                                                'SD' => 'Soudan',
-                                                                                'SS' => 'Soudan du Sud',
-                                                                                'LK' => 'Sri Lanka',
-                                                                                'SE' => 'Suède',
-                                                                                'CH' => 'Suisse',
-                                                                                'SR' => 'Suriname',
-                                                                                'SJ' => 'Svalbard et Jan Mayen',
-                                                                                'SY' => 'Syrie',
-                                                                                'TJ' => 'Tadjikistan',
-                                                                                'TW' => 'Taïwan',
-                                                                                'TZ' => 'Tanzanie',
-                                                                                'TD' => 'Tchad',
-                                                                                'CZ' => 'Tchéquie',
-                                                                                'TF' => 'Terres australes françaises',
-                                                                                'IO' => 'Territoire britannique de l’océan Indien',
-                                                                                'PS' => 'Territoires palestiniens',
-                                                                                'TH' => 'Thaïlande',
-                                                                                'TL' => 'Timor oriental',
-                                                                                'TG' => 'Togo',
-                                                                                'TK' => 'Tokelau',
-                                                                                'TO' => 'Tonga',
-                                                                                'TT' => 'Trinité-et-Tobago',
-                                                                                'TN' => 'Tunisie',
-                                                                                'TM' => 'Turkménistan',
-                                                                                'TR' => 'Turquie',
-                                                                                'TV' => 'Tuvalu',
-                                                                                'UA' => 'Ukraine',
-                                                                                'UY' => 'Uruguay',
-                                                                                'VU' => 'Vanuatu',
-                                                                                'VE' => 'Venezuela',
-                                                                                'VN' => 'Vietnam',
-                                                                                'WF' => 'Wallis-et-Futuna',
-                                                                                'YE' => 'Yémen',
-                                                                                'ZM' => 'Zambie',
-                                                                                'ZW' => 'Zimbabwe',
-                                                                            ];
-                                                                            echo $countries[$courses[0]->teams_country];
-                                                                        @endphp
+                                                            <h6 class="font-13 text-gray mt-0 font-10">
+                                                                @if (App::isLocale('en'))
+                                                                    {{ $courses[0]->teams_statut_en }}
+                                                                @else
+                                                                    {{ $courses[0]->teams_statut }}
+                                                                @endif
+                                                            </h6>
+                                                            <h6 class="font-13 text-gray mt-0 font-10">
+                                                                @if (App::isLocale('en'))
+                                                                    {{ $courses[0]->teams_poste_en }}
+                                                                @else
+                                                                    {{ $courses[0]->teams_poste }}
+                                                                @endif
+                                                            </h6>
+                                                            <h6 class="font-13 text-gray mt-0 font-10">
+                                                                {{ $courses[0]->teams_etablissement }}
+                                                            </h6>
+                                                            <ul class="list-inline mt-15">
+
+                                                                @if (isset($courses[0]->teams_country))
+                                                                    <li class="m-0 pr-10" style="width:100%;">
+                                                                        <i
+                                                                            class="pe-7s-global font-16  text-theme-colored2 mr-5"></i>
+                                                                        <a class="text-gray font-12" href="#">
+                                                                            @php
+                                                                                $countries = [
+                                                                                    'AF' => 'Afghanistan',
+                                                                                    'ZA' => 'Afrique du Sud',
+                                                                                    'AL' => 'Albanie',
+                                                                                    'DZ' => 'Algérie',
+                                                                                    'DE' => 'Allemagne',
+                                                                                    'AD' => 'Andorre',
+                                                                                    'AO' => 'Angola',
+                                                                                    'AI' => 'Anguilla',
+                                                                                    'AQ' => 'Antarctique',
+                                                                                    'AG' => 'Antigua-et-Barbuda',
+                                                                                    'SA' => 'Arabie saoudite',
+                                                                                    'AR' => 'Argentine',
+                                                                                    'AM' => 'Arménie',
+                                                                                    'AW' => 'Aruba',
+                                                                                    'AU' => 'Australie',
+                                                                                    'AT' => 'Autriche',
+                                                                                    'AZ' => 'Azerbaïdjan',
+                                                                                    'BS' => 'Bahamas',
+                                                                                    'BH' => 'Bahreïn',
+                                                                                    'BD' => 'Bangladesh',
+                                                                                    'BB' => 'Barbade',
+                                                                                    'BE' => 'Belgique',
+                                                                                    'BZ' => 'Belize',
+                                                                                    'BJ' => 'Bénin',
+                                                                                    'BM' => 'Bermudes',
+                                                                                    'BT' => 'Bhoutan',
+                                                                                    'BY' => 'Biélorussie',
+                                                                                    'BO' => 'Bolivie',
+                                                                                    'BA' => 'Bosnie-Herzégovine',
+                                                                                    'BW' => 'Botswana',
+                                                                                    'BR' => 'Brésil',
+                                                                                    'BN' => 'Brunéi Darussalam',
+                                                                                    'BG' => 'Bulgarie',
+                                                                                    'BF' => 'Burkina Faso',
+                                                                                    'BI' => 'Burundi',
+                                                                                    'KH' => 'Cambodge',
+                                                                                    'CM' => 'Cameroun',
+                                                                                    'CA' => 'Canada',
+                                                                                    'CV' => 'Cap-Vert',
+                                                                                    'CL' => 'Chili',
+                                                                                    'CN' => 'Chine',
+                                                                                    'CY' => 'Chypre',
+                                                                                    'CO' => 'Colombie',
+                                                                                    'KM' => 'Comores',
+                                                                                    'CG' => 'Congo-Brazzaville',
+                                                                                    'CD' => 'Congo-Kinshasa',
+                                                                                    'KP' => 'Corée du Nord',
+                                                                                    'KR' => 'Corée du Sud',
+                                                                                    'CR' => 'Costa Rica',
+                                                                                    'CI' => 'Côte d’Ivoire',
+                                                                                    'HR' => 'Croatie',
+                                                                                    'CU' => 'Cuba',
+                                                                                    'CW' => 'Curaçao',
+                                                                                    'DK' => 'Danemark',
+                                                                                    'DJ' => 'Djibouti',
+                                                                                    'DM' => 'Dominique',
+                                                                                    'EG' => 'Égypte',
+                                                                                    'AE' => 'Émirats arabes unis',
+                                                                                    'EC' => 'Équateur',
+                                                                                    'ER' => 'Érythrée',
+                                                                                    'ES' => 'Espagne',
+                                                                                    'EE' => 'Estonie',
+                                                                                    'SZ' => 'Eswatini',
+                                                                                    'VA' => 'État de la Cité du Vatican',
+                                                                                    'FM' => 'États fédérés de Micronésie',
+                                                                                    'US' => 'États-Unis',
+                                                                                    'ET' => 'Éthiopie',
+                                                                                    'FJ' => 'Fidji',
+                                                                                    'FI' => 'Finlande',
+                                                                                    'FR' => 'France',
+                                                                                    'GA' => 'Gabon',
+                                                                                    'GM' => 'Gambie',
+                                                                                    'GE' => 'Géorgie',
+                                                                                    'GS' => 'Géorgie du Sud et îles Sandwich du Sud',
+                                                                                    'GH' => 'Ghana',
+                                                                                    'GI' => 'Gibraltar',
+                                                                                    'GR' => 'Grèce',
+                                                                                    'GD' => 'Grenade',
+                                                                                    'GL' => 'Groenland',
+                                                                                    'GP' => 'Guadeloupe',
+                                                                                    'GU' => 'Guam',
+                                                                                    'GT' => 'Guatemala',
+                                                                                    'GG' => 'Guernesey',
+                                                                                    'GN' => 'Guinée',
+                                                                                    'GQ' => 'Guinée équatoriale',
+                                                                                    'GW' => 'Guinée-Bissau',
+                                                                                    'GY' => 'Guyana',
+                                                                                    'GF' => 'Guyane française',
+                                                                                    'HT' => 'Haïti',
+                                                                                    'HN' => 'Honduras',
+                                                                                    'HU' => 'Hongrie',
+                                                                                    'BV' => 'Île Bouvet',
+                                                                                    'CX' => 'Île Christmas',
+                                                                                    'IM' => 'Île de Man',
+                                                                                    'NF' => 'Île Norfolk',
+                                                                                    'AX' => 'Îles Åland',
+                                                                                    'KY' => 'Îles Caïmans',
+                                                                                    'CC' => 'Îles Cocos',
+                                                                                    'CK' => 'Îles Cook',
+                                                                                    'FO' => 'Îles Féroé',
+                                                                                    'HM' => 'Îles Heard et McDonald',
+                                                                                    'FK' => 'Îles Malouines',
+                                                                                    'MP' => 'Îles Mariannes du Nord',
+                                                                                    'MH' => 'Îles Marshall',
+                                                                                    'UM' => 'Îles mineures éloignées des États-Unis',
+                                                                                    'PN' => 'Îles Pitcairn',
+                                                                                    'SB' => 'Îles Salomon',
+                                                                                    'TC' => 'Îles Turques-et-Caïques',
+                                                                                    'VG' => 'Îles Vierges britanniques',
+                                                                                    'VI' => 'Îles Vierges des États-Unis',
+                                                                                    'IN' => 'Inde',
+                                                                                    'ID' => 'Indonésie',
+                                                                                    'IQ' => 'Irak',
+                                                                                    'IR' => 'Iran',
+                                                                                    'IE' => 'Irlande',
+                                                                                    'IS' => 'Islande',
+                                                                                    'IL' => 'Israël',
+                                                                                    'IT' => 'Italie',
+                                                                                    'JM' => 'Jamaïque',
+                                                                                    'JP' => 'Japon',
+                                                                                    'JE' => 'Jersey',
+                                                                                    'JO' => 'Jordanie',
+                                                                                    'KZ' => 'Kazakhstan',
+                                                                                    'KE' => 'Kenya',
+                                                                                    'KG' => 'Kirghizistan',
+                                                                                    'KI' => 'Kiribati',
+                                                                                    'KW' => 'Koweït',
+                                                                                    'RE' => 'La Réunion',
+                                                                                    'LA' => 'Laos',
+                                                                                    'LS' => 'Lesotho',
+                                                                                    'LV' => 'Lettonie',
+                                                                                    'LB' => 'Liban',
+                                                                                    'LR' => 'Libéria',
+                                                                                    'LY' => 'Libye',
+                                                                                    'LI' => 'Liechtenstein',
+                                                                                    'LT' => 'Lituanie',
+                                                                                    'LU' => 'Luxembourg',
+                                                                                    'MK' => 'Macédoine du Nord',
+                                                                                    'MG' => 'Madagascar',
+                                                                                    'MY' => 'Malaisie',
+                                                                                    'MW' => 'Malawi',
+                                                                                    'MV' => 'Maldives',
+                                                                                    'ML' => 'Mali',
+                                                                                    'MT' => 'Malte',
+                                                                                    'MA' => 'Maroc',
+                                                                                    'MQ' => 'Martinique',
+                                                                                    'MU' => 'Maurice',
+                                                                                    'MR' => 'Mauritanie',
+                                                                                    'YT' => 'Mayotte',
+                                                                                    'MX' => 'Mexique',
+                                                                                    'MD' => 'Moldavie',
+                                                                                    'MC' => 'Monaco',
+                                                                                    'MN' => 'Mongolie',
+                                                                                    'ME' => 'Monténégro',
+                                                                                    'MS' => 'Montserrat',
+                                                                                    'MZ' => 'Mozambique',
+                                                                                    'MM' => 'Myanmar (Birmanie)',
+                                                                                    'NA' => 'Namibie',
+                                                                                    'NR' => 'Nauru',
+                                                                                    'NP' => 'Népal',
+                                                                                    'NI' => 'Nicaragua',
+                                                                                    'NE' => 'Niger',
+                                                                                    'NG' => 'Nigéria',
+                                                                                    'NU' => 'Niue',
+                                                                                    'NO' => 'Norvège',
+                                                                                    'NC' => 'Nouvelle-Calédonie',
+                                                                                    'NZ' => 'Nouvelle-Zélande',
+                                                                                    'OM' => 'Oman',
+                                                                                    'UG' => 'Ouganda',
+                                                                                    'UZ' => 'Ouzbékistan',
+                                                                                    'PK' => 'Pakistan',
+                                                                                    'PW' => 'Palaos',
+                                                                                    'PA' => 'Panama',
+                                                                                    'PG' => 'Papouasie-Nouvelle-Guinée',
+                                                                                    'PY' => 'Paraguay',
+                                                                                    'NL' => 'Pays-Bas',
+                                                                                    'BQ' => 'Pays-Bas caribéens',
+                                                                                    'PE' => 'Pérou',
+                                                                                    'PH' => 'Philippines',
+                                                                                    'PL' => 'Pologne',
+                                                                                    'PF' => 'Polynésie française',
+                                                                                    'PR' => 'Porto Rico',
+                                                                                    'PT' => 'Portugal',
+                                                                                    'QA' => 'Qatar',
+                                                                                    'HK' => 'R.A.S. chinoise de Hong Kong',
+                                                                                    'MO' => 'R.A.S. chinoise de Macao',
+                                                                                    'CF' => 'République centrafricaine',
+                                                                                    'DO' => 'République dominicaine',
+                                                                                    'RO' => 'Roumanie',
+                                                                                    'GB' => 'Royaume-Uni',
+                                                                                    'RU' => 'Russie',
+                                                                                    'RW' => 'Rwanda',
+                                                                                    'EH' => 'Sahara occidental',
+                                                                                    'BL' => 'Saint-Barthélemy',
+                                                                                    'KN' => 'Saint-Christophe-et-Niévès',
+                                                                                    'SM' => 'Saint-Marin',
+                                                                                    'MF' => 'Saint-Martin',
+                                                                                    'SX' => 'Saint-Martin (partie néerlandaise)',
+                                                                                    'PM' => 'Saint-Pierre-et-Miquelon',
+                                                                                    'VC' => 'Saint-Vincent-et-les-Grenadines',
+                                                                                    'SH' => 'Sainte-Hélène',
+                                                                                    'LC' => 'Sainte-Lucie',
+                                                                                    'SV' => 'Salvador',
+                                                                                    'WS' => 'Samoa',
+                                                                                    'AS' => 'Samoa américaines',
+                                                                                    'ST' => 'Sao Tomé-et-Principe',
+                                                                                    'SN' => 'Sénégal',
+                                                                                    'RS' => 'Serbie',
+                                                                                    'SC' => 'Seychelles',
+                                                                                    'SL' => 'Sierra Leone',
+                                                                                    'SG' => 'Singapour',
+                                                                                    'SK' => 'Slovaquie',
+                                                                                    'SI' => 'Slovénie',
+                                                                                    'SO' => 'Somalie',
+                                                                                    'SD' => 'Soudan',
+                                                                                    'SS' => 'Soudan du Sud',
+                                                                                    'LK' => 'Sri Lanka',
+                                                                                    'SE' => 'Suède',
+                                                                                    'CH' => 'Suisse',
+                                                                                    'SR' => 'Suriname',
+                                                                                    'SJ' => 'Svalbard et Jan Mayen',
+                                                                                    'SY' => 'Syrie',
+                                                                                    'TJ' => 'Tadjikistan',
+                                                                                    'TW' => 'Taïwan',
+                                                                                    'TZ' => 'Tanzanie',
+                                                                                    'TD' => 'Tchad',
+                                                                                    'CZ' => 'Tchéquie',
+                                                                                    'TF' => 'Terres australes françaises',
+                                                                                    'IO' => 'Territoire britannique de l’océan Indien',
+                                                                                    'PS' => 'Territoires palestiniens',
+                                                                                    'TH' => 'Thaïlande',
+                                                                                    'TL' => 'Timor oriental',
+                                                                                    'TG' => 'Togo',
+                                                                                    'TK' => 'Tokelau',
+                                                                                    'TO' => 'Tonga',
+                                                                                    'TT' => 'Trinité-et-Tobago',
+                                                                                    'TN' => 'Tunisie',
+                                                                                    'TM' => 'Turkménistan',
+                                                                                    'TR' => 'Turquie',
+                                                                                    'TV' => 'Tuvalu',
+                                                                                    'UA' => 'Ukraine',
+                                                                                    'UY' => 'Uruguay',
+                                                                                    'VU' => 'Vanuatu',
+                                                                                    'VE' => 'Venezuela',
+                                                                                    'VN' => 'Vietnam',
+                                                                                    'WF' => 'Wallis-et-Futuna',
+                                                                                    'YE' => 'Yémen',
+                                                                                    'ZM' => 'Zambie',
+                                                                                    'ZW' => 'Zimbabwe',
+                                                                                ];
+                                                                                echo $countries[$courses[0]->teams_country];
+                                                                            @endphp
 
 
-                                                                    </a>
+                                                                        </a>
+                                                                    </li>
+                                                                @endif
+                                                                <br>
+                                                                @if (isset($courses[0]->teams_phone))
+                                                                    <li class="m-0 pr-10"> <i
+                                                                            class="fa fa-phone text-theme-colored2 mr-5"></i>
+                                                                        <a class="text-gray font-12"
+                                                                            href="#">{{ $courses[0]->teams_phone }}</a>
+                                                                    </li>
+                                                                @endif
+                                                                <br>
+                                                                @if (isset($courses[0]->teams_email))
+                                                                    <li class="m-0 pr-10"> <i
+                                                                            class="fa fa-envelope-o text-theme-colored2 mr-5"></i>
+                                                                        <a class="text-gray font-12"
+                                                                            href="mailto:{{ $courses[0]->teams_email }}">{{ $courses[0]->teams_email }}</a>
+                                                                    </li>
+                                                                @endif
+                                                            </ul>
+                                                            <ul
+                                                                class="styled-icons icon-sm icon-dark icon-theme-colored2 mt-15">
+                                                                <li><a href="#" style="pointer-events:none;"><i
+                                                                            class="fa fa-facebook"></i></a>
                                                                 </li>
-                                                            @endif
-                                                            <br>
-                                                            @if (isset($courses[0]->teams_phone))
-                                                                <li class="m-0 pr-10"> <i
-                                                                        class="fa fa-phone text-theme-colored2 mr-5"></i>
-                                                                    <a class="text-gray font-12"
-                                                                        href="#">{{ $courses[0]->teams_phone }}</a>
+                                                                <li><a href="#" style="pointer-events:none;"><i
+                                                                            class="fa fa-twitter"></i></a>
                                                                 </li>
-                                                            @endif
-                                                            <br>
-                                                            @if (isset($courses[0]->teams_email))
-                                                                <li class="m-0 pr-10"> <i
-                                                                        class="fa fa-envelope-o text-theme-colored2 mr-5"></i>
-                                                                    <a class="text-gray font-12"
-                                                                        href="mailto:{{ $courses[0]->teams_email }}">{{ $courses[0]->teams_email }}</a>
+                                                                <li><a href="#" style="pointer-events:none;"><i
+                                                                            class="fa fa-vk"></i></a>
                                                                 </li>
-                                                            @endif
-                                                        </ul>
-                                                        <ul
-                                                            class="styled-icons icon-sm icon-dark icon-theme-colored2 mt-15">
-                                                            <li><a href="#" style="pointer-events:none;"><i
-                                                                        class="fa fa-facebook"></i></a>
-                                                            </li>
-                                                            <li><a href="#" style="pointer-events:none;"><i
-                                                                        class="fa fa-twitter"></i></a>
-                                                            </li>
-                                                            <li><a href="#" style="pointer-events:none;"><i
-                                                                        class="fa fa-vk"></i></a>
-                                                            </li>
-                                                            <li><a href="#" style="pointer-events:none;"><i
-                                                                        class="fa fa-instagram"></i></a>
-                                                            </li>
-                                                            <li><a href="#" style="pointer-events:none;"><i
-                                                                        class="fa fa-google-plus"></i></a>
-                                                            </li>
-                                                        </ul>
+                                                                <li><a href="#" style="pointer-events:none;"><i
+                                                                            class="fa fa-instagram"></i></a>
+                                                                </li>
+                                                                <li><a href="#" style="pointer-events:none;"><i
+                                                                            class="fa fa-google-plus"></i></a>
+                                                                </li>
+                                                            </ul>
+                                                        </div>
                                                     </div>
-                                                </div>
                                                 @endif
                                             </div>
 
@@ -1673,6 +1694,7 @@
                                                             <div class="accordion-item active">
                                                                 <div class="accordion-header "
                                                                     style="display:flex; justify-content:space-between;font-weight:bold;">
+
                                                                     @if ($program->title)
                                                                         <p>
                                                                             {{ $program->title }}
@@ -1747,90 +1769,101 @@
                                                 <div class="row">
                                                     <div class="col-md-12">
                                                         <div class="blog-posts single-post">
-                                                            <div class="comments-area">
-                                                                @if ($course->grade)
-                                                                    <ul class="comment-list">
-                                                                        <li>
-                                                                            <div class="media comment-author"> <a
-                                                                                    class="media-left pull-left flip"
-                                                                                    href="#"><img
-                                                                                        class="img-thumbnail"
-                                                                                        src="images/blog/comment1.jpg"
-                                                                                        alt=""></a>
-                                                                                <div class="media-body">
+                                                            @if ($course->grade != '<p>.</p>')
+                                                                <div class="comments-area">
+                                                                    @if ($course->grade)
+                                                                        <ul class="comment-list">
+                                                                            <li>
+                                                                                <div class="media comment-author"> <a
+                                                                                        class="media-left pull-left flip"
+                                                                                        href="#"><img
+                                                                                            class="img-thumbnail"
+                                                                                            src="images/blog/comment1.jpg"
+                                                                                            alt=""></a>
+                                                                                    <div class="media-body">
 
 
-                                                                                    <h5 class=" @if (!isset($design->size)) media-heading comment-heading  font-16 @else media-heading comment-heading @endif "
-                                                                                        style=" @if (isset($design->color)) color:{{ $design->color }}; @endif  @if (isset($design->size)) font-size:{{ $design->size }}; @endif">
-                                                                                        {{ __('course.title1') }}
-                                                                                    </h5>
+                                                                                        <h5 class=" @if (!isset($design->size)) media-heading comment-heading  font-16 @else media-heading comment-heading @endif "
+                                                                                            style=" @if (isset($design->color)) color:{{ $design->color }}; @endif  @if (isset($design->size)) font-size:{{ $design->size }}; @endif">
+                                                                                            {{ __('course.title1') }}
+                                                                                        </h5>
 
-                                                                                    <div class="comment-date"
-                                                                                        style="font-size:16px;text-align:justify;hyphens:auto;">
-                                                                                        {!! $course->grade !!}</div>
+                                                                                        <div class="comment-date"
+                                                                                            style="font-size:16px;text-align:justify;hyphens:auto;">
+                                                                                            {!! $course->grade !!}
+                                                                                        </div>
+                                                                                    </div>
                                                                                 </div>
-                                                                            </div>
-                                                                        </li>
+                                                                            </li>
+                                                                        </ul>
+                                                                    @endif
+                                                                </div>
+                                                            @endif
+
+                                                            @if ($course->profile != '<p>.</p>')
+                                                                <div class="comments-area">
+                                                                    @if ($course->profile)
+                                                                        <ul class="comment-list">
+                                                                            <li>
+                                                                                <div class="media comment-author"> <a
+                                                                                        class="media-left pull-left flip"
+                                                                                        href="#"><img
+                                                                                            class="img-thumbnail"
+                                                                                            src="images/blog/comment1.jpg"
+                                                                                            alt=""></a>
+                                                                                    <div class="media-body">
+
+
+                                                                                        <h5 class=" @if (!isset($design->size)) media-heading comment-heading  font-16 @else media-heading comment-heading @endif "
+                                                                                            style=" @if (isset($design->color)) color:{{ $design->color }}; @endif  @if (isset($design->size)) font-size:{{ $design->size }}; @endif">
+                                                                                            {{ __('course.subtitle11') }}
+                                                                                        </h5>
+
+                                                                                        <div class="comment-date"
+                                                                                            style="font-size:16px;text-align:justify;hyphens:auto;">
+                                                                                            {!! $course->profile !!}
+                                                                                        </div>
+                                                                                    </div>
+                                                                                </div>
+                                                                            </li>
+                                                                    @endif
                                                                     </ul>
-                                                                @endif
-                                                            </div>
-                                                            <div class="comments-area">
-                                                                @if ($course->profile)
-                                                                    <ul class="comment-list">
-                                                                        <li>
-                                                                            <div class="media comment-author"> <a
-                                                                                    class="media-left pull-left flip"
-                                                                                    href="#"><img
-                                                                                        class="img-thumbnail"
-                                                                                        src="images/blog/comment1.jpg"
-                                                                                        alt=""></a>
-                                                                                <div class="media-body">
+                                                                </div>
+                                                            @endif
+                                                            @if ($course->opportunity != '<p>.</p>')
+                                                                <div class="comments-area">
+                                                                    @if ($course->opportunity)
+                                                                        <ul class="comment-list">
+                                                                            <li>
+                                                                                <div class="media comment-author"> <a
+                                                                                        class="media-left pull-left flip"
+                                                                                        href="#"><img
+                                                                                            class="img-thumbnail"
+                                                                                            src="images/blog/comment1.jpg"
+                                                                                            alt=""></a>
+                                                                                    <div class="media-body">
 
 
-                                                                                    <h5 class=" @if (!isset($design->size)) media-heading comment-heading  font-16 @else media-heading comment-heading @endif "
-                                                                                        style=" @if (isset($design->color)) color:{{ $design->color }}; @endif  @if (isset($design->size)) font-size:{{ $design->size }}; @endif">
-                                                                                        {{ __('course.subtitle11') }}
-                                                                                    </h5>
+                                                                                        <h5 class=" @if (!isset($design->size)) media-heading comment-heading  font-16 @else media-heading comment-heading @endif "
+                                                                                            style=" @if (isset($design->color)) color:{{ $design->color }}; @endif  @if (isset($design->size)) font-size:{{ $design->size }}; @endif">
+                                                                                            {{ __('course.subtitle12') }}
+                                                                                        </h5>
 
-                                                                                    <div class="comment-date"
-                                                                                        style="font-size:16px;text-align:justify;hyphens:auto;">
-                                                                                        {!! $course->profile !!}</div>
+                                                                                        <div class="comment-date"
+                                                                                            style="font-size:16px;text-align:justify;hyphens:auto;">
+                                                                                            {!! $course->opportunity !!}
+                                                                                        </div>
+                                                                                    </div>
                                                                                 </div>
-                                                                            </div>
-                                                                        </li>
-                                                                @endif
-                                                                </ul>
-                                                            </div>
-                                                            <div class="comments-area">
-                                                                @if ($course->opportunity)
-                                                                    <ul class="comment-list">
-                                                                        <li>
-                                                                            <div class="media comment-author"> <a
-                                                                                    class="media-left pull-left flip"
-                                                                                    href="#"><img
-                                                                                        class="img-thumbnail"
-                                                                                        src="images/blog/comment1.jpg"
-                                                                                        alt=""></a>
-                                                                                <div class="media-body">
-
-
-                                                                                    <h5 class=" @if (!isset($design->size)) media-heading comment-heading  font-16 @else media-heading comment-heading @endif "
-                                                                                        style=" @if (isset($design->color)) color:{{ $design->color }}; @endif  @if (isset($design->size)) font-size:{{ $design->size }}; @endif">
-                                                                                        {{ __('course.subtitle12') }}
-                                                                                    </h5>
-
-                                                                                    <div class="comment-date"
-                                                                                        style="font-size:16px;text-align:justify;hyphens:auto;">
-                                                                                        {!! $course->opportunity !!}</div>
-                                                                                </div>
-                                                                            </div>
-                                                                        </li>
+                                                                            </li>
 
 
 
-                                                                    </ul>
-                                                                @endif
-                                                            </div>
+                                                                        </ul>
+                                                                    @endif
+                                                                </div>
+                                                            @endif
+
 
                                                         </div>
                                                     </div>
@@ -2351,7 +2384,9 @@
 
                                 <div class="hidden-box"
                                     style="margin-top:-30px;padding-left:10px;padding-right:10px;">
-                                    <div style="text-align:justify;hyphens:auto;"> {!! $course->description !!}</div>
+                                    @if ($course->description != '<p>.</p>')
+                                        <div style="text-align:justify;hyphens:auto;"> {!! $course->description !!}</div>
+                                    @endif
                                     <ul>
                                         @if ($course->duration)
                                             <li> <i
@@ -2405,35 +2440,41 @@
                                     <div class="container" style="margin-top:-30px;">
                                         <div class="row">
 
-                                            @if (isset($course->admission))
-                                                <div>
-                                                    <h5 class=" @if (!isset($design->size)) font-20 @endif "
-                                                        style="  @if (isset($design->color)) color:{{ $design->color }}; @endif  @if (isset($design->size)) font-size:{{ $design->size }}; @endif">
-                                                        {{ __('course.subtitle3') }} </h5>
-                                                    <div class="font-16"
-                                                        style="text-align:justify;hyphens:auto;font-size:16px;padding-right:10px;padding-left:10px;">
-                                                        {!! $course->admission !!}</div>
-                                                </div>
+                                            @if ($course->admission != '<p>.</p>')
+                                                @if (isset($course->admission))
+                                                    <div>
+                                                        <h5 class=" @if (!isset($design->size)) font-20 @endif "
+                                                            style="  @if (isset($design->color)) color:{{ $design->color }}; @endif  @if (isset($design->size)) font-size:{{ $design->size }}; @endif">
+                                                            {{ __('course.subtitle3') }} </h5>
+                                                        <div class="font-16"
+                                                            style="text-align:justify;hyphens:auto;font-size:16px;padding-right:10px;padding-left:10px;">
+                                                            {!! $course->admission !!}</div>
+                                                    </div>
+                                                @endif
                                             @endif
-                                            @if (isset($course->dossier))
-                                                <div>
-                                                    <h5 class=" @if (!isset($design->size)) font-20 @endif "
-                                                        style="  @if (isset($design->color)) color:{{ $design->color }}; @endif  @if (isset($design->size)) font-size:{{ $design->size }}; @endif">
-                                                        {{ __('course.subtitle4') }} </h5>
-                                                    <div class="font-16"
-                                                        style="text-align:justify;hyphens:auto;font-size:16px;padding-right:10px;padding-left:10px;">
-                                                        {!! $course->dossier !!}</div>
-                                                </div>
+                                            @if ($course->dossier != '<p>.</p>')
+                                                @if (isset($course->dossier))
+                                                    <div>
+                                                        <h5 class=" @if (!isset($design->size)) font-20 @endif "
+                                                            style="  @if (isset($design->color)) color:{{ $design->color }}; @endif  @if (isset($design->size)) font-size:{{ $design->size }}; @endif">
+                                                            {{ __('course.subtitle4') }} </h5>
+                                                        <div class="font-16"
+                                                            style="text-align:justify;hyphens:auto;font-size:16px;padding-right:10px;padding-left:10px;">
+                                                            {!! $course->dossier !!}</div>
+                                                    </div>
+                                                @endif
                                             @endif
                                             @if (isset($course->candidature))
-                                                <div>
-                                                    <h5 class=" @if (!isset($design->size)) font-20 @endif "
-                                                        style="  @if (isset($design->color)) color:{{ $design->color }}; @endif  @if (isset($design->size)) font-size:{{ $design->size }}; @endif">
-                                                        {{ __('course.subtitle5') }}</h5>
-                                                    <div class="font-16"
-                                                        style="text-align:justify;hyphens:auto;font-size:16px;padding-right:10px;padding-left:10px;">
-                                                        {!! $course->candidature !!}</div>
-                                                </div>
+                                                @if ($course->candidature != '<p>.</p>')
+                                                    <div>
+                                                        <h5 class=" @if (!isset($design->size)) font-20 @endif "
+                                                            style="  @if (isset($design->color)) color:{{ $design->color }}; @endif  @if (isset($design->size)) font-size:{{ $design->size }}; @endif">
+                                                            {{ __('course.subtitle5') }}</h5>
+                                                        <div class="font-16"
+                                                            style="text-align:justify;hyphens:auto;font-size:16px;padding-right:10px;padding-left:10px;">
+                                                            {!! $course->candidature !!}</div>
+                                                    </div>
+                                                @endif
                                             @endif
                                             @if (isset($course->datelimite))
                                                 <div>
@@ -2446,14 +2487,16 @@
                                                 </div>
                                             @endif
                                             @if (isset($course->selection))
-                                                <div>
-                                                    <h5 class=" @if (!isset($design->size)) font-20 @endif "
-                                                        style="  @if (isset($design->color)) color:{{ $design->color }}; @endif  @if (isset($design->size)) font-size:{{ $design->size }}; @endif">
-                                                        {{ __('course.subtitle7') }}</h5>
-                                                    <div class="font-16"
-                                                        style="text-align:justify;hyphens:auto;font-size:16px;padding-right:10px;padding-left:10px;">
-                                                        {!! $course->selection !!}</div>
-                                                </div>
+                                                @if ($course->selection != '<p>.</p>')
+                                                    <div>
+                                                        <h5 class=" @if (!isset($design->size)) font-20 @endif "
+                                                            style="  @if (isset($design->color)) color:{{ $design->color }}; @endif  @if (isset($design->size)) font-size:{{ $design->size }}; @endif">
+                                                            {{ __('course.subtitle7') }}</h5>
+                                                        <div class="font-16"
+                                                            style="text-align:justify;hyphens:auto;font-size:16px;padding-right:10px;padding-left:10px;">
+                                                            {!! $course->selection !!}</div>
+                                                    </div>
+                                                @endif
                                             @endif
                                             @if (isset($course->daterentre))
                                                 <div>
@@ -2532,34 +2575,40 @@
 
                                         <div class="row">
                                             @if (isset($course->grade))
-                                                <div>
-                                                    <h5 class=" @if (!isset($design->size)) font-20 @endif "
-                                                        style="  @if (isset($design->color)) color:{{ $design->color }}; @endif  @if (isset($design->size)) font-size:{{ $design->size }}; @endif">
-                                                        {{ __('course.title1') }}</h5>
-                                                    <div class="font-16"
-                                                        style=" text-align:justify;hyphens:auto;font-size:16px;padding-right:10px;padding-left:10px;">
-                                                        {!! $course->grade !!}</div>
-                                                </div>
+                                                @if ($course->grade != '<p>.</p>')
+                                                    <div>
+                                                        <h5 class=" @if (!isset($design->size)) font-20 @endif "
+                                                            style="  @if (isset($design->color)) color:{{ $design->color }}; @endif  @if (isset($design->size)) font-size:{{ $design->size }}; @endif">
+                                                            {{ __('course.title1') }}</h5>
+                                                        <div class="font-16"
+                                                            style=" text-align:justify;hyphens:auto;font-size:16px;padding-right:10px;padding-left:10px;">
+                                                            {!! $course->grade !!}</div>
+                                                    </div>
+                                                @endif
                                             @endif
                                             @if (isset($course->profile))
-                                                <div>
-                                                    <h5 class=" @if (!isset($design->size)) font-20 @endif "
-                                                        style="  @if (isset($design->color)) color:{{ $design->color }}; @endif  @if (isset($design->size)) font-size:{{ $design->size }}; @endif">
-                                                        {{ __('course.subtitle11') }}</h5>
-                                                    <div class="font-16"
-                                                        style=" text-align:justify;hyphens:auto;font-size:16px;padding-right:10px;padding-left:10px;">
-                                                        {!! $course->profile !!}</div>
-                                                </div>
+                                                @if ($course->profile != '<p>.</p>')
+                                                    <div>
+                                                        <h5 class=" @if (!isset($design->size)) font-20 @endif "
+                                                            style="  @if (isset($design->color)) color:{{ $design->color }}; @endif  @if (isset($design->size)) font-size:{{ $design->size }}; @endif">
+                                                            {{ __('course.subtitle11') }}</h5>
+                                                        <div class="font-16"
+                                                            style=" text-align:justify;hyphens:auto;font-size:16px;padding-right:10px;padding-left:10px;">
+                                                            {!! $course->profile !!}</div>
+                                                    </div>
+                                                @endif
                                             @endif
-                                            @if (isset($course->opportunity))
-                                                <div>
-                                                    <h5 class=" @if (!isset($design->size)) font-20 @endif "
-                                                        style="  @if (isset($design->color)) color:{{ $design->color }}; @endif  @if (isset($design->size)) font-size:{{ $design->size }}; @endif">
-                                                        {{ __('course.subtitle12') }}</h5>
-                                                    <div class="font-16"
-                                                        style="text-align:justify;hyphens:auto;font-size:16px;padding-right:10px;padding-left:10px;">
-                                                        {!! $course->opportunity !!}</div>
-                                                </div>
+                                            @if (isset($course->candidature))
+                                                @if ($course->candidature != '<p>.</p>')
+                                                    <div>
+                                                        <h5 class=" @if (!isset($design->size)) font-20 @endif "
+                                                            style="  @if (isset($design->color)) color:{{ $design->color }}; @endif  @if (isset($design->size)) font-size:{{ $design->size }}; @endif">
+                                                            {{ __('course.subtitle12') }}</h5>
+                                                        <div class="font-16"
+                                                            style="text-align:justify;hyphens:auto;font-size:16px;padding-right:10px;padding-left:10px;">
+                                                            {!! $course->opportunity !!}</div>
+                                                    </div>
+                                                @endif
                                             @endif
                                         </div>
                                     </div>
@@ -2605,634 +2654,632 @@
                                 <div class="hidden-box font-size"
                                     style="margin-top:-30px;text-align:justify;hyphens:auto;">
                                     @if (!is_null($courses[0]->responsables_photo))
-                                    <!-- Portfolio Item Start -->
-                                    <div class="team-members mb-40 ml-40 mr-40">
-                                       
-                                        <div class="team-bottom-part border-1px p-15">
+                                        <!-- Portfolio Item Start -->
+                                        <div class="team-members mb-40 ml-40 mr-40">
 
-                                            <h4
-                                                class="text-uppercase font-weight-600 m-0 pb-5 font-16">
-                                                {{ $courses[0]->responsables_name }}
-                                                {{ $courses[0]->responsables_surname }}
+                                            <div class="team-bottom-part border-1px p-15">
 
-                                            </h4>
+                                                <h4 class="text-uppercase font-weight-600 m-0 pb-5 font-16">
+                                                    {{ $courses[0]->responsables_name }}
+                                                    {{ $courses[0]->responsables_surname }}
 
-                                            <h6 class="font-13 text-gray mt-0 font-10">
-                                                @if (App::isLocale('en'))
-                                                    {{ $courses[0]->responsables_statut_en }}
-                                                @else
-                                                    {{ $courses[0]->responsables_statut }}
-                                                @endif
-                                            </h6>
-                                            <h6 class="font-13 text-gray mt-0 font-10">
-                                                @if (App::isLocale('en'))
-                                                    {{ $courses[0]->responsables_poste_en }}
-                                                @else
-                                                    {{ $courses[0]->responsables_poste }}
-                                                @endif
-                                            </h6>
-                                            <h6 class="font-13 text-gray mt-0 font-10">
-                                                {{ $courses[0]->responsables_etablissement }}
-                                            </h6>
-                                            <ul class="list-inline">
+                                                </h4>
 
-                                                @if (isset($courses[0]->responsables_country))
-                                                    <li class="m-0 pr-10" style="width:100%;">
-                                                        <i
-                                                            class="pe-7s-global font-16  text-theme-colored2 mr-5"></i>
-                                                        <a class="text-gray font-12" href="#">
-                                                            @php
-                                                                $countries = [
-                                                                    'AF' => 'Afghanistan',
-                                                                    'ZA' => 'Afrique du Sud',
-                                                                    'AL' => 'Albanie',
-                                                                    'DZ' => 'Algérie',
-                                                                    'DE' => 'Allemagne',
-                                                                    'AD' => 'Andorre',
-                                                                    'AO' => 'Angola',
-                                                                    'AI' => 'Anguilla',
-                                                                    'AQ' => 'Antarctique',
-                                                                    'AG' => 'Antigua-et-Barbuda',
-                                                                    'SA' => 'Arabie saoudite',
-                                                                    'AR' => 'Argentine',
-                                                                    'AM' => 'Arménie',
-                                                                    'AW' => 'Aruba',
-                                                                    'AU' => 'Australie',
-                                                                    'AT' => 'Autriche',
-                                                                    'AZ' => 'Azerbaïdjan',
-                                                                    'BS' => 'Bahamas',
-                                                                    'BH' => 'Bahreïn',
-                                                                    'BD' => 'Bangladesh',
-                                                                    'BB' => 'Barbade',
-                                                                    'BE' => 'Belgique',
-                                                                    'BZ' => 'Belize',
-                                                                    'BJ' => 'Bénin',
-                                                                    'BM' => 'Bermudes',
-                                                                    'BT' => 'Bhoutan',
-                                                                    'BY' => 'Biélorussie',
-                                                                    'BO' => 'Bolivie',
-                                                                    'BA' => 'Bosnie-Herzégovine',
-                                                                    'BW' => 'Botswana',
-                                                                    'BR' => 'Brésil',
-                                                                    'BN' => 'Brunéi Darussalam',
-                                                                    'BG' => 'Bulgarie',
-                                                                    'BF' => 'Burkina Faso',
-                                                                    'BI' => 'Burundi',
-                                                                    'KH' => 'Cambodge',
-                                                                    'CM' => 'Cameroun',
-                                                                    'CA' => 'Canada',
-                                                                    'CV' => 'Cap-Vert',
-                                                                    'CL' => 'Chili',
-                                                                    'CN' => 'Chine',
-                                                                    'CY' => 'Chypre',
-                                                                    'CO' => 'Colombie',
-                                                                    'KM' => 'Comores',
-                                                                    'CG' => 'Congo-Brazzaville',
-                                                                    'CD' => 'Congo-Kinshasa',
-                                                                    'KP' => 'Corée du Nord',
-                                                                    'KR' => 'Corée du Sud',
-                                                                    'CR' => 'Costa Rica',
-                                                                    'CI' => 'Côte d’Ivoire',
-                                                                    'HR' => 'Croatie',
-                                                                    'CU' => 'Cuba',
-                                                                    'CW' => 'Curaçao',
-                                                                    'DK' => 'Danemark',
-                                                                    'DJ' => 'Djibouti',
-                                                                    'DM' => 'Dominique',
-                                                                    'EG' => 'Égypte',
-                                                                    'AE' => 'Émirats arabes unis',
-                                                                    'EC' => 'Équateur',
-                                                                    'ER' => 'Érythrée',
-                                                                    'ES' => 'Espagne',
-                                                                    'EE' => 'Estonie',
-                                                                    'SZ' => 'Eswatini',
-                                                                    'VA' => 'État de la Cité du Vatican',
-                                                                    'FM' => 'États fédérés de Micronésie',
-                                                                    'US' => 'États-Unis',
-                                                                    'ET' => 'Éthiopie',
-                                                                    'FJ' => 'Fidji',
-                                                                    'FI' => 'Finlande',
-                                                                    'FR' => 'France',
-                                                                    'GA' => 'Gabon',
-                                                                    'GM' => 'Gambie',
-                                                                    'GE' => 'Géorgie',
-                                                                    'GS' => 'Géorgie du Sud et îles Sandwich du Sud',
-                                                                    'GH' => 'Ghana',
-                                                                    'GI' => 'Gibraltar',
-                                                                    'GR' => 'Grèce',
-                                                                    'GD' => 'Grenade',
-                                                                    'GL' => 'Groenland',
-                                                                    'GP' => 'Guadeloupe',
-                                                                    'GU' => 'Guam',
-                                                                    'GT' => 'Guatemala',
-                                                                    'GG' => 'Guernesey',
-                                                                    'GN' => 'Guinée',
-                                                                    'GQ' => 'Guinée équatoriale',
-                                                                    'GW' => 'Guinée-Bissau',
-                                                                    'GY' => 'Guyana',
-                                                                    'GF' => 'Guyane française',
-                                                                    'HT' => 'Haïti',
-                                                                    'HN' => 'Honduras',
-                                                                    'HU' => 'Hongrie',
-                                                                    'BV' => 'Île Bouvet',
-                                                                    'CX' => 'Île Christmas',
-                                                                    'IM' => 'Île de Man',
-                                                                    'NF' => 'Île Norfolk',
-                                                                    'AX' => 'Îles Åland',
-                                                                    'KY' => 'Îles Caïmans',
-                                                                    'CC' => 'Îles Cocos',
-                                                                    'CK' => 'Îles Cook',
-                                                                    'FO' => 'Îles Féroé',
-                                                                    'HM' => 'Îles Heard et McDonald',
-                                                                    'FK' => 'Îles Malouines',
-                                                                    'MP' => 'Îles Mariannes du Nord',
-                                                                    'MH' => 'Îles Marshall',
-                                                                    'UM' => 'Îles mineures éloignées des États-Unis',
-                                                                    'PN' => 'Îles Pitcairn',
-                                                                    'SB' => 'Îles Salomon',
-                                                                    'TC' => 'Îles Turques-et-Caïques',
-                                                                    'VG' => 'Îles Vierges britanniques',
-                                                                    'VI' => 'Îles Vierges des États-Unis',
-                                                                    'IN' => 'Inde',
-                                                                    'ID' => 'Indonésie',
-                                                                    'IQ' => 'Irak',
-                                                                    'IR' => 'Iran',
-                                                                    'IE' => 'Irlande',
-                                                                    'IS' => 'Islande',
-                                                                    'IL' => 'Israël',
-                                                                    'IT' => 'Italie',
-                                                                    'JM' => 'Jamaïque',
-                                                                    'JP' => 'Japon',
-                                                                    'JE' => 'Jersey',
-                                                                    'JO' => 'Jordanie',
-                                                                    'KZ' => 'Kazakhstan',
-                                                                    'KE' => 'Kenya',
-                                                                    'KG' => 'Kirghizistan',
-                                                                    'KI' => 'Kiribati',
-                                                                    'KW' => 'Koweït',
-                                                                    'RE' => 'La Réunion',
-                                                                    'LA' => 'Laos',
-                                                                    'LS' => 'Lesotho',
-                                                                    'LV' => 'Lettonie',
-                                                                    'LB' => 'Liban',
-                                                                    'LR' => 'Libéria',
-                                                                    'LY' => 'Libye',
-                                                                    'LI' => 'Liechtenstein',
-                                                                    'LT' => 'Lituanie',
-                                                                    'LU' => 'Luxembourg',
-                                                                    'MK' => 'Macédoine du Nord',
-                                                                    'MG' => 'Madagascar',
-                                                                    'MY' => 'Malaisie',
-                                                                    'MW' => 'Malawi',
-                                                                    'MV' => 'Maldives',
-                                                                    'ML' => 'Mali',
-                                                                    'MT' => 'Malte',
-                                                                    'MA' => 'Maroc',
-                                                                    'MQ' => 'Martinique',
-                                                                    'MU' => 'Maurice',
-                                                                    'MR' => 'Mauritanie',
-                                                                    'YT' => 'Mayotte',
-                                                                    'MX' => 'Mexique',
-                                                                    'MD' => 'Moldavie',
-                                                                    'MC' => 'Monaco',
-                                                                    'MN' => 'Mongolie',
-                                                                    'ME' => 'Monténégro',
-                                                                    'MS' => 'Montserrat',
-                                                                    'MZ' => 'Mozambique',
-                                                                    'MM' => 'Myanmar (Birmanie)',
-                                                                    'NA' => 'Namibie',
-                                                                    'NR' => 'Nauru',
-                                                                    'NP' => 'Népal',
-                                                                    'NI' => 'Nicaragua',
-                                                                    'NE' => 'Niger',
-                                                                    'NG' => 'Nigéria',
-                                                                    'NU' => 'Niue',
-                                                                    'NO' => 'Norvège',
-                                                                    'NC' => 'Nouvelle-Calédonie',
-                                                                    'NZ' => 'Nouvelle-Zélande',
-                                                                    'OM' => 'Oman',
-                                                                    'UG' => 'Ouganda',
-                                                                    'UZ' => 'Ouzbékistan',
-                                                                    'PK' => 'Pakistan',
-                                                                    'PW' => 'Palaos',
-                                                                    'PA' => 'Panama',
-                                                                    'PG' => 'Papouasie-Nouvelle-Guinée',
-                                                                    'PY' => 'Paraguay',
-                                                                    'NL' => 'Pays-Bas',
-                                                                    'BQ' => 'Pays-Bas caribéens',
-                                                                    'PE' => 'Pérou',
-                                                                    'PH' => 'Philippines',
-                                                                    'PL' => 'Pologne',
-                                                                    'PF' => 'Polynésie française',
-                                                                    'PR' => 'Porto Rico',
-                                                                    'PT' => 'Portugal',
-                                                                    'QA' => 'Qatar',
-                                                                    'HK' => 'R.A.S. chinoise de Hong Kong',
-                                                                    'MO' => 'R.A.S. chinoise de Macao',
-                                                                    'CF' => 'République centrafricaine',
-                                                                    'DO' => 'République dominicaine',
-                                                                    'RO' => 'Roumanie',
-                                                                    'GB' => 'Royaume-Uni',
-                                                                    'RU' => 'Russie',
-                                                                    'RW' => 'Rwanda',
-                                                                    'EH' => 'Sahara occidental',
-                                                                    'BL' => 'Saint-Barthélemy',
-                                                                    'KN' => 'Saint-Christophe-et-Niévès',
-                                                                    'SM' => 'Saint-Marin',
-                                                                    'MF' => 'Saint-Martin',
-                                                                    'SX' => 'Saint-Martin (partie néerlandaise)',
-                                                                    'PM' => 'Saint-Pierre-et-Miquelon',
-                                                                    'VC' => 'Saint-Vincent-et-les-Grenadines',
-                                                                    'SH' => 'Sainte-Hélène',
-                                                                    'LC' => 'Sainte-Lucie',
-                                                                    'SV' => 'Salvador',
-                                                                    'WS' => 'Samoa',
-                                                                    'AS' => 'Samoa américaines',
-                                                                    'ST' => 'Sao Tomé-et-Principe',
-                                                                    'SN' => 'Sénégal',
-                                                                    'RS' => 'Serbie',
-                                                                    'SC' => 'Seychelles',
-                                                                    'SL' => 'Sierra Leone',
-                                                                    'SG' => 'Singapour',
-                                                                    'SK' => 'Slovaquie',
-                                                                    'SI' => 'Slovénie',
-                                                                    'SO' => 'Somalie',
-                                                                    'SD' => 'Soudan',
-                                                                    'SS' => 'Soudan du Sud',
-                                                                    'LK' => 'Sri Lanka',
-                                                                    'SE' => 'Suède',
-                                                                    'CH' => 'Suisse',
-                                                                    'SR' => 'Suriname',
-                                                                    'SJ' => 'Svalbard et Jan Mayen',
-                                                                    'SY' => 'Syrie',
-                                                                    'TJ' => 'Tadjikistan',
-                                                                    'TW' => 'Taïwan',
-                                                                    'TZ' => 'Tanzanie',
-                                                                    'TD' => 'Tchad',
-                                                                    'CZ' => 'Tchéquie',
-                                                                    'TF' => 'Terres australes françaises',
-                                                                    'IO' => 'Territoire britannique de l’océan Indien',
-                                                                    'PS' => 'Territoires palestiniens',
-                                                                    'TH' => 'Thaïlande',
-                                                                    'TL' => 'Timor oriental',
-                                                                    'TG' => 'Togo',
-                                                                    'TK' => 'Tokelau',
-                                                                    'TO' => 'Tonga',
-                                                                    'TT' => 'Trinité-et-Tobago',
-                                                                    'TN' => 'Tunisie',
-                                                                    'TM' => 'Turkménistan',
-                                                                    'TR' => 'Turquie',
-                                                                    'TV' => 'Tuvalu',
-                                                                    'UA' => 'Ukraine',
-                                                                    'UY' => 'Uruguay',
-                                                                    'VU' => 'Vanuatu',
-                                                                    'VE' => 'Venezuela',
-                                                                    'VN' => 'Vietnam',
-                                                                    'WF' => 'Wallis-et-Futuna',
-                                                                    'YE' => 'Yémen',
-                                                                    'ZM' => 'Zambie',
-                                                                    'ZW' => 'Zimbabwe',
-                                                                ];
-                                                                echo $countries[$courses[0]->responsables_country];
-                                                            @endphp
-                                                        </a>
-                                                    </li>
-                                                @endif
-                                              
-                                                @if (isset($courses[0]->responsables_phone))
-                                                    <li class="m-0 pr-10"> <i
-                                                            class="fa fa-phone text-theme-colored2 mr-5"></i>
-                                                        <a class="text-gray font-12"
-                                                            href="#">{{ $courses[0]->responsables_phone }}</a>
-                                                    </li>
-                                                @endif
-                                             
-                                                @if (isset($courses[0]->responsables_email))
-                                                    <li class="m-0 pr-10"> <i
-                                                            class="fa fa-envelope-o text-theme-colored2 mr-5"></i>
-                                                        <a class="text-gray font-12"
-                                                            href="mailto:{{ $courses[0]->responsables_email }}">{{ $courses[0]->responsables_email }}</a>
-                                                    </li>
-                                                @endif
-                                            </ul>
-                                      
+                                                <h6 class="font-13 text-gray mt-0 font-10">
+                                                    @if (App::isLocale('en'))
+                                                        {{ $courses[0]->responsables_statut_en }}
+                                                    @else
+                                                        {{ $courses[0]->responsables_statut }}
+                                                    @endif
+                                                </h6>
+                                                <h6 class="font-13 text-gray mt-0 font-10">
+                                                    @if (App::isLocale('en'))
+                                                        {{ $courses[0]->responsables_poste_en }}
+                                                    @else
+                                                        {{ $courses[0]->responsables_poste }}
+                                                    @endif
+                                                </h6>
+                                                <h6 class="font-13 text-gray mt-0 font-10">
+                                                    {{ $courses[0]->responsables_etablissement }}
+                                                </h6>
+                                                <ul class="list-inline">
+
+                                                    @if (isset($courses[0]->responsables_country))
+                                                        <li class="m-0 pr-10" style="width:100%;">
+                                                            <i
+                                                                class="pe-7s-global font-16  text-theme-colored2 mr-5"></i>
+                                                            <a class="text-gray font-12" href="#">
+                                                                @php
+                                                                    $countries = [
+                                                                        'AF' => 'Afghanistan',
+                                                                        'ZA' => 'Afrique du Sud',
+                                                                        'AL' => 'Albanie',
+                                                                        'DZ' => 'Algérie',
+                                                                        'DE' => 'Allemagne',
+                                                                        'AD' => 'Andorre',
+                                                                        'AO' => 'Angola',
+                                                                        'AI' => 'Anguilla',
+                                                                        'AQ' => 'Antarctique',
+                                                                        'AG' => 'Antigua-et-Barbuda',
+                                                                        'SA' => 'Arabie saoudite',
+                                                                        'AR' => 'Argentine',
+                                                                        'AM' => 'Arménie',
+                                                                        'AW' => 'Aruba',
+                                                                        'AU' => 'Australie',
+                                                                        'AT' => 'Autriche',
+                                                                        'AZ' => 'Azerbaïdjan',
+                                                                        'BS' => 'Bahamas',
+                                                                        'BH' => 'Bahreïn',
+                                                                        'BD' => 'Bangladesh',
+                                                                        'BB' => 'Barbade',
+                                                                        'BE' => 'Belgique',
+                                                                        'BZ' => 'Belize',
+                                                                        'BJ' => 'Bénin',
+                                                                        'BM' => 'Bermudes',
+                                                                        'BT' => 'Bhoutan',
+                                                                        'BY' => 'Biélorussie',
+                                                                        'BO' => 'Bolivie',
+                                                                        'BA' => 'Bosnie-Herzégovine',
+                                                                        'BW' => 'Botswana',
+                                                                        'BR' => 'Brésil',
+                                                                        'BN' => 'Brunéi Darussalam',
+                                                                        'BG' => 'Bulgarie',
+                                                                        'BF' => 'Burkina Faso',
+                                                                        'BI' => 'Burundi',
+                                                                        'KH' => 'Cambodge',
+                                                                        'CM' => 'Cameroun',
+                                                                        'CA' => 'Canada',
+                                                                        'CV' => 'Cap-Vert',
+                                                                        'CL' => 'Chili',
+                                                                        'CN' => 'Chine',
+                                                                        'CY' => 'Chypre',
+                                                                        'CO' => 'Colombie',
+                                                                        'KM' => 'Comores',
+                                                                        'CG' => 'Congo-Brazzaville',
+                                                                        'CD' => 'Congo-Kinshasa',
+                                                                        'KP' => 'Corée du Nord',
+                                                                        'KR' => 'Corée du Sud',
+                                                                        'CR' => 'Costa Rica',
+                                                                        'CI' => 'Côte d’Ivoire',
+                                                                        'HR' => 'Croatie',
+                                                                        'CU' => 'Cuba',
+                                                                        'CW' => 'Curaçao',
+                                                                        'DK' => 'Danemark',
+                                                                        'DJ' => 'Djibouti',
+                                                                        'DM' => 'Dominique',
+                                                                        'EG' => 'Égypte',
+                                                                        'AE' => 'Émirats arabes unis',
+                                                                        'EC' => 'Équateur',
+                                                                        'ER' => 'Érythrée',
+                                                                        'ES' => 'Espagne',
+                                                                        'EE' => 'Estonie',
+                                                                        'SZ' => 'Eswatini',
+                                                                        'VA' => 'État de la Cité du Vatican',
+                                                                        'FM' => 'États fédérés de Micronésie',
+                                                                        'US' => 'États-Unis',
+                                                                        'ET' => 'Éthiopie',
+                                                                        'FJ' => 'Fidji',
+                                                                        'FI' => 'Finlande',
+                                                                        'FR' => 'France',
+                                                                        'GA' => 'Gabon',
+                                                                        'GM' => 'Gambie',
+                                                                        'GE' => 'Géorgie',
+                                                                        'GS' => 'Géorgie du Sud et îles Sandwich du Sud',
+                                                                        'GH' => 'Ghana',
+                                                                        'GI' => 'Gibraltar',
+                                                                        'GR' => 'Grèce',
+                                                                        'GD' => 'Grenade',
+                                                                        'GL' => 'Groenland',
+                                                                        'GP' => 'Guadeloupe',
+                                                                        'GU' => 'Guam',
+                                                                        'GT' => 'Guatemala',
+                                                                        'GG' => 'Guernesey',
+                                                                        'GN' => 'Guinée',
+                                                                        'GQ' => 'Guinée équatoriale',
+                                                                        'GW' => 'Guinée-Bissau',
+                                                                        'GY' => 'Guyana',
+                                                                        'GF' => 'Guyane française',
+                                                                        'HT' => 'Haïti',
+                                                                        'HN' => 'Honduras',
+                                                                        'HU' => 'Hongrie',
+                                                                        'BV' => 'Île Bouvet',
+                                                                        'CX' => 'Île Christmas',
+                                                                        'IM' => 'Île de Man',
+                                                                        'NF' => 'Île Norfolk',
+                                                                        'AX' => 'Îles Åland',
+                                                                        'KY' => 'Îles Caïmans',
+                                                                        'CC' => 'Îles Cocos',
+                                                                        'CK' => 'Îles Cook',
+                                                                        'FO' => 'Îles Féroé',
+                                                                        'HM' => 'Îles Heard et McDonald',
+                                                                        'FK' => 'Îles Malouines',
+                                                                        'MP' => 'Îles Mariannes du Nord',
+                                                                        'MH' => 'Îles Marshall',
+                                                                        'UM' => 'Îles mineures éloignées des États-Unis',
+                                                                        'PN' => 'Îles Pitcairn',
+                                                                        'SB' => 'Îles Salomon',
+                                                                        'TC' => 'Îles Turques-et-Caïques',
+                                                                        'VG' => 'Îles Vierges britanniques',
+                                                                        'VI' => 'Îles Vierges des États-Unis',
+                                                                        'IN' => 'Inde',
+                                                                        'ID' => 'Indonésie',
+                                                                        'IQ' => 'Irak',
+                                                                        'IR' => 'Iran',
+                                                                        'IE' => 'Irlande',
+                                                                        'IS' => 'Islande',
+                                                                        'IL' => 'Israël',
+                                                                        'IT' => 'Italie',
+                                                                        'JM' => 'Jamaïque',
+                                                                        'JP' => 'Japon',
+                                                                        'JE' => 'Jersey',
+                                                                        'JO' => 'Jordanie',
+                                                                        'KZ' => 'Kazakhstan',
+                                                                        'KE' => 'Kenya',
+                                                                        'KG' => 'Kirghizistan',
+                                                                        'KI' => 'Kiribati',
+                                                                        'KW' => 'Koweït',
+                                                                        'RE' => 'La Réunion',
+                                                                        'LA' => 'Laos',
+                                                                        'LS' => 'Lesotho',
+                                                                        'LV' => 'Lettonie',
+                                                                        'LB' => 'Liban',
+                                                                        'LR' => 'Libéria',
+                                                                        'LY' => 'Libye',
+                                                                        'LI' => 'Liechtenstein',
+                                                                        'LT' => 'Lituanie',
+                                                                        'LU' => 'Luxembourg',
+                                                                        'MK' => 'Macédoine du Nord',
+                                                                        'MG' => 'Madagascar',
+                                                                        'MY' => 'Malaisie',
+                                                                        'MW' => 'Malawi',
+                                                                        'MV' => 'Maldives',
+                                                                        'ML' => 'Mali',
+                                                                        'MT' => 'Malte',
+                                                                        'MA' => 'Maroc',
+                                                                        'MQ' => 'Martinique',
+                                                                        'MU' => 'Maurice',
+                                                                        'MR' => 'Mauritanie',
+                                                                        'YT' => 'Mayotte',
+                                                                        'MX' => 'Mexique',
+                                                                        'MD' => 'Moldavie',
+                                                                        'MC' => 'Monaco',
+                                                                        'MN' => 'Mongolie',
+                                                                        'ME' => 'Monténégro',
+                                                                        'MS' => 'Montserrat',
+                                                                        'MZ' => 'Mozambique',
+                                                                        'MM' => 'Myanmar (Birmanie)',
+                                                                        'NA' => 'Namibie',
+                                                                        'NR' => 'Nauru',
+                                                                        'NP' => 'Népal',
+                                                                        'NI' => 'Nicaragua',
+                                                                        'NE' => 'Niger',
+                                                                        'NG' => 'Nigéria',
+                                                                        'NU' => 'Niue',
+                                                                        'NO' => 'Norvège',
+                                                                        'NC' => 'Nouvelle-Calédonie',
+                                                                        'NZ' => 'Nouvelle-Zélande',
+                                                                        'OM' => 'Oman',
+                                                                        'UG' => 'Ouganda',
+                                                                        'UZ' => 'Ouzbékistan',
+                                                                        'PK' => 'Pakistan',
+                                                                        'PW' => 'Palaos',
+                                                                        'PA' => 'Panama',
+                                                                        'PG' => 'Papouasie-Nouvelle-Guinée',
+                                                                        'PY' => 'Paraguay',
+                                                                        'NL' => 'Pays-Bas',
+                                                                        'BQ' => 'Pays-Bas caribéens',
+                                                                        'PE' => 'Pérou',
+                                                                        'PH' => 'Philippines',
+                                                                        'PL' => 'Pologne',
+                                                                        'PF' => 'Polynésie française',
+                                                                        'PR' => 'Porto Rico',
+                                                                        'PT' => 'Portugal',
+                                                                        'QA' => 'Qatar',
+                                                                        'HK' => 'R.A.S. chinoise de Hong Kong',
+                                                                        'MO' => 'R.A.S. chinoise de Macao',
+                                                                        'CF' => 'République centrafricaine',
+                                                                        'DO' => 'République dominicaine',
+                                                                        'RO' => 'Roumanie',
+                                                                        'GB' => 'Royaume-Uni',
+                                                                        'RU' => 'Russie',
+                                                                        'RW' => 'Rwanda',
+                                                                        'EH' => 'Sahara occidental',
+                                                                        'BL' => 'Saint-Barthélemy',
+                                                                        'KN' => 'Saint-Christophe-et-Niévès',
+                                                                        'SM' => 'Saint-Marin',
+                                                                        'MF' => 'Saint-Martin',
+                                                                        'SX' => 'Saint-Martin (partie néerlandaise)',
+                                                                        'PM' => 'Saint-Pierre-et-Miquelon',
+                                                                        'VC' => 'Saint-Vincent-et-les-Grenadines',
+                                                                        'SH' => 'Sainte-Hélène',
+                                                                        'LC' => 'Sainte-Lucie',
+                                                                        'SV' => 'Salvador',
+                                                                        'WS' => 'Samoa',
+                                                                        'AS' => 'Samoa américaines',
+                                                                        'ST' => 'Sao Tomé-et-Principe',
+                                                                        'SN' => 'Sénégal',
+                                                                        'RS' => 'Serbie',
+                                                                        'SC' => 'Seychelles',
+                                                                        'SL' => 'Sierra Leone',
+                                                                        'SG' => 'Singapour',
+                                                                        'SK' => 'Slovaquie',
+                                                                        'SI' => 'Slovénie',
+                                                                        'SO' => 'Somalie',
+                                                                        'SD' => 'Soudan',
+                                                                        'SS' => 'Soudan du Sud',
+                                                                        'LK' => 'Sri Lanka',
+                                                                        'SE' => 'Suède',
+                                                                        'CH' => 'Suisse',
+                                                                        'SR' => 'Suriname',
+                                                                        'SJ' => 'Svalbard et Jan Mayen',
+                                                                        'SY' => 'Syrie',
+                                                                        'TJ' => 'Tadjikistan',
+                                                                        'TW' => 'Taïwan',
+                                                                        'TZ' => 'Tanzanie',
+                                                                        'TD' => 'Tchad',
+                                                                        'CZ' => 'Tchéquie',
+                                                                        'TF' => 'Terres australes françaises',
+                                                                        'IO' => 'Territoire britannique de l’océan Indien',
+                                                                        'PS' => 'Territoires palestiniens',
+                                                                        'TH' => 'Thaïlande',
+                                                                        'TL' => 'Timor oriental',
+                                                                        'TG' => 'Togo',
+                                                                        'TK' => 'Tokelau',
+                                                                        'TO' => 'Tonga',
+                                                                        'TT' => 'Trinité-et-Tobago',
+                                                                        'TN' => 'Tunisie',
+                                                                        'TM' => 'Turkménistan',
+                                                                        'TR' => 'Turquie',
+                                                                        'TV' => 'Tuvalu',
+                                                                        'UA' => 'Ukraine',
+                                                                        'UY' => 'Uruguay',
+                                                                        'VU' => 'Vanuatu',
+                                                                        'VE' => 'Venezuela',
+                                                                        'VN' => 'Vietnam',
+                                                                        'WF' => 'Wallis-et-Futuna',
+                                                                        'YE' => 'Yémen',
+                                                                        'ZM' => 'Zambie',
+                                                                        'ZW' => 'Zimbabwe',
+                                                                    ];
+                                                                    echo $countries[$courses[0]->responsables_country];
+                                                                @endphp
+                                                            </a>
+                                                        </li>
+                                                    @endif
+
+                                                    @if (isset($courses[0]->responsables_phone))
+                                                        <li class="m-0 pr-10"> <i
+                                                                class="fa fa-phone text-theme-colored2 mr-5"></i>
+                                                            <a class="text-gray font-12"
+                                                                href="#">{{ $courses[0]->responsables_phone }}</a>
+                                                        </li>
+                                                    @endif
+
+                                                    @if (isset($courses[0]->responsables_email))
+                                                        <li class="m-0 pr-10"> <i
+                                                                class="fa fa-envelope-o text-theme-colored2 mr-5"></i>
+                                                            <a class="text-gray font-12"
+                                                                href="mailto:{{ $courses[0]->responsables_email }}">{{ $courses[0]->responsables_email }}</a>
+                                                        </li>
+                                                    @endif
+                                                </ul>
+
+                                            </div>
                                         </div>
-                                    </div>
-                                 @elseif(!is_null($courses[0]->teams_photo))
-                                 <div class="team-members mb-40 ml-40 mr-40">
-                                    <div class="team-bottom-part border-1px p-15">
+                                    @elseif(!is_null($courses[0]->teams_photo))
+                                        <div class="team-members mb-40 ml-40 mr-40">
+                                            <div class="team-bottom-part border-1px p-15">
 
-                                        <h4
-                                            class="text-uppercase font-weight-600 m-0 pb-5 font-16">
-                                            {{ $courses[0]->teams_name }}
-                                            {{ $courses[0]->teams_surname }}
+                                                <h4 class="text-uppercase font-weight-600 m-0 pb-5 font-16">
+                                                    {{ $courses[0]->teams_name }}
+                                                    {{ $courses[0]->teams_surname }}
 
-                                        </h4>
+                                                </h4>
 
-                                        <h6 class="font-13 text-gray mt-0 font-10">
-                                            @if (App::isLocale('en'))
-                                                {{ $courses[0]->teams_statut_en }}
-                                            @else
-                                                {{ $courses[0]->teams_statut }}
-                                            @endif
-                                        </h6>
-                                        <h6 class="font-13 text-gray mt-0 font-10">
-                                            @if (App::isLocale('en'))
-                                                {{ $courses[0]->teams_poste_en }}
-                                            @else
-                                                {{ $courses[0]->teams_poste }}
-                                            @endif
-                                        </h6>
-                                        <h6 class="font-13 text-gray mt-0 font-10">
-                                            {{ $courses[0]->teams_etablissement }}
-                                        </h6>
-                                        <ul class="list-inline mt-15">
+                                                <h6 class="font-13 text-gray mt-0 font-10">
+                                                    @if (App::isLocale('en'))
+                                                        {{ $courses[0]->teams_statut_en }}
+                                                    @else
+                                                        {{ $courses[0]->teams_statut }}
+                                                    @endif
+                                                </h6>
+                                                <h6 class="font-13 text-gray mt-0 font-10">
+                                                    @if (App::isLocale('en'))
+                                                        {{ $courses[0]->teams_poste_en }}
+                                                    @else
+                                                        {{ $courses[0]->teams_poste }}
+                                                    @endif
+                                                </h6>
+                                                <h6 class="font-13 text-gray mt-0 font-10">
+                                                    {{ $courses[0]->teams_etablissement }}
+                                                </h6>
+                                                <ul class="list-inline mt-15">
 
-                                            @if (isset($courses[0]->teams_country))
-                                                <li class="m-0 pr-10" style="width:100%;">
-                                                    <i
-                                                        class="pe-7s-global font-16  text-theme-colored2 mr-5"></i>
-                                                    <a class="text-gray font-12" href="#">
-                                                        @php
-                                                            $countries = [
-                                                                'AF' => 'Afghanistan',
-                                                                'ZA' => 'Afrique du Sud',
-                                                                'AL' => 'Albanie',
-                                                                'DZ' => 'Algérie',
-                                                                'DE' => 'Allemagne',
-                                                                'AD' => 'Andorre',
-                                                                'AO' => 'Angola',
-                                                                'AI' => 'Anguilla',
-                                                                'AQ' => 'Antarctique',
-                                                                'AG' => 'Antigua-et-Barbuda',
-                                                                'SA' => 'Arabie saoudite',
-                                                                'AR' => 'Argentine',
-                                                                'AM' => 'Arménie',
-                                                                'AW' => 'Aruba',
-                                                                'AU' => 'Australie',
-                                                                'AT' => 'Autriche',
-                                                                'AZ' => 'Azerbaïdjan',
-                                                                'BS' => 'Bahamas',
-                                                                'BH' => 'Bahreïn',
-                                                                'BD' => 'Bangladesh',
-                                                                'BB' => 'Barbade',
-                                                                'BE' => 'Belgique',
-                                                                'BZ' => 'Belize',
-                                                                'BJ' => 'Bénin',
-                                                                'BM' => 'Bermudes',
-                                                                'BT' => 'Bhoutan',
-                                                                'BY' => 'Biélorussie',
-                                                                'BO' => 'Bolivie',
-                                                                'BA' => 'Bosnie-Herzégovine',
-                                                                'BW' => 'Botswana',
-                                                                'BR' => 'Brésil',
-                                                                'BN' => 'Brunéi Darussalam',
-                                                                'BG' => 'Bulgarie',
-                                                                'BF' => 'Burkina Faso',
-                                                                'BI' => 'Burundi',
-                                                                'KH' => 'Cambodge',
-                                                                'CM' => 'Cameroun',
-                                                                'CA' => 'Canada',
-                                                                'CV' => 'Cap-Vert',
-                                                                'CL' => 'Chili',
-                                                                'CN' => 'Chine',
-                                                                'CY' => 'Chypre',
-                                                                'CO' => 'Colombie',
-                                                                'KM' => 'Comores',
-                                                                'CG' => 'Congo-Brazzaville',
-                                                                'CD' => 'Congo-Kinshasa',
-                                                                'KP' => 'Corée du Nord',
-                                                                'KR' => 'Corée du Sud',
-                                                                'CR' => 'Costa Rica',
-                                                                'CI' => 'Côte d’Ivoire',
-                                                                'HR' => 'Croatie',
-                                                                'CU' => 'Cuba',
-                                                                'CW' => 'Curaçao',
-                                                                'DK' => 'Danemark',
-                                                                'DJ' => 'Djibouti',
-                                                                'DM' => 'Dominique',
-                                                                'EG' => 'Égypte',
-                                                                'AE' => 'Émirats arabes unis',
-                                                                'EC' => 'Équateur',
-                                                                'ER' => 'Érythrée',
-                                                                'ES' => 'Espagne',
-                                                                'EE' => 'Estonie',
-                                                                'SZ' => 'Eswatini',
-                                                                'VA' => 'État de la Cité du Vatican',
-                                                                'FM' => 'États fédérés de Micronésie',
-                                                                'US' => 'États-Unis',
-                                                                'ET' => 'Éthiopie',
-                                                                'FJ' => 'Fidji',
-                                                                'FI' => 'Finlande',
-                                                                'FR' => 'France',
-                                                                'GA' => 'Gabon',
-                                                                'GM' => 'Gambie',
-                                                                'GE' => 'Géorgie',
-                                                                'GS' => 'Géorgie du Sud et îles Sandwich du Sud',
-                                                                'GH' => 'Ghana',
-                                                                'GI' => 'Gibraltar',
-                                                                'GR' => 'Grèce',
-                                                                'GD' => 'Grenade',
-                                                                'GL' => 'Groenland',
-                                                                'GP' => 'Guadeloupe',
-                                                                'GU' => 'Guam',
-                                                                'GT' => 'Guatemala',
-                                                                'GG' => 'Guernesey',
-                                                                'GN' => 'Guinée',
-                                                                'GQ' => 'Guinée équatoriale',
-                                                                'GW' => 'Guinée-Bissau',
-                                                                'GY' => 'Guyana',
-                                                                'GF' => 'Guyane française',
-                                                                'HT' => 'Haïti',
-                                                                'HN' => 'Honduras',
-                                                                'HU' => 'Hongrie',
-                                                                'BV' => 'Île Bouvet',
-                                                                'CX' => 'Île Christmas',
-                                                                'IM' => 'Île de Man',
-                                                                'NF' => 'Île Norfolk',
-                                                                'AX' => 'Îles Åland',
-                                                                'KY' => 'Îles Caïmans',
-                                                                'CC' => 'Îles Cocos',
-                                                                'CK' => 'Îles Cook',
-                                                                'FO' => 'Îles Féroé',
-                                                                'HM' => 'Îles Heard et McDonald',
-                                                                'FK' => 'Îles Malouines',
-                                                                'MP' => 'Îles Mariannes du Nord',
-                                                                'MH' => 'Îles Marshall',
-                                                                'UM' => 'Îles mineures éloignées des États-Unis',
-                                                                'PN' => 'Îles Pitcairn',
-                                                                'SB' => 'Îles Salomon',
-                                                                'TC' => 'Îles Turques-et-Caïques',
-                                                                'VG' => 'Îles Vierges britanniques',
-                                                                'VI' => 'Îles Vierges des États-Unis',
-                                                                'IN' => 'Inde',
-                                                                'ID' => 'Indonésie',
-                                                                'IQ' => 'Irak',
-                                                                'IR' => 'Iran',
-                                                                'IE' => 'Irlande',
-                                                                'IS' => 'Islande',
-                                                                'IL' => 'Israël',
-                                                                'IT' => 'Italie',
-                                                                'JM' => 'Jamaïque',
-                                                                'JP' => 'Japon',
-                                                                'JE' => 'Jersey',
-                                                                'JO' => 'Jordanie',
-                                                                'KZ' => 'Kazakhstan',
-                                                                'KE' => 'Kenya',
-                                                                'KG' => 'Kirghizistan',
-                                                                'KI' => 'Kiribati',
-                                                                'KW' => 'Koweït',
-                                                                'RE' => 'La Réunion',
-                                                                'LA' => 'Laos',
-                                                                'LS' => 'Lesotho',
-                                                                'LV' => 'Lettonie',
-                                                                'LB' => 'Liban',
-                                                                'LR' => 'Libéria',
-                                                                'LY' => 'Libye',
-                                                                'LI' => 'Liechtenstein',
-                                                                'LT' => 'Lituanie',
-                                                                'LU' => 'Luxembourg',
-                                                                'MK' => 'Macédoine du Nord',
-                                                                'MG' => 'Madagascar',
-                                                                'MY' => 'Malaisie',
-                                                                'MW' => 'Malawi',
-                                                                'MV' => 'Maldives',
-                                                                'ML' => 'Mali',
-                                                                'MT' => 'Malte',
-                                                                'MA' => 'Maroc',
-                                                                'MQ' => 'Martinique',
-                                                                'MU' => 'Maurice',
-                                                                'MR' => 'Mauritanie',
-                                                                'YT' => 'Mayotte',
-                                                                'MX' => 'Mexique',
-                                                                'MD' => 'Moldavie',
-                                                                'MC' => 'Monaco',
-                                                                'MN' => 'Mongolie',
-                                                                'ME' => 'Monténégro',
-                                                                'MS' => 'Montserrat',
-                                                                'MZ' => 'Mozambique',
-                                                                'MM' => 'Myanmar (Birmanie)',
-                                                                'NA' => 'Namibie',
-                                                                'NR' => 'Nauru',
-                                                                'NP' => 'Népal',
-                                                                'NI' => 'Nicaragua',
-                                                                'NE' => 'Niger',
-                                                                'NG' => 'Nigéria',
-                                                                'NU' => 'Niue',
-                                                                'NO' => 'Norvège',
-                                                                'NC' => 'Nouvelle-Calédonie',
-                                                                'NZ' => 'Nouvelle-Zélande',
-                                                                'OM' => 'Oman',
-                                                                'UG' => 'Ouganda',
-                                                                'UZ' => 'Ouzbékistan',
-                                                                'PK' => 'Pakistan',
-                                                                'PW' => 'Palaos',
-                                                                'PA' => 'Panama',
-                                                                'PG' => 'Papouasie-Nouvelle-Guinée',
-                                                                'PY' => 'Paraguay',
-                                                                'NL' => 'Pays-Bas',
-                                                                'BQ' => 'Pays-Bas caribéens',
-                                                                'PE' => 'Pérou',
-                                                                'PH' => 'Philippines',
-                                                                'PL' => 'Pologne',
-                                                                'PF' => 'Polynésie française',
-                                                                'PR' => 'Porto Rico',
-                                                                'PT' => 'Portugal',
-                                                                'QA' => 'Qatar',
-                                                                'HK' => 'R.A.S. chinoise de Hong Kong',
-                                                                'MO' => 'R.A.S. chinoise de Macao',
-                                                                'CF' => 'République centrafricaine',
-                                                                'DO' => 'République dominicaine',
-                                                                'RO' => 'Roumanie',
-                                                                'GB' => 'Royaume-Uni',
-                                                                'RU' => 'Russie',
-                                                                'RW' => 'Rwanda',
-                                                                'EH' => 'Sahara occidental',
-                                                                'BL' => 'Saint-Barthélemy',
-                                                                'KN' => 'Saint-Christophe-et-Niévès',
-                                                                'SM' => 'Saint-Marin',
-                                                                'MF' => 'Saint-Martin',
-                                                                'SX' => 'Saint-Martin (partie néerlandaise)',
-                                                                'PM' => 'Saint-Pierre-et-Miquelon',
-                                                                'VC' => 'Saint-Vincent-et-les-Grenadines',
-                                                                'SH' => 'Sainte-Hélène',
-                                                                'LC' => 'Sainte-Lucie',
-                                                                'SV' => 'Salvador',
-                                                                'WS' => 'Samoa',
-                                                                'AS' => 'Samoa américaines',
-                                                                'ST' => 'Sao Tomé-et-Principe',
-                                                                'SN' => 'Sénégal',
-                                                                'RS' => 'Serbie',
-                                                                'SC' => 'Seychelles',
-                                                                'SL' => 'Sierra Leone',
-                                                                'SG' => 'Singapour',
-                                                                'SK' => 'Slovaquie',
-                                                                'SI' => 'Slovénie',
-                                                                'SO' => 'Somalie',
-                                                                'SD' => 'Soudan',
-                                                                'SS' => 'Soudan du Sud',
-                                                                'LK' => 'Sri Lanka',
-                                                                'SE' => 'Suède',
-                                                                'CH' => 'Suisse',
-                                                                'SR' => 'Suriname',
-                                                                'SJ' => 'Svalbard et Jan Mayen',
-                                                                'SY' => 'Syrie',
-                                                                'TJ' => 'Tadjikistan',
-                                                                'TW' => 'Taïwan',
-                                                                'TZ' => 'Tanzanie',
-                                                                'TD' => 'Tchad',
-                                                                'CZ' => 'Tchéquie',
-                                                                'TF' => 'Terres australes françaises',
-                                                                'IO' => 'Territoire britannique de l’océan Indien',
-                                                                'PS' => 'Territoires palestiniens',
-                                                                'TH' => 'Thaïlande',
-                                                                'TL' => 'Timor oriental',
-                                                                'TG' => 'Togo',
-                                                                'TK' => 'Tokelau',
-                                                                'TO' => 'Tonga',
-                                                                'TT' => 'Trinité-et-Tobago',
-                                                                'TN' => 'Tunisie',
-                                                                'TM' => 'Turkménistan',
-                                                                'TR' => 'Turquie',
-                                                                'TV' => 'Tuvalu',
-                                                                'UA' => 'Ukraine',
-                                                                'UY' => 'Uruguay',
-                                                                'VU' => 'Vanuatu',
-                                                                'VE' => 'Venezuela',
-                                                                'VN' => 'Vietnam',
-                                                                'WF' => 'Wallis-et-Futuna',
-                                                                'YE' => 'Yémen',
-                                                                'ZM' => 'Zambie',
-                                                                'ZW' => 'Zimbabwe',
-                                                            ];
-                                                            echo $countries[$courses[0]->teams_country];
-                                                        @endphp
+                                                    @if (isset($courses[0]->teams_country))
+                                                        <li class="m-0 pr-10" style="width:100%;">
+                                                            <i
+                                                                class="pe-7s-global font-16  text-theme-colored2 mr-5"></i>
+                                                            <a class="text-gray font-12" href="#">
+                                                                @php
+                                                                    $countries = [
+                                                                        'AF' => 'Afghanistan',
+                                                                        'ZA' => 'Afrique du Sud',
+                                                                        'AL' => 'Albanie',
+                                                                        'DZ' => 'Algérie',
+                                                                        'DE' => 'Allemagne',
+                                                                        'AD' => 'Andorre',
+                                                                        'AO' => 'Angola',
+                                                                        'AI' => 'Anguilla',
+                                                                        'AQ' => 'Antarctique',
+                                                                        'AG' => 'Antigua-et-Barbuda',
+                                                                        'SA' => 'Arabie saoudite',
+                                                                        'AR' => 'Argentine',
+                                                                        'AM' => 'Arménie',
+                                                                        'AW' => 'Aruba',
+                                                                        'AU' => 'Australie',
+                                                                        'AT' => 'Autriche',
+                                                                        'AZ' => 'Azerbaïdjan',
+                                                                        'BS' => 'Bahamas',
+                                                                        'BH' => 'Bahreïn',
+                                                                        'BD' => 'Bangladesh',
+                                                                        'BB' => 'Barbade',
+                                                                        'BE' => 'Belgique',
+                                                                        'BZ' => 'Belize',
+                                                                        'BJ' => 'Bénin',
+                                                                        'BM' => 'Bermudes',
+                                                                        'BT' => 'Bhoutan',
+                                                                        'BY' => 'Biélorussie',
+                                                                        'BO' => 'Bolivie',
+                                                                        'BA' => 'Bosnie-Herzégovine',
+                                                                        'BW' => 'Botswana',
+                                                                        'BR' => 'Brésil',
+                                                                        'BN' => 'Brunéi Darussalam',
+                                                                        'BG' => 'Bulgarie',
+                                                                        'BF' => 'Burkina Faso',
+                                                                        'BI' => 'Burundi',
+                                                                        'KH' => 'Cambodge',
+                                                                        'CM' => 'Cameroun',
+                                                                        'CA' => 'Canada',
+                                                                        'CV' => 'Cap-Vert',
+                                                                        'CL' => 'Chili',
+                                                                        'CN' => 'Chine',
+                                                                        'CY' => 'Chypre',
+                                                                        'CO' => 'Colombie',
+                                                                        'KM' => 'Comores',
+                                                                        'CG' => 'Congo-Brazzaville',
+                                                                        'CD' => 'Congo-Kinshasa',
+                                                                        'KP' => 'Corée du Nord',
+                                                                        'KR' => 'Corée du Sud',
+                                                                        'CR' => 'Costa Rica',
+                                                                        'CI' => 'Côte d’Ivoire',
+                                                                        'HR' => 'Croatie',
+                                                                        'CU' => 'Cuba',
+                                                                        'CW' => 'Curaçao',
+                                                                        'DK' => 'Danemark',
+                                                                        'DJ' => 'Djibouti',
+                                                                        'DM' => 'Dominique',
+                                                                        'EG' => 'Égypte',
+                                                                        'AE' => 'Émirats arabes unis',
+                                                                        'EC' => 'Équateur',
+                                                                        'ER' => 'Érythrée',
+                                                                        'ES' => 'Espagne',
+                                                                        'EE' => 'Estonie',
+                                                                        'SZ' => 'Eswatini',
+                                                                        'VA' => 'État de la Cité du Vatican',
+                                                                        'FM' => 'États fédérés de Micronésie',
+                                                                        'US' => 'États-Unis',
+                                                                        'ET' => 'Éthiopie',
+                                                                        'FJ' => 'Fidji',
+                                                                        'FI' => 'Finlande',
+                                                                        'FR' => 'France',
+                                                                        'GA' => 'Gabon',
+                                                                        'GM' => 'Gambie',
+                                                                        'GE' => 'Géorgie',
+                                                                        'GS' => 'Géorgie du Sud et îles Sandwich du Sud',
+                                                                        'GH' => 'Ghana',
+                                                                        'GI' => 'Gibraltar',
+                                                                        'GR' => 'Grèce',
+                                                                        'GD' => 'Grenade',
+                                                                        'GL' => 'Groenland',
+                                                                        'GP' => 'Guadeloupe',
+                                                                        'GU' => 'Guam',
+                                                                        'GT' => 'Guatemala',
+                                                                        'GG' => 'Guernesey',
+                                                                        'GN' => 'Guinée',
+                                                                        'GQ' => 'Guinée équatoriale',
+                                                                        'GW' => 'Guinée-Bissau',
+                                                                        'GY' => 'Guyana',
+                                                                        'GF' => 'Guyane française',
+                                                                        'HT' => 'Haïti',
+                                                                        'HN' => 'Honduras',
+                                                                        'HU' => 'Hongrie',
+                                                                        'BV' => 'Île Bouvet',
+                                                                        'CX' => 'Île Christmas',
+                                                                        'IM' => 'Île de Man',
+                                                                        'NF' => 'Île Norfolk',
+                                                                        'AX' => 'Îles Åland',
+                                                                        'KY' => 'Îles Caïmans',
+                                                                        'CC' => 'Îles Cocos',
+                                                                        'CK' => 'Îles Cook',
+                                                                        'FO' => 'Îles Féroé',
+                                                                        'HM' => 'Îles Heard et McDonald',
+                                                                        'FK' => 'Îles Malouines',
+                                                                        'MP' => 'Îles Mariannes du Nord',
+                                                                        'MH' => 'Îles Marshall',
+                                                                        'UM' => 'Îles mineures éloignées des États-Unis',
+                                                                        'PN' => 'Îles Pitcairn',
+                                                                        'SB' => 'Îles Salomon',
+                                                                        'TC' => 'Îles Turques-et-Caïques',
+                                                                        'VG' => 'Îles Vierges britanniques',
+                                                                        'VI' => 'Îles Vierges des États-Unis',
+                                                                        'IN' => 'Inde',
+                                                                        'ID' => 'Indonésie',
+                                                                        'IQ' => 'Irak',
+                                                                        'IR' => 'Iran',
+                                                                        'IE' => 'Irlande',
+                                                                        'IS' => 'Islande',
+                                                                        'IL' => 'Israël',
+                                                                        'IT' => 'Italie',
+                                                                        'JM' => 'Jamaïque',
+                                                                        'JP' => 'Japon',
+                                                                        'JE' => 'Jersey',
+                                                                        'JO' => 'Jordanie',
+                                                                        'KZ' => 'Kazakhstan',
+                                                                        'KE' => 'Kenya',
+                                                                        'KG' => 'Kirghizistan',
+                                                                        'KI' => 'Kiribati',
+                                                                        'KW' => 'Koweït',
+                                                                        'RE' => 'La Réunion',
+                                                                        'LA' => 'Laos',
+                                                                        'LS' => 'Lesotho',
+                                                                        'LV' => 'Lettonie',
+                                                                        'LB' => 'Liban',
+                                                                        'LR' => 'Libéria',
+                                                                        'LY' => 'Libye',
+                                                                        'LI' => 'Liechtenstein',
+                                                                        'LT' => 'Lituanie',
+                                                                        'LU' => 'Luxembourg',
+                                                                        'MK' => 'Macédoine du Nord',
+                                                                        'MG' => 'Madagascar',
+                                                                        'MY' => 'Malaisie',
+                                                                        'MW' => 'Malawi',
+                                                                        'MV' => 'Maldives',
+                                                                        'ML' => 'Mali',
+                                                                        'MT' => 'Malte',
+                                                                        'MA' => 'Maroc',
+                                                                        'MQ' => 'Martinique',
+                                                                        'MU' => 'Maurice',
+                                                                        'MR' => 'Mauritanie',
+                                                                        'YT' => 'Mayotte',
+                                                                        'MX' => 'Mexique',
+                                                                        'MD' => 'Moldavie',
+                                                                        'MC' => 'Monaco',
+                                                                        'MN' => 'Mongolie',
+                                                                        'ME' => 'Monténégro',
+                                                                        'MS' => 'Montserrat',
+                                                                        'MZ' => 'Mozambique',
+                                                                        'MM' => 'Myanmar (Birmanie)',
+                                                                        'NA' => 'Namibie',
+                                                                        'NR' => 'Nauru',
+                                                                        'NP' => 'Népal',
+                                                                        'NI' => 'Nicaragua',
+                                                                        'NE' => 'Niger',
+                                                                        'NG' => 'Nigéria',
+                                                                        'NU' => 'Niue',
+                                                                        'NO' => 'Norvège',
+                                                                        'NC' => 'Nouvelle-Calédonie',
+                                                                        'NZ' => 'Nouvelle-Zélande',
+                                                                        'OM' => 'Oman',
+                                                                        'UG' => 'Ouganda',
+                                                                        'UZ' => 'Ouzbékistan',
+                                                                        'PK' => 'Pakistan',
+                                                                        'PW' => 'Palaos',
+                                                                        'PA' => 'Panama',
+                                                                        'PG' => 'Papouasie-Nouvelle-Guinée',
+                                                                        'PY' => 'Paraguay',
+                                                                        'NL' => 'Pays-Bas',
+                                                                        'BQ' => 'Pays-Bas caribéens',
+                                                                        'PE' => 'Pérou',
+                                                                        'PH' => 'Philippines',
+                                                                        'PL' => 'Pologne',
+                                                                        'PF' => 'Polynésie française',
+                                                                        'PR' => 'Porto Rico',
+                                                                        'PT' => 'Portugal',
+                                                                        'QA' => 'Qatar',
+                                                                        'HK' => 'R.A.S. chinoise de Hong Kong',
+                                                                        'MO' => 'R.A.S. chinoise de Macao',
+                                                                        'CF' => 'République centrafricaine',
+                                                                        'DO' => 'République dominicaine',
+                                                                        'RO' => 'Roumanie',
+                                                                        'GB' => 'Royaume-Uni',
+                                                                        'RU' => 'Russie',
+                                                                        'RW' => 'Rwanda',
+                                                                        'EH' => 'Sahara occidental',
+                                                                        'BL' => 'Saint-Barthélemy',
+                                                                        'KN' => 'Saint-Christophe-et-Niévès',
+                                                                        'SM' => 'Saint-Marin',
+                                                                        'MF' => 'Saint-Martin',
+                                                                        'SX' => 'Saint-Martin (partie néerlandaise)',
+                                                                        'PM' => 'Saint-Pierre-et-Miquelon',
+                                                                        'VC' => 'Saint-Vincent-et-les-Grenadines',
+                                                                        'SH' => 'Sainte-Hélène',
+                                                                        'LC' => 'Sainte-Lucie',
+                                                                        'SV' => 'Salvador',
+                                                                        'WS' => 'Samoa',
+                                                                        'AS' => 'Samoa américaines',
+                                                                        'ST' => 'Sao Tomé-et-Principe',
+                                                                        'SN' => 'Sénégal',
+                                                                        'RS' => 'Serbie',
+                                                                        'SC' => 'Seychelles',
+                                                                        'SL' => 'Sierra Leone',
+                                                                        'SG' => 'Singapour',
+                                                                        'SK' => 'Slovaquie',
+                                                                        'SI' => 'Slovénie',
+                                                                        'SO' => 'Somalie',
+                                                                        'SD' => 'Soudan',
+                                                                        'SS' => 'Soudan du Sud',
+                                                                        'LK' => 'Sri Lanka',
+                                                                        'SE' => 'Suède',
+                                                                        'CH' => 'Suisse',
+                                                                        'SR' => 'Suriname',
+                                                                        'SJ' => 'Svalbard et Jan Mayen',
+                                                                        'SY' => 'Syrie',
+                                                                        'TJ' => 'Tadjikistan',
+                                                                        'TW' => 'Taïwan',
+                                                                        'TZ' => 'Tanzanie',
+                                                                        'TD' => 'Tchad',
+                                                                        'CZ' => 'Tchéquie',
+                                                                        'TF' => 'Terres australes françaises',
+                                                                        'IO' => 'Territoire britannique de l’océan Indien',
+                                                                        'PS' => 'Territoires palestiniens',
+                                                                        'TH' => 'Thaïlande',
+                                                                        'TL' => 'Timor oriental',
+                                                                        'TG' => 'Togo',
+                                                                        'TK' => 'Tokelau',
+                                                                        'TO' => 'Tonga',
+                                                                        'TT' => 'Trinité-et-Tobago',
+                                                                        'TN' => 'Tunisie',
+                                                                        'TM' => 'Turkménistan',
+                                                                        'TR' => 'Turquie',
+                                                                        'TV' => 'Tuvalu',
+                                                                        'UA' => 'Ukraine',
+                                                                        'UY' => 'Uruguay',
+                                                                        'VU' => 'Vanuatu',
+                                                                        'VE' => 'Venezuela',
+                                                                        'VN' => 'Vietnam',
+                                                                        'WF' => 'Wallis-et-Futuna',
+                                                                        'YE' => 'Yémen',
+                                                                        'ZM' => 'Zambie',
+                                                                        'ZW' => 'Zimbabwe',
+                                                                    ];
+                                                                    echo $countries[$courses[0]->teams_country];
+                                                                @endphp
 
 
-                                                    </a>
-                                                </li>
-                                            @endif
-                                      
-                                            @if (isset($courses[0]->teams_phone))
-                                                <li class="m-0 pr-10"> <i
-                                                        class="fa fa-phone text-theme-colored2 mr-5"></i>
-                                                    <a class="text-gray font-12"
-                                                        href="#">{{ $courses[0]->teams_phone }}</a>
-                                                </li>
-                                            @endif
-                                          
-                                            @if (isset($courses[0]->teams_email))
-                                                <li class="m-0 pr-10"> <i
-                                                        class="fa fa-envelope-o text-theme-colored2 mr-5"></i>
-                                                    <a class="text-gray font-12"
-                                                        href="mailto:{{ $courses[0]->teams_email }}">{{ $courses[0]->teams_email }}</a>
-                                                </li>
-                                            @endif
-                                        </ul>
-                              
-                                    </div>
-                                </div>
-                                @endif
+                                                            </a>
+                                                        </li>
+                                                    @endif
+
+                                                    @if (isset($courses[0]->teams_phone))
+                                                        <li class="m-0 pr-10"> <i
+                                                                class="fa fa-phone text-theme-colored2 mr-5"></i>
+                                                            <a class="text-gray font-12"
+                                                                href="#">{{ $courses[0]->teams_phone }}</a>
+                                                        </li>
+                                                    @endif
+
+                                                    @if (isset($courses[0]->teams_email))
+                                                        <li class="m-0 pr-10"> <i
+                                                                class="fa fa-envelope-o text-theme-colored2 mr-5"></i>
+                                                            <a class="text-gray font-12"
+                                                                href="mailto:{{ $courses[0]->teams_email }}">{{ $courses[0]->teams_email }}</a>
+                                                        </li>
+                                                    @endif
+                                                </ul>
+
+                                            </div>
+                                        </div>
+                                    @endif
                                 </div>
                             </div>
                         </div>
@@ -3566,7 +3613,8 @@
 
                         <ul class="list-inline">
                             <li class="m-0 pl-10 pr-10"> <i class="fa fa-phone mr-5"></i> <a href="#"
-                                    style="color:#1f3344; font-size:12px;cursor:default;">(+212) 0528-241-006/240-155</a>
+                                    style="color:#1f3344; font-size:12px;cursor:default;">(+212)
+                                    0528-241-006/240-155</a>
                             </li>
                             <li class="m-0 pl-10 pr-10"> <i class="fa fa-envelope-o mr-5"></i> <a
                                     href="mailto:contact@cha-agadir.ma"
