@@ -2659,27 +2659,27 @@
 
                                             <div class="team-bottom-part border-1px p-15">
 
-                                                <h4 class="text-uppercase font-weight-600 m-0 pb-5 font-16">
+                                                <h4 class="text-uppercase font-weight-600 m-0 pb-5 font-14">
                                                     {{ $courses[0]->responsables_name }}
                                                     {{ $courses[0]->responsables_surname }}
 
                                                 </h4>
 
-                                                <h6 class="font-13 text-gray mt-0 font-10">
+                                                <h6 class="font-13 text-gray mt-0 font-8">
                                                     @if (App::isLocale('en'))
                                                         {{ $courses[0]->responsables_statut_en }}
                                                     @else
                                                         {{ $courses[0]->responsables_statut }}
                                                     @endif
                                                 </h6>
-                                                <h6 class="font-13 text-gray mt-0 font-10">
+                                                <h6 class="font-13 text-gray mt-0 font-8">
                                                     @if (App::isLocale('en'))
                                                         {{ $courses[0]->responsables_poste_en }}
                                                     @else
                                                         {{ $courses[0]->responsables_poste }}
                                                     @endif
                                                 </h6>
-                                                <h6 class="font-13 text-gray mt-0 font-10">
+                                                <h6 class="font-13 text-gray mt-0 font-8">
                                                     {{ $courses[0]->responsables_etablissement }}
                                                 </h6>
                                                 <ul class="list-inline">
@@ -2688,7 +2688,7 @@
                                                         <li class="m-0 pr-10" style="width:100%;">
                                                             <i
                                                                 class="pe-7s-global font-16  text-theme-colored2 mr-5"></i>
-                                                            <a class="text-gray font-12" href="#">
+                                                            <a class="text-gray" style="font-size:9px;" href="#">
                                                                 @php
                                                                     $countries = [
                                                                         'AF' => 'Afghanistan',
@@ -2950,7 +2950,7 @@
                                                     @if (isset($courses[0]->responsables_phone))
                                                         <li class="m-0 pr-10"> <i
                                                                 class="fa fa-phone text-theme-colored2 mr-5"></i>
-                                                            <a class="text-gray font-12"
+                                                            <a class="text-gray" style="font-size:9px;"
                                                                 href="#">{{ $courses[0]->responsables_phone }}</a>
                                                         </li>
                                                     @endif
@@ -2958,7 +2958,7 @@
                                                     @if (isset($courses[0]->responsables_email))
                                                         <li class="m-0 pr-10"> <i
                                                                 class="fa fa-envelope-o text-theme-colored2 mr-5"></i>
-                                                            <a class="text-gray font-12"
+                                                            <a class="text-gray" style="font-size:9px;"
                                                                 href="mailto:{{ $courses[0]->responsables_email }}">{{ $courses[0]->responsables_email }}</a>
                                                         </li>
                                                     @endif
@@ -2970,27 +2970,27 @@
                                         <div class="team-members mb-40 ml-40 mr-40">
                                             <div class="team-bottom-part border-1px p-15">
 
-                                                <h4 class="text-uppercase font-weight-600 m-0 pb-5 font-16">
+                                                <h4 class="text-uppercase font-weight-600 m-0 pb-5 font-14">
                                                     {{ $courses[0]->teams_name }}
                                                     {{ $courses[0]->teams_surname }}
 
                                                 </h4>
 
-                                                <h6 class="font-13 text-gray mt-0 font-10">
+                                                <h6 class="font-13 text-gray mt-0 font-8">
                                                     @if (App::isLocale('en'))
                                                         {{ $courses[0]->teams_statut_en }}
                                                     @else
                                                         {{ $courses[0]->teams_statut }}
                                                     @endif
                                                 </h6>
-                                                <h6 class="font-13 text-gray mt-0 font-10">
+                                                <h6 class="font-13 text-gray mt-0 font-8">
                                                     @if (App::isLocale('en'))
                                                         {{ $courses[0]->teams_poste_en }}
                                                     @else
                                                         {{ $courses[0]->teams_poste }}
                                                     @endif
                                                 </h6>
-                                                <h6 class="font-13 text-gray mt-0 font-10">
+                                                <h6 class="font-13 text-gray mt-0 font-8">
                                                     {{ $courses[0]->teams_etablissement }}
                                                 </h6>
                                                 <ul class="list-inline mt-15">
@@ -2999,7 +2999,7 @@
                                                         <li class="m-0 pr-10" style="width:100%;">
                                                             <i
                                                                 class="pe-7s-global font-16  text-theme-colored2 mr-5"></i>
-                                                            <a class="text-gray font-12" href="#">
+                                                            <a class="text-gray" style="font-size:9px;"  href="#">
                                                                 @php
                                                                     $countries = [
                                                                         'AF' => 'Afghanistan',
@@ -3263,7 +3263,7 @@
                                                     @if (isset($courses[0]->teams_phone))
                                                         <li class="m-0 pr-10"> <i
                                                                 class="fa fa-phone text-theme-colored2 mr-5"></i>
-                                                            <a class="text-gray font-12"
+                                                            <a class="text-gray" style="font-size:9px;"
                                                                 href="#">{{ $courses[0]->teams_phone }}</a>
                                                         </li>
                                                     @endif
@@ -3271,7 +3271,7 @@
                                                     @if (isset($courses[0]->teams_email))
                                                         <li class="m-0 pr-10"> <i
                                                                 class="fa fa-envelope-o text-theme-colored2 mr-5"></i>
-                                                            <a class="text-gray font-12"
+                                                            <a class="text-gray" style="font-size:9px;"
                                                                 href="mailto:{{ $courses[0]->teams_email }}">{{ $courses[0]->teams_email }}</a>
                                                         </li>
                                                     @endif
