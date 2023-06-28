@@ -55,8 +55,7 @@
                     <h4 class="mt-0 mb-30 line-bottom-theme-colored2">{{__('contact.title2')}}</h4>
                     @if (session()->has('success'))
                         <h6 class='alert alert-success' role="alert">
-                            Votre formulaire a été envoyé avec succès et nous vous remercions pour votre intérêt.
-                            N’hésitez pas à prendre contact avec nous. Merci.
+                            Your message has been successfully saved!
                         </h6>
                     @endif
                     <!-- Contact Form -->

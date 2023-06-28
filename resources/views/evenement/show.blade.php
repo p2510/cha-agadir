@@ -70,10 +70,7 @@
 
 
                         <h6 class='alert alert-success col-xs-12 col-sm-8 col-md-6 ' role="alert">
-                            Nous avons bien reçu votre pré-inscription et nous vous remercions pour votre intérêt à
-                            participer à
-                            notre évènement. En cas de besoin, contactez l’administration pour plus d’informations sur les
-                            modalités et les conditions de participation.
+                            Your pre-registration has been successfully saved!
                         </h6>
                     </div>
                 </div>

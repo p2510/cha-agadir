@@ -319,8 +319,7 @@
 
 
                     <h6 class='alert alert-success col-xs-12 col-sm-8 col-md-6 ' role="alert">
-                        Votre inscription à notre newsletter a été bien
-                        enregistrée !!
+                        Your email has been successfully registered!
                     </h6>
                 </div>
             </div>
@@ -1909,10 +1908,7 @@
                                                             </h4>
                                                             @if (session()->has('success'))
                                                                 <h6 class='alert alert-success' role="alert">
-                                                                    Votre réponse a été bien enregistrée . Nous vous
-                                                                    remercions
-                                                                    pour votre intérêt et n'hésitez pas à nous contacter
-                                                                    .
+                                                                    Your reply has been successfully registered!
                                                                 </h6>
                                                             @endif
                                                             <div class="line-bottom-theme-colored2 mb-30  "></div>
@@ -3312,10 +3308,7 @@
                                                         </h4>
                                                         @if (session()->has('success'))
                                                             <h6 class='alert alert-success' role="alert">
-                                                                Votre réponse a été bien enregistrée . Nous vous
-                                                                remercions
-                                                                pour votre intérêt et n'hésitez pas à nous contacter
-                                                                .
+                                                                Your reply has been successfully registered!
                                                             </h6>
                                                         @endif
                                                         <div class="line-bottom-theme-colored2 mb-30  "></div>
