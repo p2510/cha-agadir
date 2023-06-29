@@ -117,9 +117,9 @@
                         </div>
                         <div class="col-xs-11 col-sm-12 col-md-8">
                             <div class="widget">
-                                <ul class="list-inline text-right flip sm-text-center">
+                                <ul class="list-inline text-right flip sm-text-right md-text-center">
 
-                                    <li class="text-white" style="position:relative; top:3px;">
+                                    <li id="elem" class="text-white" style="position:relative; top:3px;">
 
                                         <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18"
                                             viewBox="0 0 24 24">

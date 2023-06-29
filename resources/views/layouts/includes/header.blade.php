@@ -104,7 +104,7 @@
             <div class="header-top bg-theme-colored border-top-theme-colored2-2px sm-text-center">
                 <div class="container">
                     <div class="row">
-                        <div class="col-xs-1 col-sm-6 col-md-1 ">
+                        <div class="col-xs-12 col-sm-6 col-md-1 ">
 
                             <div class="widget">
                                 <a href=""></a>
@@ -133,11 +133,11 @@
                                 </ul>
                             </div>
                         </div>
-                        <div class="col-xs-11 col-sm-12 col-md-8">
+                        <div class="col-xs-12 col-sm-12 col-md-8">
                             <div class="widget">
-                                <ul class="list-inline text-right flip sm-text-right md-text-center">
+                                <ul class="list-inline flip text-center  ">
 
-                                    <li id="elem" class="text-white" style="position:relative; top:3px;">
+                                    <li  class="text-white" style="position:relative; top:3px;">
 
                                         <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18"
                                             viewBox="0 0 24 24">
