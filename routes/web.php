@@ -37,7 +37,7 @@ use App\Http\Controllers\ModeApplicationController;
 |
 */
 
-Route::prefix('/test')->group(function () {
+
     
 Route::get('/', [HomeController::class, '__invoke'])->name('home');
 Route::get('/nos-formations/{course}', [CourseController::class, 'show'])->name('course.details');
@@ -73,7 +73,7 @@ Route::get('/centre-excellence', [CenterController::class, '__invoke'])->name('c
 Route::get('/ferme-experiementale', [ExperienceController::class, '__invoke'])->name('experience.index');
 Route::get('/impact-cluster', [ImpactController::class, '__invoke'])->name('impact.index');
 Route::get('/agri-business', [BusinessController::class, '__invoke'])->name('business.index');
-});
+
 // alert 
 
 

@@ -342,7 +342,7 @@
                 @if (count($pagevideos) == 1)
                     <style>
                         iframe {
-                            transform: scale(0.8);
+                            width: 40%;
                             position: relative;
                             top: 30%;
                         }
