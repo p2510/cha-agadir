@@ -244,7 +244,7 @@
                                             class="font-14 text-uppercase d-inline">{{ __('header.title3') }}</a>
                                         <ul class="dropdown" style="padding-left: -50px;">
                                             <li style="padding-left: -50px;">
-                                                <a href="{{ route('degree.show', "Ingénieur d'État") }}"
+                                                <a href="{{ route('degree.show', "INGÉNIEUR") }}"
                                                     style="padding-left: -50px">{{ __('header.subtitle9') }}</a>
                                                 <ul class="dropdown">
                                                     <li><a
@@ -261,7 +261,7 @@
 
                                             </li>
                                             <li><a
-                                                    href="{{ route('degree.show', 'Master') }}">{{ __('header.subtitle13') }}</a>
+                                                    href="{{ route('degree.show', 'MASTER') }}">{{ __('header.subtitle13') }}</a>
                                                 <ul class="dropdown">
                                                     <li><a
                                                             href="{{ route('course.details', 'Water & Sustainable Horticulture') }}">{{ __('header.subtitle14') }}</a>
@@ -276,7 +276,7 @@
                                                 </ul>
                                             </li>
 
-                                            <li><a href="{{ route('degree.show', 'Licence pro') }}">
+                                            <li><a href="{{ route('degree.show', 'LICENCE PRO.') }}">
                                                     {{ __('header.subtitle18') }}</a>
                                                 <ul class="dropdown">
                                                     <li><a
@@ -288,7 +288,7 @@
                                                     </li>
                                                 </ul>
                                             </li>
-                                            <li><a href="{{ route('degree.show', 'Technicien sp.') }}">{{ __('header.subtitle22') }}
+                                            <li><a href="{{ route('degree.show', 'TECHNICIEN SPÉCIALISÉ') }}">{{ __('header.subtitle22') }}
                                                 </a>
                                                 <ul class="dropdown">
                                                     <li><a
@@ -306,10 +306,10 @@
                                                 </ul>
                                             </li>
                                             <li><a
-                                                    href="{{ route('course.details', 'Programme Doctoral') }}">{{ __('header.subtitle30') }}</a>
+                                                    href="{{ route('course.details', 'DOCTORAT') }}">{{ __('header.subtitle30') }}</a>
 
                                             </li>
-                                            <li><a href="{{ route('degree.show', 'Formation Exécutive') }}">{{ __('header.subtitle31') }}
+                                            <li><a href="{{ route('degree.show', 'FORMATION EXÉCUTIVE') }}">{{ __('header.subtitle31') }}
                                                     <span class="label label-danger">New</span></a>
                                                 <ul class="dropdown">
                                                     <li><a href="{{ route('course.details', 'Farm Manager') }}">
