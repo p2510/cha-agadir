@@ -70,17 +70,12 @@
 
 
                      
-                        <div class="alert alert-custom  fade in alert-dismissable show" style="margin-top:18px;">
+                        <div class="alert alert-success  fade in alert-dismissable show" style="margin-top:18px;">
                             <button type="button" class="close" data-dismiss="alert" aria-label="Close">
                                 <span aria-hidden="true" style="font-size:20px">×</span>
                             </button>                        Your pre-registration has been successfully saved!
                         </div>
-                        <style>
-                            .alert-custom {
-                                background-color: #007c00 ;
-                                color: #fff;
-                            }
-                        </style>
+                    
                     </div>
                 </div>
             @endif

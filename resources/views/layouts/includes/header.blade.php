@@ -195,7 +195,7 @@
             @if (count($alert) > 0)
                 @foreach ($alert as $item)
                     <marquee behavior="" direction="left"
-                        style="padding-top:4px; padding-bottom:4px; background-color:#F88147;color:white;">
+                        style="padding-top:4px; padding-bottom:4px; background-color:#007c00 ;color:white;">
                         {{ $item->message }}
                     </marquee>
                 @endforeach
@@ -204,16 +204,25 @@
                 <div class="header-nav-wrapper navbar-scrolltofixed bg-white">
                     <div class="container">
 
+                        <div id="logo_pc" style="justify-content:center;width:100%;">
 
-                        <nav id="menuzord-right" class="menuzord default theme-colored">
                             @if (count($logo_url) > 0)
                                 @foreach ($logo_url as $item)
                                     <a class="menuzord-brand  flip mt-20 mt-sm-10 mb-sm-20 pt-5"
+                                        href="{{ route('home') }}"><img
+                                            src="{{ url('storage') }}/{{ $item->logo }}" alt=""></a>
+                                @endforeach
+                            @endif
+                        </div>
+                        <nav id="menuzord-right" class="menuzord default theme-colored">
+                            @if (count($logo_url) > 0)
+                                @foreach ($logo_url as $item)
+                                    <a id="logo_mobile" class="menuzord-brand  flip mt-20 mt-sm-10 mb-sm-20 pt-5"
                                         href="{{ route('home') }}"><img style="width: 166px;height:30;"
                                             src="{{ url('storage') }}/{{ $item->logo }}" alt=""></a>
                                 @endforeach
                             @endif
-                            
+
                             <ul class="menuzord-menu list-unstyled">
 
                                 <li @if (Route::current()->getName() == 'home') class='active' @endif>
@@ -340,7 +349,7 @@
                                         class="font-14 text-uppercase">{{ __('header.title8') }}</a>
 
                             </ul>
-                       
+
 
                         </nav>
 
@@ -355,6 +364,7 @@
                 .break {
                     display: none;
                 }
+              
 
 
             }
@@ -363,6 +373,7 @@
                 .break {
                     display: block;
                 }
+             
 
 
             }
@@ -372,18 +383,30 @@
                     display: none;
 
                 }
+              
+                #logo_pc{
+                    display: none;
+                }
             }
 
             @media screen and (min-width: 768px) {
                 #separate {
+                    display: block;
+                }
+                #logo_pc{
+                    display:flex;;
+                }
+                #logo_mobile{
                     display: none;
                 }
+               
             }
 
             @media screen and (min-width: 992px) and (max-width: 1199px) {
                 .menuzord-menu li a {
                     font-size: 11px !important;
                 }
+                
             }
 
             @media (max-width: 992px) {

@@ -133,6 +133,14 @@
                                     </li>
 
                                     <li class="text-white">|</li>
+                                    <li class="text-white" style="position:relative; top:3px;">
+                                        <svg xmlns="http://www.w3.org/2000/svg" width="17" height="17"
+                                            viewBox="0 0 576 512">
+                                            <path fill="currentColor"
+                                                d="M512 80c8.8 0 16 7.2 16 16V416c0 8.8-7.2 16-16 16H64c-8.8 0-16-7.2-16-16V96c0-8.8 7.2-16 16-16H512zM64 32C28.7 32 0 60.7 0 96V416c0 35.3 28.7 64 64 64H512c35.3 0 64-28.7 64-64V96c0-35.3-28.7-64-64-64H64zM208 256a64 64 0 1 0 0-128 64 64 0 1 0 0 128zm-32 32c-44.2 0-80 35.8-80 80c0 8.8 7.2 16 16 16H304c8.8 0 16-7.2 16-16c0-44.2-35.8-80-80-80H176zM376 144c-13.3 0-24 10.7-24 24s10.7 24 24 24h80c13.3 0 24-10.7 24-24s-10.7-24-24-24H376zm0 96c-13.3 0-24 10.7-24 24s10.7 24 24 24h80c13.3 0 24-10.7 24-24s-10.7-24-24-24H376z" />
+                                        </svg>
+
+                                    </li>
                                     <li>
                                         <a class="text-white"
                                             href="{{ route('about.index') }}">{{ __('header.info2') }}</a>
@@ -150,7 +158,7 @@
                                     <li class=" text-white" style="font-weight:bold;" id='elem'>
                                         (+212) 0528-241-006 / 240-155
                                     </li>
-                                 
+
                                     <li>
                                         <a href="{{ route('course.index') }}"
                                             class="btn btn-dark btn-circled btn-theme-colored2 btn-sm  pr-30 pl-30 "
@@ -166,10 +174,10 @@
             </div>
 
 
-            @if (count($alert)>0)
+            @if (count($alert) > 0)
                 @foreach ($alert as $item)
                     <marquee behavior="" direction="left"
-                        style="padding-top:4px; padding-bottom:4px; background-color:#F88147;color:white;">
+                        style="padding-top:4px; padding-bottom:4px; background-color:#007c00 ;color:white;">
                         {{ $item->message }}
                     </marquee>
                 @endforeach
@@ -177,7 +185,8 @@
             <div class="header-nav">
                 <div class="header-nav-wrapper navbar-scrolltofixed bg-white">
                     <div class="container">
-                        <div style="display:flex;justify-content:center;width:100%;">
+
+                        <div id="logo_pc" style="justify-content:center;width:100%;">
 
                             @if (count($logo_url) > 0)
                                 @foreach ($logo_url as $item)
@@ -187,8 +196,14 @@
                                 @endforeach
                             @endif
                         </div>
-
                         <nav id="menuzord-right" class="menuzord default theme-colored">
+                            @if (count($logo_url) > 0)
+                                @foreach ($logo_url as $item)
+                                    <a id="logo_mobile" class="menuzord-brand  flip mt-20 mt-sm-10 mb-sm-20 pt-5"
+                                        href="{{ route('home') }}"><img style="width: 166px;height:30;"
+                                            src="{{ url('storage') }}/{{ $item->logo }}" alt=""></a>
+                                @endforeach
+                            @endif
 
                             <ul class="menuzord-menu list-unstyled">
 
@@ -226,7 +241,7 @@
                                         class="font-14 text-uppercase d-inline">{{ __('header.title3') }}</a>
                                     <ul class="dropdown" style="padding-left: -50px;">
                                         <li style="padding-left: -50px;">
-                                            <a href="{{ route('degree.show', "Ingénieur d'État") }}"
+                                            <a href="{{ route('degree.show', 'INGÉNIEUR') }}"
                                                 style="padding-left: -50px">{{ __('header.subtitle9') }}</a>
                                             <ul class="dropdown">
                                                 <li><a
@@ -238,27 +253,26 @@
                                                 <li><a
                                                         href="{{ route('course.details', 'Architecture du Paysage') }}">
                                                         {{ __('header.subtitle12') }}</a></li>
-
                                             </ul>
-
                                         </li>
                                         <li><a
-                                                href="{{ route('degree.show', 'Master') }}">{{ __('header.subtitle13') }}</a>
+                                                href="{{ route('degree.show', 'MASTER') }}">{{ __('header.subtitle13') }}</a>
                                             <ul class="dropdown">
                                                 <li><a
-                                                        href="{{ route('course.details', 'Water & Sustainable Horticulture') }}">{{ __('header.subtitle14') }}</a>
+                                                        href="{{ route('course.details', 'EAU ET HORTICULTURE DURABLE') }}">{{ __('header.subtitle14') }}</a>
                                                 </li>
                                                 <li><a
                                                         href="{{ route('course.details', 'Architecture du Paysage') }}">{{ __('header.subtitle15') }}</a>
                                                 </li>
-                                                <li><a href="{{ route('course.details', 'Locust Science') }}">
+                                                <li><a href="{{ route('course.details', 'Locust Master') }}">
                                                         {{ __('header.subtitle16') }}</a></li>
-                                                <li><a href="{{ route('course.details', 'Sciences Acridiennes') }}">
+                                                <li><a
+                                                        href="{{ route('course.details', 'Master Sciences Acridiennes') }}">
                                                         {{ __('header.subtitle17') }}</a></li>
                                             </ul>
                                         </li>
 
-                                        <li><a href="{{ route('degree.show', 'Licence pro') }}">
+                                        <li><a href="{{ route('degree.show', 'LICENCE PRO.') }}">
                                                 {{ __('header.subtitle18') }}</a>
                                             <ul class="dropdown">
                                                 <li><a
@@ -270,7 +284,7 @@
                                                 </li>
                                             </ul>
                                         </li>
-                                        <li><a href="{{ route('degree.show', 'Technicien sp.') }}">{{ __('header.subtitle22') }}
+                                        <li><a href="{{ route('degree.show', 'TECHNICIEN SPÉCIALISÉ') }}">{{ __('header.subtitle22') }}
                                             </a>
                                             <ul class="dropdown">
                                                 <li><a
@@ -283,15 +297,16 @@
                                                 <li><a
                                                         href="{{ route('course.details', 'Cultures Ornementales et Aménagement des Espaces Verts') }}">{{ __('header.subtitle27') }}
                                                         <br class="break"> {{ __('header.subtitle28') }}</a></li>
-                                                <li><a href="Aquaculture">{{ __('header.subtitle29') }}</a>
+                                                <li><a
+                                                        href="{{ route('course.details', 'Aquaculture') }}">{{ __('header.subtitle29') }}</a>
                                                 </li>
                                             </ul>
                                         </li>
                                         <li><a
-                                                href="{{ route('course.details', 'Programme Doctoral') }}">{{ __('header.subtitle30') }}</a>
+                                                href="{{ route('course.details', 'DOCTORAT') }}">{{ __('header.subtitle30') }}</a>
 
                                         </li>
-                                        <li><a href="{{ route('degree.show', 'Formation Exécutive') }}">{{ __('header.subtitle31') }}
+                                        <li><a href="{{ route('degree.show', 'FORMATION EXÉCUTIVE') }}">{{ __('header.subtitle31') }}
                                                 <span class="label label-danger">New</span></a>
                                             <ul class="dropdown">
                                                 <li><a href="{{ route('course.details', 'Farm Manager') }}">
@@ -317,49 +332,21 @@
 
                             </ul>
 
+
                         </nav>
+
                     </div>
                 </div>
             </div>
         </header>
 
-        @if (session()->has('successNewsletter'))
-            <div class="container">
-                <div class="row">
-
-
-
-                    <div class="alert alert-custom  fade in alert-dismissable show" style="margin-top:18px;">
-                        <button type="button" class="close" data-dismiss="alert" aria-label="Close">
-                            <span aria-hidden="true" style="font-size:20px">×</span>
-                        </button> Your email has been successfully registered!
-                    </div>
-                    <style>
-                        .alert-custom {
-                            background-color: #007c00 ;
-                            color: #fff;
-                        }
-                    </style>
-                </div>
-            </div>
-        @endif
-        @if ($errors->any())
-            <div class="container">
-                <div class="row">
-                    <ul class='alert alert-danger col-xs-12 col-sm-8 col-md-6 ' role="alert">
-                        @foreach ($errors->all() as $error)
-                            <li>{{ $error }}</li>
-                        @endforeach
-                    </ul>
-                </div>
-            </div>
-        @endif
 
         <style>
             @media only screen and (min-width:500px) {
                 .break {
                     display: none;
                 }
+              
 
 
             }
@@ -368,6 +355,7 @@
                 .break {
                     display: block;
                 }
+             
 
 
             }
@@ -377,18 +365,30 @@
                     display: none;
 
                 }
+              
+                #logo_pc{
+                    display: none;
+                }
             }
 
             @media screen and (min-width: 768px) {
                 #separate {
+                    display: block;
+                }
+                #logo_pc{
+                    display:flex;;
+                }
+                #logo_mobile{
                     display: none;
                 }
+               
             }
 
             @media screen and (min-width: 992px) and (max-width: 1199px) {
                 .menuzord-menu li a {
                     font-size: 11px !important;
                 }
+                
             }
 
             @media (max-width: 992px) {
@@ -576,6 +576,35 @@
                 background-color: #1F334560;
             }
         </style>
+
+        @if (session()->has('successNewsletter'))
+            <div class="container">
+                <div class="row">
+
+
+
+                    <div class="alert alert-success  fade in alert-dismissable show" style="margin-top:18px;">
+                        <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                            <span aria-hidden="true" style="font-size:20px">×</span>
+                        </button> Your email has been successfully registered!
+                    </div>
+                   
+                </div>
+            </div>
+        @endif
+        @if ($errors->any())
+            <div class="container">
+                <div class="row">
+                    <ul class='alert alert-danger col-xs-12 col-sm-8 col-md-6 ' role="alert">
+                        @foreach ($errors->all() as $error)
+                            <li>{{ $error }}</li>
+                        @endforeach
+                    </ul>
+                </div>
+            </div>
+        @endif
+
+      
         <script>
             const switchlang = document.getElementById('switchlang');
             switchlang.addEventListener('change', () => {
@@ -1927,18 +1956,13 @@
                                                             </h4>
                                                             @if (session()->has('success'))
                                                               
-                                                                <div class="alert alert-custom  fade in alert-dismissable show" style="margin-top:18px;">
+                                                                <div class="alert alert-success  fade in alert-dismissable show" style="margin-top:18px;">
                                                                     <button type="button" class="close" data-dismiss="alert" aria-label="Close">
                                                                         <span aria-hidden="true" style="font-size:20px">×</span>
                                                                     </button>                           Your reply has been successfully registered!
                                         
                                                                 </div>
-                                                                <style>
-                                                                    .alert-custom {
-                                                                        background-color: #007c00 ;
-                                                                        color: #fff;
-                                                                    }
-                                                                </style>
+                                                                
                                                             @endif
                                                             <div class="line-bottom-theme-colored2 mb-30  "></div>
                                                             <p class="text-white">{{ __('course.subtitle14') }}.</p>
@@ -3339,18 +3363,13 @@
                                                         </h4>
                                                         @if (session()->has('success'))
                                                           
-                                                            <div class="alert alert-custom  fade in alert-dismissable show" style="margin-top:18px;">
+                                                            <div class="alert alert-success  fade in alert-dismissable show" style="margin-top:18px;">
                                                                 <button type="button" class="close" data-dismiss="alert" aria-label="Close">
                                                                     <span aria-hidden="true" style="font-size:20px">×</span>
                                                                 </button>                            Your reply has been successfully registered!
                                     
                                                             </div>
-                                                            <style>
-                                                                .alert-custom {
-                                                                    background-color: #007c00 ;
-                                                                    color: #fff;
-                                                                }
-                                                            </style>
+                                                         
                                                         @endif
                                                         <div class="line-bottom-theme-colored2 mb-30  "></div>
                                                         <p class="text-white">{{ __('course.subtitle14') }}.</p>
