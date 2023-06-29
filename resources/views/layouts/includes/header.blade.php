@@ -268,14 +268,14 @@
                                                     href="{{ route('degree.show', 'MASTER') }}">{{ __('header.subtitle13') }}</a>
                                                 <ul class="dropdown">
                                                     <li><a
-                                                            href="{{ route('course.details', 'Water & Sustainable Horticulture') }}">{{ __('header.subtitle14') }}</a>
+                                                            href="{{ route('course.details', 'EAU ET HORTICULTURE DURABLE') }}">{{ __('header.subtitle14') }}</a>
                                                     </li>
                                                     <li><a
                                                             href="{{ route('course.details', 'Architecture du Paysage') }}">{{ __('header.subtitle15') }}</a>
                                                     </li>
-                                                    <li><a href="{{ route('course.details', 'Locust Science') }}">
+                                                    <li><a href="{{ route('course.details', 'Locust Master') }}">
                                                             {{ __('header.subtitle16') }}</a></li>
-                                                    <li><a href="{{ route('course.details', 'Sciences Acridiennes') }}">
+                                                    <li><a href="{{ route('course.details', 'Master Sciences Acridiennes') }}">
                                                             {{ __('header.subtitle17') }}</a></li>
                                                 </ul>
                                             </li>
@@ -305,7 +305,7 @@
                                                     <li><a
                                                             href="{{ route('course.details', 'Cultures Ornementales et Aménagement des Espaces Verts') }}">{{ __('header.subtitle27') }}
                                                             <br class="break"> {{ __('header.subtitle28') }}</a></li>
-                                                    <li><a href="Aquaculture">{{ __('header.subtitle29') }}</a>
+                                                    <li><a href="{{ route('course.details', 'Aquaculture') }}">{{ __('header.subtitle29') }}</a>
                                                     </li>
                                                 </ul>
                                             </li>
