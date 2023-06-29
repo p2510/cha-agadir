@@ -3,11 +3,18 @@
 <div class="container">
     <div class="row">
 
-   
-        <h6 class='alert alert-success col-xs-12 col-sm-8 col-md-6 ' role="alert">
-            Votre inscription à notre newsletter a été bien
-            enregistrée !!
-        </h6>
+
+        <div class="alert alert-custom  fade in alert-dismissable show" style="margin-top:18px;">
+            <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                <span aria-hidden="true" style="font-size:20px">×</span>
+            </button>               Your email has been successfully registered!
+        </div>
+        <style>.alert-custom {
+            
+                background-color:#007c00;
+                color: #fff;
+            }
+        </style>
     </div>
 </div>
 @endif
@@ -16,9 +23,18 @@
     <div class="row">
 
    
-        <h6 class='alert alert-success col-xs-12 col-sm-8 col-md-6 ' role="alert">
-           Vous êtes désormais désabonner de la newsletter !!
-        </h6>
+        <div class="alert alert-custom  fade in alert-dismissable show" style="margin-top:18px;">
+            <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                <span aria-hidden="true" style="font-size:20px">×</span>
+            </button>             Your email has been successfully unregistered! 
+
+        </div>
+        <style>{
+            .alert-custom 
+                background-color: #007c00 ;
+                color: #fff;
+            }
+        </style>
     </div>
 </div>
 @endif

@@ -73,10 +73,9 @@
                             <div class="gallery-isotope default-animation-effect grid-3 gutter-small clearfix"
                                 data-lightbox="gallery">
                                 <!-- Portfolio Item Start -->
-
                                 @foreach ($courses as $course)
                                     <div class="item gallery-item  a{{ $course->degree_id }}"
-                                        style="padding-bottom:20px;padding-right:10px;">
+                                        style="padding-bottom:20px;">
                                         <div class="course-single-item bg-white border-1px clearfix">
                                             <a href="{{ route('course.details', $course->name) }}" class="course-thumb">
                                                 <img class="img-fullwidth" alt=""

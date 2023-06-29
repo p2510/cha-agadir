@@ -102,15 +102,21 @@
 
                         </div>
 
-                        <div class="col-xs-0 col-sm-6 col-md-3"  id="elem">
+                        <div class="col-xs-0 col-sm-6 col-md-3" id="elem">
                             <div class="widget">
 
                                 <ul class="styled-icons icon-sm icon-white">
 
-                                    <li><a href="#"><i class="fa fa-facebook"></i></a></li>
-                                    <li><a href="#"><i class="fa fa-instagram"></i></a></li>
-                                    <li><a href="#"><i class="fa fa-linkedin"></i></a></li>
-                                    <li><a href="#"><i class="fa fa-youtube"></i></a></li>
+                                    <li><a
+                                            href="https://www.facebook.com/profile.php?id=100088051148636&mibextid=ZbWKwL"><i
+                                                class="fa fa-facebook"></i></a></li>
+                                    <li><a href="https://youtube.com/@ComplexeHorticoleAgadir"><i
+                                                class="fa fa-instagram"></i></a></li>
+                                    <li><a href="https://youtube.com/@ComplexeHorticoleAgadir   "><i
+                                                class="fa fa-linkedin"></i></a></li>
+                                    <li><a href="youtube.com/@ComplexeHorticoleAgadir"><i class="fa fa-youtube"></i></a>
+                                    </li>
+
 
                                 </ul>
                             </div>
@@ -119,7 +125,7 @@
                             <div class="widget">
                                 <ul class="list-inline flip text-center  ">
 
-                                    <li  class="text-white" style="position:relative; top:3px;">
+                                    <li class="text-white" style="position:relative; top:3px;">
 
                                         <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18"
                                             viewBox="0 0 24 24">
@@ -137,7 +143,7 @@
                                         <a class="text-white" id="elem"
                                             href="{{ route('about.index') }}">{{ __('header.info2') }}</a>
                                     </li>
-                                    
+
 
                                     <li class="text-white " id='elem'>|</li>
                                     <li class="text-white " id='elem' style="position:relative; top:3px;">
@@ -151,8 +157,8 @@
                                     <li class=" text-white" style="font-weight:bold;" id='elem'>
                                         (+212) 0528-241-006 / 240-155
                                     </li>
-                                    
-                                    
+
+
                                     <li>
                                         <a href="{{ route('course.index') }}"
                                             class="btn btn-dark btn-circled btn-theme-colored2 btn-sm  pr-10 pl-10 "
@@ -168,7 +174,7 @@
             </div>
 
 
-            @if (count($alert)>0)
+            @if (count($alert) > 0)
                 @foreach ($alert as $item)
                     <marquee behavior="" direction="left"
                         style="padding-top:4px; padding-bottom:4px; margin-top:4px; background-color:#F88147;color:white;">
@@ -330,9 +336,18 @@
                 <div class="row">
 
 
-                    <h6 class='alert alert-success col-xs-12 col-sm-8 col-md-6 ' role="alert">
-                        Your email has been successfully registered!
-                    </h6>
+
+                    <div class="alert alert-custom  fade in alert-dismissable show" style="margin-top:18px;">
+                        <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                            <span aria-hidden="true" style="font-size:20px">×</span>
+                        </button> Your email has been successfully registered!
+                    </div>
+                    <style>
+                        .alert-custom {
+                            background-color: #007c00 ;
+                            color: #fff;
+                        }
+                    </style>
                 </div>
             </div>
         @endif
@@ -1919,9 +1934,19 @@
                                                                 {{ __('event.subtitle6') }}
                                                             </h4>
                                                             @if (session()->has('success'))
-                                                                <h6 class='alert alert-success' role="alert">
-                                                                    Your reply has been successfully registered!
-                                                                </h6>
+                                                              
+                                                                <div class="alert alert-custom  fade in alert-dismissable show" style="margin-top:18px;">
+                                                                    <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                                                                        <span aria-hidden="true" style="font-size:20px">×</span>
+                                                                    </button>                           Your reply has been successfully registered!
+                                        
+                                                                </div>
+                                                                <style>
+                                                                    .alert-custom {
+                                                                        background-color: #007c00 ;
+                                                                        color: #fff;
+                                                                    }
+                                                                </style>
                                                             @endif
                                                             <div class="line-bottom-theme-colored2 mb-30  "></div>
                                                             <p class="text-white">{{ __('course.subtitle14') }}.</p>
@@ -2696,7 +2721,8 @@
                                                         <li class="m-0 pr-10" style="width:100%;">
                                                             <i
                                                                 class="pe-7s-global font-16  text-theme-colored2 mr-5"></i>
-                                                            <a class="text-gray" style="font-size:9px;" href="#">
+                                                            <a class="text-gray" style="font-size:9px;"
+                                                                href="#">
                                                                 @php
                                                                     $countries = [
                                                                         'AF' => 'Afghanistan',
@@ -3007,7 +3033,8 @@
                                                         <li class="m-0 pr-10" style="width:100%;">
                                                             <i
                                                                 class="pe-7s-global font-16  text-theme-colored2 mr-5"></i>
-                                                            <a class="text-gray" style="font-size:9px;"  href="#">
+                                                            <a class="text-gray" style="font-size:9px;"
+                                                                href="#">
                                                                 @php
                                                                     $countries = [
                                                                         'AF' => 'Afghanistan',
@@ -3319,9 +3346,19 @@
                                                             {{ __('event.subtitle6') }}
                                                         </h4>
                                                         @if (session()->has('success'))
-                                                            <h6 class='alert alert-success' role="alert">
-                                                                Your reply has been successfully registered!
-                                                            </h6>
+                                                          
+                                                            <div class="alert alert-custom  fade in alert-dismissable show" style="margin-top:18px;">
+                                                                <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                                                                    <span aria-hidden="true" style="font-size:20px">×</span>
+                                                                </button>                            Your reply has been successfully registered!
+                                    
+                                                            </div>
+                                                            <style>
+                                                                .alert-custom {
+                                                                    background-color: #007c00 ;
+                                                                    color: #fff;
+                                                                }
+                                                            </style>
                                                         @endif
                                                         <div class="line-bottom-theme-colored2 mb-30  "></div>
                                                         <p class="text-white">{{ __('course.subtitle14') }}.</p>

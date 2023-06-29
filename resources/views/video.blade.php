@@ -90,7 +90,7 @@
         }
 
         .gallery-item {
-            padding-left: 7px;
+            
             margin-bottom: 7px;
         }
     </style>

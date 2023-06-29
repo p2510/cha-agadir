@@ -69,9 +69,18 @@
                     <div class="row">
 
 
-                        <h6 class='alert alert-success col-xs-12 col-sm-8 col-md-6 ' role="alert">
-                            Your pre-registration has been successfully saved!
-                        </h6>
+                     
+                        <div class="alert alert-custom  fade in alert-dismissable show" style="margin-top:18px;">
+                            <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                                <span aria-hidden="true" style="font-size:20px">×</span>
+                            </button>                        Your pre-registration has been successfully saved!
+                        </div>
+                        <style>
+                            .alert-custom {
+                                background-color: #007c00 ;
+                                color: #fff;
+                            }
+                        </style>
                     </div>
                 </div>
             @endif
@@ -500,7 +509,7 @@
                                             <div class="mb-10">
                                                 <div class="font-12 text-white "
                                                     style="text-align:justify;hyphens:auto;width:100%;">
-                                                    <input name="accepted" value='accepted' type="checkbox" required>
+                                                    <input name="accepted" value='accepted' type="checkbox" required >
                                                     {{ __('event.formtext7') }} <a class="text-white"
                                                         style="font-weight:normal;text-decoration:underline;"
                                                         href="{{ route('mention.index') }}"> {{ __('event.formtext8') }}

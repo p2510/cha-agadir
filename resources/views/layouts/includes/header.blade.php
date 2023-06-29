@@ -125,10 +125,10 @@
 
                                 <ul class="styled-icons icon-sm icon-white">
 
-                                    <li><a href="#"><i class="fa fa-facebook"></i></a></li>
-                                    <li><a href="#"><i class="fa fa-instagram"></i></a></li>
-                                    <li><a href="#"><i class="fa fa-linkedin"></i></a></li>
-                                    <li><a href="#"><i class="fa fa-youtube"></i></a></li>
+                                    <li><a href="https://www.facebook.com/profile.php?id=100088051148636&mibextid=ZbWKwL"><i class="fa fa-facebook"></i></a></li>
+                                    <li><a href="https://youtube.com/@ComplexeHorticoleAgadir"><i class="fa fa-instagram"></i></a></li>
+                                    <li><a href="https://youtube.com/@ComplexeHorticoleAgadir   "><i class="fa fa-linkedin"></i></a></li>
+                                    <li><a href="youtube.com/@ComplexeHorticoleAgadir"><i class="fa fa-youtube"></i></a></li>
 
                                 </ul>
                             </div>
