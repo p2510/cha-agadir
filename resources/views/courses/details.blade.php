@@ -86,7 +86,7 @@
             <div class="header-top bg-theme-colored border-top-theme-colored2-2px sm-text-center">
                 <div class="container">
                     <div class="row">
-                        <div class="col-md-1 ">
+                        <div class="col-xs-1 col-sm-6 col-md-1 ">
 
                             <div class="widget">
                                 <a href=""></a>
@@ -98,9 +98,11 @@
                                 </select>
                             </div>
 
+
+
                         </div>
 
-                        <div class="col-md-3">
+                        <div class="col-xs-0 col-sm-6 col-md-3"  id="elem">
                             <div class="widget">
 
                                 <ul class="styled-icons icon-sm icon-white">
@@ -113,7 +115,7 @@
                                 </ul>
                             </div>
                         </div>
-                        <div class="col-md-8">
+                        <div class="col-xs-11 col-sm-12 col-md-8">
                             <div class="widget">
                                 <ul class="list-inline text-right flip sm-text-center">
 
@@ -130,11 +132,12 @@
                                             href="{{ route('contact.create') }}">{{ __('header.info1') }}</a>
                                     </li>
 
-                                    <li class="text-white">|</li>
+                                    <li class="text-white" id="elem">|</li>
                                     <li>
-                                        <a class="text-white"
+                                        <a class="text-white" id="elem"
                                             href="{{ route('about.index') }}">{{ __('header.info2') }}</a>
                                     </li>
+                                    
 
                                     <li class="text-white " id='elem'>|</li>
                                     <li class="text-white " id='elem' style="position:relative; top:3px;">
@@ -148,10 +151,11 @@
                                     <li class=" text-white" style="font-weight:bold;" id='elem'>
                                         (+212) 0528-241-006 / 240-155
                                     </li>
-                                    <br id='separate'>
+                                    
+                                    
                                     <li>
                                         <a href="{{ route('course.index') }}"
-                                            class="btn btn-dark btn-circled btn-theme-colored2 btn-sm  pr-30 pl-30 "
+                                            class="btn btn-dark btn-circled btn-theme-colored2 btn-sm  pr-10 pl-10 "
                                             style="font-weight: bold; animation: blink 2s ease-in-out infinite;">{{ __('header.info3') }}</a>
                                     </li>
 
@@ -164,6 +168,14 @@
             </div>
 
 
+            @if (count($alert)>0)
+                @foreach ($alert as $item)
+                    <marquee behavior="" direction="left"
+                        style="padding-top:4px; padding-bottom:4px; margin-top:4px; background-color:#F88147;color:white;">
+                        {{ $item->message }}
+                    </marquee>
+                @endforeach
+            @endif
             <div class="header-nav">
                 <div class="header-nav-wrapper navbar-scrolltofixed bg-white">
                     <div class="container">
