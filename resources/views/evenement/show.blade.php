@@ -506,19 +506,25 @@
 
 
                                         <div class="col-xs-12 col-sm-12 ">
+
                                             <div class="mb-10">
-                                                <div class="font-12 text-white "
+
+                                                <div class="font-10 text-white "
                                                     style="text-align:justify;hyphens:auto;width:100%;">
-                                                    <input name="accepted" value='accepted' type="checkbox" required >
-                                                    {{ __('event.formtext7') }} <a class="text-white"
+                                                    <input name="accepted" value='accepted'
+                                                        type="checkbox">
+                                                    {{ __('event.formtext7') }} <a
+                                                        class="text-white"
                                                         style="font-weight:normal;text-decoration:underline;"
-                                                        href="{{ route('mention.index') }}"> {{ __('event.formtext8') }}
-                                                    </a>,{{ __('event.formtext9') }}.<strong style="color:red;">*</strong>
+                                                        href="{{ route('mention.index') }}">
+                                                        {{ __('event.formtext8') }}</a>,{{ __('event.formtext9') }}<strong
+                                                        style="color:red;">*</strong>
                                                 </div>
                                             </div>
 
                                             @if ($errors->has('accepted'))
-                                                <span class="text-danger">{{ $errors->first('accepted') }}</span>
+                                                <span
+                                                    class="text-danger">{{ $errors->first('accepted') }}</span>
                                             @endif
                                         </div>
 

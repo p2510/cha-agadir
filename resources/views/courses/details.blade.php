@@ -86,7 +86,7 @@
             <div class="header-top bg-theme-colored border-top-theme-colored2-2px sm-text-center">
                 <div class="container">
                     <div class="row">
-                        <div class="col-xs-12 col-sm-6 col-md-1 ">
+                        <div class=" col-xs-12 col-md-1 ">
 
                             <div class="widget">
                                 <a href=""></a>
@@ -102,28 +102,22 @@
 
                         </div>
 
-                        <div class="col-xs-0 col-sm-6 col-md-3" id="elem">
+                        <div class="col-md-3" id="elem">
                             <div class="widget">
 
                                 <ul class="styled-icons icon-sm icon-white">
 
-                                    <li><a
-                                            href="https://www.facebook.com/profile.php?id=100088051148636&mibextid=ZbWKwL"><i
-                                                class="fa fa-facebook"></i></a></li>
-                                    <li><a href="https://youtube.com/@ComplexeHorticoleAgadir"><i
-                                                class="fa fa-instagram"></i></a></li>
-                                    <li><a href="https://youtube.com/@ComplexeHorticoleAgadir   "><i
-                                                class="fa fa-linkedin"></i></a></li>
-                                    <li><a href="youtube.com/@ComplexeHorticoleAgadir"><i class="fa fa-youtube"></i></a>
-                                    </li>
-
+                                    <li><a href="#"><i class="fa fa-facebook"></i></a></li>
+                                    <li><a href="#"><i class="fa fa-instagram"></i></a></li>
+                                    <li><a href="#"><i class="fa fa-linkedin"></i></a></li>
+                                    <li><a href="#"><i class="fa fa-youtube"></i></a></li>
 
                                 </ul>
                             </div>
                         </div>
-                        <div class="col-xs-12 col-sm-12 col-md-8">
+                        <div class="col-xs-12 col-md-8">
                             <div class="widget">
-                                <ul class="list-inline flip text-center  ">
+                                <ul class="list-inline text-right flip sm-text-center">
 
                                     <li class="text-white" style="position:relative; top:3px;">
 
@@ -138,12 +132,11 @@
                                             href="{{ route('contact.create') }}">{{ __('header.info1') }}</a>
                                     </li>
 
-                                    <li class="text-white" id="elem">|</li>
+                                    <li class="text-white">|</li>
                                     <li>
-                                        <a class="text-white" id="elem"
+                                        <a class="text-white"
                                             href="{{ route('about.index') }}">{{ __('header.info2') }}</a>
                                     </li>
-
 
                                     <li class="text-white " id='elem'>|</li>
                                     <li class="text-white " id='elem' style="position:relative; top:3px;">
@@ -157,11 +150,10 @@
                                     <li class=" text-white" style="font-weight:bold;" id='elem'>
                                         (+212) 0528-241-006 / 240-155
                                     </li>
-
-
+                                 
                                     <li>
                                         <a href="{{ route('course.index') }}"
-                                            class="btn btn-dark btn-circled btn-theme-colored2 btn-sm  pr-10 pl-10 "
+                                            class="btn btn-dark btn-circled btn-theme-colored2 btn-sm  pr-30 pl-30 "
                                             style="font-weight: bold; animation: blink 2s ease-in-out infinite;">{{ __('header.info3') }}</a>
                                     </li>
 
@@ -174,10 +166,10 @@
             </div>
 
 
-            @if (count($alert) > 0)
+            @if (count($alert)>0)
                 @foreach ($alert as $item)
                     <marquee behavior="" direction="left"
-                        style="padding-top:4px; padding-bottom:4px; margin-top:4px; background-color:#F88147;color:white;">
+                        style="padding-top:4px; padding-bottom:4px; background-color:#F88147;color:white;">
                         {{ $item->message }}
                     </marquee>
                 @endforeach
