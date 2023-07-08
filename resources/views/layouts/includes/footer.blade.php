@@ -208,6 +208,9 @@
 
 <!-- end wrapper -->
 
+<script>
+    $(".header-nav-inner").css({'height':($(".header-nav-wrapper").height()+'px')});
+</script>
 <!-- Footer Scripts -->
 <!-- JS | Chart-->
 <script src="{{ asset('app-assets/js/chart.js') }}" defer></script>

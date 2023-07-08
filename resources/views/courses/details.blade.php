@@ -183,6 +183,7 @@
                 @endforeach
             @endif
             <div class="header-nav">
+                <div class="header-nav-inner">
                 <div class="header-nav-wrapper navbar-scrolltofixed bg-white">
                     <div class="container">
 
@@ -337,6 +338,7 @@
 
                     </div>
                 </div>
+            </div>
             </div>
         </header>
 
@@ -4003,6 +4005,7 @@
     }
 </style>
 <script>
+    $(".header-nav-inner").css({'height':($(".header-nav-wrapper").height()+'px')});
     const accSingleTriggers = document.querySelectorAll(".accordion-header");
 
     accSingleTriggers.forEach((trigger) =>

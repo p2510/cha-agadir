@@ -201,158 +201,166 @@
                 @endforeach
             @endif
             <div class="header-nav">
-                <div class="header-nav-wrapper navbar-scrolltofixed bg-white">
-                    <div class="container">
+                <div class="header-nav-inner">
+                    <div class="header-nav-wrapper navbar-scrolltofixed bg-white">
+                        <div class="container">
 
-                        <div id="logo_pc" style="justify-content:center;width:100%;">
+                            <div id="logo_pc" style="justify-content:center;width:100%;">
 
-                            @if (count($logo_url) > 0)
-                                @foreach ($logo_url as $item)
-                                    <a class="menuzord-brand  flip mt-20 mt-sm-10 mb-sm-20 pt-5"
-                                        href="{{ route('home') }}"><img
-                                            src="{{ url('storage') }}/{{ $item->logo }}" alt=""></a>
-                                @endforeach
-                            @endif
+                                @if (count($logo_url) > 0)
+                                    @foreach ($logo_url as $item)
+                                        <a class="menuzord-brand  flip mt-20 mt-sm-10 mb-sm-20 pt-5"
+                                            href="{{ route('home') }}"><img
+                                                src="{{ url('storage') }}/{{ $item->logo }}" alt=""></a>
+                                    @endforeach
+                                @endif
+                            </div>
+                            <nav id="menuzord-right" class="menuzord default theme-colored">
+                                @if (count($logo_url) > 0)
+                                    @foreach ($logo_url as $item)
+                                        <a id="logo_mobile" class="menuzord-brand  flip mt-20 mt-sm-10 mb-sm-20 pt-5"
+                                            href="{{ route('home') }}"><img style="width: 166px;height:30;"
+                                                src="{{ url('storage') }}/{{ $item->logo }}" alt=""></a>
+                                    @endforeach
+                                @endif
+
+                                <ul class="menuzord-menu list-unstyled">
+
+                                    <li @if (Route::current()->getName() == 'home') class='active' @endif>
+                                        <a href="{{ route('home') }}" class="font-14 text-uppercase"
+                                            style="padding: 10px 10px 10px 10px; ">{{ __('header.title1') }}</a>
+                                    </li>
+                                    <li><a href="#home" class="font-14 text-uppercase"
+                                            style="padding: 10px 10px 10px 10px;">{{ __('header.title2') }}</a>
+                                        <ul class="dropdown">
+                                            <li><a
+                                                    href="{{ route('director.index') }}">{{ __('header.subtitle1') }}</a>
+                                            </li>
+                                            <li><a href="{{ route('about.index') }}">{{ __('header.subtitle2') }}</a>
+                                            </li>
+                                            <li><a href="{{ route('index.team') }}">{{ __('header.subtitle3') }}</a>
+                                            </li>
+                                            <li><a
+                                                    href="{{ route('index.professor') }}">{{ __('header.subtitle33') }}</a>
+                                            </li>
+                                            <li><a
+                                                    href="{{ route('campus.index') }}">{{ __('header.subtitle4') }}</a>
+                                            </li>
+                                            <li><a
+                                                    href="{{ route('evenement.index') }}">{{ __('header.subtitle5') }}</a>
+                                            </li>
+                                            <li><a
+                                                    href="{{ route('blog-actualités.index') }}">{{ __('header.subtitle6') }}</a>
+                                            </li>
+                                            <li><a href="{{ route('media.index') }}">{{ __('header.subtitle7') }}</a>
+                                            </li>
+                                            <li><a href="{{ route('video.index') }}">{{ __('header.subtitle8') }}</a>
+                                            </li>
+                                        </ul>
+                                    </li>
+                                    <li @if (Route::current()->getName() == 'course.index') class="active" @endif><a
+                                            href="{{ route('course.index') }}" style="padding: 10px 10px 10px 10px;"
+                                            class="font-14 text-uppercase d-inline">{{ __('header.title3') }}</a>
+                                        <ul class="dropdown" style="padding-left: -50px;">
+                                            <li style="padding-left: -50px;">
+                                                <a href="{{ route('degree.show', 'INGÉNIEUR') }}"
+                                                    style="padding-left: -50px">{{ __('header.subtitle9') }}</a>
+                                                <ul class="dropdown">
+                                                    <li><a
+                                                            href="{{ route('course.details', 'Horticulture') }}">{{ __('header.subtitle10') }}</a>
+                                                    </li>
+                                                    <li><a
+                                                            href="{{ route('course.details', 'Protection des Plantes') }}">{{ __('header.subtitle11') }}</a>
+                                                    </li>
+                                                    <li><a
+                                                            href="{{ route('course.details', 'Architecture du Paysage') }}">
+                                                            {{ __('header.subtitle12') }}</a></li>
+                                                </ul>
+                                            </li>
+                                            <li><a
+                                                    href="{{ route('degree.show', 'MASTER') }}">{{ __('header.subtitle13') }}</a>
+                                                <ul class="dropdown">
+                                                    <li><a
+                                                            href="{{ route('course.details', 'EAU ET HORTICULTURE DURABLE') }}">{{ __('header.subtitle14') }}</a>
+                                                    </li>
+                                                    <li><a
+                                                            href="{{ route('course.details', 'Architecture du Paysage') }}">{{ __('header.subtitle15') }}</a>
+                                                    </li>
+                                                    <li><a href="{{ route('course.details', 'Locust Master') }}">
+                                                            {{ __('header.subtitle16') }}</a></li>
+                                                    <li><a
+                                                            href="{{ route('course.details', 'Master Sciences Acridiennes') }}">
+                                                            {{ __('header.subtitle17') }}</a></li>
+                                                </ul>
+                                            </li>
+
+                                            <li><a href="{{ route('degree.show', 'LICENCE PRO.') }}">
+                                                    {{ __('header.subtitle18') }}</a>
+                                                <ul class="dropdown">
+                                                    <li><a
+                                                            href="{{ route('course.details', 'Horticulture Ornementale et Espaces verts') }}">
+                                                            {{ __('header.subtitle19') }} <br class="break">
+                                                            {{ __('header.subtitle20') }} </a></li>
+                                                    <li><a
+                                                            href="{{ route('course.details', 'Aménagement du Paysage') }}">{{ __('header.subtitle21') }}
+                                                        </a>
+                                                    </li>
+                                                </ul>
+                                            </li>
+                                            <li><a href="{{ route('degree.show', 'TECHNICIEN SPÉCIALISÉ') }}">{{ __('header.subtitle22') }}
+                                                </a>
+                                                <ul class="dropdown">
+                                                    <li><a
+                                                            href="{{ route('course.details', 'Technico-Commercial en Productions Horticoles') }}">{{ __('header.subtitle23') }}
+                                                            <br class="break">{{ __('header.subtitle24') }} </a></li>
+                                                    <li><a
+                                                            href="{{ route('course.details', 'Conditionnement et Valorisation des Produits Agricoles') }}">{{ __('header.subtitle25') }}
+                                                            <br class="break">{{ __('header.subtitle26') }} </a>
+                                                    </li>
+                                                    <li><a
+                                                            href="{{ route('course.details', 'Cultures Ornementales et Aménagement des Espaces Verts') }}">{{ __('header.subtitle27') }}
+                                                            <br class="break"> {{ __('header.subtitle28') }}</a></li>
+                                                    <li><a
+                                                            href="{{ route('course.details', 'Aquaculture') }}">{{ __('header.subtitle29') }}</a>
+                                                    </li>
+                                                </ul>
+                                            </li>
+                                            <li><a
+                                                    href="{{ route('course.details', 'DOCTORAT') }}">{{ __('header.subtitle30') }}</a>
+
+                                            </li>
+                                            <li><a href="{{ route('degree.show', 'FORMATION EXÉCUTIVE') }}">{{ __('header.subtitle31') }}
+                                                    <span class="label label-danger">New</span></a>
+                                                <ul class="dropdown">
+                                                    <li><a href="{{ route('course.details', 'Farm Manager') }}">
+                                                            {{ __('header.subtitle32') }}</a>
+                                                    </li>
+                                                </ul>
+                                            </li>
+
+
+                                        </ul>
+                                    </li>
+
+                                    <li><a href="{{ route('search.index') }}" style="padding: 10px 10px 10px 10px;"
+                                            class="font-14 text-uppercase">{{ __('header.title4') }}</a>
+                                    <li><a href="{{ route('center.index') }}" style="padding: 10px 10px 10px 10px;"
+                                            class="font-14 text-uppercase">{{ __('header.title5') }}</a>
+                                    <li><a href="{{ route('experience.index') }}"
+                                            style="padding: 10px 10px 10px 10px;"
+                                            class="font-14 text-uppercase">{{ __('header.title6') }}</a>
+                                    <li><a href="{{ route('impact.index') }}" style="padding: 10px 10px 10px 10px;"
+                                            class="font-14 text-uppercase">{{ __('header.title7') }}</a>
+                                    <li><a href="{{ route('business.index') }}"
+                                            style="padding: 10px 10px 10px 10px;"
+                                            class="font-14 text-uppercase">{{ __('header.title8') }}</a>
+
+                                </ul>
+
+
+                            </nav>
+
                         </div>
-                        <nav id="menuzord-right" class="menuzord default theme-colored">
-                            @if (count($logo_url) > 0)
-                                @foreach ($logo_url as $item)
-                                    <a id="logo_mobile" class="menuzord-brand  flip mt-20 mt-sm-10 mb-sm-20 pt-5"
-                                        href="{{ route('home') }}"><img style="width: 166px;height:30;"
-                                            src="{{ url('storage') }}/{{ $item->logo }}" alt=""></a>
-                                @endforeach
-                            @endif
-
-                            <ul class="menuzord-menu list-unstyled">
-
-                                <li @if (Route::current()->getName() == 'home') class='active' @endif>
-                                    <a href="{{ route('home') }}" class="font-14 text-uppercase"
-                                        style="padding: 10px 10px 10px 10px; ">{{ __('header.title1') }}</a>
-                                </li>
-                                <li><a href="#home" class="font-14 text-uppercase"
-                                        style="padding: 10px 10px 10px 10px;">{{ __('header.title2') }}</a>
-                                    <ul class="dropdown">
-                                        <li><a href="{{ route('director.index') }}">{{ __('header.subtitle1') }}</a>
-                                        </li>
-                                        <li><a href="{{ route('about.index') }}">{{ __('header.subtitle2') }}</a>
-                                        </li>
-                                        <li><a href="{{ route('index.team') }}">{{ __('header.subtitle3') }}</a>
-                                        </li>
-                                        <li><a
-                                                href="{{ route('index.professor') }}">{{ __('header.subtitle33') }}</a>
-                                        </li>
-                                        <li><a href="{{ route('campus.index') }}">{{ __('header.subtitle4') }}</a>
-                                        </li>
-                                        <li><a href="{{ route('evenement.index') }}">{{ __('header.subtitle5') }}</a>
-                                        </li>
-                                        <li><a
-                                                href="{{ route('blog-actualités.index') }}">{{ __('header.subtitle6') }}</a>
-                                        </li>
-                                        <li><a href="{{ route('media.index') }}">{{ __('header.subtitle7') }}</a>
-                                        </li>
-                                        <li><a href="{{ route('video.index') }}">{{ __('header.subtitle8') }}</a>
-                                        </li>
-                                    </ul>
-                                </li>
-                                <li @if (Route::current()->getName() == 'course.index') class="active" @endif><a
-                                        href="{{ route('course.index') }}" style="padding: 10px 10px 10px 10px;"
-                                        class="font-14 text-uppercase d-inline">{{ __('header.title3') }}</a>
-                                    <ul class="dropdown" style="padding-left: -50px;">
-                                        <li style="padding-left: -50px;">
-                                            <a href="{{ route('degree.show', 'INGÉNIEUR') }}"
-                                                style="padding-left: -50px">{{ __('header.subtitle9') }}</a>
-                                            <ul class="dropdown">
-                                                <li><a
-                                                        href="{{ route('course.details', 'Horticulture') }}">{{ __('header.subtitle10') }}</a>
-                                                </li>
-                                                <li><a
-                                                        href="{{ route('course.details', 'Protection des Plantes') }}">{{ __('header.subtitle11') }}</a>
-                                                </li>
-                                                <li><a
-                                                        href="{{ route('course.details', 'Architecture du Paysage') }}">
-                                                        {{ __('header.subtitle12') }}</a></li>
-                                            </ul>
-                                        </li>
-                                        <li><a
-                                                href="{{ route('degree.show', 'MASTER') }}">{{ __('header.subtitle13') }}</a>
-                                            <ul class="dropdown">
-                                                <li><a
-                                                        href="{{ route('course.details', 'EAU ET HORTICULTURE DURABLE') }}">{{ __('header.subtitle14') }}</a>
-                                                </li>
-                                                <li><a
-                                                        href="{{ route('course.details', 'Architecture du Paysage') }}">{{ __('header.subtitle15') }}</a>
-                                                </li>
-                                                <li><a href="{{ route('course.details', 'Locust Master') }}">
-                                                        {{ __('header.subtitle16') }}</a></li>
-                                                <li><a
-                                                        href="{{ route('course.details', 'Master Sciences Acridiennes') }}">
-                                                        {{ __('header.subtitle17') }}</a></li>
-                                            </ul>
-                                        </li>
-
-                                        <li><a href="{{ route('degree.show', 'LICENCE PRO.') }}">
-                                                {{ __('header.subtitle18') }}</a>
-                                            <ul class="dropdown">
-                                                <li><a
-                                                        href="{{ route('course.details', 'Horticulture Ornementale et Espaces verts') }}">
-                                                        {{ __('header.subtitle19') }} <br class="break">
-                                                        {{ __('header.subtitle20') }} </a></li>
-                                                <li><a href="{{ route('course.details', 'Aménagement du Paysage') }}">{{ __('header.subtitle21') }}
-                                                    </a>
-                                                </li>
-                                            </ul>
-                                        </li>
-                                        <li><a href="{{ route('degree.show', 'TECHNICIEN SPÉCIALISÉ') }}">{{ __('header.subtitle22') }}
-                                            </a>
-                                            <ul class="dropdown">
-                                                <li><a
-                                                        href="{{ route('course.details', 'Technico-Commercial en Productions Horticoles') }}">{{ __('header.subtitle23') }}
-                                                        <br class="break">{{ __('header.subtitle24') }} </a></li>
-                                                <li><a
-                                                        href="{{ route('course.details', 'Conditionnement et Valorisation des Produits Agricoles') }}">{{ __('header.subtitle25') }}
-                                                        <br class="break">{{ __('header.subtitle26') }} </a>
-                                                </li>
-                                                <li><a
-                                                        href="{{ route('course.details', 'Cultures Ornementales et Aménagement des Espaces Verts') }}">{{ __('header.subtitle27') }}
-                                                        <br class="break"> {{ __('header.subtitle28') }}</a></li>
-                                                <li><a
-                                                        href="{{ route('course.details', 'Aquaculture') }}">{{ __('header.subtitle29') }}</a>
-                                                </li>
-                                            </ul>
-                                        </li>
-                                        <li><a
-                                                href="{{ route('course.details', 'DOCTORAT') }}">{{ __('header.subtitle30') }}</a>
-
-                                        </li>
-                                        <li><a href="{{ route('degree.show', 'FORMATION EXÉCUTIVE') }}">{{ __('header.subtitle31') }}
-                                                <span class="label label-danger">New</span></a>
-                                            <ul class="dropdown">
-                                                <li><a href="{{ route('course.details', 'Farm Manager') }}">
-                                                        {{ __('header.subtitle32') }}</a>
-                                                </li>
-                                            </ul>
-                                        </li>
-
-
-                                    </ul>
-                                </li>
-
-                                <li><a href="{{ route('search.index') }}" style="padding: 10px 10px 10px 10px;"
-                                        class="font-14 text-uppercase">{{ __('header.title4') }}</a>
-                                <li><a href="{{ route('center.index') }}" style="padding: 10px 10px 10px 10px;"
-                                        class="font-14 text-uppercase">{{ __('header.title5') }}</a>
-                                <li><a href="{{ route('experience.index') }}" style="padding: 10px 10px 10px 10px;"
-                                        class="font-14 text-uppercase">{{ __('header.title6') }}</a>
-                                <li><a href="{{ route('impact.index') }}" style="padding: 10px 10px 10px 10px;"
-                                        class="font-14 text-uppercase">{{ __('header.title7') }}</a>
-                                <li><a href="{{ route('business.index') }}" style="padding: 10px 10px 10px 10px;"
-                                        class="font-14 text-uppercase">{{ __('header.title8') }}</a>
-
-                            </ul>
-
-
-                        </nav>
-
                     </div>
                 </div>
             </div>
@@ -364,7 +372,7 @@
                 .break {
                     display: none;
                 }
-              
+
 
 
             }
@@ -373,7 +381,7 @@
                 .break {
                     display: block;
                 }
-             
+
 
 
             }
@@ -383,8 +391,8 @@
                     display: none;
 
                 }
-              
-                #logo_pc{
+
+                #logo_pc {
                     display: none;
                 }
             }
@@ -393,20 +401,23 @@
                 #separate {
                     display: block;
                 }
-                #logo_pc{
-                    display:flex;;
+
+                #logo_pc {
+                    display: flex;
+                    ;
                 }
-                #logo_mobile{
+
+                #logo_mobile {
                     display: none;
                 }
-               
+
             }
 
             @media screen and (min-width: 992px) and (max-width: 1199px) {
                 .menuzord-menu li a {
                     font-size: 11px !important;
                 }
-                
+
             }
 
             @media (max-width: 992px) {
