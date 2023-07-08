@@ -204,6 +204,9 @@
     .footer .widget .widget-title {
         margin-top: 0px;
     }
+    .header-nav{
+        z-index:1;
+    }
 </style>
 
 <!-- end wrapper -->

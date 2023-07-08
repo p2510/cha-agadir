@@ -4003,6 +4003,9 @@
         color: white;
         background-color: #F88147;
     }
+    .header-nav{
+        z-index:1;
+    }
 </style>
 <script>
     $(".header-nav-inner").css({'height':($(".header-nav-wrapper").height()+'px')});
