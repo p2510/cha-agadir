@@ -1099,7 +1099,7 @@
                                                                         <a class="text-gray font-12" href="#">
                                                                             @php
                                                                                 $countries = [
-                                                                                    'MA' => 'Maroc',
+                                                                                    'MA' => 'Morocco',
                                                                                     'AF' => 'Afghanistan',
                                                                                     'ZA' => 'Afrique du Sud',
                                                                                     'AL' => 'Albanie',
@@ -1431,7 +1431,7 @@
                                                                         <a class="text-gray font-12" href="#">
                                                                             @php
                                                                                 $countries = [
-                                                                                    'MA' => 'Maroc',
+                                                                                    'MA' => 'Morocco',
                                                                                     'AF' => 'Afghanistan',
                                                                                     'ZA' => 'Afrique du Sud',
                                                                                     'AL' => 'Albanie',
