@@ -1681,7 +1681,6 @@
                                                                                     'ZM' => 'Zambie',
                                                                                     'ZW' => 'Zimbabwe',
                                                                                 ];
-                                                                                echo $countries[$courses[0]->teams_country];
                                                                             @endphp
 
 
