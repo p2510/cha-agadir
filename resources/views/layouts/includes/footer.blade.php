@@ -205,7 +205,7 @@
         margin-top: 0px;
     }
     .header-nav{
-        z-index:1;
+        z-index:11111;
     }
 </style>
 

@@ -6,10 +6,10 @@
             <div class="alert alert-success  fade in alert-dismissable show" style="margin-top:18px;">
                 <button type="button" class="close" data-dismiss="alert" aria-label="Close">
                     <span aria-hidden="true" style="font-size:20px">×</span>
-                </button>  Your email has been successfully registered!
+                </button> Your email has been successfully registered!
 
             </div>
-          
+
         </div>
     </div>
 @endif
@@ -20,10 +20,10 @@
             <div class="alert alert-success  fade in alert-dismissable show" style="margin-top:18px;">
                 <button type="button" class="close" data-dismiss="alert" aria-label="Close">
                     <span aria-hidden="true" style="font-size:20px">×</span>
-                </button>  Your email has been successfully unregistered!
+                </button> Your email has been successfully unregistered!
 
             </div>
-          
+
         </div>
     </div>
 @endif
@@ -317,7 +317,8 @@
                         </div>
                     </div>
                 @endforeach
-                @if (count($downloads) !== 0)
+
+                @if (count($downloads) != 0)
                     <div class="mr-10 ml-10  ">
                         <button class="accordion active" id="btn_download"
                             style="display: flex;justify-content:space-between; padding-left:4px;padding-right:4px;">{{ __('home.text8') }}</button>
@@ -515,23 +516,9 @@
 
 <script>
     const items = document.querySelectorAll(".item");
-
     items.forEach((item) => {
         item.addEventListener('click', (e) => {
-            items.forEach((otherItem) => {
-                if (otherItem !== item && otherItem.classList.contains('open')) {
-                    otherItem.classList.remove('open');
-                }
-            });
             item.classList.toggle('open');
-            let top = e.target.offsetTop;
-
-            if (item.classList.contains('open')) {
-                window.scroll({
-                    top: top,
-                    behavior: 'smooth',
-                });
-            }
         });
     });
 </script>

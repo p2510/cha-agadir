@@ -31,6 +31,7 @@ class SearchController extends Controller
             }
             return $item;
            });
+    
            
         $pagevideos=Pagevideo::where('pagename','recherche')->get()->map(function ($item){         
             if (App::isLocale('en')) {
@@ -40,13 +41,14 @@ class SearchController extends Controller
         });
 
 
-        $tabs=Tabpage::where('pagename','recherche')->with('tabimages')->get()->map(function ($item){         
+        $tabs=Tabpage::where('pagename','recherche')->get()->map(function ($item){         
                                     if (App::isLocale('en')) {
                                         $item->title=$item->title_en;
                                         $item->content=$item->content_en;
                                     }
                                     return $item;
                                 });
+          
 
         return view('static.search')->with(['datas'=>$datas,'shareFacebook'=>$shareFacebook,'shareWhatsapp'=>$shareWhatsapp,'shareLinkedin'=>$shareLinkedin,'downloads'=>$downloads,'pagevideos'=>$pagevideos,'tabs'=>$tabs]);
     }
