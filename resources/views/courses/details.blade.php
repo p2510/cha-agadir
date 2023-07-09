@@ -263,7 +263,7 @@
                                                         href="{{ route('course.details', 'EAU ET HORTICULTURE DURABLE') }}">{{ __('header.subtitle14') }}</a>
                                                 </li>
                                                 <li><a
-                                                        href="{{ route('course.details', 'Architecture du Paysage') }}">{{ __('header.subtitle15') }}</a>
+                                                        href="{{ route('course.details', 'ARCHITECTURE DU PAYSAGE (MS)') }}">{{ __('header.subtitle15') }}</a>
                                                 </li>
                                                 <li><a href="{{ route('course.details', 'Locust Master') }}">
                                                         {{ __('header.subtitle16') }}</a></li>
