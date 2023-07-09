@@ -187,9 +187,15 @@
                                         <div style="text-align:justify;hyphens:auto;"> {!! $tab->content !!}
                                         </div>
                                         <div class="gallery-container-x">
-                                            @if (count($tab->tabimages) > 1)
+                                            @if (count($tab->tabimages) == 2)
                                                 @foreach ($tab->tabimages as $media)
                                                     <div class="gallery-item-x-2">
+                                                        <img src="{{ url('storage') }}/{{ $media->photo }}">
+                                                    </div>
+                                                @endforeach
+                                            @elseif(count($tab->tabimages) > 2)
+                                                @foreach ($tab->tabimages as $media)
+                                                    <div class="gallery-item-x-3">
                                                         <img src="{{ url('storage') }}/{{ $media->photo }}">
                                                     </div>
                                                 @endforeach
@@ -200,6 +206,7 @@
                                                     </div>
                                                 @endforeach
                                             @endif
+
 
                                         </div>
                                     </div>
