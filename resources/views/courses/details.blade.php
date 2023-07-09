@@ -2743,7 +2743,7 @@
                                                                 href="#">
                                                                 @php
                                                                     $countries = [
-                                                                        'MA' => 'Maroc',
+                                                                        'MA' => 'Morocco',
                                                                         'AF' => 'Afghanistan',
                                                                         'ZA' => 'Afrique du Sud',
                                                                         'AL' => 'Albanie',
@@ -3055,7 +3055,7 @@
                                                                 href="#">
                                                                 @php
                                                                     $countries = [
-                                                                        'MA' => 'Maroc',
+                                                                        'MA' => 'Morocco',
                                                                         'AF' => 'Afghanistan',
                                                                         'ZA' => 'Afrique du Sud',
                                                                         'AL' => 'Albanie',
@@ -4036,7 +4036,7 @@
     let getProvince1 = document.getElementById('province1');
 
     getCountries.addEventListener('change', () => {
-        if (getCountries.value !== 'Maroc') {
+        if (getCountries.value !== 'Morocco') {
             getProvinces.style.display = 'none'
             getProvince.value = '_'
         } else {
@@ -4044,7 +4044,7 @@
         }
     })
     getCountries1.addEventListener('change', () => {
-        if (getCountries1.value !== 'Maroc') {
+        if (getCountries1.value !== 'Morocco') {
             getProvinces1.style.display = 'none'
             getProvince1.value = '_'
         } else {
