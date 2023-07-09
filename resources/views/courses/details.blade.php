@@ -1099,6 +1099,7 @@
                                                                         <a class="text-gray font-12" href="#">
                                                                             @php
                                                                                 $countries = [
+                                                                                    'MA' => 'Maroc',
                                                                                     'AF' => 'Afghanistan',
                                                                                     'ZA' => 'Afrique du Sud',
                                                                                     'AL' => 'Albanie',
@@ -1243,7 +1244,6 @@
                                                                                     'MV' => 'Maldives',
                                                                                     'ML' => 'Mali',
                                                                                     'MT' => 'Malte',
-                                                                                    'MA' => 'Maroc',
                                                                                     'MQ' => 'Martinique',
                                                                                     'MU' => 'Maurice',
                                                                                     'MR' => 'Mauritanie',
@@ -1431,6 +1431,7 @@
                                                                         <a class="text-gray font-12" href="#">
                                                                             @php
                                                                                 $countries = [
+                                                                                    'MA' => 'Maroc',
                                                                                     'AF' => 'Afghanistan',
                                                                                     'ZA' => 'Afrique du Sud',
                                                                                     'AL' => 'Albanie',
@@ -1575,7 +1576,6 @@
                                                                                     'MV' => 'Maldives',
                                                                                     'ML' => 'Mali',
                                                                                     'MT' => 'Malte',
-                                                                                    'MA' => 'Maroc',
                                                                                     'MQ' => 'Martinique',
                                                                                     'MU' => 'Maurice',
                                                                                     'MR' => 'Mauritanie',
@@ -2743,6 +2743,7 @@
                                                                 href="#">
                                                                 @php
                                                                     $countries = [
+                                                                        'MA' => 'Maroc',
                                                                         'AF' => 'Afghanistan',
                                                                         'ZA' => 'Afrique du Sud',
                                                                         'AL' => 'Albanie',
@@ -2887,7 +2888,6 @@
                                                                         'MV' => 'Maldives',
                                                                         'ML' => 'Mali',
                                                                         'MT' => 'Malte',
-                                                                        'MA' => 'Maroc',
                                                                         'MQ' => 'Martinique',
                                                                         'MU' => 'Maurice',
                                                                         'MR' => 'Mauritanie',
@@ -3055,6 +3055,7 @@
                                                                 href="#">
                                                                 @php
                                                                     $countries = [
+                                                                        'MA' => 'Maroc',
                                                                         'AF' => 'Afghanistan',
                                                                         'ZA' => 'Afrique du Sud',
                                                                         'AL' => 'Albanie',
@@ -3199,7 +3200,6 @@
                                                                         'MV' => 'Maldives',
                                                                         'ML' => 'Mali',
                                                                         'MT' => 'Malte',
-                                                                        'MA' => 'Maroc',
                                                                         'MQ' => 'Martinique',
                                                                         'MU' => 'Maurice',
                                                                         'MR' => 'Mauritanie',
