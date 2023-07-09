@@ -30,7 +30,7 @@ class CampusController extends Controller
             }
             return $item;
            });
-           $pagevideos=Pagevideo::where('pagename','vie estudiantine')->get()->map(function ($item){         
+           $pagevideos=Pagevideo::where('pagename','campus')->get()->map(function ($item){         
             if (App::isLocale('en')) {
                 $item->title=$item->title_en;
             }
