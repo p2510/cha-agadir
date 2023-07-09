@@ -204,7 +204,7 @@
                 <div class="header-nav-inner">
                     <div class="header-nav-wrapper navbar-scrolltofixed bg-white">
                         <div class="container">
-
+<!--
                             <div id="logo_pc" style="justify-content:center;width:100%;">
 
                                 @if (count($logo_url) > 0)
@@ -215,6 +215,7 @@
                                     @endforeach
                                 @endif
                             </div>
+                        -->
                             <nav id="menuzord-right" class="menuzord default theme-colored">
                                 @if (count($logo_url) > 0)
                                     @foreach ($logo_url as $item)
@@ -391,10 +392,10 @@
                     display: none;
 
                 }
-
+/*
                 #logo_pc {
                     display: none;
-                }
+                }*/
             }
 
             @media screen and (min-width: 768px) {
@@ -402,14 +403,14 @@
                     display: block;
                 }
 
-                #logo_pc {
+                /* #logo_pc {
                     display: flex;
                     ;
                 }
 
-                #logo_mobile {
+               #logo_mobile {
                     display: none;
-                }
+                }*/
 
             }
 
