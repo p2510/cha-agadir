@@ -1099,7 +1099,6 @@
                                                                         <a class="text-gray font-12" href="#">
                                                                             @php
                                                                                 $countries = [
-                                                                                    'MA' => 'Morocco',
                                                                                     'AF' => 'Afghanistan',
                                                                                     'ZA' => 'Afrique du Sud',
                                                                                     'AL' => 'Albanie',
@@ -1244,6 +1243,7 @@
                                                                                     'MV' => 'Maldives',
                                                                                     'ML' => 'Mali',
                                                                                     'MT' => 'Malte',
+                                                                                    'MA' => 'Maroc',
                                                                                     'MQ' => 'Martinique',
                                                                                     'MU' => 'Maurice',
                                                                                     'MR' => 'Mauritanie',
@@ -1431,7 +1431,6 @@
                                                                         <a class="text-gray font-12" href="#">
                                                                             @php
                                                                                 $countries = [
-                                                                                    'MA' => 'Morocco',
                                                                                     'AF' => 'Afghanistan',
                                                                                     'ZA' => 'Afrique du Sud',
                                                                                     'AL' => 'Albanie',
@@ -1576,6 +1575,7 @@
                                                                                     'MV' => 'Maldives',
                                                                                     'ML' => 'Mali',
                                                                                     'MT' => 'Malte',
+                                                                                    'MA' => 'Maroc',
                                                                                     'MQ' => 'Martinique',
                                                                                     'MU' => 'Maurice',
                                                                                     'MR' => 'Mauritanie',
@@ -1681,6 +1681,7 @@
                                                                                     'ZM' => 'Zambie',
                                                                                     'ZW' => 'Zimbabwe',
                                                                                 ];
+                                                                                echo $countries[$courses[0]->teams_country];
                                                                             @endphp
 
 
@@ -2742,7 +2743,6 @@
                                                                 href="#">
                                                                 @php
                                                                     $countries = [
-                                                                        'MA' => 'Morocco',
                                                                         'AF' => 'Afghanistan',
                                                                         'ZA' => 'Afrique du Sud',
                                                                         'AL' => 'Albanie',
@@ -2887,6 +2887,7 @@
                                                                         'MV' => 'Maldives',
                                                                         'ML' => 'Mali',
                                                                         'MT' => 'Malte',
+                                                                        'MA' => 'Maroc',
                                                                         'MQ' => 'Martinique',
                                                                         'MU' => 'Maurice',
                                                                         'MR' => 'Mauritanie',
@@ -3198,6 +3199,7 @@
                                                                         'MV' => 'Maldives',
                                                                         'ML' => 'Mali',
                                                                         'MT' => 'Malte',
+                                                                        'MA' => 'Maroc',
                                                                         'MQ' => 'Martinique',
                                                                         'MU' => 'Maurice',
                                                                         'MR' => 'Mauritanie',
@@ -4034,7 +4036,7 @@
     let getProvince1 = document.getElementById('province1');
 
     getCountries.addEventListener('change', () => {
-        if (getCountries.value !== 'Morocco') {
+        if (getCountries.value !== 'Maroc') {
             getProvinces.style.display = 'none'
             getProvince.value = '_'
         } else {
@@ -4042,7 +4044,7 @@
         }
     })
     getCountries1.addEventListener('change', () => {
-        if (getCountries1.value !== 'Morocco') {
+        if (getCountries1.value !== 'Maroc') {
             getProvinces1.style.display = 'none'
             getProvince1.value = '_'
         } else {
