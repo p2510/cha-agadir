@@ -107,10 +107,10 @@
 
                                 <ul class="styled-icons icon-sm icon-white">
 
-                                    <li><a href="#"><i class="fa fa-facebook"></i></a></li>
-                                    <li><a href="#"><i class="fa fa-instagram"></i></a></li>
-                                    <li><a href="#"><i class="fa fa-linkedin"></i></a></li>
-                                    <li><a href="#"><i class="fa fa-youtube"></i></a></li>
+                                    <li><a href="hcps://www.facebook.com/profile.php?id=100088051148636&mibexVd=ZbWKwL"><i class="fa fa-facebook"></i></a></li>
+                                    <li><a href="hcps://www.facebook.com/profile.php?id=100088051148636&mibexVd=ZbWKwL"><i class="fa fa-instagram"></i></a></li>
+                                    <li><a href="hcps://www.linkedin.com/company/complexe-horVcole-d-agadir/"><i class="fa fa-linkedin"></i></a></li>
+                                    <li><a href="hcps://youtube.com/@ComplexeHorVcoleAgadir"><i class="fa fa-youtube"></i></a></li>
 
                                 </ul>
                             </div>
@@ -265,10 +265,10 @@
                                                 <li><a
                                                         href="{{ route('course.details', 'ARCHITECTURE DU PAYSAGE (MS)') }}">{{ __('header.subtitle15') }}</a>
                                                 </li>
-                                                <li><a href="{{ route('course.details', 'Locust Master') }}">
+                                                <li><a href="{{ route('course.details', 'Locust Science (En)') }}">
                                                         {{ __('header.subtitle16') }}</a></li>
                                                 <li><a
-                                                        href="{{ route('course.details', 'Master Sciences Acridiennes') }}">
+                                                        href="{{ route('course.details', 'Sciences Acridiennes (Fr)') }}">
                                                         {{ __('header.subtitle17') }}</a></li>
                                             </ul>
                                         </li>
@@ -1099,6 +1099,7 @@
                                                                         <a class="text-gray font-12" href="#">
                                                                             @php
                                                                                 $countries = [
+                                                                                    'MA' => 'Morocco',
                                                                                     'AF' => 'Afghanistan',
                                                                                     'ZA' => 'Afrique du Sud',
                                                                                     'AL' => 'Albanie',
@@ -1243,7 +1244,6 @@
                                                                                     'MV' => 'Maldives',
                                                                                     'ML' => 'Mali',
                                                                                     'MT' => 'Malte',
-                                                                                    'MA' => 'Maroc',
                                                                                     'MQ' => 'Martinique',
                                                                                     'MU' => 'Maurice',
                                                                                     'MR' => 'Mauritanie',
@@ -2743,6 +2743,7 @@
                                                                 href="#">
                                                                 @php
                                                                     $countries = [
+                                                                        'MA' => 'Morocco',
                                                                         'AF' => 'Afghanistan',
                                                                         'ZA' => 'Afrique du Sud',
                                                                         'AL' => 'Albanie',
@@ -2887,7 +2888,6 @@
                                                                         'MV' => 'Maldives',
                                                                         'ML' => 'Mali',
                                                                         'MT' => 'Malte',
-                                                                        'MA' => 'Maroc',
                                                                         'MQ' => 'Martinique',
                                                                         'MU' => 'Maurice',
                                                                         'MR' => 'Mauritanie',
@@ -3199,7 +3199,6 @@
                                                                         'MV' => 'Maldives',
                                                                         'ML' => 'Mali',
                                                                         'MT' => 'Malte',
-                                                                        'MA' => 'Maroc',
                                                                         'MQ' => 'Martinique',
                                                                         'MU' => 'Maurice',
                                                                         'MR' => 'Mauritanie',
@@ -4036,7 +4035,7 @@
     let getProvince1 = document.getElementById('province1');
 
     getCountries.addEventListener('change', () => {
-        if (getCountries.value !== 'Maroc') {
+        if (getCountries.value !== 'Morocco') {
             getProvinces.style.display = 'none'
             getProvince.value = '_'
         } else {
@@ -4044,7 +4043,7 @@
         }
     })
     getCountries1.addEventListener('change', () => {
-        if (getCountries1.value !== 'Maroc') {
+        if (getCountries1.value !== 'Morocco') {
             getProvinces1.style.display = 'none'
             getProvince1.value = '_'
         } else {

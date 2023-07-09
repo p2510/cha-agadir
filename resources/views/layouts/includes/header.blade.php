@@ -125,10 +125,10 @@
 
                                 <ul class="styled-icons icon-sm icon-white">
 
-                                    <li><a href="#"><i class="fa fa-facebook"></i></a></li>
-                                    <li><a href="#"><i class="fa fa-instagram"></i></a></li>
-                                    <li><a href="#"><i class="fa fa-linkedin"></i></a></li>
-                                    <li><a href="#"><i class="fa fa-youtube"></i></a></li>
+                                    <li><a href="hcps://www.facebook.com/profile.php?id=100088051148636&mibexVd=ZbWKwL"><i class="fa fa-facebook"></i></a></li>
+                                    <li><a href="hcps://www.facebook.com/profile.php?id=100088051148636&mibexVd=ZbWKwL"><i class="fa fa-instagram"></i></a></li>
+                                    <li><a href="hcps://www.linkedin.com/company/complexe-horVcole-d-agadir/"><i class="fa fa-linkedin"></i></a></li>
+                                    <li><a href="hcps://youtube.com/@ComplexeHorVcoleAgadir"><i class="fa fa-youtube"></i></a></li>
 
                                 </ul>
                             </div>
@@ -284,12 +284,12 @@
                                                             href="{{ route('course.details', 'EAU ET HORTICULTURE DURABLE') }}">{{ __('header.subtitle14') }}</a>
                                                     </li>
                                                     <li><a
-                                                            href="{{ route('course.details', 'Architecture du Paysage') }}">{{ __('header.subtitle15') }}</a>
+                                                            href="{{ route('course.details', 'ARCHITECTURE DU PAYSAGE (MS)') }}">{{ __('header.subtitle15') }}</a>
                                                     </li>
-                                                    <li><a href="{{ route('course.details', 'Locust Master') }}">
+                                                    <li><a href="{{ route('course.details', 'Locust Science (En)') }}">
                                                             {{ __('header.subtitle16') }}</a></li>
                                                     <li><a
-                                                            href="{{ route('course.details', 'Master Sciences Acridiennes') }}">
+                                                            href="{{ route('course.details', 'Sciences Acridiennes (Fr)') }}">
                                                             {{ __('header.subtitle17') }}</a></li>
                                                 </ul>
                                             </li>
