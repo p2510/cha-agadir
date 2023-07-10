@@ -214,10 +214,10 @@
 
                                 @if (count($logo_url) > 0)
                 @foreach ($logo_url as $item)
-                <a class="menuzord-brand  flip mt-20 mt-sm-10 mb-sm-20 pt-5"
+<a class="menuzord-brand  flip mt-20 mt-sm-10 mb-sm-20 pt-5"
                                                             href="{{ route('home') }}"><img
                                                                 src="{{ url('storage') }}/{{ $item->logo }}" alt=""></a>
-                @endforeach
+@endforeach
                 @endif
                             </div>
                         -->
@@ -611,8 +611,10 @@
                 background-color: #1F334560;
             }
 
-            .header-nav .container {
-                width: 1400px;
+            @media (min-width: 1430px) {
+                .header-nav .container {
+                    width: 1400px
+                }
             }
 
             .menuzord-brand {
