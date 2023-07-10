@@ -109,7 +109,8 @@
 
                                     <li><a href="hcps://www.facebook.com/profile.php?id=100088051148636&mibexVd=ZbWKwL"><i
                                                 class="fa fa-facebook"></i></a></li>
-                                    <li><a href="hcps://www.facebook.com/profile.php?id=100088051148636&mibexVd=ZbWKwL"><i
+                                    <li><a
+                                            href="hcps://www.facebook.com/profile.php?id=100088051148636&mibexVd=ZbWKwL"><i
                                                 class="fa fa-instagram"></i></a></li>
                                     <li><a href="hcps://www.linkedin.com/company/complexe-horVcole-d-agadir/"><i
                                                 class="fa fa-linkedin"></i></a></li>
@@ -190,17 +191,18 @@
                 <div class="header-nav-inner">
                     <div class="header-nav-wrapper navbar-scrolltofixed bg-white">
                         <div class="container">
-
+                            <!--
                             <div id="logo_pc" style="justify-content:center;width:100%;">
 
                                 @if (count($logo_url) > 0)
-                                    @foreach ($logo_url as $item)
-                                        <a class="menuzord-brand  flip mt-20 mt-sm-10 mb-sm-20 pt-5"
-                                            href="{{ route('home') }}"><img
-                                                src="{{ url('storage') }}/{{ $item->logo }}" alt=""></a>
-                                    @endforeach
-                                @endif
+                @foreach ($logo_url as $item)
+                <a class="menuzord-brand  flip mt-20 mt-sm-10 mb-sm-20 pt-5"
+                                                            href="{{ route('home') }}"><img
+                                                                src="{{ url('storage') }}/{{ $item->logo }}" alt=""></a>
+                @endforeach
+                @endif
                             </div>
+                        -->
                             <nav id="menuzord-right" class="menuzord default theme-colored">
                                 @if (count($logo_url) > 0)
                                     @foreach ($logo_url as $item)
@@ -360,8 +362,6 @@
                     display: none;
                 }
 
-
-
             }
 
             @media only screen and (max-width:500px) {
@@ -379,9 +379,10 @@
 
                 }
 
+                /*
                 #logo_pc {
                     display: none;
-                }
+                }*/
             }
 
             @media screen and (min-width: 768px) {
@@ -389,14 +390,14 @@
                     display: block;
                 }
 
-                #logo_pc {
+                /* #logo_pc {
                     display: flex;
                     ;
                 }
 
-                #logo_mobile {
+               #logo_mobile {
                     display: none;
-                }
+                }*/
 
             }
 
