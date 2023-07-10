@@ -213,12 +213,12 @@
                             <div id="logo_pc" style="justify-content:center;width:100%;">
 
                                 @if (count($logo_url) > 0)
-                @foreach ($logo_url as $item)
+@foreach ($logo_url as $item)
 <a class="menuzord-brand  flip mt-20 mt-sm-10 mb-sm-20 pt-5"
                                                             href="{{ route('home') }}"><img
                                                                 src="{{ url('storage') }}/{{ $item->logo }}" alt=""></a>
 @endforeach
-                @endif
+@endif
                             </div>
                         -->
                             <nav id="menuzord-right" class="menuzord default theme-colored">
@@ -611,9 +611,13 @@
                 background-color: #1F334560;
             }
 
-            @media (min-width: 1430px) {
+            @media (min-width: 1200px) {
                 .header-nav .container {
-                    width: 1400px
+                    width: 100%;
+                }
+
+                .menuzord-menu>li>a {
+                    font-size: 13px !important;
                 }
             }
 

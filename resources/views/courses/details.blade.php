@@ -592,9 +592,13 @@
                 background-color: #1F334560;
             }
 
-            @media (min-width: 1430px) {
+            @media (min-width: 1200px) {
                 .header-nav .container {
-                    width: 1400px
+                    width: 100%;
+                }
+
+                .menuzord-menu>li>a {
+                    font-size: 13px !important;
                 }
             }
 
