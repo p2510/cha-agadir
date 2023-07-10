@@ -219,7 +219,7 @@
                             <nav id="menuzord-right" class="menuzord default theme-colored">
                                 @if (count($logo_url) > 0)
                                     @foreach ($logo_url as $item)
-                                        <a id="logo_mobile" class="menuzord-brand  flip mt-20 mt-sm-10 mb-sm-20 pt-5"
+                                        <a id="logo_mobile" class="menuzord-brand  flip mt-5 mt-sm-10 mb-sm-20 pt-5"
                                             href="{{ route('home') }}"><img style="width: 166px;height:30;"
                                                 src="{{ url('storage') }}/{{ $item->logo }}" alt=""></a>
                                     @endforeach
