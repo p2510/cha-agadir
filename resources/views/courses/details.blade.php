@@ -1958,7 +1958,7 @@
                                     class="gallery-isotope default-animation-effect @if (count($coursevideos) == 1) grid-1   @elseif(count($coursevideos) == 2) grid-2 @else grid-3 @endif gutter-small clearfix"
                                     data-lightbox="gallery" style="margin-top:6px;">
                                     @foreach ($coursevideos as $coursevideo)
-                                        <div class="gallery-item">
+                                        <div class="gallery-item p15">
                                             <p style="text-align: center; background-color:#F88147;color:black;">
                                                 {{ $coursevideo->title }}</p>
                                             <iframe width="220" height="145"
@@ -1968,6 +1968,7 @@
                                         </div>
                                     @endforeach
                                 </div>
+                                
 
 
                             </div>
