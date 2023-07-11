@@ -494,20 +494,25 @@
                                                 @endif
                                             </div>
                                         </div>
+                                        <div style="margin-left:15px;" >
+
+                                            <input name="accepted" value='accepted'
+                                            type="checkbox" >
+                                        </div>
                                         <div class="col-xs-12 col-sm-12 font-12 text-white mb-10"
                                             style="text-align:justify;hyphens:auto;">
+                                        
                                             {{ __('event.formtext6') }}
                                         </div>
 
-
+                                        
                                         <div class="col-xs-12 col-sm-12 ">
 
                                             <div class="mb-10">
 
                                                 <div class="font-10 text-white "
                                                     style="text-align:justify;hyphens:auto;width:100%;">
-                                                    <input name="accepted" value='accepted'
-                                                        type="checkbox">
+                                                   
                                                     {{ __('event.formtext7') }} <a
                                                         class="text-white"
                                                         style="font-weight:normal;text-decoration:underline;"
