@@ -4032,9 +4032,11 @@
     }
 </style>
 <script>
-    $(".header-nav-inner").css({
-        'height': ($(".header-nav-wrapper").height() + 'px')
-    });
+  if ($(window).width() <= 991 ) {
+        $(".header-nav-inner").css({
+            'height': ($(".header-nav-wrapper").height() + 'px')
+        });
+    }
     const accSingleTriggers = document.querySelectorAll(".accordion-header");
 
     accSingleTriggers.forEach((trigger) =>
