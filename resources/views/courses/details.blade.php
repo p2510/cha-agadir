@@ -4109,4 +4109,11 @@
             item.classList.toggle('open');
         });
     });
+    
+    const accitems = document.querySelectorAll(".accordion-item");
+    accitems.forEach((item) => {
+        item.addEventListener('click', (e) => {
+            item.classList.toggle('active');
+        });
+    });
 </script>
