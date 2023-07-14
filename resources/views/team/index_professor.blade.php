@@ -45,17 +45,17 @@
                                         <div class="gallery-item ">
                                             <div class="team-members mb-40 ">
                                                 <!-- <a href="{{ route('show.professor', $responsable->name) }}" class="team-thumb mr-0">-->
-                                                <a href="#" class="team-thumb mr-0">
+                                                <div class="team-thumb mr-0">
                                                     <img src="{{ asset('storage') }}/{{ $responsable->photo }}"
                                                         alt="" class="img-fullwidth">
-                                                </a>
+                                                </div>
                                                 <div class="team-bottom-part border-1px p-15">
                                                     <!--<a href="{{ route('show.professor', $responsable->name) }}">-->
-                                                        <a href="#">
+                                                        <div >
                                                             <h4 class="text-uppercase font-weight-600 m-0 pb-5 font-16">
                                                                 {{ $responsable->name }}
                                                                 {{ $responsable->surname }} </h4>
-                                                        </a>
+                                                        </div>
                                                         <h6 class="font-13 text-gray mt-0 font-10">
                                                             @if (App::isLocale('en'))
                                                                 {{ $responsable->statut_en }}
