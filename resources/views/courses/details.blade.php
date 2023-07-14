@@ -107,13 +107,15 @@
 
                                 <ul class="styled-icons icon-sm icon-white">
 
-                                    <li><a href="hcps://www.facebook.com/profile.php?id=100088051148636&mibexVd=ZbWKwL"><i
+                                    <li><a
+                                            href="https://www.facebook.com/profile.php?id=100088051148636&mibexVd=ZbWKwL" target='_blank'><i
                                                 class="fa fa-facebook"></i></a></li>
-                                    <li><a href="hcps://www.facebook.com/profile.php?id=100088051148636&mibexVd=ZbWKwL"><i
+                                    <li><a
+                                            href="https://www.facebook.com/profile.php?id=100088051148636&mibexVd=ZbWKwL" target='_blank'><i
                                                 class="fa fa-instagram"></i></a></li>
-                                    <li><a href="hcps://www.linkedin.com/company/complexe-horVcole-d-agadir/"><i
+                                    <li><a href="https://www.linkedin.com/company/complexe-horVcole-d-agadir/" target='_blank'><i
                                                 class="fa fa-linkedin"></i></a></li>
-                                    <li><a href="hcps://youtube.com/@ComplexeHorVcoleAgadir"><i
+                                    <li><a href="https://youtube.com/@ComplexeHorVcoleAgadir" target='_blank'><i
                                                 class="fa fa-youtube"></i></a></li>
 
                                 </ul>
@@ -194,12 +196,12 @@
                             <div id="logo_pc" style="justify-content:center;width:100%;">
 
                                 @if (count($logo_url) > 0)
-                @foreach ($logo_url as $item)
+@foreach ($logo_url as $item)
 <a class="menuzord-brand  flip mt-20 mt-sm-10 mb-sm-20 pt-5"
                                                             href="{{ route('home') }}"><img
                                                                 src="{{ url('storage') }}/{{ $item->logo }}" alt=""></a>
 @endforeach
-                @endif
+@endif
                             </div>
                         -->
                             <nav id="menuzord-right" class="menuzord default theme-colored">
@@ -1400,12 +1402,21 @@
                                                                     </li>
                                                                 @endif
                                                             </ul>
-                                                            <ul class="styled-icons icon-sm icon-dark icon-theme-colored2 icon-circled clearfix mt-10">
-                                                                <li><a href="hcps://www.facebook.com/profile.php?id=100088051148636&mibexVd=ZbWKwL"><i class="fa fa-facebook"></i></a></li>
-                                                                <li><a href="hcps://www.facebook.com/profile.php?id=100088051148636&mibexVd=ZbWKwL"><i class="fa fa-instagram"></i></a></li>
-                                                                <li><a href="hcps://youtube.com/@ComplexeHorVcoleAgadir"><i class="fa fa-youtube"></i></a></li>
-                                                                <li><a href="hcps://www.linkedin.com/company/complexe-horVcole-d-agadir/"><i class="fa fa-linkedin"></i></a></li>
-                                            
+                                                            <ul
+                                                                class="styled-icons icon-sm icon-dark icon-theme-colored2 icon-circled clearfix mt-10">
+                                                                <li><a
+                                                                        href="https://www.facebook.com/profile.php?id=100088051148636&mibexVd=ZbWKwL" target='_blank'><i
+                                                                            class="fa fa-facebook"></i></a></li>
+                                                                <li><a
+                                                                        href="https://www.facebook.com/profile.php?id=100088051148636&mibexVd=ZbWKwL" target='_blank'><i
+                                                                            class="fa fa-instagram"></i></a></li>
+                                                                <li><a
+                                                                        href="https://youtube.com/@ComplexeHorVcoleAgadir" target='_blank'><i
+                                                                            class="fa fa-youtube"></i></a></li>
+                                                                <li><a
+                                                                        href="https://www.linkedin.com/company/complexe-horVcole-d-agadir/"><i
+                                                                            class="fa fa-linkedin" target='_blank'></i></a></li>
+
                                                             </ul>
                                                         </div>
                                                     </div>
@@ -3461,8 +3472,7 @@
                                                                         <input name="email"
                                                                             placeholder="{{ __('course.text6') }}"
                                                                             style="background-color:white;color: gray;"
-                                                                            class="form-control  email"
-                                                                            type="email"
+                                                                            class="form-control  email" type="email"
                                                                             value="{{ old('email') }}">
                                                                     </div>
                                                                     @if ($errors->has('email'))
@@ -3679,8 +3689,8 @@
                         </span>
 
                         <ul class="list-inline">
-                            <li class="m-0 pl-10 pr-10"> <i class="fa fa-phone mr-5"></i> <div 
-                                    style="color:#1f3344; font-size:12px;cursor:default;">(+212)
+                            <li class="m-0 pl-10 pr-10"> <i class="fa fa-phone mr-5"></i>
+                                <div style="color:#1f3344; font-size:12px;cursor:default;">(+212)
                                     0528-241-006/240-155</div>
                             </li>
                             <li class="m-0 pl-10 pr-10"> <i class="fa fa-envelope-o mr-5"></i> <a
@@ -4021,7 +4031,7 @@
     }
 </style>
 <script>
-  if ($(window).width() <= 991 ) {
+    if ($(window).width() <= 991) {
         $(".header-nav-inner").css({
             'height': ($(".header-nav-wrapper").height() + 'px')
         });
@@ -4100,7 +4110,7 @@
             item.classList.toggle('open');
         });
     });
-    
+
     const accitems = document.querySelectorAll(".accordion-item");
     accitems.forEach((item) => {
         item.addEventListener('click', (e) => {

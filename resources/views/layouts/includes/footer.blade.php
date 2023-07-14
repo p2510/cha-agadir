@@ -20,10 +20,13 @@
                             style="color:#1f3344;">www.cha-agadir.ma</a> </li>
                 </ul>
                 <ul class="styled-icons icon-sm icon-dark icon-theme-colored2 icon-circled clearfix mt-10">
-                    <li><a href="hcps://www.facebook.com/profile.php?id=100088051148636&mibexVd=ZbWKwL"><i class="fa fa-facebook"></i></a></li>
-                    <li><a href="hcps://www.facebook.com/profile.php?id=100088051148636&mibexVd=ZbWKwL"><i class="fa fa-instagram"></i></a></li>
-                    <li><a href="hcps://youtube.com/@ComplexeHorVcoleAgadir"><i class="fa fa-youtube"></i></a></li>
-                    <li><a href="hcps://www.linkedin.com/company/complexe-horVcole-d-agadir/"><i class="fa fa-linkedin"></i></a></li>
+                    <li><a href="https://www.facebook.com/profile.php?id=100088051148636&mibexVd=ZbWKwL" target='_blank'><i
+                                class="fa fa-facebook"></i></a></li>
+                    <li><a href="https://www.facebook.com/profile.php?id=100088051148636&mibexVd=ZbWKwL" target='_blank' ><i
+                                class="fa fa-instagram"></i></a></li>
+                    <li><a href="https://youtube.com/@ComplexeHorVcoleAgadir"><i class="fa fa-youtube" target='_blank'></i></a></li>
+                    <li><a href="https://www.linkedin.com/company/complexe-horVcole-d-agadir/" target='_blank'><i
+                                class="fa fa-linkedin"></i></a></li>
 
                 </ul>
             </div>
@@ -143,7 +146,8 @@
             <div class="row">
 
                 <div class="col-md-6">
-                    <p class="font-14 sm-text-center m-0"> <span id='elem'> Copyright </span> &copy;2023 <span class="text-theme-colored2">CHA
+                    <p class="font-14 sm-text-center m-0"> <span id='elem'> Copyright </span> &copy;2023 <span
+                            class="text-theme-colored2">CHA
                             Agadir</span>. {{ __('footer.text1') }} </p>
                 </div>
                 <div class="col-md-6 text-right">
@@ -180,8 +184,8 @@
 
 <style>
     @media screen and (max-width: 768px) {
-        #elem{
-            
+        #elem {
+
             display: none;
         }
     }
@@ -204,15 +208,18 @@
     .footer .widget .widget-title {
         margin-top: 0px;
     }
-    .header-nav{
-        z-index:11111;
+
+    .header-nav {
+        z-index: 11111;
     }
 </style>
 
 <!-- end wrapper -->
 
 <script>
-    $(".header-nav-inner").css({'height':($(".header-nav-wrapper").height()+'px')});
+    $(".header-nav-inner").css({
+        'height': ($(".header-nav-wrapper").height() + 'px')
+    });
 </script>
 <!-- Footer Scripts -->
 <!-- JS | Chart-->

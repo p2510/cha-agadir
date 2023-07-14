@@ -125,14 +125,15 @@
 
                                 <ul class="styled-icons icon-sm icon-white">
 
-                                    <li><a href="hcps://www.facebook.com/profile.php?id=100088051148636&mibexVd=ZbWKwL"><i
-                                                class="fa fa-facebook"></i></a></li>
                                     <li><a
-                                            href="hcps://www.facebook.com/profile.php?id=100088051148636&mibexVd=ZbWKwL"><i
-                                                class="fa fa-instagram"></i></a></li>
-                                    <li><a href="hcps://www.linkedin.com/company/complexe-horVcole-d-agadir/"><i
-                                                class="fa fa-linkedin"></i></a></li>
-                                    <li><a href="hcps://youtube.com/@ComplexeHorVcoleAgadir"><i
+                                            href="https://www.facebook.com/profile.php?id=100088051148636&mibexVd=ZbWKwL" target='_blank'><i
+                                                class="fa fa-facebook" target='_blank'></i></a></li>
+                                    <li><a
+                                            href="https://www.facebook.com/profile.php?id=100088051148636&mibexVd=ZbWKwL" target='_blank'><i
+                                                class="fa fa-instagram" target='_blank'></i></a></li>
+                                    <li><a href="https://www.linkedin.com/company/complexe-horVcole-d-agadir/" target='_blank'><i
+                                                class="fa fa-linkedin" target='_blank'></i></a></li>
+                                    <li><a href="https://youtube.com/@ComplexeHorVcoleAgadir" target='_blank'><i
                                                 class="fa fa-youtube"></i></a></li>
 
                                 </ul>
