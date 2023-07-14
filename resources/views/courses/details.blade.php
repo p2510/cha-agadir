@@ -1409,9 +1409,9 @@
                                                                         target='_blank'><i
                                                                             class="fa fa-instagram"></i></a></li>
                                                                 <li><a
-                                                                        href="https://youtube.com/@ComplexeHorticoleAgadir"><i
+                                                                        href="https://youtube.com/@ComplexeHorticoleAgadir" target='_blank'><i
                                                                             class="fa fa-youtube"
-                                                                            target='_blank'></i></a></li>
+                                                                            ></i></a></li>
                                                                 <li><a href="https://www.linkedin.com/company/complexe-horticole-d-agadir/"
                                                                         target='_blank'><i
                                                                             class="fa fa-linkedin"></i></a></li>
