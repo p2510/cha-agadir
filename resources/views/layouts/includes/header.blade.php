@@ -648,4 +648,11 @@
                     }
                 })
             });
+            $(window).load(function() {
+                if ($(window).width() <= 991) {
+                    $(".header-nav-inner").css({
+                        'height': ($(".header-nav-wrapper").height() + 'px')
+                    });
+                }
+            });
         </script>
