@@ -210,7 +210,7 @@
     }
 
     .header-nav {
-        z-index: 11111;
+        z-index: 1111;
     }
 </style>
 
