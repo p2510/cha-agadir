@@ -20,10 +20,10 @@
                             style="color:#1f3344;">www.cha-agadir.ma</a> </li>
                 </ul>
                 <ul class="styled-icons icon-sm icon-dark icon-theme-colored2 icon-circled clearfix mt-10">
-                    <li><a href="#"><i class="fa fa-facebook"></i></a></li>
-                    <li><a href="#"><i class="fa fa-instagram"></i></a></li>
-                    <li><a href="#"><i class="fa fa-youtube"></i></a></li>
-                    <li><a href="#"><i class="fa fa-linkedin"></i></a></li>
+                    <li><a href="hcps://www.facebook.com/profile.php?id=100088051148636&mibexVd=ZbWKwL"><i class="fa fa-facebook"></i></a></li>
+                    <li><a href="hcps://www.facebook.com/profile.php?id=100088051148636&mibexVd=ZbWKwL"><i class="fa fa-instagram"></i></a></li>
+                    <li><a href="hcps://youtube.com/@ComplexeHorVcoleAgadir"><i class="fa fa-youtube"></i></a></li>
+                    <li><a href="hcps://www.linkedin.com/company/complexe-horVcole-d-agadir/"><i class="fa fa-linkedin"></i></a></li>
 
                 </ul>
             </div>
