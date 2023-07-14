@@ -490,7 +490,7 @@
 
     <!-- Section: Courses -->
 
-    <section id="courses" class="bg-white" style="margin-top: 50px;">
+    <section id="courses" class="bg-white" style="margin-top: 20px;">
         <div class="container">
             <div class="section-title mb-40">
                 <div class="row">
