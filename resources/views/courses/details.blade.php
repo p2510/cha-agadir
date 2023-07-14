@@ -107,15 +107,13 @@
 
                                 <ul class="styled-icons icon-sm icon-white">
 
-                                    <li><a
-                                            href="https://www.facebook.com/profile.php?id=100088051148636&mibexVd=ZbWKwL" target='_blank'><i
-                                                class="fa fa-facebook"></i></a></li>
-                                    <li><a
-                                            href="https://www.facebook.com/profile.php?id=100088051148636&mibexVd=ZbWKwL" target='_blank'><i
-                                                class="fa fa-instagram"></i></a></li>
-                                    <li><a href="https://www.linkedin.com/company/complexe-horVcole-d-agadir/" target='_blank'><i
-                                                class="fa fa-linkedin"></i></a></li>
-                                    <li><a href="https://youtube.com/@ComplexeHorVcoleAgadir" target='_blank'><i
+                                    <li><a href="https://www.facebook.com/profile.php?id=100088051148636&mibexVd=ZbWKwL"
+                                            target='_blank'><i class="fa fa-facebook" target='_blank'></i></a></li>
+                                    <li><a href="https://www.facebook.com/profile.php?id=100088051148636&mibexVd=ZbWKwL"
+                                            target='_blank'><i class="fa fa-instagram" target='_blank'></i></a></li>
+                                    <li><a href="https://www.linkedin.com/company/complexe-horticole-d-agadir/"
+                                            target='_blank'><i class="fa fa-linkedin" target='_blank'></i></a></li>
+                                    <li><a href="https://youtube.com/@ComplexeHorticoleAgadir" target='_blank'><i
                                                 class="fa fa-youtube"></i></a></li>
 
                                 </ul>
@@ -1404,18 +1402,19 @@
                                                             </ul>
                                                             <ul
                                                                 class="styled-icons icon-sm icon-dark icon-theme-colored2 icon-circled clearfix mt-10">
-                                                                <li><a
-                                                                        href="https://www.facebook.com/profile.php?id=100088051148636&mibexVd=ZbWKwL" target='_blank'><i
+                                                                <li><a href="https://www.facebook.com/profile.php?id=100088051148636&mibexVd=ZbWKwL"
+                                                                        target='_blank'><i
                                                                             class="fa fa-facebook"></i></a></li>
-                                                                <li><a
-                                                                        href="https://www.facebook.com/profile.php?id=100088051148636&mibexVd=ZbWKwL" target='_blank'><i
+                                                                <li><a href="https://www.facebook.com/profile.php?id=100088051148636&mibexVd=ZbWKwL"
+                                                                        target='_blank'><i
                                                                             class="fa fa-instagram"></i></a></li>
                                                                 <li><a
-                                                                        href="https://youtube.com/@ComplexeHorVcoleAgadir" target='_blank'><i
-                                                                            class="fa fa-youtube"></i></a></li>
-                                                                <li><a
-                                                                        href="https://www.linkedin.com/company/complexe-horVcole-d-agadir/"><i
-                                                                            class="fa fa-linkedin" target='_blank'></i></a></li>
+                                                                        href="https://youtube.com/@ComplexeHorticoleAgadir"><i
+                                                                            class="fa fa-youtube"
+                                                                            target='_blank'></i></a></li>
+                                                                <li><a href="https://www.linkedin.com/company/complexe-horticole-d-agadir/"
+                                                                        target='_blank'><i
+                                                                            class="fa fa-linkedin"></i></a></li>
 
                                                             </ul>
                                                         </div>
@@ -3472,7 +3471,8 @@
                                                                         <input name="email"
                                                                             placeholder="{{ __('course.text6') }}"
                                                                             style="background-color:white;color: gray;"
-                                                                            class="form-control  email" type="email"
+                                                                            class="form-control  email"
+                                                                            type="email"
                                                                             value="{{ old('email') }}">
                                                                     </div>
                                                                     @if ($errors->has('email'))
@@ -4027,7 +4027,7 @@
     }
 
     .header-nav {
-        z-index: 11111;
+        z-index: 1111;
     }
 </style>
 <script>
@@ -4117,4 +4117,11 @@
             item.classList.toggle('active');
         });
     });
+    $(window).load(function() {
+                if ($(window).width() <= 991) {
+                    $(".header-nav-inner").css({
+                        'height': ($(".header-nav-wrapper").height() + 'px')
+                    });
+                }
+            });
 </script>

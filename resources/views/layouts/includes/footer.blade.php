@@ -24,8 +24,8 @@
                                 class="fa fa-facebook"></i></a></li>
                     <li><a href="https://www.facebook.com/profile.php?id=100088051148636&mibexVd=ZbWKwL" target='_blank' ><i
                                 class="fa fa-instagram"></i></a></li>
-                    <li><a href="https://youtube.com/@ComplexeHorVcoleAgadir"><i class="fa fa-youtube" target='_blank'></i></a></li>
-                    <li><a href="https://www.linkedin.com/company/complexe-horVcole-d-agadir/" target='_blank'><i
+                    <li><a href="https://youtube.com/@ComplexeHorticoleAgadir"><i class="fa fa-youtube" target='_blank'></i></a></li>
+                    <li><a href="https://www.linkedin.com/company/complexe-horticole-d-agadir/" target='_blank'><i
                                 class="fa fa-linkedin"></i></a></li>
 
                 </ul>
