@@ -12,6 +12,7 @@ use App\Http\Utils\Provinces;
 use Illuminate\Validation\Rule;
 use App\Jobs\JobMessageInterested;
 use App\Mail\SendMessageInterested;
+use Illuminate\Support\Facades\App;
 use Illuminate\Support\Facades\Mail;
 
 
@@ -27,7 +28,8 @@ class InterestedController extends Controller
     {
         
     $getCourse=Course::find($id);
-    $getDegree=Degree::find($getCourse->degree_id);
+    $getDegree= Degree::find($getCourse->degree_id);
+
     
    $data=$request->validate([
             'gender'=>['required','string',Rule::in(['Mlle','Mme','Mr'])],
@@ -48,11 +50,10 @@ class InterestedController extends Controller
         
         $data['course_id']=$id;
         $data['degree_name']=$getDegree->name;
-     
-
         
-       Interested::create($data);
-       JobMessageInterested::dispatch($request->email, $getCourse->name,$getDegree->name,$request->name,$id);
+        Interested::create($data);
+        JobMessageInterested::dispatch($request->email, $getCourse->name, $getCourse->name_en,$getDegree->name,$getDegree->name_en,$request->name,$id);
+
         return redirect()->back()->with('success','succès');
     }
 }

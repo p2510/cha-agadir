@@ -23,13 +23,17 @@ class SendMessageInterested extends Mailable
      */
      
      public $course_name;
+     public $course_name_en;
      public $degree;
+     public $degree_en;
      public $name;
      public $download_id;
-    public function __construct(string $course_name,string $degree,string $name,int $download_id)
+    public function __construct(string $course_name,string $course_name_en,string $degree,string $degree_en,string $name,int $download_id)
     {
         $this->course_name=$course_name;
+        $this->course_name_en=$course_name_en;
         $this->degree=$degree;
+        $this->degree_en=$degree_en;
         $this->name=$name;
         $this->download_id=$download_id;
     }
@@ -59,7 +63,9 @@ class SendMessageInterested extends Mailable
             with:[
                 'name'=>$this->name,
                 'course_name'=>$this->course_name,
+                'course_name_en'=>$this->course_name_en,
                 'degree'=>$this->degree,
+                'degree_en'=>$this->degree_en,
             ]
         );
     }

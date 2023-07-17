@@ -1,3 +1,50 @@
+
+<h2> Subject: confirmation of your pre-registration - {{ $title }}</h2>
+<br>
+
+<h3>Dear {{ $name }}</h3>
+<br>
+<div>
+    We're thrilled to confirm your pre-registration for our upcoming event:
+</div>
+<br>
+
+<p>Topic : {{ $title }}</p>
+<p>Location : {{ $location }}</p>
+<p>Start  : {{ $start_at }}</p>
+<p>End : {{ $end_at }}</p>
+<br>
+
+<div>
+    We've attached further details to this email to help you prepare. Should you have any
+    questions about the event, or need additional information about how to participate,
+    please feel free to reach out. Our event coordination team is standing by to assist
+    you.
+</div>
+<br>
+
+<p>We're looking forward to welcoming you soon.</p>
+<br>
+
+<p>Best regards.</p>
+<br>
+<br>
+
+<div>
+        @if (count($logo_url) > 0)
+    @foreach ($logo_url as $item)
+        <img id="logo" src="{{ url('storage') }}/{{ $item->logo }}" alt="">
+    @endforeach
+    @endif
+</div>
+<br>
+<div>
+    km 2 route d’Azrou, B.P. 121 <br>
+    Ait Melloul 80150 - Agadir <br>
+    (+212) 0528-241-006 / 240-155 <br>
+    contact@cha-agadir.ma - <a href="https://cha-agadir.ma"> www.cha-agadir.ma</a>
+</div>
+<hr>
 <h2> Sujet: Confirmation de pré-inscription - {{ $title }}</h2>
 <br>
 
@@ -45,54 +92,7 @@
 </div>
 
 <br>
-<hr>
-<br>
 
-<h2> Subject: confirmation of your pre-registration - {{ $title }}</h2>
-<br>
-
-<h3>Dear {{ $name }}</h3>
-<br>
-<div>
-    We're thrilled to confirm your pre-registration for our upcoming event:
-</div>
-<br>
-
-<p>Topic : {{ $title }}</p>
-<p>Location : {{ $location }}</p>
-<p>Start  : {{ $start_at }}</p>
-<p>End : {{ $end_at }}</p>
-<br>
-
-<div>
-    We've attached further details to this email to help you prepare. Should you have any
-    questions about the event, or need additional information about how to participate,
-    please feel free to reach out. Our event coordination team is standing by to assist
-    you.
-</div>
-<br>
-
-<p>We're looking forward to welcoming you soon.</p>
-<br>
-
-<p>Best regards.</p>
-<br>
-<br>
-
-<div>
-        @if (count($logo_url) > 0)
-    @foreach ($logo_url as $item)
-        <img id="logo" src="{{ url('storage') }}/{{ $item->logo }}" alt="">
-    @endforeach
-    @endif
-</div>
-<br>
-<div>
-    km 2 route d’Azrou, B.P. 121 <br>
-    Ait Melloul 80150 - Agadir <br>
-    (+212) 0528-241-006 / 240-155 <br>
-    contact@cha-agadir.ma - <a href="https://cha-agadir.ma"> www.cha-agadir.ma</a>
-</div>
 
 
 <style>
