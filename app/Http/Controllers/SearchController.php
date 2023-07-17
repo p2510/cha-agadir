@@ -42,7 +42,7 @@ class SearchController extends Controller
         });
 
 
-        $tabs=Tabpage::where('pagename','recherche')->get()->map(function ($item){         
+        $tabs=Tabpage::where('pagename','recherche')->get()->map(function ($item){
                                     if (App::isLocale('en')) {
                                         $item->title=$item->title_en;
                                         $item->content=$item->content_en;

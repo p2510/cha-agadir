@@ -326,7 +326,7 @@
                 @endforeach
 
                 @if (count($downloads) != 0)
-                  
+
                     <div class="mr-10 ml-10  ">
                         <button class="accordion active" id="btn_download"
                             style="display: flex;justify-content:space-between; padding-left:4px;padding-right:4px;">{{ __('home.text8') }}</button>
@@ -340,29 +340,29 @@
                     </div>
                 @endif
 
-
+               <span style="visibility:hidden;"> titre</span>
                 <div class="gallery-isotope default-animation-effect @if (count($pagevideos) == 1) grid-1   @elseif(count($pagevideos) == 2) grid-2 @else grid-3 @endif  gutter-small clearfix"
-                    data-lightbox="gallery">
-                    @foreach ($pagevideos as $pagevideo)
-                        <div class="gallery-item  mt-10 ">
-                            <p style="text-align: center; background-color:#F88147;color:black;">
-                                {{ $pagevideo->title }}</p>
-                            <iframe width="220" height="145"
-                                src="https://www.youtube.com/embed/{{ $pagevideo->video }}?rel=0" allowfullscreen>
-                            </iframe>
-                        </div>
-                    @endforeach
+                data-lightbox="gallery">
+                @foreach ($pagevideos as $pagevideo)
+                    <div class="gallery-item  mt-10 ">
+                        <p style="text-align: center; background-color:#F88147;color:black;">
+                            {{ $pagevideo->title }}</p>
+                        <iframe width="220" height="145"
+                            src="https://www.youtube.com/embed/{{ $pagevideo->video }}?rel=0" allowfullscreen>
+                        </iframe>
+                    </div>
+                @endforeach
                 </div>
-
                 @if (count($pagevideos) == 1)
-                    <style>
-                        iframe {
-                            width: 40%;
-                            position: relative;
-                            top: 30%;
-                        }
-                    </style>
+                <style>
+                    iframe {
+                        width: 40%;
+                        position: relative;
+                        top: 30%;
+                    }
+                </style>
                 @endif
+
             </div>
         </div>
     </div>
