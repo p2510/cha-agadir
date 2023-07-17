@@ -326,10 +326,12 @@
                 @endforeach
 
                 @if (count($downloads) != 0)
+                  
                     <div class="mr-10 ml-10  ">
                         <button class="accordion active" id="btn_download"
                             style="display: flex;justify-content:space-between; padding-left:4px;padding-right:4px;">{{ __('home.text8') }}</button>
-                        <div class="panel" style="max-height: 54px;margin-bottom:30px;">
+                        <div class="panel" style="max-height: 100px;margin-bottom:30px;">
+
                             @foreach ($downloads as $key => $download)
                                 <div><a href="{{ url('storage') }}/{{ $download->file }}" target='_blank'
                                         style="color:#1f3344;">{{ $download->filename }}</a></div>
@@ -342,7 +344,7 @@
                 <div class="gallery-isotope default-animation-effect @if (count($pagevideos) == 1) grid-1   @elseif(count($pagevideos) == 2) grid-2 @else grid-3 @endif  gutter-small clearfix"
                     data-lightbox="gallery">
                     @foreach ($pagevideos as $pagevideo)
-                        <div class="gallery-item  mt-10 pr-10">
+                        <div class="gallery-item  mt-10 ">
                             <p style="text-align: center; background-color:#F88147;color:black;">
                                 {{ $pagevideo->title }}</p>
                             <iframe width="220" height="145"

@@ -33,6 +33,7 @@ class SearchController extends Controller
            });
     
            
+           
         $pagevideos=Pagevideo::where('pagename','recherche')->get()->map(function ($item){         
             if (App::isLocale('en')) {
                 $item->title=$item->title_en;
