@@ -14,7 +14,7 @@ return [
 'day2'=>'Fri',
 'day3'=>'Sat',
 'day4'=>'Sun',
-'indicatorday'=>'Close',
+'indicatorday'=>'Closed',
 'placehoderNewsletter'=>'Your email',
 'text1'=>'All rights reserved',
 'text2'=>'Legal notice',
