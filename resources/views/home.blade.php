@@ -8,7 +8,7 @@
 
             <!-- START REVOLUTION SLIDER 5.0.7 -->
             <div id="rev_slider_home_wrapper" class="rev_slider_wrapper fullwidthbanner-container" data-alias="news-gallery34"
-                style="margin:0px auto;background-color:#ffffff;padding:0px;margin-top:0px;margin-bottom:0px;">
+                style="margin:0px auto;background-color:#111;padding:0px;margin-top:0px;margin-bottom:0px;">
                 <!-- START REVOLUTION SLIDER 5.0.7 fullwidth mode -->
                 <div id="rev_slider_home" class="rev_slider fullwidthabanner" style="display:none;" data-version="5.0.7">
                     <ul>

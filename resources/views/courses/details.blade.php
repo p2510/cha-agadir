@@ -605,6 +605,11 @@
             .menuzord-brand {
                 margin: 15px 30px 18px 0;
             }
+            @media (max-width: 992px) {
+                .menuzord .menuzord-menu {
+                    display: none;
+                }
+            }
         </style>
 
         @if (session()->has('successNewsletter'))

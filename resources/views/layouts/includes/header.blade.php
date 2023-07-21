@@ -125,14 +125,12 @@
 
                                 <ul class="styled-icons icon-sm icon-white">
 
-                                    <li><a
-                                            href="https://www.facebook.com/profile.php?id=100088051148636&mibexVd=ZbWKwL" target='_blank'><i
-                                                class="fa fa-facebook" target='_blank'></i></a></li>
-                                    <li><a
-                                            href="https://www.facebook.com/profile.php?id=100088051148636&mibexVd=ZbWKwL" target='_blank'><i
-                                                class="fa fa-instagram" target='_blank'></i></a></li>
-                                    <li><a href="https://www.linkedin.com/company/complexe-horticole-d-agadir/" target='_blank'><i
-                                                class="fa fa-linkedin" target='_blank'></i></a></li>
+                                    <li><a href="https://www.facebook.com/profile.php?id=100088051148636&mibexVd=ZbWKwL"
+                                            target='_blank'><i class="fa fa-facebook" target='_blank'></i></a></li>
+                                    <li><a href="https://www.facebook.com/profile.php?id=100088051148636&mibexVd=ZbWKwL"
+                                            target='_blank'><i class="fa fa-instagram" target='_blank'></i></a></li>
+                                    <li><a href="https://www.linkedin.com/company/complexe-horticole-d-agadir/"
+                                            target='_blank'><i class="fa fa-linkedin" target='_blank'></i></a></li>
                                     <li><a href="https://youtube.com/@ComplexeHorticoleAgadir" target='_blank'><i
                                                 class="fa fa-youtube"></i></a></li>
 
@@ -624,6 +622,12 @@
 
             .menuzord-brand {
                 margin: 15px 30px 18px 0;
+            }
+
+            @media (max-width: 992px) {
+                .menuzord .menuzord-menu {
+                    display: none;
+                }
             }
         </style>
         <script>
