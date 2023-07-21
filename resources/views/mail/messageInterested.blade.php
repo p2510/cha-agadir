@@ -6,7 +6,7 @@
 <br>
 <div>
     We sincerely appreciate your interest in our institution and specifically, our “{{ $course_name_en }} -{{ $degree_en }}” program. It's always exciting to engage with individuals who share
-    our passion for learning and growth. {{ $course_name_en }} - {{ $degree_en }} »
+    our passion for learning and growth. {{ $course_name_en }}  {{ $degree_en }} »
     :
 </div>
 <br>
