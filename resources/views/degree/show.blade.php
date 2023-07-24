@@ -37,7 +37,7 @@
                             <div class="col-md-6">
                                 <ol class="breadcrumb text-left mt-10" style="color:rgb(45, 69, 88);font-weight:bold;">
                                     <li><a href="/">{{ __('header.title1') }}</a></li>
-                                    <li><a href="{{ route('course.index') }}">Formation</a></li>
+                                    <li><a href="{{ route('course.index') }}">{{ __('header.title3') }}</a></li>
                                     <li>
                                         @if ($degrees_name)
                                             {{ $degrees_name }}

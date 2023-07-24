@@ -7,7 +7,7 @@
 <div>
     We sincerely appreciate your interest in our institution and specifically, our “{{ $course_name_en }} -{{ $degree_en }}” program. It's always exciting to engage with individuals who share
     our passion for learning and growth.
-    :
+    
 </div>
 <br>
 
@@ -53,8 +53,7 @@
 <br>
 <div>
     Nous vous remercions sincèrement pour l'intérêt que vous portez à notre institution
-    et particulièrement à notre formation intitulée « {{ $course_name }} - {{ $degree }} »
-    .
+    et particulièrement à notre formation intitulée « {{ $course_name }} - {{ $degree }} ».
 </div>
 <br>
 
