@@ -292,10 +292,10 @@
                                                             href="{{ route('course.details', 'ARCHITECTURE DU PAYSAGE (MS)') }}">{{ __('header.subtitle15') }}</a>
                                                     </li>
                                                     <li><a
-                                                            href="{{ route('course.details', 'Locust Science (En)') }}">
+                                                            href="{{ route('course.details', 'Gestion Acridienne (EN)') }}">
                                                             {{ __('header.subtitle16') }}</a></li>
                                                     <li><a
-                                                            href="{{ route('course.details', 'Sciences Acridiennes (Fr)') }}">
+                                                            href="{{ route('course.details', 'Gestion Acridienne (FR)') }}">
                                                             {{ __('header.subtitle17') }}</a></li>
                                                 </ul>
                                             </li>
