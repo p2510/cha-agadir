@@ -66,7 +66,15 @@
                                         <div class="course-details clearfix p-20 pt-15">
                                             <div class="course-top-part">
                                                 <a href="{{ route('course.details', $course->name) }}">
-                                                    <h4 class="mt-5 mb-5">{{ $course->name }}</h4>
+                                                    <h4 class="mt-5 mb-5">
+                                                        @if (App::isLocale('en'))
+                                                        {{ $course->name_en}}
+
+                                                        @else
+                                                        {{ $course->name }}
+
+                                                        @endif
+                                                    </h4>
                                                 </a>
                                                 <a href="{{ route('course.details', $course->name) }}">
                                                     <h4 class="mt-5 mb-5">{{ $course->degrees_name }}</h4>
@@ -81,13 +89,14 @@
                                         </div>
                                         <div class="course-meta">
                                             <ul class="list-inline">
-                                                <li><i class="ficon-clock font-18"></i> {{ $course->duration }} {{__('home.text1')}}</li>
+                                                <li><i class="ficon-clock font-18"></i> {{ $course->duration }}
+                                                    {{ __('home.text1') }}</li>
                                                 <li><i class="pe-7s-notebook font-18"></i>{{ $course->languages_name }}
                                                 </li>
                                             </ul>
                                             <a href="{{ route('course.details', $course->name) }}" style="display:block;"
                                                 class="course-tag">
-                                                <h5>{{__('home.text5')}}</h5>
+                                                <h5>{{ __('home.text5') }}</h5>
                                             </a>
                                         </div>
                                     </div>

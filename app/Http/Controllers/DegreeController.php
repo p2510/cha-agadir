@@ -65,14 +65,13 @@ class DegreeController extends Controller
             ->select('courses.*','modalities.name as modalitiy_name','degrees.name as degrees_name','degrees.name_en as degrees_name_en','languages.name as languages_name','modes.name as modes_name','responsables.photo as responsables_photo','responsables.surname as responsables_surname')
             ->get();
            
-           
-            
+          $courses['name_en']='';
             foreach ($courses as $key => $item) {
                 $item->datelimite=Carbon::parse($item->datelimite)->toObject();
                 $item->description=substr($item->description,0,200);
                  
                 if (App::isLocale('en')) {
-                    $item->name=$item->name_en;
+                  
                     $item->accroche=$item->accroche_en;
                     $item->degrees_name=$item->degrees_name_en;
                   }  

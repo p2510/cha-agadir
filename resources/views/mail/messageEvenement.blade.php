@@ -1,5 +1,5 @@
 
-<h2> Subject: confirmation of your pre-registration - {{ $title }}</h2>
+<h2> Subject: Confirmation of your pre-registration - {{ $title }}</h2>
 <br>
 
 <h3>Dear {{ $name }}</h3>
@@ -45,7 +45,7 @@
     contact@cha-agadir.ma - <a href="https://cha-agadir.ma"> www.cha-agadir.ma</a>
 </div>
 <hr>
-<h2> Sujet: Confirmation de pré-inscription - {{ $title }}</h2>
+<h2> Sujet: Confirmation de votre pré-inscription - {{ $title }}</h2>
 <br>
 
 <h3>Bonjour {{ $name }}</h3>

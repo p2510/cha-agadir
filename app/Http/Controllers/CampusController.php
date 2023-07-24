@@ -24,19 +24,19 @@ class CampusController extends Controller
         $shareFacebook=ShareFacade::currentPage()->facebook()->getRawLinks();
         $shareWhatsapp=ShareFacade::currentPage()->whatsapp()->getRawLinks();
         $shareLinkedin=ShareFacade::currentPage()->linkedin()->getRawLinks();
-        $downloads=Downloadpage::where('pagename','vie estudiantine')->get()->map(function ($item){         
+        $downloads=Downloadpage::where('pagename','vie-estudiantine')->get()->map(function ($item){         
             if (App::isLocale('en')) {
                 $item->filename=$item->filename_en;
             }
             return $item;
            });
-           $pagevideos=Pagevideo::where('pagename','campus')->get()->map(function ($item){         
+        $pagevideos=Pagevideo::where('pagename','campus')->get()->map(function ($item){         
             if (App::isLocale('en')) {
                 $item->title=$item->title_en;
             }
             return $item;
            });
-           $tabs=Tabpage::where('pagename','vie estudiantine')->with('tabimages')->get()->map(function ($item){
+        $tabs=Tabpage::where('pagename','vie estudiantine')->with('tabimages')->get()->map(function ($item){
             if (App::isLocale('en')) {
                 $item->title=$item->title_en;
                 $item->content=$item->content_en;

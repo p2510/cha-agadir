@@ -304,9 +304,7 @@ class ContactController extends Controller
        $data['phone']='+'.$request->indice . ' | ' . $data['phone'];
        Contact::create($data);
        
-       //Mail::to($request->email)->send(new SendContactMessage($request->name,$request->subject));
-
-   
+       Mail::to($request->email)->send(new SendContactMessage($request->name,$request->subject));
 
        return redirect()->back()->with('success','succès');
     }

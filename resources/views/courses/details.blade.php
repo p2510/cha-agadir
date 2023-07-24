@@ -3573,13 +3573,19 @@
                                                                             <option value="_" selected>
                                                                                 {{ __('course.text9') }}</option>
                                                                             @foreach ($levels as $level)
-                                                                                <option value="{{ $level }}">
-                                                                                    @if (App::isLocale('en'))
-                                                                                        {{ $level->name_en }}
-                                                                                    @else
-                                                                                        {{ $level->name }}
-                                                                                    @endif
-                                                                                </option>
+                                                                            @if (App::isLocale('en'))
+                                                                            <option
+                                                                                value="{{ $level->name_en }}">
+
+                                                                                {{ $level->name_en }}
+                                                                            @else
+                                                                            <option
+                                                                                value="{{ $level->name }}">
+
+                                                                                {{ $level->name }}
+
+                                                                            </option>
+                                                                        @endif
                                                                             @endforeach
                                                                         </select>
 

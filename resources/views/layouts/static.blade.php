@@ -334,7 +334,7 @@
 
                             @foreach ($downloads as $key => $download)
                                 <div><a href="{{ url('storage') }}/{{ $download->file }}" target='_blank'
-                                        style="color:#1f3344;">{{ $download->filename }}</a></div>
+                                        class="filename">{{ $download->filename }}</a></div>
                             @endforeach
                         </div>
                     </div>
@@ -368,6 +368,12 @@
     </div>
 </section>
 <style>
+    .filename{
+        color:#1f3344;
+    }
+    .filename:hover{
+    color:#F88147;
+    }
     .accordion {
         color: #fff;
         background-color: #1F3345;
