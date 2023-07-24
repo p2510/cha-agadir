@@ -268,7 +268,7 @@
                                             class="font-14 text-uppercase d-inline">{{ __('header.title3') }}</a>
                                         <ul class="dropdown" style="padding-left: -50px;">
                                             <li style="padding-left: -50px;">
-                                                <a href="{{ route('degree.show', 'INGÉNIEUR') }}"
+                                                <a href="{{ route('degree.show', 'INGÉNIEUR AGRONOME') }}"
                                                     style="padding-left: -50px">{{ __('header.subtitle9') }}</a>
                                                 <ul class="dropdown">
                                                     <li><a
@@ -283,7 +283,7 @@
                                                 </ul>
                                             </li>
                                             <li><a
-                                                    href="{{ route('degree.show', 'MASTER') }}">{{ __('header.subtitle13') }}</a>
+                                                    href="{{ route('degree.show', 'MASTER INTERNATIONAL') }}">{{ __('header.subtitle13') }}</a>
                                                 <ul class="dropdown">
                                                     <li><a
                                                             href="{{ route('course.details', 'EAU ET HORTICULTURE DURABLE') }}">{{ __('header.subtitle14') }}</a>
@@ -300,7 +300,7 @@
                                                 </ul>
                                             </li>
 
-                                            <li><a href="{{ route('degree.show', 'LICENCE PRO.') }}">
+                                            <li><a href="{{ route('degree.show', 'LICENCE PROFESSIONNELLE') }}">
                                                     {{ __('header.subtitle18') }}</a>
                                                 <ul class="dropdown">
                                                     <li><a
