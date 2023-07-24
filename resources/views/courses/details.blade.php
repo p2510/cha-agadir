@@ -610,6 +610,15 @@
                     display: none;
                 }
             }
+            #home,
+            #home #rev_slider_home_wrapper {
+                height: 660px;
+                background-color: #111;
+            }
+
+            .menuzord .showhide {
+                padding: 33px 0 0;
+            }
         </style>
 
         @if (session()->has('successNewsletter'))
