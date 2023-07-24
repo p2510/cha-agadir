@@ -610,7 +610,6 @@
                     display: none;
                 }
             }
-            #home,
             #home #rev_slider_home_wrapper {
                 height: 660px;
                 background-color: #111;
