@@ -72,6 +72,7 @@ class DegreeController extends Controller
                 $item->description=substr($item->description,0,200);
                  
                 if (App::isLocale('en')) {
+                    $item->name=$item->name_en;
                     $item->accroche=$item->accroche_en;
                     $item->degrees_name=$item->degrees_name_en;
                   }  
