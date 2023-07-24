@@ -1,5 +1,5 @@
 
-<h2> Subject: Receivied - {{ $subject }}</h2>
+<h2> Subject: Received - {{ $subject }}</h2>
 <br>
 
 <h3>Dear {{ $name }}</h3>
