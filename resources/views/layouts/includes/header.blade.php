@@ -635,6 +635,10 @@
                 height: 660px;
                 background-color: #111;
             }
+
+            .menuzord .showhide {
+                padding: 33px 0 0;
+            }
         </style>
         <script>
             const switchlang = document.getElementById('switchlang');
@@ -645,6 +649,7 @@
                 let initShow = 0;
                 let showHide = document.querySelector('.showhide');
                 let em = document.getElementsByTagName('em');
+
 
                 showHide.addEventListener('click', () => {
                     initShow++
