@@ -3624,11 +3624,7 @@
                                                                             class="text-white"
                                                                             style="font-weight:normal;text-decoration:underline;"
                                                                             href="{{ route('mention.index') }}"> les
-                                                                            conditions
-                                                                            générales d'utilisation</a> , notamment la
-                                                                        mention relative
-                                                                        á la protection des données
-                                                                        personnelles.<strong
+                                                                            {{ __('event.formtext8') }}</a>,{{ __('event.formtext9') }}<strong
                                                                             style="color:red;">*</strong>
                                                                     </div>
                                                                 </div>
