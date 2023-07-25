@@ -156,7 +156,7 @@
                                     <input name="accepted" value='accepted' type="checkbox" required>
                                     {{ __('event.formtext7') }} <a
                                         style="font-weight:normal;text-decoration:underline;color:#1f3344;"
-                                        href="{{ route('mention.index') }}"> {{ __('event.formtext8') }}</a>,{{ __('event.formtext9') }}.<strong style="color:red;">*</strong>
+                                        href="{{ route('mention.index') }}"> {{ __('event.formtext8') }}</a>,{{ __('event.formtext9') }}<strong style="color:red;">*</strong>
                                 </div>
                             </div>
 
