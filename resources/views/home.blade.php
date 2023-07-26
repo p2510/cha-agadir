@@ -707,6 +707,12 @@
             padding-top: 10px;
             padding-bottom: 40px;
         }
+
+        .owl-carousel-3col>.item {
+            width: 33.33%;
+            padding: 10px;
+            float: left;
+        }
     </style>
     <section>
         <div class="container">
