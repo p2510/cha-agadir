@@ -109,7 +109,7 @@
                             <div class="widget">
                                 <a href=""></a>
                                 <select class="language-selector" id="switchlang">
-                                    <option value="fr" @if (App::currentLocale() == 'fr') selected @endif>Français
+                                    <option value="fr" @if (App::currentLocale() == 'fr') selected @endif>Françai
                                     </option>
                                     <option value="en" @if (App::currentLocale() == 'en') selected @endif>English
                                     </option>
