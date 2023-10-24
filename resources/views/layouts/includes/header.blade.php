@@ -105,16 +105,17 @@
                 <div class="container">
                     <div class="row">
                         <div class=" col-xs-12 col-md-1 ">
-
+                            <!--
                             <div class="widget">
                                 <a href=""></a>
                                 <select class="language-selector" id="switchlang">
-                                    <option value="fr" @if (App::currentLocale() == 'fr') selected @endif>Françai
+                                    <option value="fr" @if (App::currentLocale() == 'fr') selected @endif>Français
                                     </option>
                                     <option value="en" @if (App::currentLocale() == 'en') selected @endif>English
                                     </option>
                                 </select>
                             </div>
+                        -->
 
 
 
