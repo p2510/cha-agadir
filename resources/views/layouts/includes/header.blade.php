@@ -105,7 +105,7 @@
                 <div class="container">
                     <div class="row">
                         <div class=" col-xs-12 col-md-1 ">
-                            <!--
+
                             <div class="widget">
                                 <a href=""></a>
                                 <select class="language-selector" id="switchlang">
@@ -115,7 +115,6 @@
                                     </option>
                                 </select>
                             </div>
-                        -->
 
 
 
